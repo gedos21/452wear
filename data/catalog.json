@@ -1,0 +1,103 @@
+{
+  "eklenen": [
+    {
+      "id": "p-005",
+      "slug": "test-admin-akis-urunu",
+      "name": "TEST Admin Akis Urunu",
+      "description": "Otomatik test urunu, test sonunda silinir.",
+      "category": "tisort",
+      "price": 1049,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-005-a.png",
+          "alt": "TEST Admin Akis Urunu"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-005-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 5
+        },
+        {
+          "id": "p-005-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 0
+        }
+      ],
+      "isNew": true,
+      "tryOn": {
+        "layer": "top",
+        "asset": "/character/tops/p-005-208e3c1e.png",
+        "status": "approved"
+      }
+    }
+  ],
+  "degisen": {
+    "p-001": {
+      "id": "p-001",
+      "slug": "oversize-tisort",
+      "name": "Oversize Tişört",
+      "description": "Ağır gramajlı %100 pamuk, oversize kalıp. Yıkamada çekmeye karşı ön işlemli.",
+      "category": "tisort",
+      "price": 749,
+      "compareAtPrice": 899,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-001-a.png",
+          "alt": "Oversize tişört, önden görünüm"
+        },
+        {
+          "src": "/products/p-001-b.png",
+          "alt": "Oversize tişört, arkadan görünüm"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        },
+        {
+          "name": "Kemik",
+          "hex": "#e6e1d6"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-001-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 12
+        },
+        {
+          "id": "p-001-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 8
+        },
+        {
+          "id": "p-001-l",
+          "size": "L",
+          "color": "Kemik",
+          "stock": 4
+        }
+      ],
+      "isNew": true,
+      "tryOn": {
+        "layer": "top",
+        "asset": "/character/tops/tshirt-black.png",
+        "status": "approved"
+      }
+    }
+  }
+}
