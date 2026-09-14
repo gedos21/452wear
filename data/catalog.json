@@ -1,47 +1,5 @@
 {
-  "eklenen": [
-    {
-      "id": "p-005",
-      "slug": "test-admin-akis-urunu",
-      "name": "TEST Admin Akis Urunu",
-      "description": "Otomatik test urunu, test sonunda silinir.",
-      "category": "tisort",
-      "price": 1049,
-      "currency": "TRY",
-      "images": [
-        {
-          "src": "/products/p-005-a.png",
-          "alt": "TEST Admin Akis Urunu"
-        }
-      ],
-      "colors": [
-        {
-          "name": "Siyah",
-          "hex": "#1a1a1a"
-        }
-      ],
-      "variants": [
-        {
-          "id": "p-005-siyah-m",
-          "size": "M",
-          "color": "Siyah",
-          "stock": 5
-        },
-        {
-          "id": "p-005-siyah-l",
-          "size": "L",
-          "color": "Siyah",
-          "stock": 0
-        }
-      ],
-      "isNew": true,
-      "tryOn": {
-        "layer": "top",
-        "asset": "/character/tops/p-005-208e3c1e.png",
-        "status": "approved"
-      }
-    }
-  ],
+  "eklenen": [],
   "degisen": {
     "p-001": {
       "id": "p-001",
