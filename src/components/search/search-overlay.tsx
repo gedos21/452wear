@@ -5,9 +5,10 @@ import { motion, useReducedMotion } from "motion/react";
 import { Search, X } from "lucide-react";
 import { ProductCard } from "@/components/product/product-card";
 import { PRODUCT_GRID_COLUMNS, PRODUCT_GRID_SIZES } from "@/components/product/product-grid-columns";
+import { useCatalog } from "@/components/product/catalog-provider";
 import { useQuickView } from "@/components/product/quick-view";
 import { buildSearchIndex, searchProducts } from "@/lib/product-search";
-import { CATEGORIES, PRODUCTS } from "@/data/products";
+import { CATEGORIES } from "@/data/products";
 import type { ProductCategory } from "@/types/product";
 
 const PANEL_SPRING = { type: "spring", stiffness: 300, damping: 32 } as const;
@@ -27,11 +28,12 @@ export function SearchOverlay({
   const reduced = useReducedMotion();
   const quickView = useQuickView();
   const inputRef = useRef<HTMLInputElement>(null);
+  const { products } = useCatalog();
 
-  // Index bir kez kurulur; her tuşta yeniden hesaplanmaz.
+  // Index katalog başına bir kez kurulur; her tuşta yeniden hesaplanmaz.
   const index = useMemo(
-    () => buildSearchIndex(PRODUCTS, categoryLabel),
-    [],
+    () => buildSearchIndex(products, categoryLabel),
+    [products],
   );
 
   // Yazma akıcı kalsın diye sonuç listesi ertelenmiş değerle çizilir.

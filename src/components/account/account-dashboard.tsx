@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Heart } from "lucide-react";
 import { Field, NotConnectedNote } from "./field";
 import { useAuth, type AuthUser } from "@/lib/auth";
-import { useFavorites } from "@/lib/favorites";
+import { useFavoriteProducts } from "@/components/product/catalog-provider";
 import { useOrders, ORDER_STATUS_LABEL } from "@/lib/orders";
 import { formatPrice } from "@/lib/format";
 import { cn } from "@/lib/utils";
@@ -190,7 +190,7 @@ function OrdersSection() {
 }
 
 function FavoritesSection() {
-  const { count } = useFavorites();
+  const count = useFavoriteProducts().length;
 
   return (
     <div>

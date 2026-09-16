@@ -1,18 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
 import { ArrowRight } from "lucide-react";
-import { useCart } from "@/lib/cart";
+import { useCartLines } from "@/components/product/catalog-provider";
 import { formatPrice } from "@/lib/format";
 import { shippingFor } from "@/lib/shipping";
-import { PRODUCTS } from "@/data/products";
 
-/** Sepet özeti. Sepetle aynı tek kaynaktan okur. */
+/** Sepet özeti. Sepet çekmecesiyle aynı çözülmüş satırlardan okur. */
 export function CheckoutSummary() {
-  const { items, subtotal, count } = useCart();
-  const catalog = useMemo(() => new Map(PRODUCTS.map((p) => [p.id, p])), []);
-  const currency = items[0]?.currency ?? "TRY";
+  const { lines, subtotal, count, currency } = useCartLines();
   const shipping = shippingFor(subtotal);
 
   if (count === 0) {
@@ -33,9 +29,7 @@ export function CheckoutSummary() {
   return (
     <div>
       <ul className="divide-y divide-border/70 border-y border-border/70">
-        {items.map((item) => {
-          const product = catalog.get(item.productId);
-          if (!product) return null;
+        {lines.map(({ item, product }) => {
           return (
             <li key={item.id} className="flex items-start justify-between gap-4 py-4">
               <div className="min-w-0">

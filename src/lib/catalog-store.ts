@@ -74,14 +74,34 @@ export async function urunYaz(urun: Product): Promise<void> {
   await katmanYaz(k);
 }
 
-/** Çakışmayan yeni ürün id'si (p-0NN biçimini korur). */
+/**
+ * Yeni ürün id'si (p-NNN): şimdiye kadar kullanılmış en büyük numaranın bir
+ * fazlası. Aradaki boşluklar BİLEREK doldurulmaz:
+ *   • silinmiş bir ürünün id'si tarayıcılardaki sepet/favorilerde kalmış
+ *     olabilir; yeni ürüne verilirse orada başka bir ürün olarak dirilir,
+ *   • public/ altında o numarayla başlayan dosyalar olabilir (ör. p-005-b.png
+ *     p-009'un görseli) ve yeni ürünle karışır.
+ * Bu yüzden katalogdaki id'lerin yanında görsel klasörlerindeki dosya adlarına
+ * da bakılır.
+ */
 export async function yeniId(): Promise<string> {
-  const mevcut = new Set((await katalogOku()).map((p) => p.id));
-  for (let n = 1; n < 1000; n++) {
-    const id = `p-${String(n).padStart(3, "0")}`;
-    if (!mevcut.has(id)) return id;
+  const adlar = (await katalogOku()).map((p) => p.id);
+  for (const klasor of ["products", "character"]) {
+    try {
+      const dosyalar = await fs.readdir(
+        path.join(process.cwd(), "public", klasor),
+        { recursive: true },
+      );
+      adlar.push(...dosyalar.map((d) => path.basename(d)));
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
+    }
   }
-  throw new Error("Boş ürün id'si kalmadı");
+  const enBuyuk = Math.max(
+    0,
+    ...adlar.map((ad) => Number(/^p-(\d+)(?=[-.]|$)/.exec(ad)?.[1] ?? 0)),
+  );
+  return `p-${String(enBuyuk + 1).padStart(3, "0")}`;
 }
 
 /** Ürün adından slug — Türkçe karakterler sadeleştirilir. */

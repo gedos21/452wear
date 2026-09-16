@@ -1,39 +1,28 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, X } from "lucide-react";
 import { CartLine } from "./cart-line";
+import { useCartLines } from "@/components/product/catalog-provider";
 import { useCart } from "@/lib/cart";
 import { formatPrice } from "@/lib/format";
 import { shippingFor } from "@/lib/shipping";
-import { PRODUCTS } from "@/data/products";
 
 const DRAWER_SPRING = { type: "spring", stiffness: 260, damping: 32 } as const;
 
 export function CartDrawer({ onClose }: { onClose: () => void }) {
   const reduced = useReducedMotion();
-  const { items, setQty, remove, count, subtotal } = useCart();
+  const { setQty, remove } = useCart();
+  // Görünen satırlar, adet ve tutar aynı çözülmüş listeden gelir.
+  const { lines, count, subtotal, currency } = useCartLines();
   const closeRef = useRef<HTMLButtonElement>(null);
   const [promoOpen, setPromoOpen] = useState(false);
   const [promo, setPromo] = useState("");
   const [promoNote, setPromoNote] = useState<string | null>(null);
 
-  // Ürün verisini bir kez indeksle — her satırda arama yapmayalım.
-  const catalog = useMemo(
-    () => new Map(PRODUCTS.map((p) => [p.id, p])),
-    [],
-  );
-
-  const lines = items
-    .map((item) => ({ item, product: catalog.get(item.productId) }))
-    .filter((line): line is { item: (typeof items)[number]; product: NonNullable<typeof line.product> } =>
-      Boolean(line.product),
-    );
-
   const shipping = shippingFor(subtotal);
-  const currency = items[0]?.currency ?? "TRY";
 
   useEffect(() => {
     closeRef.current?.focus();

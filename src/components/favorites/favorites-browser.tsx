@@ -1,6 +1,5 @@
 "use client";
 
-import { useMemo } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight } from "lucide-react";
@@ -10,8 +9,7 @@ import {
   PRODUCT_GRID_COLUMNS,
   PRODUCT_GRID_SIZES,
 } from "@/components/product/product-grid-columns";
-import { useFavorites } from "@/lib/favorites";
-import { PRODUCTS } from "@/data/products";
+import { useFavoriteProducts } from "@/components/product/catalog-provider";
 
 /**
  * Favoriler listesi. Veri mevcut tek favori kaynağından (lib/favorites)
@@ -21,14 +19,9 @@ import { PRODUCTS } from "@/data/products";
  * ürün aniden kaybolmaz, kalanlar yerine kayar.
  */
 export function FavoritesBrowser() {
-  const { ids } = useFavorites();
-  const reduced = useReducedMotion();
-
   // Katalog sırası korunur; favoriye eklenme sırası listeyi karıştırmasın.
-  const products = useMemo(
-    () => PRODUCTS.filter((p) => ids.includes(p.id)),
-    [ids],
-  );
+  const products = useFavoriteProducts();
+  const reduced = useReducedMotion();
 
   if (products.length === 0) return <EmptyFavorites />;
 
@@ -81,7 +74,8 @@ function EmptyFavorites() {
 
 /** Başlığın altındaki sayaç — favori sayısı istemcide bilindiği için ayrı. */
 export function FavoritesCount() {
-  const { count } = useFavorites();
+  // Listeyle aynı kaynak: katalogda olmayan favori sayılmaz.
+  const count = useFavoriteProducts().length;
   return (
     <p className="mt-5 micro text-foreground/45">
       {count === 0 ? "Henüz ürün yok" : `${count} ürün`}

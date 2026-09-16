@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { slotForCategory } from "@/lib/character";
@@ -32,6 +33,8 @@ const KATEGORILER: ProductCategory[] = [
 ];
 
 function tazele(urunId?: string) {
+  // Kök layout da kataloğu okur (sepet, favoriler, arama): tüm ağaç tazelenir.
+  revalidatePath("/", "layout");
   revalidatePath("/admin/urunler");
   if (urunId) revalidatePath(`/admin/urunler/${urunId}`);
   revalidatePath("/");
@@ -127,23 +130,44 @@ function varyantlar(
   return out;
 }
 
+/** Kabul edilen ürün görseli türleri ve kaydedilecek uzantıları. */
+const GORSEL_TURLERI: Record<string, string> = {
+  "image/webp": "webp",
+  "image/png": "png",
+  "image/jpeg": "jpg",
+};
+
+/** Tek görsel için üst sınır. İsteğin toplamı next.config.ts'te sınırlı. */
+const GORSEL_MAKS_MB = 8;
+
 async function gorselleriKaydet(fd: FormData, id: string, ad: string) {
   const dosyalar = fd
     .getAll("gorsel")
     .filter((f): f is File => f instanceof File && f.size > 0);
   if (dosyalar.length === 0) return [];
+
+  // Önce hepsi doğrulanır: biri reddedilirse diske yarım yükleme yazılmaz.
+  for (const f of dosyalar) {
+    if (!GORSEL_TURLERI[f.type])
+      throw new Error(`"${f.name}" desteklenmiyor; WebP, PNG veya JPG yükle.`);
+    if (f.size > GORSEL_MAKS_MB * 1024 * 1024)
+      throw new Error(`"${f.name}" ${GORSEL_MAKS_MB} MB'ı aşıyor.`);
+  }
+
   const klasor = path.join(process.cwd(), "public", "products");
   await fs.mkdir(klasor, { recursive: true });
   const out = [];
-  for (let i = 0; i < dosyalar.length; i++) {
-    const f = dosyalar[i];
-    const uzanti =
-      f.type === "image/png" ? "png" : f.type === "image/webp" ? "webp" : "jpg";
-    const adi = `${id}-${String.fromCharCode(97 + i)}.${uzanti}`;
-    await fs.writeFile(
-      path.join(klasor, adi),
-      Buffer.from(await f.arrayBuffer()),
-    );
+  for (const f of dosyalar) {
+    const buf = Buffer.from(await f.arrayBuffer());
+    // İçerik hash'li ad: mevcut bir dosyanın (başka ürünün görseli dahil)
+    // üzerine asla yazılmaz; aynı içerik zaten varsa dosya yeniden yazılmaz.
+    const hash = createHash("sha1").update(buf).digest("hex").slice(0, 8);
+    const adi = `${id}-${hash}.${GORSEL_TURLERI[f.type]}`;
+    try {
+      await fs.writeFile(path.join(klasor, adi), buf, { flag: "wx" });
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw e;
+    }
     // alt metni ürün adından gelir; uydurma açıklama üretmiyoruz.
     out.push({ src: `/products/${adi}`, alt: ad });
   }

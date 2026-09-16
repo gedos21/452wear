@@ -1,23 +1,19 @@
 "use client";
 
-import { useMemo } from "react";
 import { Table } from "./prose";
-import { useCart } from "@/lib/cart";
+import { useCartLines } from "@/components/product/catalog-provider";
 import { formatPrice } from "@/lib/format";
 import { shippingFor } from "@/lib/shipping";
-import { PRODUCTS } from "@/data/products";
 
 /**
  * Ön Bilgilendirme Formundaki ürün/fiyat tablosu. Veriyi mevcut sepetten
  * alır — sabit ürün veya fiyat yazılmaz. Sepet boşsa yapı anlatılır.
  */
 export function OrderSummaryTable() {
-  const { items, subtotal } = useCart();
-  const catalog = useMemo(() => new Map(PRODUCTS.map((p) => [p.id, p])), []);
-  const currency = items[0]?.currency ?? "TRY";
+  const { lines, subtotal, currency } = useCartLines();
   const shipping = shippingFor(subtotal);
 
-  if (items.length === 0) {
+  if (lines.length === 0) {
     return (
       <div className="rounded-product bg-muted px-5 py-4">
         <p className="text-[13px] leading-relaxed text-muted-foreground">
@@ -32,10 +28,9 @@ export function OrderSummaryTable() {
     <div className="space-y-5">
       <Table
         head={["Ürün", "Adet", "Birim Fiyat", "Ara Toplam"]}
-        rows={items.map((item) => {
-          const product = catalog.get(item.productId);
+        rows={lines.map(({ item, product }) => {
           return [
-            `${product?.name ?? item.productId} · ${item.color} / ${item.size}`,
+            `${product.name} · ${item.color} / ${item.size}`,
             String(item.qty),
             formatPrice(item.price, item.currency),
             formatPrice(item.price * item.qty, item.currency),

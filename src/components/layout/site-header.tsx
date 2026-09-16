@@ -10,8 +10,10 @@ import { NAV_LINKS } from "./nav-links";
 import { useCartUi } from "@/components/cart/cart-provider";
 import { useSearch } from "@/components/search/search-provider";
 import { CountBadge } from "./count-badge";
-import { useCart } from "@/lib/cart";
-import { useFavorites } from "@/lib/favorites";
+import {
+  useCartLines,
+  useFavoriteProducts,
+} from "@/components/product/catalog-provider";
 import { useAuth } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 
@@ -22,8 +24,9 @@ export function SiteHeader() {
   const pathname = usePathname();
   const { openCart } = useCartUi();
   const { openSearch } = useSearch();
-  const { count: cartCount } = useCart();
-  const { count: favoriteCount } = useFavorites();
+  // Sayaçlar, çekmece ve favoriler sayfasıyla aynı çözülmüş listeden gelir.
+  const { count: cartCount } = useCartLines();
+  const favoriteCount = useFavoriteProducts().length;
   const { status: authStatus } = useAuth();
 
   // Aktif sayfa yalnızca ton farkıyla belli olur; ayrı bir vurgu eklenmiyor.
