@@ -28,32 +28,51 @@ type Katman = {
   eklenen: Product[];
   /** Tohum üründe yapılan değişiklikler: id → ürün. */
   degisen: Record<string, Product>;
+  /**
+   * Silinen ürünlerin id'leri. Tohum ürün kodda durduğu için ancak burada
+   * işaretlenerek gizlenir; admin ürünü listeden çıkarılır ama id'si yine
+   * burada kalır ki yeni bir ürüne verilmesin (bkz. yeniId).
+   */
+  silinen: string[];
 };
-
-const BOS: Katman = { eklenen: [], degisen: {} };
 
 async function katmanOku(): Promise<Katman> {
   try {
     const ham = await fs.readFile(DOSYA, "utf8");
     const v = JSON.parse(ham) as Partial<Katman>;
-    return { eklenen: v.eklenen ?? [], degisen: v.degisen ?? {} };
+    return {
+      eklenen: v.eklenen ?? [],
+      degisen: v.degisen ?? {},
+      silinen: v.silinen ?? [],
+    };
   } catch (e) {
     // Dosya yoksa katman boştur; başka bir hata varsa yut­mayalım.
-    if ((e as NodeJS.ErrnoException).code === "ENOENT") return BOS;
+    if ((e as NodeJS.ErrnoException).code === "ENOENT")
+      return { eklenen: [], degisen: {}, silinen: [] };
     throw e;
   }
 }
 
 async function katmanYaz(k: Katman): Promise<void> {
   await fs.mkdir(path.dirname(DOSYA), { recursive: true });
-  await fs.writeFile(DOSYA, JSON.stringify(k, null, 2) + "\n", "utf8");
+  // Boş silinen listesi dosyaya yazılmaz; dosya elle okunurken sade kalsın.
+  const { silinen, ...digerleri } = k;
+  const veri = silinen.length > 0 ? k : digerleri;
+  await fs.writeFile(DOSYA, JSON.stringify(veri, null, 2) + "\n", "utf8");
+}
+
+/** Silinmemiş tohum ürünler, varsa admin'in yaptığı değişikliklerle. */
+function tohumUrunler(k: Katman): Product[] {
+  const silinen = new Set(k.silinen);
+  return SEED.filter((p) => !silinen.has(p.id)).map(
+    (p) => k.degisen[p.id] ?? p,
+  );
 }
 
 /** Tohum + admin katmanı birleşmiş canlı katalog. */
 export async function katalogOku(): Promise<Product[]> {
   const k = await katmanOku();
-  const tohum = SEED.map((p) => k.degisen[p.id] ?? p);
-  return [...tohum, ...k.eklenen];
+  return [...tohumUrunler(k), ...k.eklenen];
 }
 
 export async function urunBul(id: string): Promise<Product | null> {
@@ -75,17 +94,38 @@ export async function urunYaz(urun: Product): Promise<void> {
 }
 
 /**
+ * Ürünü katalogdan kaldırır ve silinen ürünü döndürür (dosya temizliği için).
+ * Admin ürünü listeden çıkar; tohum ürün kodda durduğu için gizlenir. İki
+ * durumda da id `silinen` listesine girer ve bir daha kullanılmaz.
+ */
+export async function katalogdanSil(id: string): Promise<Product | null> {
+  const k = await katmanOku();
+  const urun = [...tohumUrunler(k), ...k.eklenen].find((p) => p.id === id);
+  if (!urun) return null;
+  k.eklenen = k.eklenen.filter((p) => p.id !== id);
+  delete k.degisen[id];
+  if (!k.silinen.includes(id)) k.silinen.push(id);
+  await katmanYaz(k);
+  return urun;
+}
+
+/**
  * Yeni ürün id'si (p-NNN): şimdiye kadar kullanılmış en büyük numaranın bir
- * fazlası. Aradaki boşluklar BİLEREK doldurulmaz:
+ * fazlası. Aradaki boşluklar ve silinen id'ler BİLEREK kullanılmaz:
  *   • silinmiş bir ürünün id'si tarayıcılardaki sepet/favorilerde kalmış
  *     olabilir; yeni ürüne verilirse orada başka bir ürün olarak dirilir,
  *   • public/ altında o numarayla başlayan dosyalar olabilir (ör. p-005-b.png
  *     p-009'un görseli) ve yeni ürünle karışır.
- * Bu yüzden katalogdaki id'lerin yanında görsel klasörlerindeki dosya adlarına
- * da bakılır.
+ * Bu yüzden katalogdaki ve silinen id'lerin yanında görsel klasörlerindeki
+ * dosya adlarına da bakılır.
  */
 export async function yeniId(): Promise<string> {
-  const adlar = (await katalogOku()).map((p) => p.id);
+  const k = await katmanOku();
+  const adlar = [
+    ...SEED.map((p) => p.id),
+    ...k.eklenen.map((p) => p.id),
+    ...k.silinen,
+  ];
   for (const klasor of ["products", "character"]) {
     try {
       const dosyalar = await fs.readdir(
@@ -130,8 +170,35 @@ export function slugYap(ad: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+/** Bu slug'ı kullanan başka bir ürün (haricId dışında) varsa onu döndürür. */
+export async function slugSahibi(
+  slug: string,
+  haricId: string,
+): Promise<Product | null> {
+  return (
+    (await katalogOku()).find((p) => p.slug === slug && p.id !== haricId) ??
+    null
+  );
+}
+
+/** Addan üretilen slug başka üründe varsa sonuna -2, -3… eklenir. */
+export async function bosSlug(taban: string, haricId: string): Promise<string> {
+  const dolu = new Set(
+    (await katalogOku()).filter((p) => p.id !== haricId).map((p) => p.slug),
+  );
+  if (!dolu.has(taban)) return taban;
+  for (let n = 2; ; n++) if (!dolu.has(`${taban}-${n}`)) return `${taban}-${n}`;
+}
+
 /* ---- Sunucu tarafı okuma yardımcıları (canlı katalog) ---- */
 
+/**
+ * Ana sayfa "Yeni Gelenler": admin'in eklediği ürünler en yeniden eskiye önce
+ * gelir, ardından tohum katalog kendi sırasıyla.
+ */
 export async function yeniGelenler(limit = 4): Promise<Product[]> {
-  return (await katalogOku()).filter((p) => p.isNew).slice(0, limit);
+  const k = await katmanOku();
+  return [...[...k.eklenen].reverse(), ...tohumUrunler(k)]
+    .filter((p) => p.isNew)
+    .slice(0, limit);
 }

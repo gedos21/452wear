@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useActionState, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Plus, X } from "lucide-react";
-import { urunKaydet, type Sonuc } from "@/app/admin/actions";
+import { Plus, Trash2, X } from "lucide-react";
+import { urunKaydet, urunSil, type Sonuc } from "@/app/admin/actions";
 import { CATEGORIES } from "@/data/products";
 import { SIZE_ORDER } from "@/lib/product-variants";
 import { cn } from "@/lib/utils";
@@ -45,6 +45,17 @@ export function UrunFormu({
     async (onceki: Sonuc, fd: FormData) => {
       if (pixelDosya) fd.append("pixelAsset", pixelDosya);
       return urunKaydet(onceki, fd);
+    },
+    BOS,
+  );
+
+  // Silme iki adımlı: ilk tık onay ister, ikincisi siler.
+  const [silOnay, setSilOnay] = useState(false);
+  const [silSonuc, sil, siliniyor] = useActionState(
+    async (onceki: Sonuc, fd: FormData) => {
+      const r = await urunSil(onceki, fd);
+      if (r.durum === "ok") router.push("/admin/urunler");
+      return r;
     },
     BOS,
   );
@@ -97,6 +108,15 @@ export function UrunFormu({
             name="ad"
             required
             defaultValue={urun?.name}
+            className={girdi}
+          />
+        </label>
+        <label className="grid gap-2">
+          <span className={etiket}>Slug (ürün adresi)</span>
+          <input
+            name="slug"
+            defaultValue={urun?.slug}
+            placeholder="Boş bırakılırsa ürün adından üretilir"
             className={girdi}
           />
         </label>
@@ -370,6 +390,48 @@ export function UrunFormu({
             )}
           >
             {sonuc.mesaj}
+          </p>
+        )}
+        {urun && (
+          <div className="ml-auto flex flex-wrap items-center gap-3">
+            {silOnay ? (
+              <>
+                <span className="text-[13px] text-foreground/70">
+                  Ürün katalogdan kaldırılsın mı?
+                </span>
+                <button
+                  type="submit"
+                  formAction={sil}
+                  formNoValidate
+                  disabled={siliniyor}
+                  className="inline-flex h-10 items-center gap-2 rounded-full bg-foreground px-4 micro text-background ring-1 ring-brand transition-colors hover:bg-foreground/90 disabled:opacity-50"
+                >
+                  <Trash2 className="size-3.5" strokeWidth={1.8} />
+                  {siliniyor ? "Siliniyor…" : "Evet, sil"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSilOnay(false)}
+                  className="micro text-foreground/50 transition-colors hover:text-foreground"
+                >
+                  Vazgeç
+                </button>
+              </>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setSilOnay(true)}
+                className="inline-flex h-10 items-center gap-2 rounded-full px-3 micro text-foreground/50 transition-colors hover:text-brand"
+              >
+                <Trash2 className="size-3.5" strokeWidth={1.8} />
+                Ürünü sil
+              </button>
+            )}
+          </div>
+        )}
+        {silSonuc.durum === "hata" && (
+          <p role="alert" className="w-full text-[13px] text-brand">
+            {silSonuc.mesaj}
           </p>
         )}
       </div>

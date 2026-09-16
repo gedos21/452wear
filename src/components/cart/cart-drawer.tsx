@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, X } from "lucide-react";
-import { CartLine } from "./cart-line";
+import { CartLine, UnavailableNotice } from "./cart-line";
 import { useCartLines } from "@/components/product/catalog-provider";
 import { useCart } from "@/lib/cart";
 import { formatPrice } from "@/lib/format";
@@ -16,7 +16,7 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
   const reduced = useReducedMotion();
   const { setQty, remove } = useCart();
   // Görünen satırlar, adet ve tutar aynı çözülmüş listeden gelir.
-  const { lines, count, subtotal, currency } = useCartLines();
+  const { lines, unavailable, count, subtotal, currency } = useCartLines();
   const closeRef = useRef<HTMLButtonElement>(null);
   const [promoOpen, setPromoOpen] = useState(false);
   const [promo, setPromo] = useState("");
@@ -80,6 +80,14 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
             <X className="size-4" strokeWidth={1.8} />
           </button>
         </header>
+
+        {unavailable.length > 0 && (
+          <UnavailableNotice
+            count={unavailable.length}
+            onRemove={() => unavailable.forEach((i) => remove(i.id))}
+            className="mx-6 mt-5 border-b border-border/70 pb-4 sm:mx-8"
+          />
+        )}
 
         {lines.length === 0 ? (
           <EmptyCart onClose={onClose} />

@@ -212,6 +212,49 @@ export function PixelFitPaneli({
     </>
   );
 
+  // Karakterde yuvası olmayan kategori (ayakkabı): Pixel Fit kullanılmaz.
+  // Eski bir kayıtta asset kalmışsa yalnızca kaldırma seçeneği gösterilir.
+  if (layer === null) {
+    return (
+      <section
+        aria-labelledby="pixel-fit-baslik"
+        className="rounded-[var(--radius-product)] bg-muted/40 p-5 ring-1 ring-border/70 sm:p-6"
+      >
+        <h2 id="pixel-fit-baslik" className="micro text-foreground">
+          Pixel Fit Asset
+        </h2>
+        <p className="mt-4 text-[13px] leading-relaxed text-foreground/60">
+          Bu kategoride Pixel Fit kullanılmıyor; karakterde bu ürün için bir
+          katman yok.
+        </p>
+        {urun?.tryOn && (
+          <form action={kaldir} className="mt-4">
+            <input type="hidden" name="urunId" value={urun.id} />
+            <button
+              type="submit"
+              disabled={kaldiriliyor}
+              className="inline-flex h-10 items-center gap-2 rounded-full px-3 micro text-foreground/50 transition-colors hover:text-brand disabled:opacity-50"
+            >
+              <Trash2 className="size-3.5" strokeWidth={1.8} />
+              {kaldiriliyor ? "Kaldırılıyor…" : "Kayıtlı asset'i kaldır"}
+            </button>
+          </form>
+        )}
+        {sonMesaj && (
+          <p
+            role="status"
+            className={cn(
+              "mt-4 text-[13px]",
+              sonMesaj.durum === "hata" ? "text-brand" : "text-foreground/70",
+            )}
+          >
+            {sonMesaj.mesaj}
+          </p>
+        )}
+      </section>
+    );
+  }
+
   return (
     <section
       aria-labelledby="pixel-fit-baslik"

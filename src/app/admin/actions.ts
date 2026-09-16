@@ -5,7 +5,16 @@ import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { slotForCategory } from "@/lib/character";
-import { slugYap, urunBul, urunYaz, yeniId } from "@/lib/catalog-store";
+import {
+  bosSlug,
+  katalogdanSil,
+  katalogOku,
+  slugSahibi,
+  slugYap,
+  urunBul,
+  urunYaz,
+  yeniId,
+} from "@/lib/catalog-store";
 import { pixelAssetKaydet, pixelAssetSil } from "@/lib/pixel-asset";
 import type {
   Product,
@@ -47,6 +56,8 @@ type Ayiklama =
   | {
       ok: true;
       ad: string;
+      /** Elle girilen slug (sadeleştirilmiş); boşsa addan üretilir. */
+      slug: string;
       aciklama: string;
       kategori: ProductCategory;
       fiyat: number;
@@ -57,6 +68,7 @@ type Ayiklama =
 
 function urunuAyikla(fd: FormData): Ayiklama {
   const ad = String(fd.get("ad") ?? "").trim();
+  const slug = slugYap(String(fd.get("slug") ?? ""));
   const aciklama = String(fd.get("aciklama") ?? "").trim();
   const kategori = String(fd.get("kategori") ?? "") as ProductCategory;
   const fiyat = Number(fd.get("fiyat"));
@@ -88,6 +100,7 @@ function urunuAyikla(fd: FormData): Ayiklama {
   return {
     ok: true,
     ad,
+    slug,
     aciklama,
     kategori,
     fiyat,
@@ -140,20 +153,22 @@ const GORSEL_TURLERI: Record<string, string> = {
 /** Tek görsel için üst sınır. İsteğin toplamı next.config.ts'te sınırlı. */
 const GORSEL_MAKS_MB = 8;
 
-async function gorselleriKaydet(fd: FormData, id: string, ad: string) {
+/** Seçilen görselleri doğrular; diske hiçbir şey yazmaz. */
+function gorselleriDogrula(fd: FormData): File[] {
   const dosyalar = fd
     .getAll("gorsel")
     .filter((f): f is File => f instanceof File && f.size > 0);
-  if (dosyalar.length === 0) return [];
-
-  // Önce hepsi doğrulanır: biri reddedilirse diske yarım yükleme yazılmaz.
   for (const f of dosyalar) {
     if (!GORSEL_TURLERI[f.type])
       throw new Error(`"${f.name}" desteklenmiyor; WebP, PNG veya JPG yükle.`);
     if (f.size > GORSEL_MAKS_MB * 1024 * 1024)
       throw new Error(`"${f.name}" ${GORSEL_MAKS_MB} MB'ı aşıyor.`);
   }
+  return dosyalar;
+}
 
+async function gorselleriYaz(dosyalar: File[], id: string, ad: string) {
+  if (dosyalar.length === 0) return [];
   const klasor = path.join(process.cwd(), "public", "products");
   await fs.mkdir(klasor, { recursive: true });
   const out = [];
@@ -174,6 +189,27 @@ async function gorselleriKaydet(fd: FormData, id: string, ad: string) {
   return out;
 }
 
+/**
+ * Artık hiçbir ürünün kullanmadığı, bu ürün için YÜKLENMİŞ görselleri siler.
+ * Yalnızca `<urunId>-<hash>.<uzantı>` biçimindeki dosyalara dokunur: tohum
+ * görselleri (ör. p-001-a.png ya da p-009'un kullandığı p-005-b.png) birden
+ * fazla ürün tarafından paylaşılabildiği için asla silinmez.
+ */
+async function kullanilmayanGorselleriSil(yollar: string[], urunId: string) {
+  const kullanilan = new Set(
+    (await katalogOku()).flatMap((p) => p.images.map((g) => g.src)),
+  );
+  const yuklenen = new RegExp(`^/products/${urunId}-[0-9a-f]{8}\\.(webp|png|jpg)$`);
+  for (const yol of yollar) {
+    if (kullanilan.has(yol) || !yuklenen.test(yol)) continue;
+    try {
+      await fs.unlink(path.join(process.cwd(), "public", yol.slice(1)));
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
+    }
+  }
+}
+
 export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
   try {
     const a = urunuAyikla(fd);
@@ -185,11 +221,29 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
       return { durum: "hata", mesaj: "Ürün bulunamadı." };
 
     const id = mevcut?.id ?? (await yeniId());
-    const yeni = await gorselleriKaydet(fd, id, a.ad);
-    const images = yeni.length > 0 ? yeni : (mevcut?.images ?? []);
-    if (images.length === 0)
-      return { durum: "hata", mesaj: "En az bir ürün görseli yükle." };
 
+    // Slug: elle girildiyse başka üründe olmamalı; boşsa addan üretilir ve
+    // çakışırsa sonuna -2, -3… eklenir.
+    let slug = a.slug;
+    if (slug) {
+      const sahip = await slugSahibi(slug, id);
+      if (sahip)
+        return {
+          durum: "hata",
+          mesaj: `"${slug}" adresi zaten "${sahip.name}" ürününde kullanılıyor.`,
+        };
+    } else {
+      const taban = slugYap(a.ad);
+      if (!taban)
+        return {
+          durum: "hata",
+          mesaj: "Ürün adından adres üretilemedi; slug alanını doldur.",
+        };
+      slug = await bosSlug(taban, id);
+    }
+
+    // Önce diske hiçbir şey yazmayan kontroller: biri reddedilirse sahipsiz
+    // görsel ya da asset dosyası oluşmaz.
     const variants = varyantlar(
       id,
       a.colors,
@@ -203,29 +257,42 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
         mesaj: "Stok ızgarasında en az bir hücre doldur.",
       };
 
-    // Pixel Fit katmanı. Yeni ürün ekranında PNG ürünle AYNI kaydetmede gelir;
-    // layer kategoriden türetilir (slotForCategory tek kaynak). Dosya
-    // reddedilirse ürün de yazılmaz — yarım kayıt ve sahte başarı olmaz.
+    const dosyalar = gorselleriDogrula(fd);
+    if (dosyalar.length === 0 && !mevcut?.images.length)
+      return { durum: "hata", mesaj: "En az bir ürün görseli yükle." };
+
+    const layer = slotForCategory(a.kategori);
     const pixelDosya = fd.get("pixelAsset");
+    const pixelSecildi = pixelDosya instanceof File && pixelDosya.size > 0;
+    if (!layer && (pixelSecildi || mevcut?.tryOn))
+      return {
+        durum: "hata",
+        mesaj: pixelSecildi
+          ? "Bu kategoride Pixel Fit kullanılmıyor; seçilen PNG'yi kaldır."
+          : "Bu kategoride Pixel Fit kullanılmıyor; önce kayıtlı Pixel Fit asset'ini kaldır.",
+      };
+
+    // Pixel Fit: en sık reddedilen dosya bu olduğu için görsellerden ÖNCE
+    // işlenir. Reddedilirse ne ürün ne de görseller yazılır.
     let tryOn = mevcut?.tryOn;
     let pixelEklendi = false;
-    if (pixelDosya instanceof File && pixelDosya.size > 0) {
-      const layer = slotForCategory(a.kategori);
+    if (pixelDosya instanceof File && pixelDosya.size > 0 && layer) {
       const sonuc = await pixelAssetKaydet(pixelDosya, layer, id);
       if (!sonuc.ok)
         return {
           durum: "hata",
           mesaj: `Pixel Fit PNG reddedildi, ürün kaydedilmedi: ${sonuc.hata}`,
         };
-      if (mevcut?.tryOn && mevcut.tryOn.asset !== sonuc.yol)
-        await pixelAssetSil(mevcut.tryOn.asset, id);
       tryOn = { layer, asset: sonuc.yol, status: "approved" };
       pixelEklendi = true;
     }
 
+    const yeni = await gorselleriYaz(dosyalar, id, a.ad);
+    const images = yeni.length > 0 ? yeni : (mevcut?.images ?? []);
+
     const urun: Product = {
       id,
-      slug: mevcut?.slug ?? slugYap(a.ad),
+      slug,
       name: a.ad,
       description: a.aciklama,
       category: a.kategori,
@@ -243,6 +310,17 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
     };
 
     await urunYaz(urun);
+
+    // Eski dosyalar ürün yazıldıktan SONRA temizlenir: yazım başarısız olsaydı
+    // ürün hâlâ onları gösteriyor olurdu.
+    if (mevcut?.tryOn && tryOn && mevcut.tryOn.asset !== tryOn.asset)
+      await pixelAssetSil(mevcut.tryOn.asset, id);
+    if (mevcut && yeni.length > 0)
+      await kullanilmayanGorselleriSil(
+        mevcut.images.map((g) => g.src),
+        id,
+      );
+
     tazele(id);
     return {
       durum: "ok",
@@ -253,6 +331,24 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
     };
   } catch (e) {
     return { durum: "hata", mesaj: `Kaydedilemedi: ${(e as Error).message}` };
+  }
+}
+
+export async function urunSil(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
+  try {
+    const urun = await katalogdanSil(String(fd.get("urunId") ?? ""));
+    if (!urun) return { durum: "hata", mesaj: "Ürün bulunamadı." };
+    // Katalogdan çıktıktan sonra bu ürün için yüklenmiş dosyalar temizlenir;
+    // tohum görsellerine ve başka ürünlerin kullandığı dosyalara dokunulmaz.
+    await kullanilmayanGorselleriSil(
+      urun.images.map((g) => g.src),
+      urun.id,
+    );
+    if (urun.tryOn) await pixelAssetSil(urun.tryOn.asset, urun.id);
+    tazele();
+    return { durum: "ok", mesaj: `"${urun.name}" silindi.` };
+  } catch (e) {
+    return { durum: "hata", mesaj: `Silinemedi: ${(e as Error).message}` };
   }
 }
 
@@ -269,12 +365,10 @@ export async function pixelAssetYukle(
       return { durum: "hata", mesaj: "PNG dosyası seç." };
 
     const layer = slotForCategory(urun.category);
+    if (!layer)
+      return { durum: "hata", mesaj: "Bu kategoride Pixel Fit kullanılmıyor." };
     const sonuc = await pixelAssetKaydet(dosya, layer, urun.id);
     if (!sonuc.ok) return { durum: "hata", mesaj: sonuc.hata };
-
-    // Değiştirilen eski yüklemeyi temizle (tohum asset'lerine dokunmaz).
-    if (urun.tryOn && urun.tryOn.asset !== sonuc.yol)
-      await pixelAssetSil(urun.tryOn.asset, urun.id);
 
     // Doğrulamayı geçen asset doğrudan yayına girer: Pixel Fit = Hazır,
     // layer kategoriden gelir. (Eski "pending" kayıtlar onay düğmesiyle
@@ -283,6 +377,12 @@ export async function pixelAssetYukle(
       ...urun,
       tryOn: { layer, asset: sonuc.yol, status: "approved" },
     });
+
+    // Değiştirilen eski yükleme, ürün yazıldıktan sonra temizlenir (tohum
+    // asset'lerine dokunmaz).
+    if (urun.tryOn && urun.tryOn.asset !== sonuc.yol)
+      await pixelAssetSil(urun.tryOn.asset, urun.id);
+
     tazele(urun.id);
     return { durum: "ok", mesaj: "Asset yüklendi. Pixel Fit hazır." };
   } catch (e) {

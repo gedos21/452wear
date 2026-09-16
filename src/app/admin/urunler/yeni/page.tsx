@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { UrunDuzenleyici } from "@/components/admin/urun-duzenleyici";
 
-export const metadata = { title: "Yeni ürün | Admin" };
+export const metadata = { title: "Yeni ürün" };
 
 export default function YeniUrunSayfasi() {
   return (

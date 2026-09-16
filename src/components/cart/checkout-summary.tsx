@@ -2,18 +2,30 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { UnavailableNotice } from "./cart-line";
 import { useCartLines } from "@/components/product/catalog-provider";
+import { useCart } from "@/lib/cart";
 import { formatPrice } from "@/lib/format";
 import { shippingFor } from "@/lib/shipping";
 
 /** Sepet özeti. Sepet çekmecesiyle aynı çözülmüş satırlardan okur. */
 export function CheckoutSummary() {
-  const { lines, subtotal, count, currency } = useCartLines();
+  const { remove } = useCart();
+  const { lines, unavailable, subtotal, count, currency } = useCartLines();
   const shipping = shippingFor(subtotal);
+
+  const notice = unavailable.length > 0 && (
+    <UnavailableNotice
+      count={unavailable.length}
+      onRemove={() => unavailable.forEach((i) => remove(i.id))}
+      className="mb-6"
+    />
+  );
 
   if (count === 0) {
     return (
       <div>
+        {notice}
         <p className="text-muted-foreground">Sepetin boş.</p>
         <Link
           href="/magaza"
@@ -28,6 +40,7 @@ export function CheckoutSummary() {
 
   return (
     <div>
+      {notice}
       <ul className="divide-y divide-border/70 border-y border-border/70">
         {lines.map(({ item, product }) => {
           return (
@@ -39,7 +52,7 @@ export function CheckoutSummary() {
                 </p>
               </div>
               <span className="shrink-0 text-sm font-medium">
-                {formatPrice(item.price * item.qty, item.currency)}
+                {formatPrice(product.price * item.qty, product.currency)}
               </span>
             </li>
           );

@@ -21,8 +21,9 @@ export type CartItem = {
   size: ProductSize;
   color: string;
   qty: number;
-  /** Sepete eklendiği andaki birim fiyat — katalog fiyatı sonradan değişse
-   *  bile sepetteki satır kaymasın diye anlık görüntü olarak saklanır. */
+  /** Sepete eklendiği andaki birim fiyat; yalnızca kayıt olarak saklanır.
+   *  Gösterim ve toplamlar katalogdaki güncel fiyattan hesaplanır
+   *  (bkz. components/product/catalog-provider). */
   price: number;
   currency: Currency;
 };

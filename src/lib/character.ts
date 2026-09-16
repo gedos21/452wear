@@ -61,10 +61,11 @@ export function tryOnAsset(
 
 /**
  * Bir ürünün hangi katman yuvasına ait olduğu. Ürün datasında ikinci bir alan
- * tutmuyoruz — mevcut `category` tek kaynak. Yeni kategori eklenirse burası
- * genişler.
+ * tutmuyoruz — mevcut `category` tek kaynak. Karakterde yuvası olmayan
+ * kategori (ayakkabı) için null döner: Pixel Fit o kategoride kullanılmaz.
  */
-export function slotForCategory(category: ProductCategory): TryOnLayer {
+export function slotForCategory(category: ProductCategory): TryOnLayer | null {
+  if (category === "ayakkabi") return null;
   return category === "esofman" ? "bottom" : "top";
 }
 

@@ -17,7 +17,7 @@ import type { Product, ProductCategory } from "@/types/product";
 
 export type Occasion = "gunluk" | "okul" | "disari" | "aksam";
 export type Vibe = "sade" | "street" | "oversize" | "farkli";
-export type TopChoice = "tisort" | "sweatshirt" | "farketmez";
+export type TopChoice = "tisort" | "sweatshirt" | "hirka" | "farketmez";
 export type BottomChoice = "esofman" | "farketmez";
 
 export type OutfitAnswers = {
@@ -60,6 +60,7 @@ export const QUESTIONS: {
     options: [
       { value: "tisort", label: "Tişört" },
       { value: "sweatshirt", label: "Sweatshirt" },
+      { value: "hirka", label: "Hırka" },
       { value: "farketmez", label: "Fark etmez" },
     ],
   },
@@ -184,7 +185,9 @@ export function buildOutfit(
   const available = products.filter(isAvailable);
 
   const topCategories: ProductCategory[] =
-    answers.top === "farketmez" ? ["tisort", "sweatshirt"] : [answers.top];
+    answers.top === "farketmez"
+      ? ["tisort", "sweatshirt", "hirka"]
+      : [answers.top];
 
   const tops = available.filter((p) => topCategories.includes(p.category));
   const bottoms = available.filter((p) => p.category === "esofman");

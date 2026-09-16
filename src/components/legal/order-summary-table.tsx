@@ -32,8 +32,8 @@ export function OrderSummaryTable() {
           return [
             `${product.name} · ${item.color} / ${item.size}`,
             String(item.qty),
-            formatPrice(item.price, item.currency),
-            formatPrice(item.price * item.qty, item.currency),
+            formatPrice(product.price, product.currency),
+            formatPrice(product.price * item.qty, product.currency),
           ];
         })}
       />

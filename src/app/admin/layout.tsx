@@ -2,7 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/container";
 
-export const metadata = { title: "Admin | 452WEAR" };
+// absolute: kök şablon ("%s | 452WEAR") başlığa ikinci kez eklenmesin.
+export const metadata = {
+  title: { absolute: "Admin | 452WEAR", template: "%s | Admin" },
+};
 
 /**
  * Admin kabuğu.

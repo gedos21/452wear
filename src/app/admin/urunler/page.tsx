@@ -9,7 +9,7 @@ import {
   pixelFitDurumu,
 } from "@/components/admin/pixel-fit-durum";
 
-export const metadata = { title: "Ürünler | Admin" };
+export const metadata = { title: "Ürünler" };
 
 // Katalog diskten okunur; her istekte güncel olmalı.
 export const dynamic = "force-dynamic";

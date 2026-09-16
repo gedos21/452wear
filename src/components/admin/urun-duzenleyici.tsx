@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import { slotForCategory } from "@/lib/character";
 import type { Product, ProductCategory } from "@/types/product";
 import { PixelFitPaneli } from "./pixel-fit-paneli";
 import { UrunFormu } from "./urun-formu";
@@ -46,7 +47,8 @@ export function UrunDuzenleyici({ urun }: { urun?: Product }) {
         kategori={kategori}
         onKategori={setKategori}
         onKaydedildi={kaydedildi}
-        pixelDosya={pixelDosya}
+        // Karakterde yuvası olmayan kategoride seçili PNG gönderilmez.
+        pixelDosya={slotForCategory(kategori) ? pixelDosya : null}
       />
       <div className="lg:sticky lg:top-20 lg:self-start">
         <PixelFitPaneli

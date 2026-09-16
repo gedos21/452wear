@@ -58,7 +58,7 @@ export function CartLine({
             </p>
           </div>
           <span className="shrink-0 text-sm font-medium">
-            {formatPrice(item.price * item.qty, item.currency)}
+            {formatPrice(product.price * item.qty, product.currency)}
           </span>
         </div>
 
@@ -101,6 +101,38 @@ export function CartLine({
         )}
       </div>
     </motion.li>
+  );
+}
+
+/**
+ * Katalogdan kalkmış ya da artık sunulmayan renk/bedendeki satırlar için tek
+ * satırlık uyarı. Bu satırlar adede ve tutara girmez; buradan sepetten çıkarılır.
+ */
+export function UnavailableNotice({
+  count,
+  onRemove,
+  className,
+}: {
+  count: number;
+  onRemove: () => void;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "flex items-center justify-between gap-4 text-[12px] text-muted-foreground",
+        className,
+      )}
+    >
+      <span>{count} ürün artık satışta değil.</span>
+      <button
+        type="button"
+        onClick={onRemove}
+        className="shrink-0 micro text-foreground/45 transition-colors hover:text-foreground"
+      >
+        Sepetten çıkar
+      </button>
+    </div>
   );
 }
 
