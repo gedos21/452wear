@@ -7,8 +7,9 @@ export const dynamic = "force-dynamic";
 
 export default async function UrunDuzenleSayfasi({
   params,
+  searchParams,
 }: PageProps<"/admin/urunler/[id]">) {
-  const { id } = await params;
+  const [{ id }, sorgu] = await Promise.all([params, searchParams]);
   const urun = await urunBul(id);
   if (!urun) notFound();
 
@@ -27,7 +28,12 @@ export default async function UrunDuzenleSayfasi({
         </h1>
         <span className="text-[13px] text-foreground/40">{urun.id}</span>
       </div>
-      <UrunDuzenleyici urun={urun} />
+      <UrunDuzenleyici
+        urun={urun}
+        ilkMesaj={
+          sorgu.olusturuldu ? `Ürün oluşturuldu (${urun.id}).` : undefined
+        }
+      />
     </div>
   );
 }

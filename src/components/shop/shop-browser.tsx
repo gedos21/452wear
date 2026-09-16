@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { categoryHref } from "@/components/layout/nav-links";
-import { useQuickView } from "@/components/product/quick-view";
 import { CategoryNav } from "./category-nav";
 import { ShopControls } from "./shop-controls";
 import { EmptyState, ProductGrid } from "./product-grid";
@@ -34,33 +33,27 @@ const PAGE_SIZE = 8;
 export function ShopBrowser({
   products,
   category,
-  openSlug,
 }: {
   products: Product[];
   category: CategoryFilter;
-  /** /urun/<slug> bağlantısından gelindiyse detay paneli açılacak ürün. */
-  openSlug?: string;
 }) {
   const router = useRouter();
   const pathname = usePathname();
-  const quickView = useQuickView();
-
-  // /urun/<slug> bağlantısı mağazaya ?urun=<slug> ile gelir: ürünün detay
-  // paneli bir kez açılır ve parametre adresten düşer ki sayfa yenilenince
-  // panel tekrar açılmasın.
-  const openedSlug = useRef<string | null>(null);
-  useEffect(() => {
-    if (!openSlug || openedSlug.current === openSlug) return;
-    openedSlug.current = openSlug;
-    const product = products.find((p) => p.slug === openSlug);
-    if (product) quickView?.open(product);
-    router.replace(categoryHref(category), { scroll: false });
-  }, [openSlug, products, quickView, router, category]);
 
   const [filters, setFilters] = useState<ProductFilters>(EMPTY_FILTERS);
   const [sort, setSort] = useState<SortKey>("recommended");
 
-  const facets = useMemo(() => deriveFacets(products), [products]);
+  // Filtre seçenekleri seçili kategorinin ürünlerinden türer: ayakkabıda
+  // numaralar, giyimde harf bedenler görünür; eşleşmeyen seçenek çıkmaz.
+  const facets = useMemo(
+    () =>
+      deriveFacets(
+        category === "all"
+          ? products
+          : products.filter((p) => p.category === category),
+      ),
+    [products, category],
+  );
 
   // URL'deki kategori, yerel filtrelerin üzerine yazar.
   const activeFilters = useMemo<ProductFilters>(

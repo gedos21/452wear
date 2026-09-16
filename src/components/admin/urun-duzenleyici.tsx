@@ -20,7 +20,14 @@ function formAnahtari(urun: Product): string {
   return JSON.stringify(bilgi);
 }
 
-export function UrunDuzenleyici({ urun }: { urun?: Product }) {
+export function UrunDuzenleyici({
+  urun,
+  ilkMesaj,
+}: {
+  urun?: Product;
+  /** Sayfaya bir kayıttan sonra gelindiyse gösterilecek mesaj. */
+  ilkMesaj?: string;
+}) {
   const [kategori, setKategori] = useState<ProductCategory>(
     urun?.category ?? "tisort",
   );
@@ -30,9 +37,15 @@ export function UrunDuzenleyici({ urun }: { urun?: Product }) {
   // böylece yerel önizleme ve dosya girdisi temizlenir.
   const [pixelSifirla, setPixelSifirla] = useState(0);
 
-  const kaydedildi = useCallback(() => {
+  // Form kayıttan sonra yeniden kurulduğu için son kayıt mesajı burada tutulur.
+  const [kayitMesaji, setKayitMesaji] = useState<string | null>(
+    ilkMesaj ?? null,
+  );
+
+  const kaydedildi = useCallback((mesaj: string) => {
     setPixelDosya(null);
     setPixelSifirla((n) => n + 1);
+    setKayitMesaji(mesaj);
   }, []);
 
   return (
@@ -47,6 +60,7 @@ export function UrunDuzenleyici({ urun }: { urun?: Product }) {
         kategori={kategori}
         onKategori={setKategori}
         onKaydedildi={kaydedildi}
+        kayitMesaji={kayitMesaji}
         // Karakterde yuvası olmayan kategoride seçili PNG gönderilmez.
         pixelDosya={slotForCategory(kategori) ? pixelDosya : null}
       />

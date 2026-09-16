@@ -1,6 +1,23 @@
 export type Currency = "TRY";
 
-export type ProductSize = "XS" | "S" | "M" | "L" | "XL" | "XXL";
+/** Giyim bedenleri. */
+export type ApparelSize = "XS" | "S" | "M" | "L" | "XL" | "XXL";
+
+/** Ayakkabı numaraları (EU, tam numara). */
+export type ShoeSize =
+  | "36"
+  | "37"
+  | "38"
+  | "39"
+  | "40"
+  | "41"
+  | "42"
+  | "43"
+  | "44"
+  | "45"
+  | "46";
+
+export type ProductSize = ApparelSize | ShoeSize;
 
 export type ProductCategory =
   | "ayakkabi"

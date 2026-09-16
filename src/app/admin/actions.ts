@@ -7,7 +7,9 @@ import path from "node:path";
 import { slotForCategory } from "@/lib/character";
 import {
   bosSlug,
-  katalogdanSil,
+  copeTasi,
+  copKutusundanGeriGetir,
+  kaliciSil,
   katalogOku,
   slugSahibi,
   slugYap,
@@ -16,6 +18,7 @@ import {
   yeniId,
 } from "@/lib/catalog-store";
 import { pixelAssetKaydet, pixelAssetSil } from "@/lib/pixel-asset";
+import { sizesForCategory } from "@/lib/product-variants";
 import type {
   Product,
   ProductCategory,
@@ -94,7 +97,13 @@ function urunuAyikla(fd: FormData): Ayiklama {
     .filter((c) => c.name.length > 0);
   if (colors.length === 0) return { ok: false, hata: "En az bir renk gir." };
 
-  const bedenler = fd.getAll("beden").map((v) => String(v)) as ProductSize[];
+  // Yalnızca kategorinin beden sistemindeki değerler kabul edilir
+  // (ayakkabıda numara, diğerlerinde harf beden).
+  const gecerliBedenler = sizesForCategory(kategori);
+  const bedenler = fd
+    .getAll("beden")
+    .map((v) => String(v) as ProductSize)
+    .filter((b) => gecerliBedenler.includes(b));
   if (bedenler.length === 0) return { ok: false, hata: "En az bir beden seç." };
 
   return {
@@ -334,19 +343,57 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
   }
 }
 
+/** Ürünü çöp kutusuna taşır. Verisi ve görselleri durur; geri getirilebilir. */
 export async function urunSil(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
   try {
-    const urun = await katalogdanSil(String(fd.get("urunId") ?? ""));
+    const urun = await copeTasi(String(fd.get("urunId") ?? ""));
     if (!urun) return { durum: "hata", mesaj: "Ürün bulunamadı." };
-    // Katalogdan çıktıktan sonra bu ürün için yüklenmiş dosyalar temizlenir;
-    // tohum görsellerine ve başka ürünlerin kullandığı dosyalara dokunulmaz.
+    tazele();
+    return {
+      durum: "ok",
+      mesaj: `"${urun.name}" silindi; Silinenler'den geri getirebilirsin.`,
+    };
+  } catch (e) {
+    return { durum: "hata", mesaj: `Silinemedi: ${(e as Error).message}` };
+  }
+}
+
+export async function urunGeriGetir(
+  _onceki: Sonuc,
+  fd: FormData,
+): Promise<Sonuc> {
+  try {
+    const urun = await copKutusundanGeriGetir(String(fd.get("urunId") ?? ""));
+    if (!urun) return { durum: "hata", mesaj: "Ürün çöp kutusunda değil." };
+    tazele(urun.id);
+    return { durum: "ok", mesaj: `"${urun.name}" geri getirildi.` };
+  } catch (e) {
+    return {
+      durum: "hata",
+      mesaj: `Geri getirilemedi: ${(e as Error).message}`,
+    };
+  }
+}
+
+/**
+ * Çöp kutusundaki ürünü kalıcı siler. Bu ürün için yüklenmiş dosyalar da
+ * temizlenir; tohum görsellerine ve başka ürünlerin kullandığı dosyalara
+ * dokunulmaz.
+ */
+export async function urunKaliciSil(
+  _onceki: Sonuc,
+  fd: FormData,
+): Promise<Sonuc> {
+  try {
+    const urun = await kaliciSil(String(fd.get("urunId") ?? ""));
+    if (!urun) return { durum: "hata", mesaj: "Ürün çöp kutusunda değil." };
     await kullanilmayanGorselleriSil(
       urun.images.map((g) => g.src),
       urun.id,
     );
     if (urun.tryOn) await pixelAssetSil(urun.tryOn.asset, urun.id);
     tazele();
-    return { durum: "ok", mesaj: `"${urun.name}" silindi.` };
+    return { durum: "ok", mesaj: `"${urun.name}" kalıcı olarak silindi.` };
   } catch (e) {
     return { durum: "hata", mesaj: `Silinemedi: ${(e as Error).message}` };
   }

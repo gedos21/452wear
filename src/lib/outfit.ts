@@ -172,10 +172,17 @@ function pickTop(
   return pool[Math.floor(Math.random() * pool.length)].product;
 }
 
-export type Outfit = { top: Product; bottom: Product; total: number };
+/** Ayakkabı stokta uygun ürün varsa eklenir; yoksa kombin üst + alt kalır. */
+export type Outfit = {
+  top: Product;
+  bottom: Product;
+  shoes?: Product;
+  total: number;
+};
 
 /**
  * Üst + alt kombin kurar. Önce üst seçilir, sonra ona göre renk uyumlu alt.
+ * Stokta ayakkabı varsa alta göre bir ayakkabı eklenir; karaktere çizilmez.
  * Aynı ürün iki kez gelemez (farklı kategoriler olduğu için zaten olamaz).
  */
 export function buildOutfit(
@@ -207,5 +214,19 @@ export function buildOutfit(
   );
   if (!bottom) return null;
 
-  return { top, bottom, total: top.price + bottom.price };
+  const shoes = pickTop(
+    available
+      .filter((p) => p.category === "ayakkabi")
+      .map((product) => ({
+        product,
+        score: scoreProduct(product, answers, bottom),
+      })),
+  );
+
+  return {
+    top,
+    bottom,
+    ...(shoes ? { shoes } : {}),
+    total: top.price + bottom.price + (shoes?.price ?? 0),
+  };
 }

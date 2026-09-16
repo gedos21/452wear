@@ -1,3 +1,4 @@
+import { SIZE_ORDER } from "@/lib/product-variants";
 import type { Product, ProductCategory, ProductSize } from "@/types/product";
 
 /**
@@ -101,10 +102,8 @@ export function deriveFacets(products: Product[]) {
     for (const color of product.colors) colors.set(color.name, color.hex);
   }
 
-  const order: ProductSize[] = ["XS", "S", "M", "L", "XL", "XXL"];
-
   return {
-    sizes: order.filter((s) => sizes.has(s)),
+    sizes: SIZE_ORDER.filter((s) => sizes.has(s)),
     colors: [...colors].map(([name, hex]) => ({ name, hex })),
   };
 }

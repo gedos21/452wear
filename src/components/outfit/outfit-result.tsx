@@ -18,15 +18,19 @@ import { formatPrice } from "@/lib/format";
 import { defaultColor, sizeAvailability } from "@/lib/product-variants";
 import { cn } from "@/lib/utils";
 import { wearableForSlot } from "@/lib/character";
-import type { Outfit } from "@/lib/outfit";
+import { isAvailable, type Outfit } from "@/lib/outfit";
 import type { Product, ProductSize, TryOnLayer } from "@/types/product";
+
+/** Kombin parçasının yuvası: karakter katmanları + karaktere çizilmeyen ayakkabı. */
+type Yuva = TryOnLayer | "shoes";
 
 /**
  * Kombin sonucu. Sepete ekleme mevcut cart sistemini kullanır ve beden
  * seçilmeden yapılmaz — kullanıcı adına beden seçmiyoruz.
  *
  * Kombin motorunun sonucu başlangıç seçimidir; kullanıcı bir yuvayı
- * değiştirdiğinde yalnızca o yuva güncellenir (diğeri ve karakter aynı kalır).
+ * değiştirdiğinde yalnızca o yuva güncellenir (diğerleri ve karakter aynı
+ * kalır). Ayakkabı yuvası karaktere çizilmez; yalnızca kart olarak gösterilir.
  */
 export function OutfitResult({
   outfit,
@@ -40,23 +44,29 @@ export function OutfitResult({
   const { add } = useCart();
 
   // Yuva → seçili ürün. Tek kaynak; karakter de fiyat da buradan okunur.
-  const [secim, setSecim] = useState<Record<TryOnLayer, Product>>({
+  const [secim, setSecim] = useState<{
+    top: Product;
+    bottom: Product;
+    shoes?: Product;
+  }>({
     top: outfit.top,
     bottom: outfit.bottom,
+    shoes: outfit.shoes,
   });
   const [sizes, setSizes] = useState<Record<string, ProductSize | null>>({});
   const [added, setAdded] = useState(false);
 
-  const pieces: { layer: TryOnLayer; product: Product }[] = [
-    { layer: "top", product: secim.top },
-    { layer: "bottom", product: secim.bottom },
+  const pieces: { yuva: Yuva; product: Product }[] = [
+    { yuva: "top", product: secim.top },
+    { yuva: "bottom", product: secim.bottom },
+    ...(secim.shoes ? [{ yuva: "shoes" as const, product: secim.shoes }] : []),
   ];
   const total = pieces.reduce((sum, p) => sum + p.product.price, 0);
   const ready = pieces.every(({ product }) => sizes[product.id]);
 
-  /** Yalnızca verilen yuvayı değiştirir; diğer yuvaya dokunmaz. */
-  function degistir(layer: TryOnLayer, product: Product) {
-    setSecim((prev) => ({ ...prev, [layer]: product }));
+  /** Yalnızca verilen yuvayı değiştirir; diğer yuvalara dokunmaz. */
+  function degistir(yuva: Yuva, product: Product) {
+    setSecim((prev) => ({ ...prev, [yuva]: product }));
     setAdded(false);
   }
 
@@ -102,19 +112,28 @@ export function OutfitResult({
 
         <div className="order-last lg:order-first">
           <div className="grid gap-8 sm:grid-cols-2 sm:gap-10">
-            {pieces.map(({ layer, product }, i) => (
+            {pieces.map(({ yuva, product }, i) => (
               <motion.div
                 // key YUVA'dır, ürün değil: ürün değişince kart yeniden
                 // mount olup animasyonu baştan oynatmaz.
-                key={layer}
+                key={yuva}
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, delay: 0.08 + i * 0.08 }}
               >
                 <PieceCard
                   product={product}
-                  alternatifler={wearableForSlot(products, layer)}
-                  onDegistir={(p) => degistir(layer, p)}
+                  alternatifler={
+                    // Ayakkabı karaktere çizilmediği için stoktaki tüm
+                    // ayakkabılar seçenektir; üst/alt ise karakterde
+                    // gösterilebilen ürünlerle sınırlı.
+                    yuva === "shoes"
+                      ? products.filter(
+                          (p) => p.category === "ayakkabi" && isAvailable(p),
+                        )
+                      : wearableForSlot(products, yuva)
+                  }
+                  onDegistir={(p) => degistir(yuva, p)}
                   selectedSize={sizes[product.id] ?? null}
                   onSelectSize={(size) => {
                     setSizes((prev) => ({ ...prev, [product.id]: size }));
@@ -175,7 +194,9 @@ export function OutfitResult({
 
             {!ready && (
               <p className="mt-4 text-[13px] text-muted-foreground">
-                Sepete eklemek için her iki parçanın bedenini seç.
+                Sepete eklemek için{" "}
+                {pieces.length === 2 ? "her iki parçanın" : "tüm parçaların"}{" "}
+                bedenini seç.
               </p>
             )}
           </motion.div>

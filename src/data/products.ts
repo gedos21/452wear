@@ -258,42 +258,8 @@ export async function getProductsByCategory(
 }
 
 /**
- * Hero showcase'i besleyen demo ürün. Bilerek PRODUCTS dizisinin dışında
- * tutuldu: katalog ve "Yeni Gelenler" bölümü bundan etkilenmesin.
+ * Hero vitrininde gösterilecek katalog ürününün slug'ı. Ürün ayrıca
+ * tanımlanmaz; katalogdaki gerçek kayıt kullanılır, böylece fiyatı ve
+ * bağlantısı hep güncel kalır (bkz. lib/catalog-store vitrinUrunu).
  */
-export const SHOWCASE_PRODUCTS: Product[] = [
-  {
-    id: "showcase-001",
-    slug: "eye-dagger-tisort",
-    name: "Eye & Dagger Tişört",
-    description: "Kırık beyaz ağır gramaj tişört, önden gravür baskı.",
-    category: "tisort",
-    price: 599,
-    currency: "TRY",
-    images: [
-      {
-        src: "/products/eye-dagger-tee.jpg",
-        alt: "Kırık beyaz tişört üzerinde gravür tarzı göz ve hançer baskısı",
-      },
-    ],
-    colors: [{ name: "Kırık Beyaz", hex: "#E9E4DA" }],
-    variants: [
-      { id: "showcase-001-m", size: "M", color: "Kırık Beyaz", stock: 6 },
-      { id: "showcase-001-l", size: "L", color: "Kırık Beyaz", stock: 4 },
-    ],
-    isNew: false,
-  },
-];
-
-export async function getShowcaseProducts(): Promise<Product[]> {
-  return SHOWCASE_PRODUCTS;
-}
-
-/**
- * "Sana Özel" bölümünün ürünü. Şimdilik sabit bir seçim — ileride kullanıcının
- * gezdiği / favorilediği / sepetindeki ürüne göre belirlenecek. Bölüm ürünü
- * prop olarak aldığı için yalnızca bu fonksiyonu değiştirmek yeterli olacak.
- */
-export async function getPersonalPick(): Promise<Product> {
-  return PRODUCTS[1];
-}
+export const SHOWCASE_SLUG = "eye-dagger-tisort";

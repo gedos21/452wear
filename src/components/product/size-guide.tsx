@@ -2,24 +2,54 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
+import type { ProductCategory } from "@/types/product";
 
-const ROWS = [
-  { size: "XS", chest: "86–91", length: "66" },
-  { size: "S", chest: "91–96", length: "69" },
-  { size: "M", chest: "96–101", length: "72" },
-  { size: "L", chest: "101–106", length: "74" },
-  { size: "XL", chest: "106–111", length: "76" },
-  { size: "XXL", chest: "111–117", length: "78" },
-];
+type Guide = { columns: string[]; rows: string[][]; note: string };
+
+const APPAREL_GUIDE: Guide = {
+  columns: ["Beden", "Göğüs (cm)", "Boy (cm)"],
+  rows: [
+    ["XS", "86–91", "66"],
+    ["S", "91–96", "69"],
+    ["M", "96–101", "72"],
+    ["L", "101–106", "74"],
+    ["XL", "106–111", "76"],
+    ["XXL", "111–117", "78"],
+  ],
+  note: "Ölçüler ürünün kendisine aittir, vücut ölçüsü değildir. Oversize kalıplarda bir beden küçük tercih edebilirsin.",
+};
+
+const SHOE_GUIDE: Guide = {
+  columns: ["Numara (EU)", "Ayak uzunluğu (cm)"],
+  rows: [
+    ["36", "23"],
+    ["37", "23,5"],
+    ["38", "24"],
+    ["39", "25"],
+    ["40", "25,5"],
+    ["41", "26"],
+    ["42", "27"],
+    ["43", "27,5"],
+    ["44", "28"],
+    ["45", "29"],
+    ["46", "29,5"],
+  ],
+  note: "Ayağını topuktan en uzun parmağın ucuna kadar ölç. Ölçüler yaklaşıktır ve kalıba göre değişebilir; iki numara arasında kalırsan büyük olanı seç.",
+};
 
 /** Beden rehberi — panelin içinde açılan sade bir katman. */
 export function SizeGuide({
   open,
+  category,
   onClose,
 }: {
   open: boolean;
+  /** Ayakkabıda numara tablosu, diğer kategorilerde beden tablosu gösterilir. */
+  category: ProductCategory;
   onClose: () => void;
 }) {
+  const guide = category === "ayakkabi" ? SHOE_GUIDE : APPAREL_GUIDE;
+
   return (
     <AnimatePresence>
       {open && (
@@ -48,24 +78,28 @@ export function SizeGuide({
             <table className="w-full text-left text-sm">
               <thead>
                 <tr className="micro text-foreground/45">
-                  <th className="pb-3 font-normal">Beden</th>
-                  <th className="pb-3 font-normal">Göğüs (cm)</th>
-                  <th className="pb-3 font-normal">Boy (cm)</th>
+                  {guide.columns.map((column) => (
+                    <th key={column} className="pb-3 font-normal">
+                      {column}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                {ROWS.map((row) => (
-                  <tr key={row.size} className="border-t border-border/70">
-                    <td className="py-3 font-medium">{row.size}</td>
-                    <td className="py-3 text-muted-foreground">{row.chest}</td>
-                    <td className="py-3 text-muted-foreground">{row.length}</td>
+                {guide.rows.map(([first, ...rest]) => (
+                  <tr key={first} className="border-t border-border/70">
+                    <td className="py-3 font-medium">{first}</td>
+                    {rest.map((cell, i) => (
+                      <td key={i} className="py-3 text-muted-foreground">
+                        {cell}
+                      </td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
             </table>
             <p className="mt-6 text-[13px] leading-relaxed text-muted-foreground">
-              Ölçüler ürünün kendisine aittir, vücut ölçüsü değildir. Oversize
-              kalıplarda bir beden küçük tercih edebilirsin.
+              {guide.note}
             </p>
           </div>
         </motion.div>

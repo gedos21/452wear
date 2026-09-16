@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Plus, Trash2, X } from "lucide-react";
 import { urunKaydet, urunSil, type Sonuc } from "@/app/admin/actions";
 import { CATEGORIES } from "@/data/products";
-import { SIZE_ORDER } from "@/lib/product-variants";
+import { sizesForCategory } from "@/lib/product-variants";
 import { cn } from "@/lib/utils";
 import type { Product, ProductCategory, ProductSize } from "@/types/product";
 
@@ -23,13 +23,19 @@ export function UrunFormu({
   kategori,
   onKategori,
   onKaydedildi,
+  kayitMesaji,
   pixelDosya,
 }: {
   urun?: Product;
   kategori: ProductCategory;
   onKategori: (k: ProductCategory) => void;
-  /** Kayıt başarılıysa çağrılır; Pixel Fit paneli seçimini sıfırlar. */
-  onKaydedildi?: () => void;
+  /** Kayıt başarılıysa mesajla çağrılır; Pixel Fit paneli seçimini sıfırlar. */
+  onKaydedildi?: (mesaj: string) => void;
+  /**
+   * Son başarılı kaydın mesajı. Form kayıttan sonra sunucudaki veriyle yeniden
+   * kurulduğu için kendi sonucu sıfırlanır; mesaj buradan gösterilir.
+   */
+  kayitMesaji?: string | null;
   /**
    * Pixel Fit panelinde seçilmiş ama henüz yüklenmemiş PNG.
    *
@@ -41,10 +47,23 @@ export function UrunFormu({
   pixelDosya?: File | null;
 }) {
   const router = useRouter();
+  // Başarı sonrası işler action'ın İÇİNDE yapılır, effect'te değil: kayıt
+  // yanıtı güncel ürün verisini de getirdiği için form (key ile) aynı anda
+  // yeniden kurulur ve bu bileşenin effect'i sonucu hiç görmeden kaybolur.
   const [sonuc, kaydet, kaydediliyor] = useActionState(
     async (onceki: Sonuc, fd: FormData) => {
       if (pixelDosya) fd.append("pixelAsset", pixelDosya);
-      return urunKaydet(onceki, fd);
+      const r = await urunKaydet(onceki, fd);
+      if (r.durum === "ok") {
+        // Kaydedilen PNG artık sunucudaki yoldan gösterilir; paneldeki
+        // "henüz kaydedilmedi" seçimi burada düşer.
+        onKaydedildi?.(r.mesaj);
+        // Yeni üründe düzenleme sayfasına geçilir; mesaj adresle taşınır.
+        if (!urun && r.urunId)
+          router.push(`/admin/urunler/${r.urunId}?olusturuldu=1`);
+        else router.refresh();
+      }
+      return r;
     },
     BOS,
   );
@@ -84,16 +103,17 @@ export function UrunFormu({
     return out;
   });
 
-  useEffect(() => {
-    if (sonuc.durum !== "ok") return;
-    // Kaydedilen PNG artık sunucudaki yoldan gösterilir; paneldeki "henüz
-    // kaydedilmedi" seçimi burada düşer.
-    onKaydedildi?.();
-    if (!urun && sonuc.urunId) router.push(`/admin/urunler/${sonuc.urunId}`);
-    else router.refresh();
-  }, [sonuc, urun, router, onKaydedildi]);
 
-  const secilenBedenler = SIZE_ORDER.filter((b) => bedenler.has(b));
+  // Kategori değişince beden sistemi de değişir (ayakkabıda numara).
+  const bedenSecenekleri = sizesForCategory(kategori);
+  const secilenBedenler = bedenSecenekleri.filter((b) => bedenler.has(b));
+
+  const gosterilenSonuc =
+    sonuc.durum !== "bos"
+      ? sonuc
+      : kayitMesaji
+        ? { durum: "ok" as const, mesaj: kayitMesaji }
+        : null;
 
   return (
     <form action={kaydet} className="grid gap-8">
@@ -246,7 +266,7 @@ export function UrunFormu({
       <fieldset className="grid gap-3">
         <legend className={etiket}>Bedenler</legend>
         <div className="flex flex-wrap gap-1.5">
-          {SIZE_ORDER.map((b) => {
+          {bedenSecenekleri.map((b) => {
             const aktif = bedenler.has(b);
             return (
               <label
@@ -381,15 +401,17 @@ export function UrunFormu({
               ? "Değişiklikleri kaydet"
               : "Ürünü oluştur"}
         </button>
-        {sonuc.durum !== "bos" && (
+        {gosterilenSonuc && (
           <p
             role="status"
             className={cn(
               "text-[13px]",
-              sonuc.durum === "hata" ? "text-brand" : "text-foreground/70",
+              gosterilenSonuc.durum === "hata"
+                ? "text-brand"
+                : "text-foreground/70",
             )}
           >
-            {sonuc.mesaj}
+            {gosterilenSonuc.mesaj}
           </p>
         )}
         {urun && (
@@ -397,7 +419,7 @@ export function UrunFormu({
             {silOnay ? (
               <>
                 <span className="text-[13px] text-foreground/70">
-                  Ürün katalogdan kaldırılsın mı?
+                  Ürün silinsin mi? Silinenler&apos;den geri getirebilirsin.
                 </span>
                 <button
                   type="submit"

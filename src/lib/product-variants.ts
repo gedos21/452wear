@@ -1,7 +1,25 @@
-import type { Product, ProductImage, ProductSize } from "@/types/product";
+import type {
+  ApparelSize,
+  Product,
+  ProductCategory,
+  ProductImage,
+  ProductSize,
+  ShoeSize,
+} from "@/types/product";
+
+export const APPAREL_SIZES: ApparelSize[] = ["XS", "S", "M", "L", "XL", "XXL"];
+
+export const SHOE_SIZES: ShoeSize[] = [
+  "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46",
+];
 
 /** Beden sıralaması — veri hangi sırada gelirse gelsin UI hep aynı sırada gösterir. */
-export const SIZE_ORDER: ProductSize[] = ["XS", "S", "M", "L", "XL", "XXL"];
+export const SIZE_ORDER: ProductSize[] = [...APPAREL_SIZES, ...SHOE_SIZES];
+
+/** Kategorinin beden sistemi: ayakkabıda numara, diğerlerinde harf beden. */
+export function sizesForCategory(category: ProductCategory): ProductSize[] {
+  return category === "ayakkabi" ? SHOE_SIZES : APPAREL_SIZES;
+}
 
 /**
  * Bir rengin görselleri.

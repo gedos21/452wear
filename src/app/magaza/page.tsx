@@ -6,7 +6,7 @@ import { Reveal } from "@/components/motion";
 import { ShopBrowser } from "@/components/shop/shop-browser";
 import { CATEGORIES } from "@/data/products";
 import { katalogOku } from "@/lib/catalog-store";
-import { CATEGORY_PARAM, PRODUCT_PARAM } from "@/components/layout/nav-links";
+import { CATEGORY_PARAM } from "@/components/layout/nav-links";
 import type { CategoryFilter } from "@/lib/product-filters";
 
 export const metadata: Metadata = {
@@ -29,7 +29,6 @@ export default async function ShopPage({
 }) {
   const [products, params] = await Promise.all([katalogOku(), searchParams]);
   const category = readCategory(params[CATEGORY_PARAM]);
-  const openSlug = params[PRODUCT_PARAM];
 
   return (
     <>
@@ -49,11 +48,7 @@ export default async function ShopPage({
           </Reveal>
 
           <div className="mt-12 sm:mt-16">
-            <ShopBrowser
-              products={products}
-              category={category}
-              openSlug={typeof openSlug === "string" ? openSlug : undefined}
-            />
+            <ShopBrowser products={products} category={category} />
           </div>
         </Container>
       </main>

@@ -3,10 +3,11 @@ import { Reveal } from "@/components/motion";
 import { Lanyard } from "@/components/react-bits";
 import { SpecialPickCard } from "@/components/product/special-pick-card";
 import { ActionButton } from "@/components/ui/action-button";
-import { getPersonalPick } from "@/data/products";
+import { sanaOzel } from "@/lib/catalog-store";
 
 export async function SpecialPick() {
-  const product = await getPersonalPick();
+  const product = await sanaOzel();
+  if (!product) return null;
   const href = `/urun/${product.slug}`;
 
   return (

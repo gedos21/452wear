@@ -2,10 +2,10 @@ import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion";
 import { ActionButton } from "@/components/ui/action-button";
 import { ProductShowcase } from "./product-showcase";
-import { getShowcaseProducts } from "@/data/products";
+import { vitrinUrunu } from "@/lib/catalog-store";
 
 export async function Hero() {
-  const showcase = await getShowcaseProducts();
+  const vitrin = await vitrinUrunu();
 
   return (
     <section className="pt-10 pb-12 sm:pt-14 sm:pb-16 lg:pt-16 lg:pb-16">
@@ -34,9 +34,11 @@ export async function Hero() {
           </Reveal>
         </div>
 
-        <Reveal trigger="mount" delay={0.1}>
-          <ProductShowcase products={showcase} />
-        </Reveal>
+        {vitrin && (
+          <Reveal trigger="mount" delay={0.1}>
+            <ProductShowcase products={[vitrin]} />
+          </Reveal>
+        )}
       </Container>
     </section>
   );

@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import { CATEGORIES } from "@/data/products";
-import { katalogOku } from "@/lib/catalog-store";
+import { Silinenler } from "@/components/admin/silinenler";
+import { copKutusu, katalogOku } from "@/lib/catalog-store";
 import { formatPrice } from "@/lib/format";
 import {
   PixelFitRozet,
@@ -15,7 +16,7 @@ export const metadata = { title: "Ürünler" };
 export const dynamic = "force-dynamic";
 
 export default async function UrunlerSayfasi() {
-  const urunler = await katalogOku();
+  const [urunler, silinenler] = await Promise.all([katalogOku(), copKutusu()]);
   const kategoriAdi = (slug: string) =>
     CATEGORIES.find((c) => c.slug === slug)?.label ?? slug;
   const hazir = urunler.filter((u) => pixelFitDurumu(u) === "hazir").length;
@@ -108,6 +109,17 @@ export default async function UrunlerSayfasi() {
           </li>
         ))}
       </ul>
+
+      {silinenler.length > 0 && (
+        <Silinenler
+          urunler={silinenler.map((u) => ({
+            id: u.id,
+            name: u.name,
+            kategori: kategoriAdi(u.category),
+            gorsel: u.images[0]?.src,
+          }))}
+        />
+      )}
     </div>
   );
 }
