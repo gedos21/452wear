@@ -8,8 +8,10 @@ export async function Hero() {
   const vitrin = await vitrinUrunu();
 
   return (
-    <section className="pt-8 pb-6 sm:pt-10 sm:pb-8 lg:pt-6 lg:pb-4">
-      <Container className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:gap-12 xl:max-w-[min(88vw,96rem)]">
+    // Masaüstünde ~65vh; çok uzun ekranlarda içerik etrafında boşluk
+    // birikmesin diye 600px'te sınırlanır. İçerik dikeyde ortalanır.
+    <section className="pt-8 pb-6 sm:pt-10 sm:pb-8 lg:flex lg:min-h-[clamp(520px,65vh,600px)] lg:items-center lg:py-0">
+      <Container className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-12 xl:max-w-[min(88vw,96rem)]">
         <div>
           <Reveal trigger="mount" as="h1">
             <span className="block font-display text-5xl font-extrabold leading-[0.9] tracking-[-0.035em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">

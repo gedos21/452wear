@@ -3,13 +3,13 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Hero } from "@/components/home/hero";
 import { CategorySpotlight } from "@/components/home/category-spotlight";
 import { OutfitSpotlight } from "@/components/home/outfit-spotlight";
-import { SpecialPick } from "@/components/home/special-pick";
+
 
 export default function HomePage() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main className="flex-1 pb-6 lg:pb-10">
         <Hero />
         <CategorySpotlight
           category="ayakkabi"
@@ -22,7 +22,6 @@ export default function HomePage() {
           }}
         />
         <OutfitSpotlight />
-        <SpecialPick />
       </main>
       <SiteFooter />
     </>

@@ -48,7 +48,7 @@ export function EditorialImage({
           src={src}
           alt={alt}
           fill
-          sizes="(min-width: 1024px) 40vw, 100vw"
+          sizes="(min-width: 1280px) 340px, (min-width: 1024px) 30vw, 100vw"
           className="object-cover"
         />
       </motion.div>
