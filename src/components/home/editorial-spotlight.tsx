@@ -17,8 +17,7 @@ const KART_SIZES = "(min-width: 1024px) 20vw, 45vw";
  *    yükseklikleri birbirine yakındır ve ürünlerin altında boşluk kalmaz.
  *  - Görsel sütunu geniş ekranda 340px'te sabitlenir (2:3 → ~510px yükseklik):
  *    görsel ekranla büyümez, bölüm içeriği kadar yer kaplar.
- *  - `ters` verilirse masaüstünde görsel sağa geçer; ardışık vitrinler
- *    böylece zikzak bir ritimle dizilir.
+
  *  - Mobilde DOM sırası geçerlidir: görsel → başlık → ürünler (2 kolon).
  *
  * Başlık görselin üstüne bindirilmez: editorial görseller kendi
@@ -31,7 +30,6 @@ export function EditorialSpotlight({
   cta,
   image,
   products,
-  ters = false,
 }: {
   href: string;
   title: string;
@@ -39,34 +37,15 @@ export function EditorialSpotlight({
   cta: string;
   image: { src: string; alt: string };
   products: Product[];
-  ters?: boolean;
 }) {
   return (
     <section className="pt-6 pb-10 sm:pt-8 sm:pb-12 lg:pt-4 lg:pb-16">
-      <Container
-        className={
-          ters
-            ? "grid items-center lg:grid-cols-[minmax(0,70fr)_minmax(0,30fr)] lg:gap-x-12 xl:max-w-[min(88vw,96rem)] xl:grid-cols-[minmax(0,1fr)_340px]"
-            : "grid items-center lg:grid-cols-[minmax(0,30fr)_minmax(0,70fr)] lg:gap-x-12 xl:max-w-[min(88vw,96rem)] xl:grid-cols-[340px_minmax(0,1fr)]"
-        }
-      >
-        <Reveal
-          className={
-            ters
-              ? "lg:col-start-2 lg:row-start-1"
-              : "lg:col-start-1 lg:row-start-1"
-          }
-        >
+      <Container className="grid items-center lg:grid-cols-[minmax(0,30fr)_minmax(0,70fr)] lg:gap-x-12 xl:max-w-[min(88vw,96rem)] xl:grid-cols-[340px_minmax(0,1fr)]">
+        <Reveal>
           <EditorialImage href={href} src={image.src} alt={image.alt} />
         </Reveal>
 
-        <div
-          className={
-            ters
-              ? "mt-5 lg:col-start-1 lg:row-start-1 lg:mt-0"
-              : "mt-5 lg:col-start-2 lg:row-start-1 lg:mt-0"
-          }
-        >
+        <div className="mt-5 lg:mt-0">
           <Reveal
             delay={0.06}
             className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4"
