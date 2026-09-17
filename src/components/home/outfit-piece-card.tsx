@@ -36,7 +36,7 @@ export function OutfitPieceCard({
         src={cover.src}
         alt={cover.alt}
         fill
-        sizes="(min-width: 1024px) 24vw, (min-width: 640px) 42vw, 70vw"
+        sizes="(min-width: 1024px) 16vw, (min-width: 640px) 38vw, 62vw"
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
       />
       {/* Alt bilgiler her fotoğrafta okunsun diye yumuşak karartma. */}
@@ -44,11 +44,11 @@ export function OutfitPieceCard({
         aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/70 via-black/25 to-transparent"
       />
-      <span className="absolute left-3 top-3 rounded-full bg-background/90 px-2.5 py-1 micro backdrop-blur-sm lg:left-4 lg:top-4">
+      <span className="absolute left-3 top-3 rounded-full bg-background/90 px-2.5 py-1 micro backdrop-blur-sm">
         {String(index + 1).padStart(2, "0")} · {PARCA[product.category]}
       </span>
-      <div className="absolute inset-x-0 bottom-0 p-4 text-white lg:p-5">
-        <h3 className="font-display text-lg font-extrabold leading-tight tracking-[-0.02em] sm:text-xl">
+      <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+        <h3 className="font-display text-base font-extrabold leading-tight tracking-[-0.02em] sm:text-lg">
           {product.name}
         </h3>
         <div className="mt-2 flex items-center justify-between gap-3 text-sm">
