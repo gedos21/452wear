@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { PRODUCTS as SEED, SHOWCASE_SLUG } from "@/data/products";
-import type { Product } from "@/types/product";
+import type { Product, ProductCategory } from "@/types/product";
 
 /**
  * Katalog kalıcılığı — GELİŞTİRME ORTAMI İÇİN.
@@ -281,16 +281,37 @@ export async function bosSlug(taban: string, haricId: string): Promise<string> {
 /* ---- Sunucu tarafı okuma yardımcıları (canlı katalog) ---- */
 
 /**
- * Ana sayfa "Yeni Gelenler": admin'in eklediği ürünler en yeniden eskiye önce
- * gelir, ardından tohum katalog kendi sırasıyla.
+ * Yayındaki ürünler, en yeni önce: admin'in eklediği ürünler en yeniden
+ * eskiye, ardından tohum katalog kendi sırasıyla.
  */
-export async function yeniGelenler(limit = 4): Promise<Product[]> {
-  const k = await katmanOku();
+function enYeniOnce(k: Katman): Product[] {
   const yayinda = yayindakiler(k);
   const eklenenIdler = new Set(k.eklenen.map((p) => p.id));
   const eklenen = yayinda.filter((p) => eklenenIdler.has(p.id)).reverse();
   const tohum = yayinda.filter((p) => !eklenenIdler.has(p.id));
-  return [...eklenen, ...tohum].filter((p) => p.isNew).slice(0, limit);
+  return [...eklenen, ...tohum];
+}
+
+/** "Yeni" işaretli ürünler, en yenisi başta (hero vitrininin yedeği). */
+export async function yeniGelenler(limit = 4): Promise<Product[]> {
+  return enYeniOnce(await katmanOku())
+    .filter((p) => p.isNew)
+    .slice(0, limit);
+}
+
+/**
+ * Ana sayfa kategori vitrini: kategorinin stokta olan ürünleri, en yeni
+ * eklenen başta.
+ */
+export async function kategoriVitrini(
+  kategori: ProductCategory,
+  limit = 3,
+): Promise<Product[]> {
+  return enYeniOnce(await katmanOku())
+    .filter(
+      (p) => p.category === kategori && p.variants.some((v) => v.stock > 0),
+    )
+    .slice(0, limit);
 }
 
 /**
