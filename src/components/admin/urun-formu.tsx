@@ -12,6 +12,9 @@ import type { Product, ProductCategory, ProductSize } from "@/types/product";
 
 const BOS: Sonuc = { durum: "bos" };
 
+/** Başarılı kayıttan sonra düzenleyiciye bildirilen bilgi. */
+export type Kayit = { mesaj: string; urunId?: string; ad: string };
+
 type RenkSatiri = { key: number; name: string; hex: string };
 
 /** Formdaki görsel: kayıtlı (sunucudaki yol) ya da bu kayıtta eklenecek dosya. */
@@ -34,8 +37,11 @@ export function UrunFormu({
   urun?: Product;
   kategori: ProductCategory;
   onKategori: (k: ProductCategory) => void;
-  /** Kayıt başarılıysa mesajla çağrılır; Pixel Fit paneli seçimini sıfırlar. */
-  onKaydedildi?: (mesaj: string) => void;
+  /**
+   * Kayıt başarılıysa çağrılır. Düzenleyici Pixel Fit seçimini sıfırlar; yeni
+   * üründe formu boşaltıp bildirim gösterir, kayıtlı üründe mesajı saklar.
+   */
+  onKaydedildi?: (kayit: Kayit) => void;
   /**
    * Son başarılı kaydın mesajı. Form kayıttan sonra sunucudaki veriyle yeniden
    * kurulduğu için kendi sonucu sıfırlanır; mesaj buradan gösterilir.
@@ -117,11 +123,14 @@ export function UrunFormu({
       if (r.durum === "ok") {
         // Kaydedilen PNG artık sunucudaki yoldan gösterilir; paneldeki
         // "henüz kaydedilmedi" seçimi burada düşer.
-        onKaydedildi?.(r.mesaj);
-        // Yeni üründe düzenleme sayfasına geçilir; mesaj adresle taşınır.
-        if (!urun && r.urunId)
-          router.push(`/admin/urunler/${r.urunId}?olusturuldu=1`);
-        else router.refresh();
+        onKaydedildi?.({
+          mesaj: r.mesaj,
+          urunId: r.urunId,
+          ad: String(fd.get("ad") ?? ""),
+        });
+        // Yeni üründe form yerinde boşaltılır (bkz. UrunDuzenleyici); kayıtlı
+        // üründe sunucudaki güncel veriyle yeniden kurulur.
+        if (urun) router.refresh();
       }
       return r;
     },
