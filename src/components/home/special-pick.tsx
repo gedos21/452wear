@@ -13,8 +13,8 @@ export async function SpecialPick() {
   return (
     // overflow-x-clip: kart salınırken sayfa asla yatay kaymasın
     // (clip, hidden'ın aksine kaydırma bağlamı oluşturmaz).
-    <section className="overflow-x-clip py-16 sm:py-20 lg:py-28">
-      <Container className="grid items-center gap-16 lg:grid-cols-[1fr_minmax(0,380px)] lg:gap-24">
+    <section className="overflow-x-clip pt-10 pb-14 sm:pt-12 sm:pb-16 lg:pt-14 lg:pb-20">
+      <Container className="grid items-center gap-12 lg:grid-cols-[1fr_minmax(0,380px)] lg:gap-16 xl:max-w-[min(88vw,96rem)]">
         <div>
           <Reveal>
             <h2 className="font-display text-3xl font-extrabold tracking-[-0.02em] sm:text-4xl">

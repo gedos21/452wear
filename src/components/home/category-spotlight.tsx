@@ -43,15 +43,15 @@ export async function CategorySpotlight({
   const href = categoryHref(category);
 
   return (
-    <section className="py-14 sm:py-16 lg:py-20">
-      <Container className="grid max-w-[96rem] lg:grid-cols-[minmax(0,37fr)_minmax(0,63fr)] lg:gap-x-14">
+    <section className="pt-8 pb-12 sm:pt-10 sm:pb-14 lg:pt-10 lg:pb-14">
+      <Container className="grid lg:grid-cols-[minmax(0,37fr)_minmax(0,63fr)] lg:gap-x-12 xl:max-w-[min(88vw,96rem)]">
         <Reveal className="lg:col-start-1 lg:row-start-1">
           <EditorialImage href={href} src={image.src} alt={image.alt} />
         </Reveal>
 
         <Reveal
           delay={0.06}
-          className="mt-6 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 lg:col-start-1 lg:row-start-2"
+          className="mt-5 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 lg:col-start-1 lg:row-start-2"
         >
           <div>
             <h2 className="font-display text-4xl font-extrabold leading-none tracking-[-0.03em] sm:text-5xl">
@@ -69,7 +69,7 @@ export async function CategorySpotlight({
         </Reveal>
 
         {products.length > 0 && (
-          <div className="mt-12 lg:col-start-2 lg:row-start-1 lg:mt-0 lg:self-center">
+          <div className="mt-10 lg:col-start-2 lg:row-start-1 lg:mt-0 lg:self-center">
             <Stagger
               className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-3"
               stagger={0.06}
@@ -81,7 +81,7 @@ export async function CategorySpotlight({
                 </StaggerItem>
               ))}
             </Stagger>
-            <div className="mt-8 flex justify-end">
+            <div className="mt-6 flex justify-end">
               <Link
                 href={href}
                 className="micro text-foreground/60 transition-colors hover:text-foreground"
