@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState, useState } from "react";
+import { useActionState, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Plus, Trash2, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Plus, Trash2, X } from "lucide-react";
 import { urunKaydet, urunSil, type Sonuc } from "@/app/admin/actions";
 import { CATEGORIES } from "@/data/products";
 import { sizesForCategory } from "@/lib/product-variants";
@@ -13,6 +13,11 @@ import type { Product, ProductCategory, ProductSize } from "@/types/product";
 const BOS: Sonuc = { durum: "bos" };
 
 type RenkSatiri = { key: number; name: string; hex: string };
+
+/** Formdaki görsel: kayıtlı (sunucudaki yol) ya da bu kayıtta eklenecek dosya. */
+type GorselOgesi =
+  | { tip: "mevcut"; key: string; src: string }
+  | { tip: "yeni"; key: string; src: string; file: File };
 
 const girdi =
   "h-11 w-full rounded-lg bg-background px-3 text-sm ring-1 ring-border outline-none transition-shadow placeholder:text-foreground/30 focus-visible:ring-2 focus-visible:ring-ring";
@@ -47,12 +52,67 @@ export function UrunFormu({
   pixelDosya?: File | null;
 }) {
   const router = useRouter();
+
+  // Görseller ekrandaki sırayla tutulur: kayıtlı olanlar + bu kayıtta eklenecek
+  // dosyalar. Kaydedince bu sıra gönderilir; listeden kaldırılan kayıtlı görsel
+  // sunucuda silinir. Seçilen dosyalar kaydedilene kadar yalnızca önizlemedir.
+  const [gorseller, setGorseller] = useState<GorselOgesi[]>(() =>
+    (urun?.images ?? []).map((g) => ({
+      tip: "mevcut" as const,
+      key: g.src,
+      src: g.src,
+    })),
+  );
+  const yeniSayac = useRef(0);
+
+  function gorselEkle(e: React.ChangeEvent<HTMLInputElement>) {
+    // Birlikte seçilen dosyalar adına göre dizilir: 01-kapak, 02-arka…
+    const dosyalar = [...(e.target.files ?? [])].sort((a, b) =>
+      a.name.localeCompare(b.name, "tr", { numeric: true }),
+    );
+    // Aynı dosya kaldırılıp yeniden seçilebilsin.
+    e.target.value = "";
+    const eklenen = dosyalar.map((file) => ({
+      tip: "yeni" as const,
+      key: `yeni-${yeniSayac.current++}`,
+      src: URL.createObjectURL(file),
+      file,
+    }));
+    setGorseller((l) => [...l, ...eklenen]);
+  }
+
+  function gorselKaldir(i: number) {
+    const g = gorseller[i];
+    if (g?.tip === "yeni") URL.revokeObjectURL(g.src);
+    setGorseller((l) => l.filter((_, j) => j !== i));
+  }
+
+  function gorselTasi(i: number, yon: -1 | 1) {
+    setGorseller((l) => {
+      const j = i + yon;
+      if (j < 0 || j >= l.length) return l;
+      const kopya = [...l];
+      [kopya[i], kopya[j]] = [kopya[j], kopya[i]];
+      return kopya;
+    });
+  }
+
   // Başarı sonrası işler action'ın İÇİNDE yapılır, effect'te değil: kayıt
   // yanıtı güncel ürün verisini de getirdiği için form (key ile) aynı anda
   // yeniden kurulur ve bu bileşenin effect'i sonucu hiç görmeden kaybolur.
   const [sonuc, kaydet, kaydediliyor] = useActionState(
     async (onceki: Sonuc, fd: FormData) => {
       if (pixelDosya) fd.append("pixelAsset", pixelDosya);
+      // Görseller formdan değil bu listeden gider: sıra ve kaldırma burada.
+      let yeniIndex = 0;
+      for (const g of gorseller) {
+        if (g.tip === "mevcut") {
+          fd.append("gorselSira", `m:${g.src}`);
+        } else {
+          fd.append("gorsel", g.file);
+          fd.append("gorselSira", `y:${yeniIndex++}`);
+        }
+      }
       const r = await urunKaydet(onceki, fd);
       if (r.durum === "ok") {
         // Kaydedilen PNG artık sunucudaki yoldan gösterilir; paneldeki
@@ -357,35 +417,74 @@ export function UrunFormu({
       {/* Görseller */}
       <fieldset className="grid gap-3">
         <legend className={etiket}>Ürün görselleri</legend>
-        {urun && urun.images.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {urun.images.map((g) => (
-              <div
-                key={g.src}
-                className="relative size-20 overflow-hidden rounded-lg bg-muted"
-              >
-                <Image
-                  src={g.src}
-                  alt={g.alt}
-                  fill
-                  sizes="80px"
-                  className="object-cover"
-                />
-              </div>
+        {gorseller.length > 0 && (
+          <ol className="flex flex-wrap gap-2">
+            {gorseller.map((g, i) => (
+              <li key={g.key} className="w-20">
+                <div className="relative size-20 overflow-hidden rounded-lg bg-muted">
+                  <Image
+                    src={g.src}
+                    alt={`${i + 1}. görsel`}
+                    fill
+                    sizes="80px"
+                    unoptimized={g.tip === "yeni"}
+                    className="object-cover"
+                  />
+                  {i === 0 && (
+                    <span className="absolute left-1 top-1 rounded-full bg-background/90 px-1.5 py-0.5 text-[10px] leading-none">
+                      Kapak
+                    </span>
+                  )}
+                  {g.tip === "yeni" && (
+                    <span className="absolute bottom-1 left-1 rounded-full bg-foreground/80 px-1.5 py-0.5 text-[10px] leading-none text-background">
+                      Yeni
+                    </span>
+                  )}
+                </div>
+                <div className="mt-1 flex items-center justify-between">
+                  <button
+                    type="button"
+                    onClick={() => gorselTasi(i, -1)}
+                    disabled={i === 0}
+                    aria-label={`${i + 1}. görseli öne al`}
+                    className="grid size-6 place-items-center rounded-full text-foreground/55 transition-colors hover:text-foreground disabled:opacity-25"
+                  >
+                    <ChevronLeft className="size-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => gorselKaldir(i)}
+                    aria-label={`${i + 1}. görseli kaldır`}
+                    className="grid size-6 place-items-center rounded-full text-foreground/40 transition-colors hover:text-brand"
+                  >
+                    <X className="size-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => gorselTasi(i, 1)}
+                    disabled={i === gorseller.length - 1}
+                    aria-label={`${i + 1}. görseli arkaya al`}
+                    className="grid size-6 place-items-center rounded-full text-foreground/55 transition-colors hover:text-foreground disabled:opacity-25"
+                  >
+                    <ChevronRight className="size-3.5" />
+                  </button>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
         )}
         <input
           type="file"
-          name="gorsel"
           accept="image/png,image/jpeg,image/webp"
           multiple
+          onChange={gorselEkle}
+          aria-label="Görsel ekle"
           className="text-[13px] file:mr-3 file:h-9 file:cursor-pointer file:rounded-full file:border-0 file:bg-muted file:px-4 file:text-[13px] file:text-foreground"
         />
         <p className="text-[12px] text-foreground/45">
-          {urun
-            ? "Yeni görsel seçersen mevcut görsellerin yerini alır. İlk görsel kapak olur."
-            : "En az bir görsel gerekli. İlk görsel kapak olur."}
+          Seçilen görseller listenin sonuna eklenir. İlk görsel kapak olur,
+          ikincisi kartın üzerine gelince görünür. Sırayı oklarla değiştir,
+          görseli × ile kaldır; değişiklikler kaydedince uygulanır.
         </p>
       </fieldset>
 

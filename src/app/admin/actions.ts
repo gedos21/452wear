@@ -23,6 +23,7 @@ import type {
   Product,
   ProductCategory,
   ProductColor,
+  ProductImage,
   ProductSize,
   ProductVariant,
 } from "@/types/product";
@@ -198,6 +199,55 @@ async function gorselleriYaz(dosyalar: File[], id: string, ad: string) {
   return out;
 }
 
+type GorselSirasi =
+  | { tip: "mevcut"; gorsel: ProductImage }
+  | { tip: "yeni"; index: number };
+
+const SIRA_HATASI = "Görsel sırası geçersiz; sayfayı yenileyip tekrar dene.";
+
+/**
+ * Formdaki görsel sırasını çözer: "m:<yol>" kayıtlı bir görseli, "y:<n>" bu
+ * kayıtta yüklenen n. dosyayı gösterir. Kayıtlı görsel yalnızca ürünün kendi
+ * görsellerinden olabilir ve her yeni dosya tam bir kez yer almalıdır; böylece
+ * sıraya girmeyen dosya diske yazılmaz. Boş sıra "hiç görsel yok" demektir:
+ * kullanıcının kaldırdığı kayıtlı görseller kendiliğinden geri gelmez.
+ */
+function gorselSirasi(
+  fd: FormData,
+  mevcut: ProductImage[],
+  yeniSayisi: number,
+): { ok: true; liste: GorselSirasi[] } | { ok: false; hata: string } {
+  const ham = fd.getAll("gorselSira").map(String);
+  const liste: GorselSirasi[] = [];
+  const kullanilanYeni = new Set<number>();
+  for (const oge of ham) {
+    const deger = oge.slice(2);
+    if (oge.startsWith("m:")) {
+      const gorsel = mevcut.find((g) => g.src === deger);
+      const tekrar = liste.some(
+        (s) => s.tip === "mevcut" && s.gorsel.src === deger,
+      );
+      if (!gorsel || tekrar) return { ok: false, hata: SIRA_HATASI };
+      liste.push({ tip: "mevcut", gorsel });
+    } else if (oge.startsWith("y:")) {
+      const index = Number(deger);
+      if (
+        !Number.isInteger(index) ||
+        index < 0 ||
+        index >= yeniSayisi ||
+        kullanilanYeni.has(index)
+      )
+        return { ok: false, hata: SIRA_HATASI };
+      kullanilanYeni.add(index);
+      liste.push({ tip: "yeni", index });
+    } else {
+      return { ok: false, hata: SIRA_HATASI };
+    }
+  }
+  if (kullanilanYeni.size !== yeniSayisi) return { ok: false, hata: SIRA_HATASI };
+  return { ok: true, liste };
+}
+
 /**
  * Artık hiçbir ürünün kullanmadığı, bu ürün için YÜKLENMİŞ görselleri siler.
  * Yalnızca `<urunId>-<hash>.<uzantı>` biçimindeki dosyalara dokunur: tohum
@@ -267,7 +317,9 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
       };
 
     const dosyalar = gorselleriDogrula(fd);
-    if (dosyalar.length === 0 && !mevcut?.images.length)
+    const sira = gorselSirasi(fd, mevcut?.images ?? [], dosyalar.length);
+    if (!sira.ok) return { durum: "hata", mesaj: sira.hata };
+    if (sira.liste.length === 0)
       return { durum: "hata", mesaj: "En az bir ürün görseli yükle." };
 
     const layer = slotForCategory(a.kategori);
@@ -296,8 +348,10 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
       pixelEklendi = true;
     }
 
-    const yeni = await gorselleriYaz(dosyalar, id, a.ad);
-    const images = yeni.length > 0 ? yeni : (mevcut?.images ?? []);
+    const yuklenen = await gorselleriYaz(dosyalar, id, a.ad);
+    const images = sira.liste.map((s) =>
+      s.tip === "mevcut" ? s.gorsel : yuklenen[s.index],
+    );
 
     const urun: Product = {
       id,
@@ -324,7 +378,8 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
     // ürün hâlâ onları gösteriyor olurdu.
     if (mevcut?.tryOn && tryOn && mevcut.tryOn.asset !== tryOn.asset)
       await pixelAssetSil(mevcut.tryOn.asset, id);
-    if (mevcut && yeni.length > 0)
+    // Kaldırılan görseller de burada gider (yalnızca başka ürün kullanmıyorsa).
+    if (mevcut)
       await kullanilmayanGorselleriSil(
         mevcut.images.map((g) => g.src),
         id,
