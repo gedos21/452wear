@@ -315,6 +315,31 @@ export async function kategoriVitrini(
 }
 
 /**
+ * Ana sayfa kombin vitrini: birlikte giyilecek üç parça. Her biri kendi
+ * grubunun stokta olan en yeni ürünü: üst (tişört/sweatshirt/hırka), eşofman,
+ * ayakkabı. Grubunda ürün olmayan parça atlanır. Hemen üstteki ayakkabı
+ * vitrininde görünen ürünler, başka seçenek varsa tekrar gösterilmez.
+ */
+export async function kombinVitrini(): Promise<Product[]> {
+  const urunler = enYeniOnce(await katmanOku()).filter((p) =>
+    p.variants.some((v) => v.stock > 0),
+  );
+  const vitrinde = new Set(
+    (await kategoriVitrini("ayakkabi", 3)).map((p) => p.id),
+  );
+  const gruplar: ProductCategory[][] = [
+    ["tisort", "sweatshirt", "hirka"],
+    ["esofman"],
+    ["ayakkabi"],
+  ];
+  return gruplar.flatMap((grup) => {
+    const aday = urunler.filter((p) => grup.includes(p.category));
+    const urun = aday.find((p) => !vitrinde.has(p.id)) ?? aday[0];
+    return urun ? [urun] : [];
+  });
+}
+
+/**
  * "Sana Özel" bölümünün ürünü. Şimdilik sabit bir kural: yayındaki katalogun
  * ikinci ürünü (tohum katalogda Kapüşonlu Sweatshirt). İleride kullanıcının
  * gezdiği / favorilediği / sepetindeki ürüne göre belirlenecek. Katalog boşsa

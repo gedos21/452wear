@@ -2,6 +2,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Hero } from "@/components/home/hero";
 import { CategorySpotlight } from "@/components/home/category-spotlight";
+import { OutfitSpotlight } from "@/components/home/outfit-spotlight";
 import { SpecialPick } from "@/components/home/special-pick";
 
 export default function HomePage() {
@@ -20,6 +21,7 @@ export default function HomePage() {
             alt: "452WEAR ayakkabı koleksiyonu: havada duran dört sneaker",
           }}
         />
+        <OutfitSpotlight />
         <SpecialPick />
       </main>
       <SiteFooter />
