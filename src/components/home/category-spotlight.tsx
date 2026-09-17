@@ -7,13 +7,21 @@ import { kategoriVitrini } from "@/lib/catalog-store";
 import type { ProductCategory } from "@/types/product";
 import { EditorialImage } from "./editorial-image";
 
-/** Sağdaki kart genişliği: masaüstünde bölümün ~%58'i üç kolona bölünür. */
-const KART_SIZES = "(min-width: 1024px) 17vw, 45vw";
+/** Sağdaki kart genişliği: masaüstünde bölümün ~%63'ü üç kolona bölünür. */
+const KART_SIZES = "(min-width: 1024px) 20vw, 45vw";
 
 /**
  * Ana sayfa kategori vitrini: solda büyük editorial görsel, sağda o
  * kategorinin en yeni eklenen üç ürünü. Ürünler canlı katalogdan gelir;
  * kategoride stokta ürün yoksa yalnızca görsel ve bağlantı gösterilir.
+ *
+ * Yerleşim:
+ *  - Bölüm, sayfanın standart içerik genişliğinden daha geniştir (96rem):
+ *    editorial görsel içerik alanının soluna taşar ve büyük kalır.
+ *  - Masaüstünde ızgara iki satırdır: 1. satırda görsel (~%37) ve ürünler
+ *    (~%63), 2. satırda görselin altındaki başlık. Ürünler böylece başlığa
+ *    göre değil görselin kendisine göre dikeyde ortalanır.
+ *  - Mobilde DOM sırası geçerlidir: görsel → başlık → ürünler (2 kolon).
  *
  * Başlık görselin ALTINDA durur: editorial görseller (ör. ayakkabı afişi)
  * kendi tipografisini taşıyabildiği için üstüne yazı bindirilmez.
@@ -36,28 +44,32 @@ export async function CategorySpotlight({
 
   return (
     <section className="py-14 sm:py-16 lg:py-20">
-      <Container className="grid gap-12 lg:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] lg:items-end lg:gap-14">
-        <Reveal>
+      <Container className="grid max-w-[96rem] lg:grid-cols-[minmax(0,37fr)_minmax(0,63fr)] lg:gap-x-14">
+        <Reveal className="lg:col-start-1 lg:row-start-1">
           <EditorialImage href={href} src={image.src} alt={image.alt} />
-          <div className="mt-6 flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
-            <div>
-              <h2 className="font-display text-4xl font-extrabold leading-none tracking-[-0.03em] sm:text-5xl">
-                {title}
-                <span className="text-brand">.</span>
-              </h2>
-              <p className="mt-3 text-muted-foreground">{subtitle}</p>
-            </div>
-            <Link
-              href={href}
-              className="micro text-foreground transition-colors hover:text-foreground/60"
-            >
-              {cta} →
-            </Link>
+        </Reveal>
+
+        <Reveal
+          delay={0.06}
+          className="mt-6 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 lg:col-start-1 lg:row-start-2"
+        >
+          <div>
+            <h2 className="font-display text-4xl font-extrabold leading-none tracking-[-0.03em] sm:text-5xl">
+              {title}
+              <span className="text-brand">.</span>
+            </h2>
+            <p className="mt-3 text-muted-foreground">{subtitle}</p>
           </div>
+          <Link
+            href={href}
+            className="micro text-foreground transition-colors hover:text-foreground/60"
+          >
+            {cta} →
+          </Link>
         </Reveal>
 
         {products.length > 0 && (
-          <div>
+          <div className="mt-12 lg:col-start-2 lg:row-start-1 lg:mt-0 lg:self-center">
             <Stagger
               className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-3"
               stagger={0.06}
