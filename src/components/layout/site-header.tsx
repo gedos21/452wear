@@ -17,7 +17,11 @@ import {
 import { useAuth } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 
-
+/**
+ * Mobilde 18px ikonların dokunma alanı: görünmez bir kenar ile 34×34px'e
+ * büyür (ikonlar arası 16px boşluk sayesinde birbirine binmez). Görünüm aynı.
+ */
+const DOKUNMA = "after:absolute after:-inset-2 after:content-['']";
 
 export function SiteHeader() {
   const [hovered, setHovered] = useState<string | null>(null);
@@ -77,7 +81,10 @@ export function SiteHeader() {
             type="button"
             onClick={openSearch}
             aria-label="Arama"
-            className="text-foreground/70 transition-colors hover:text-foreground"
+            className={cn(
+              "relative text-foreground/70 transition-colors hover:text-foreground",
+              DOKUNMA,
+            )}
           >
             <Search className="size-[18px] md:hidden" strokeWidth={1.6} />
             <span className="hidden micro md:inline">Arama</span>
@@ -93,6 +100,7 @@ export function SiteHeader() {
             aria-current={isActive("/favoriler") ? "page" : undefined}
             className={cn(
               "relative transition-colors hover:text-foreground",
+              DOKUNMA,
               isActive("/favoriler") ? "text-foreground" : "text-foreground/70",
             )}
           >
@@ -107,7 +115,8 @@ export function SiteHeader() {
             aria-label={authStatus === "signed-in" ? "Hesabım" : "Hesap"}
             aria-current={isActive("/hesap") ? "page" : undefined}
             className={cn(
-              "transition-colors hover:text-foreground",
+              "relative transition-colors hover:text-foreground",
+              DOKUNMA,
               isActive("/hesap") ? "text-foreground" : "text-foreground/70",
             )}
           >
@@ -120,7 +129,10 @@ export function SiteHeader() {
             type="button"
             onClick={openCart}
             aria-label={cartCount > 0 ? `Sepet, ${cartCount} ürün` : "Sepet"}
-            className="relative text-foreground/70 transition-colors hover:text-foreground"
+            className={cn(
+              "relative text-foreground/70 transition-colors hover:text-foreground",
+              DOKUNMA,
+            )}
           >
             <ShoppingBag className="size-[18px] md:hidden" strokeWidth={1.6} />
             <span className="hidden micro md:inline">Sepet</span>

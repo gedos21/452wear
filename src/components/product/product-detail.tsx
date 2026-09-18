@@ -86,6 +86,16 @@ export function ProductDetail({
   }, [added]);
 
   function handleAdd() {
+    // Seçili renkte hiç stok yoksa bütün bedenler kapalıdır; "beden seç"
+    // demek seçilemeyen bir şeyi istemek olurdu.
+    if (!sizes.some((s) => s.inStock)) {
+      setError(
+        product.variants.some((v) => v.stock > 0)
+          ? "Bu renk tükendi; başka bir renk seç."
+          : "Bu ürün tükendi.",
+      );
+      return;
+    }
     if (!size) {
       setError(shoe ? "Lütfen bir numara seç." : "Lütfen bir beden seç.");
       return;

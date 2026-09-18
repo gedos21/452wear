@@ -14,10 +14,10 @@ export async function Hero() {
       <Container className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-12 xl:max-w-[min(88vw,96rem)]">
         <div>
           <Reveal trigger="mount" as="h1">
-            <span className="block font-display text-5xl font-extrabold leading-[0.9] tracking-[-0.035em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
+            <span className="block font-display text-[clamp(2.5rem,13vw,3rem)] font-extrabold leading-[0.9] tracking-[-0.035em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
               BUGÜN NE
             </span>
-            <span className="block font-display text-5xl font-extrabold leading-[0.9] tracking-[-0.035em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
+            <span className="block font-display text-[clamp(2.5rem,13vw,3rem)] font-extrabold leading-[0.9] tracking-[-0.035em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
               GİYİYORSUN<span className="text-brand">?</span>
             </span>
           </Reveal>
