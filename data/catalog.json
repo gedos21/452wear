@@ -1,5 +1,356 @@
 {
-  "eklenen": [],
+  "eklenen": [
+    {
+      "id": "p-011",
+      "slug": "adidas-superstar",
+      "name": "Adidas Süperstar",
+      "description": "Adidas Süperstar",
+      "category": "ayakkabi",
+      "price": 999,
+      "compareAtPrice": 1200,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-011-f45165db.jpg",
+          "alt": "Adidas Süperstar"
+        },
+        {
+          "src": "/products/p-011-5706411b.jpg",
+          "alt": "Adidas Süperstar"
+        },
+        {
+          "src": "/products/p-011-37c109c9.jpg",
+          "alt": "Adidas Süperstar"
+        },
+        {
+          "src": "/products/p-011-dd52f863.jpg",
+          "alt": "Adidas Süperstar"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah Beyaz",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-011-siyah-beyaz-36",
+          "size": "36",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        },
+        {
+          "id": "p-011-siyah-beyaz-37",
+          "size": "37",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        },
+        {
+          "id": "p-011-siyah-beyaz-38",
+          "size": "38",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        },
+        {
+          "id": "p-011-siyah-beyaz-39",
+          "size": "39",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        },
+        {
+          "id": "p-011-siyah-beyaz-40",
+          "size": "40",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        },
+        {
+          "id": "p-011-siyah-beyaz-41",
+          "size": "41",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        },
+        {
+          "id": "p-011-siyah-beyaz-42",
+          "size": "42",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        },
+        {
+          "id": "p-011-siyah-beyaz-43",
+          "size": "43",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        },
+        {
+          "id": "p-011-siyah-beyaz-44",
+          "size": "44",
+          "color": "Siyah Beyaz",
+          "stock": 5
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-012",
+      "slug": "air-force-1",
+      "name": "Nike Air Jordan 1 Low Year of the Dragon",
+      "description": "Açıklama:\r\nJordan 1 Low’un ikonik silüeti, Çin kültüründen ilham alan Year of the Dragon detaylarıyla buluşuyor. Dengeli renk kombinasyonu, özel grafik/dokusal detayları ve klasik düşük bilek tasarımıyla günlük streetwear kombinlerine güçlü bir görünüm katar.\r\n\r\nÖne Çıkanlar\r\n\r\nAir Jordan 1 Low silüeti\r\nYear of the Dragon özel tasarım detayları\r\nDüşük bilekli klasik yapı\r\nGünlük kullanıma uygun\r\nJean, eşofman ve oversize parçalarla kolay kombinlenir",
+      "category": "ayakkabi",
+      "price": 999,
+      "compareAtPrice": 1200,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-012-b6473a43.jpg",
+          "alt": "Nike Air Jordan 1 Low Year of the Dragon"
+        },
+        {
+          "src": "/products/p-012-04b58ee0.jpg",
+          "alt": "Nike Air Jordan 1 Low Year of the Dragon"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Beyaz",
+          "hex": "#5e3131"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-012-beyaz-36",
+          "size": "36",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-37",
+          "size": "37",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-38",
+          "size": "38",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-39",
+          "size": "39",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-40",
+          "size": "40",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-41",
+          "size": "41",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-42",
+          "size": "42",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-43",
+          "size": "43",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-44",
+          "size": "44",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-012-beyaz-45",
+          "size": "45",
+          "color": "Beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": false
+    },
+    {
+      "id": "p-013",
+      "slug": "nike-court-borough-low-recraft",
+      "name": "Nike Court Borough Low Recraft",
+      "description": "Günlük kullanıma uygun, klasik ve sade tasarımıyla öne çıkan Nike Court Borough Low Recraft, rahatlığı ve ikonik Nike görünümünü bir araya getiriyor. Düşük bilekli yapısı sayesinde kolay kombinlenirken, temiz silüetiyle günlük streetwear tarzına uyum sağlar.\r\n\r\nÖne Çıkanlar\r\n\r\nNike Court Borough Low Recraft tasarımı\r\nKlasik düşük bilekli sneaker silüeti\r\nGünlük kullanıma uygun\r\nKolay kombinlenebilen sade görünüm\r\nJean, eşofman ve günlük kombinlerle uyumlu\r\n\r\nKategori: Sneaker\r\nModel: Court Borough Low Recraft\r\nTarz: Günlük / Streetwear",
+      "category": "ayakkabi",
+      "price": 999,
+      "compareAtPrice": 1200,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-013-9eb209dd.jpg",
+          "alt": "Nike Court Borough Low Recraft"
+        },
+        {
+          "src": "/products/p-013-6ddb52e9.jpg",
+          "alt": "Nike Court Borough Low Recraft"
+        },
+        {
+          "src": "/products/p-013-9afc0b0e.jpg",
+          "alt": "Nike Court Borough Low Recraft"
+        },
+        {
+          "src": "/products/p-013-51653d9f.jpg",
+          "alt": "Nike Court Borough Low Recraft"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Beyaz",
+          "hex": "#ff0505"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-013-beyaz-36",
+          "size": "36",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-013-beyaz-37",
+          "size": "37",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-013-beyaz-38",
+          "size": "38",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-013-beyaz-39",
+          "size": "39",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-013-beyaz-40",
+          "size": "40",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-013-beyaz-41",
+          "size": "41",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-013-beyaz-42",
+          "size": "42",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-013-beyaz-43",
+          "size": "43",
+          "color": "Beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-014",
+      "slug": "nike-dunk-low-iron-shadow",
+      "name": "Nike Dunk Low Iron Shadow",
+      "description": "Klasik Dunk Low silüetini koyu ve modern bir renk paletiyle buluşturan Nike Dunk Low Iron Shadow, sade ama dikkat çekici görünümüyle streetwear kombinlerinin tamamlayıcı parçası. Düşük bilekli yapısı ve kontrast detayları sayesinde günlük kullanımdan şehir stiline kadar kolayca kombinlenebilir.\r\n\r\nÖne Çıkanlar\r\n\r\nDunk Low klasik silüeti\r\nIron Shadow renk konsepti\r\nDüşük bilekli sneaker yapısı\r\nGünlük kullanıma uygun\r\nJean, kargo ve eşofmanlarla kolay kombinlenir",
+      "category": "ayakkabi",
+      "price": 999,
+      "compareAtPrice": 1200,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-014-9d64b153.jpg",
+          "alt": "Nike Dunk Low Iron Shadow"
+        },
+        {
+          "src": "/products/p-014-2f9d079a.jpg",
+          "alt": "Nike Dunk Low Iron Shadow"
+        },
+        {
+          "src": "/products/p-014-7ef3c84b.jpg",
+          "alt": "Nike Dunk Low Iron Shadow"
+        },
+        {
+          "src": "/products/p-014-65a423fd.jpg",
+          "alt": "Nike Dunk Low Iron Shadow"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Gri",
+          "hex": "#545454"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-014-gri-36",
+          "size": "36",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-014-gri-37",
+          "size": "37",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-014-gri-38",
+          "size": "38",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-014-gri-39",
+          "size": "39",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-014-gri-40",
+          "size": "40",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-014-gri-41",
+          "size": "41",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-014-gri-42",
+          "size": "42",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-014-gri-43",
+          "size": "43",
+          "color": "Gri",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    }
+  ],
   "degisen": {
     "p-001": {
       "id": "p-001",
@@ -12,12 +363,12 @@
       "currency": "TRY",
       "images": [
         {
-          "src": "/products/p-001-a.png",
-          "alt": "Oversize tişört, önden görünüm"
+          "src": "/products/p-001-77487dd7.jpg",
+          "alt": "Oversize Tişört"
         },
         {
-          "src": "/products/p-001-b.png",
-          "alt": "Oversize tişört, arkadan görünüm"
+          "src": "/products/p-001-ad3236f2.jpg",
+          "alt": "Oversize Tişört"
         }
       ],
       "colors": [
@@ -56,6 +407,356 @@
         "asset": "/character/tops/tshirt-black.png",
         "status": "approved"
       }
+    },
+    "p-009": {
+      "id": "p-009",
+      "slug": "bisiklet-yaka-sweatshirt",
+      "name": "Bisiklet Yaka Sweatshirt",
+      "description": "Klasik crewneck kalıp, ribana yaka ve manşet.",
+      "category": "sweatshirt",
+      "price": 1349,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-009-9c525b5b.jpg",
+          "alt": "Bisiklet Yaka Sweatshirt"
+        },
+        {
+          "src": "/products/p-009-f68e49d4.jpg",
+          "alt": "Bisiklet Yaka Sweatshirt"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Kemik",
+          "hex": "#e6e1d6"
+        },
+        {
+          "name": "Haki",
+          "hex": "#6e7358"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-009-s",
+          "size": "S",
+          "color": "Kemik",
+          "stock": 9
+        },
+        {
+          "id": "p-009-xxl",
+          "size": "XXL",
+          "color": "Kemik",
+          "stock": 2
+        },
+        {
+          "id": "p-009-l",
+          "size": "L",
+          "color": "Haki",
+          "stock": 6
+        }
+      ],
+      "isNew": false
+    },
+    "p-008": {
+      "id": "p-008",
+      "slug": "fermuarli-sweatshirt",
+      "name": "Fermuarlı Sweatshirt",
+      "description": "Tam boy fermuar, yan cepli, şardonlu iç yüzey.",
+      "category": "sweatshirt",
+      "price": 1699,
+      "compareAtPrice": 1999,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-008-aee1c63c.jpg",
+          "alt": "Fermuarlı Sweatshirt"
+        },
+        {
+          "src": "/products/p-008-fdf25d81.jpg",
+          "alt": "Fermuarlı Sweatshirt"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Antrasit",
+          "hex": "#3a3b3c"
+        },
+        {
+          "name": "Bej",
+          "hex": "#c9b79c"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-008-m",
+          "size": "M",
+          "color": "Antrasit",
+          "stock": 7
+        },
+        {
+          "id": "p-008-l",
+          "size": "L",
+          "color": "Bej",
+          "stock": 3
+        }
+      ],
+      "isNew": false
+    },
+    "p-010": {
+      "id": "p-010",
+      "slug": "jogger-pantolon",
+      "name": "Jogger Pantolon",
+      "description": "Lastikli bel ve paça, yumuşak üç iplik kumaş.",
+      "category": "esofman",
+      "price": 1249,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-010-d72592a2.png",
+          "alt": "Jogger Pantolon"
+        },
+        {
+          "src": "/products/p-010-cf2b6ff8.png",
+          "alt": "Jogger Pantolon"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        },
+        {
+          "name": "Gri",
+          "hex": "#9b9b96"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-010-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 8
+        },
+        {
+          "id": "p-010-l",
+          "size": "L",
+          "color": "Gri",
+          "stock": 0
+        }
+      ],
+      "isNew": false
+    },
+    "p-007": {
+      "id": "p-007",
+      "slug": "basic-tisort",
+      "name": "Basic Tişört",
+      "description": "Düz kalıp, orta gramaj, günlük kullanım için.",
+      "category": "tisort",
+      "price": 549,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-007-6bd28dd3.jpg",
+          "alt": "Basic Tişört"
+        },
+        {
+          "src": "/products/p-007-70beded4.jpg",
+          "alt": "Basic Tişört"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Beyaz",
+          "hex": "#f2efe9"
+        },
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        },
+        {
+          "name": "Gri",
+          "hex": "#9b9b96"
+        },
+        {
+          "name": "Lacivert",
+          "hex": "#26303f"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-007-s",
+          "size": "S",
+          "color": "Beyaz",
+          "stock": 14
+        },
+        {
+          "id": "p-007-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 11
+        },
+        {
+          "id": "p-007-xl",
+          "size": "XL",
+          "color": "Gri",
+          "stock": 5
+        }
+      ],
+      "isNew": false,
+      "tryOn": {
+        "layer": "top",
+        "asset": "/character/tops/tshirt-white.png",
+        "status": "approved"
+      }
+    },
+    "p-002": {
+      "id": "p-002",
+      "slug": "kapusonlu-sweatshirt",
+      "name": "Kapüşonlu Sweatshirt",
+      "description": "Üç iplik şardonlu kumaş, geniş kapüşon ve ribana detay.",
+      "category": "sweatshirt",
+      "price": 1499,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-002-69c043ce.jpg",
+          "alt": "Kapüşonlu Sweatshirt"
+        },
+        {
+          "src": "/products/p-002-4a91b9ad.jpg",
+          "alt": "Kapüşonlu Sweatshirt"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Gri",
+          "hex": "#9b9b96"
+        },
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        },
+        {
+          "name": "Lacivert",
+          "hex": "#26303f"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-002-m",
+          "size": "M",
+          "color": "Gri",
+          "stock": 5
+        },
+        {
+          "id": "p-002-l",
+          "size": "L",
+          "color": "Gri",
+          "stock": 9
+        },
+        {
+          "id": "p-002-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 3
+        }
+      ],
+      "isNew": true
+    },
+    "p-003": {
+      "id": "p-003",
+      "slug": "kargo-pantolon",
+      "name": "Kargo Pantolon",
+      "description": "Rahat kalıp, yan cepli kargo pantolon, ayarlanabilir paça.",
+      "category": "esofman",
+      "price": 1799,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-003-7a9acd99.png",
+          "alt": "Kargo Pantolon"
+        },
+        {
+          "src": "/products/p-003-7008e797.png",
+          "alt": "Kargo Pantolon"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Haki",
+          "hex": "#6e7358"
+        },
+        {
+          "name": "Bej",
+          "hex": "#c9b79c"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-003-m",
+          "size": "M",
+          "color": "Haki",
+          "stock": 7
+        },
+        {
+          "id": "p-003-l",
+          "size": "L",
+          "color": "Haki",
+          "stock": 2
+        },
+        {
+          "id": "p-003-s",
+          "size": "S",
+          "color": "Bej",
+          "stock": 6
+        }
+      ],
+      "isNew": true
+    },
+    "p-004": {
+      "id": "p-004",
+      "slug": "yikanmis-jean",
+      "name": "Yıkanmış Jean",
+      "description": "Orta yükseklikte bel, düz paça, taş yıkama denim.",
+      "category": "esofman",
+      "price": 1949,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-004-542dba5a.png",
+          "alt": "Yıkanmış Jean"
+        },
+        {
+          "src": "/products/p-004-7008e797.png",
+          "alt": "Yıkanmış Jean"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Açık Mavi",
+          "hex": "#8fa3b8"
+        },
+        {
+          "name": "İndigo",
+          "hex": "#2e3b4e"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-004-l",
+          "size": "L",
+          "color": "Açık Mavi",
+          "stock": 6
+        },
+        {
+          "id": "p-004-m",
+          "size": "M",
+          "color": "İndigo",
+          "stock": 4
+        }
+      ],
+      "isNew": true
     }
   }
 }
