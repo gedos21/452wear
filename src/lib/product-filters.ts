@@ -50,18 +50,16 @@ export function filterProducts(
       return false;
     }
 
+    // Beden ve renk AYNI varyantta, stokta aranır: "M + Beyaz" seçilince
+    // yalnızca beyazın M'si stokta olan ürün çıkar.
     if (
-      filters.sizes.length > 0 &&
+      (filters.sizes.length > 0 || filters.colors.length > 0) &&
       !product.variants.some(
-        (v) => v.stock > 0 && filters.sizes.includes(v.size),
+        (v) =>
+          v.stock > 0 &&
+          (filters.sizes.length === 0 || filters.sizes.includes(v.size)) &&
+          (filters.colors.length === 0 || filters.colors.includes(v.color)),
       )
-    ) {
-      return false;
-    }
-
-    if (
-      filters.colors.length > 0 &&
-      !product.colors.some((c) => filters.colors.includes(c.name))
     ) {
       return false;
     }

@@ -577,10 +577,6 @@
         {
           "name": "Gri",
           "hex": "#9b9b96"
-        },
-        {
-          "name": "Lacivert",
-          "hex": "#26303f"
         }
       ],
       "variants": [
@@ -636,10 +632,6 @@
         {
           "name": "Siyah",
           "hex": "#1a1a1a"
-        },
-        {
-          "name": "Lacivert",
-          "hex": "#26303f"
         }
       ],
       "variants": [
