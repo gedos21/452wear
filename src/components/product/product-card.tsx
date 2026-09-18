@@ -34,6 +34,8 @@ export function ProductCard({
   const [cover, second] = product.images;
   // Panel bu ürün için açıkken kartın örtüleri geçişe karışmasın.
   const detailOpen = quickView?.openId === product.id;
+  // Yalnızca BÜTÜN varyantlar tükenmişse; stoktaki ürünlerde kart aynen kalır.
+  const soldOut = !product.variants.some((v) => v.stock > 0);
   const dots = product.colors.slice(0, MAX_DOTS);
   const rest = product.colors.length - dots.length;
 
@@ -81,6 +83,12 @@ export function ProductCard({
               className="object-cover"
             />
           </motion.div>
+        )}
+
+        {soldOut && (
+          <span className="pointer-events-none absolute left-2.5 top-2.5 z-10 rounded-full bg-background/90 px-2.5 py-1 micro backdrop-blur-sm">
+            Tükendi
+          </span>
         )}
 
         {!detailOpen && (

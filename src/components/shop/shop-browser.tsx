@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { categoryHref } from "@/components/layout/nav-links";
 import { CategoryNav } from "./category-nav";
 import { ShopControls } from "./shop-controls";
-import { EmptyState, ProductGrid } from "./product-grid";
+import { EmptyCategory, EmptyState, ProductGrid } from "./product-grid";
 import {
   activeFilterCount,
   deriveFacets,
@@ -77,6 +77,10 @@ export function ShopBrowser({
 
   const activeCount = activeFilterCount(activeFilters);
 
+  // Kategoride hiç ürün yoksa filtre arayüzü ve "filtreleri temizle" anlamsız.
+  const kategoriBos =
+    category !== "all" && !products.some((p) => p.category === category);
+
   /**
    * Sayfalama, seçim değiştiğinde başa döner. Efektle sıfırlamak yerine
    * anahtardan türetiliyor: kategori URL'den geldiği için geri/ileri
@@ -105,40 +109,48 @@ export function ShopBrowser({
         <CategoryNav value={category} onChange={setCategory} />
       </div>
 
-      <div className="mt-6">
-        <ShopControls
-          count={results.length}
-          sort={sort}
-          onSortChange={setSort}
-          filters={activeFilters}
-          onFiltersChange={setFilters}
-          facets={facets}
-          activeCount={activeCount}
-          onClear={clear}
-        />
-      </div>
-
-      {results.length === 0 ? (
-        <EmptyState onClear={clear} />
+      {kategoriBos ? (
+        <EmptyCategory onShowAll={() => router.push(categoryHref("all"))} />
       ) : (
         <>
-          <div className="mt-10 lg:mt-14">
-            {/* key: seçim değişince ızgara yeniden mount olur.
-                Stagger'ın giriş animasyonu `once: true` ile çalıştığından,
-                remount olmadan yeni kartlar gizli durumda kalıyordu. */}
-            <ProductGrid key={resetKey} products={shown} />
+          <div className="mt-6">
+            <ShopControls
+              count={results.length}
+              sort={sort}
+              onSortChange={setSort}
+              filters={activeFilters}
+              onFiltersChange={setFilters}
+              facets={facets}
+              activeCount={activeCount}
+              onClear={clear}
+            />
           </div>
 
-          {hasMore && (
-            <div className="mt-16 flex justify-center">
-              <button
-                type="button"
-                onClick={() => setPage({ key: resetKey, visible: visible + PAGE_SIZE })}
-                className="inline-flex h-12 items-center rounded-full border border-foreground/20 px-7 micro transition-colors hover:border-foreground/60"
-              >
-                Daha Fazla Göster
-              </button>
-            </div>
+          {results.length === 0 ? (
+            <EmptyState onClear={clear} />
+          ) : (
+            <>
+              <div className="mt-10 lg:mt-14">
+                {/* key: seçim değişince ızgara yeniden mount olur.
+                Stagger'ın giriş animasyonu `once: true` ile çalıştığından,
+                remount olmadan yeni kartlar gizli durumda kalıyordu. */}
+                <ProductGrid key={resetKey} products={shown} />
+              </div>
+
+              {hasMore && (
+                <div className="mt-16 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setPage({ key: resetKey, visible: visible + PAGE_SIZE })
+                    }
+                    className="inline-flex h-12 items-center rounded-full border border-foreground/20 px-7 micro transition-colors hover:border-foreground/60"
+                  >
+                    Daha Fazla Göster
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </>
       )}

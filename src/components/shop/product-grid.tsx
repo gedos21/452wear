@@ -31,6 +31,30 @@ export function ProductGrid({ products }: { products: Product[] }) {
   );
 }
 
+/**
+ * Kategoride hiç ürün yokken gösterilir (filtre sonucu değil). Kategori
+ * menüde kalır; kullanıcı boş bir ızgara yerine ne olduğunu görür.
+ */
+export function EmptyCategory({ onShowAll }: { onShowAll: () => void }) {
+  return (
+    <div className="py-20 text-center sm:py-28">
+      <h3 className="font-display text-2xl font-extrabold tracking-[-0.02em] sm:text-3xl">
+        ÇOK YAKINDA<span className="text-brand">.</span>
+      </h3>
+      <p className="mx-auto mt-4 max-w-xs text-sm text-muted-foreground">
+        Bu kategoride henüz ürün bulunmuyor.
+      </p>
+      <button
+        type="button"
+        onClick={onShowAll}
+        className="mt-8 inline-flex h-11 items-center rounded-full border border-foreground/20 px-6 micro transition-colors hover:border-foreground/60"
+      >
+        Tüm Ürünleri Gör
+      </button>
+    </div>
+  );
+}
+
 export function EmptyState({ onClear }: { onClear: () => void }) {
   return (
     <div className="py-20 text-center sm:py-28">

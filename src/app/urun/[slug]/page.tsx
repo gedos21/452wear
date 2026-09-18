@@ -53,7 +53,17 @@ export default async function UrunSayfasi({
 }: PageProps<"/urun/[slug]">) {
   const { slug } = await params;
   const { urun, yonlendir } = await slugIleUrun(slug);
-  if (!urun) notFound();
+  if (!urun) {
+    // Büyük harfle yazılmış adres (ör. /urun/OVERSIZE-TISORT) küçük harfli
+    // asıl adrese gider. Asıl slug'lar hep küçük harf olduğu için döngü
+    // oluşmaz; küçük harfte de ürün yoksa 404.
+    const kucuk = slug.toLocaleLowerCase("en-US");
+    if (kucuk !== slug) {
+      const { urun: bulunan } = await slugIleUrun(kucuk);
+      if (bulunan) permanentRedirect(`/urun/${bulunan.slug}`);
+    }
+    notFound();
+  }
   if (yonlendir) permanentRedirect(`/urun/${urun.slug}`);
 
   const kategori = CATEGORIES.find((c) => c.slug === urun.category);
@@ -67,7 +77,10 @@ export default async function UrunSayfasi({
             aria-label="Konum"
             className="flex flex-wrap items-center gap-2 micro text-foreground/45"
           >
-            <Link href="/magaza" className="transition-colors hover:text-foreground">
+            <Link
+              href="/magaza"
+              className="transition-colors hover:text-foreground"
+            >
               Mağaza
             </Link>
             {kategori && (

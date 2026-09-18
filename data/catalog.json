@@ -93,7 +93,7 @@
     },
     {
       "id": "p-012",
-      "slug": "air-force-1",
+      "slug": "nike-air-jordan-1-low-year-of-the-dragon",
       "name": "Nike Air Jordan 1 Low Year of the Dragon",
       "description": "Açıklama:\r\nJordan 1 Low’un ikonik silüeti, Çin kültüründen ilham alan Year of the Dragon detaylarıyla buluşuyor. Dengeli renk kombinasyonu, özel grafik/dokusal detayları ve klasik düşük bilek tasarımıyla günlük streetwear kombinlerine güçlü bir görünüm katar.\r\n\r\nÖne Çıkanlar\r\n\r\nAir Jordan 1 Low silüeti\r\nYear of the Dragon özel tasarım detayları\r\nDüşük bilekli klasik yapı\r\nGünlük kullanıma uygun\r\nJean, eşofman ve oversize parçalarla kolay kombinlenir",
       "category": "ayakkabi",
@@ -750,5 +750,8 @@
       ],
       "isNew": true
     }
+  },
+  "yonlendirmeler": {
+    "air-force-1": "p-012"
   }
 }
