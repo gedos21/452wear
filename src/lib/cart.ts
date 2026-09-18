@@ -109,6 +109,10 @@ function setItems(next: readonly CartItem[]) {
 export function useCart() {
   const items = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
+  /**
+   * Sepete ekler ve GERÇEKTEN eklenen adedi döndürür. `max` (varyantın stoğu)
+   * verilirse satırın toplam adedi bunu aşamaz; sınıra dayanmışsa 0 döner.
+   */
   const add = useCallback(
     (input: {
       productId: string;
@@ -117,11 +121,15 @@ export function useCart() {
       price: number;
       currency: Currency;
       qty?: number;
-    }) => {
+      max?: number;
+    }): number => {
       const id = lineId(input.productId, input.size, input.color);
-      const qty = input.qty ?? 1;
       const current = getSnapshot();
       const existing = current.find((i) => i.id === id);
+      const onceki = existing?.qty ?? 0;
+      const qty =
+        Math.min(onceki + (input.qty ?? 1), input.max ?? Infinity) - onceki;
+      if (qty <= 0) return 0;
 
       setItems(
         existing
@@ -139,6 +147,7 @@ export function useCart() {
               },
             ],
       );
+      return qty;
     },
     [],
   );

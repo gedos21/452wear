@@ -37,6 +37,17 @@ export type Sonuc =
   | { durum: "ok"; mesaj: string; urunId?: string }
   | { durum: "hata"; mesaj: string };
 
+/**
+ * Admin paneli yalnızca yerel geliştirmede açıktır (bkz. admin/layout). Sayfa
+ * production'da 404 verse de bu eylemler build'e girer ve kimliği bilinirse
+ * doğrudan çağrılabilir; bu yüzden her eylem kendi başına da kapanır.
+ */
+const KAPALI = process.env.NODE_ENV === "production";
+const KAPALI_SONUC: Sonuc = {
+  durum: "hata",
+  mesaj: "Admin yalnızca geliştirme ortamında çalışır.",
+};
+
 const KATEGORILER: ProductCategory[] = [
   "ayakkabi",
   "esofman",
@@ -270,6 +281,7 @@ async function kullanilmayanGorselleriSil(yollar: string[], urunId: string) {
 }
 
 export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
+  if (KAPALI) return KAPALI_SONUC;
   try {
     const a = urunuAyikla(fd);
     if (!a.ok) return { durum: "hata", mesaj: a.hata };
@@ -400,6 +412,7 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
 
 /** Ürünü çöp kutusuna taşır. Verisi ve görselleri durur; geri getirilebilir. */
 export async function urunSil(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
+  if (KAPALI) return KAPALI_SONUC;
   try {
     const urun = await copeTasi(String(fd.get("urunId") ?? ""));
     if (!urun) return { durum: "hata", mesaj: "Ürün bulunamadı." };
@@ -417,6 +430,7 @@ export async function urunGeriGetir(
   _onceki: Sonuc,
   fd: FormData,
 ): Promise<Sonuc> {
+  if (KAPALI) return KAPALI_SONUC;
   try {
     const urun = await copKutusundanGeriGetir(String(fd.get("urunId") ?? ""));
     if (!urun) return { durum: "hata", mesaj: "Ürün çöp kutusunda değil." };
@@ -439,6 +453,7 @@ export async function urunKaliciSil(
   _onceki: Sonuc,
   fd: FormData,
 ): Promise<Sonuc> {
+  if (KAPALI) return KAPALI_SONUC;
   try {
     const urun = await kaliciSil(String(fd.get("urunId") ?? ""));
     if (!urun) return { durum: "hata", mesaj: "Ürün çöp kutusunda değil." };
@@ -458,6 +473,7 @@ export async function pixelAssetYukle(
   _onceki: Sonuc,
   fd: FormData,
 ): Promise<Sonuc> {
+  if (KAPALI) return KAPALI_SONUC;
   try {
     const urun = await urunBul(String(fd.get("urunId") ?? ""));
     if (!urun) return { durum: "hata", mesaj: "Önce ürünü kaydet." };
@@ -496,6 +512,7 @@ export async function pixelAssetOnayla(
   _onceki: Sonuc,
   fd: FormData,
 ): Promise<Sonuc> {
+  if (KAPALI) return KAPALI_SONUC;
   try {
     const urun = await urunBul(String(fd.get("urunId") ?? ""));
     if (!urun?.tryOn) return { durum: "hata", mesaj: "Onaylanacak asset yok." };
@@ -511,6 +528,7 @@ export async function pixelAssetKaldir(
   _onceki: Sonuc,
   fd: FormData,
 ): Promise<Sonuc> {
+  if (KAPALI) return KAPALI_SONUC;
   try {
     const urun = await urunBul(String(fd.get("urunId") ?? ""));
     if (!urun?.tryOn)

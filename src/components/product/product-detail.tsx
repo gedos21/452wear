@@ -91,13 +91,23 @@ export function ProductDetail({
       return;
     }
     setError(null);
-    add({
+    const stok =
+      product.variants.find((v) => v.size === size && v.color === color)
+        ?.stock ?? 0;
+    const eklenen = add({
       productId: product.id,
       size,
       color,
       price: product.price,
       currency: product.currency,
+      max: stok,
     });
+    if (eklenen === 0) {
+      setError(
+        `Sepetinde bu ${shoe ? "numaradan" : "bedenden"} zaten ${stok} adet var; stokta daha fazlası yok.`,
+      );
+      return;
+    }
     setAdded(true);
   }
 

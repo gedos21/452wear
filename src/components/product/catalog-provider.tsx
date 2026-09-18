@@ -78,8 +78,10 @@ export type ResolvedCartLine = { item: CartItem; product: Product };
  * Tutar katalogdaki GÜNCEL fiyattan hesaplanır; ürün panelinde görülen fiyat
  * ile sepetteki fiyat hep aynıdır.
  *
- * Katalogda olmayan ürünün ya da ürünün artık sunmadığı renk/beden
- * kombinasyonunun satırı `lines`'a girmez; adede ve tutara da eklenmez.
+ * Katalogda olmayan ürünün, ürünün artık sunmadığı ya da stoğu tükenmiş
+ * renk/beden kombinasyonunun satırı `lines`'a girmez; adede ve tutara da
+ * eklenmez. Adedi sonradan düşen stoktan fazla olan satır stoğa indirilerek
+ * sayılır: sepet hiçbir zaman stoktan fazlasını satın alınabilir göstermez.
  * Bunlar `unavailable` olarak ayrıca döner ki kullanıcı görüp sepetten
  * çıkarabilsin. Otomatik SİLİNMEZ: açık kalmış bir sekmenin eski kataloğu,
  * sonradan eklenmiş geçerli bir ürünü yanlışlıkla düşürmesin.
@@ -93,10 +95,14 @@ export function useCartLines() {
     const unavailable: CartItem[] = [];
     for (const item of items) {
       const product = byId.get(item.productId);
-      const hasVariant = product?.variants.some(
+      const stok = product?.variants.find(
         (v) => v.size === item.size && v.color === item.color,
-      );
-      if (product && hasVariant) lines.push({ item, product });
+      )?.stock;
+      if (product && stok !== undefined && stok > 0)
+        lines.push({
+          item: item.qty > stok ? { ...item, qty: stok } : item,
+          product,
+        });
       else unavailable.push(item);
     }
     const currency: Currency = lines[0]?.product.currency ?? "TRY";

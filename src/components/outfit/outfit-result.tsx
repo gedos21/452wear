@@ -75,12 +75,17 @@ export function OutfitResult({
     for (const { product } of pieces) {
       const size = sizes[product.id];
       if (!size) return;
+      const color = defaultColor(product);
       add({
         productId: product.id,
         size,
-        color: defaultColor(product),
+        color,
         price: product.price,
         currency: product.currency,
+        // Satır, varyantın stoğunu aşamaz.
+        max:
+          product.variants.find((v) => v.size === size && v.color === color)
+            ?.stock ?? 0,
       });
     }
     setAdded(true);

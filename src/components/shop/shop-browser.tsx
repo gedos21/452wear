@@ -55,10 +55,19 @@ export function ShopBrowser({
     [products, category],
   );
 
-  // URL'deki kategori, yerel filtrelerin üzerine yazar.
+  // URL'deki kategori, yerel filtrelerin üzerine yazar. Kategori değişince
+  // yeni kategoride karşılığı olmayan seçimler (ör. ayakkabıdan tişörte
+  // geçerken "42") düşer; yoksa görünmeyen bir filtre sonucu boşaltırdı.
   const activeFilters = useMemo<ProductFilters>(
-    () => ({ ...filters, category }),
-    [filters, category],
+    () => ({
+      ...filters,
+      sizes: filters.sizes.filter((s) => facets.sizes.includes(s)),
+      colors: filters.colors.filter((c) =>
+        facets.colors.some((f) => f.name === c),
+      ),
+      category,
+    }),
+    [filters, facets, category],
   );
 
   const results = useMemo(
@@ -73,7 +82,7 @@ export function ShopBrowser({
    * anahtardan türetiliyor: kategori URL'den geldiği için geri/ileri
    * tuşlarında da doğru sıfırlanır.
    */
-  const resetKey = `${category}|${sort}|${filters.sizes.join()}|${filters.colors.join()}`;
+  const resetKey = `${category}|${sort}|${activeFilters.sizes.join()}|${activeFilters.colors.join()}`;
   const [page, setPage] = useState({ key: resetKey, visible: PAGE_SIZE });
   const visible = page.key === resetKey ? page.visible : PAGE_SIZE;
 

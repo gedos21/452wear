@@ -105,8 +105,9 @@ export function CartLine({
 }
 
 /**
- * Katalogdan kalkmış ya da artık sunulmayan renk/bedendeki satırlar için tek
- * satırlık uyarı. Bu satırlar adede ve tutara girmez; buradan sepetten çıkarılır.
+ * Katalogdan kalkmış, artık sunulmayan ya da tükenmiş renk/bedendeki satırlar
+ * için tek satırlık uyarı. Bu satırlar adede ve tutara girmez; buradan
+ * sepetten çıkarılır.
  */
 export function UnavailableNotice({
   count,
@@ -124,7 +125,7 @@ export function UnavailableNotice({
         className,
       )}
     >
-      <span>{count} ürün artık satışta değil.</span>
+      <span>{count} ürün tükendi ya da artık satışta değil.</span>
       <button
         type="button"
         onClick={onRemove}
