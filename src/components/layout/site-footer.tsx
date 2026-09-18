@@ -19,6 +19,12 @@ export function SiteFooter() {
           >
             Mağaza
           </Link>
+          <Link
+            href="/iletisim"
+            className="micro text-foreground/70 transition-colors hover:text-foreground"
+          >
+            İletişim
+          </Link>
         </nav>
 
         {/* Yasal bağlantılar tek kayıttan üretilir (lib/legal). */}

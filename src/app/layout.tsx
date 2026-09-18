@@ -6,6 +6,7 @@ import { QuickViewProvider } from "@/components/product/quick-view";
 import { CookieBanner } from "@/components/cookie/cookie-banner";
 import { CatalogProvider } from "@/components/product/catalog-provider";
 import { katalogOku } from "@/lib/catalog-store";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 // latin-ext, Türkçe karakterler (ı, İ, ğ, ş, ç, ö, ü) için gerekli.
@@ -23,11 +24,19 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
+  // Paylaşım görselleri ve bağlantılar bu adrese göre tam URL'ye çevrilir.
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "452WEAR",
     template: "%s | 452WEAR",
   },
   description: "Ne giyeceğine birlikte karar verelim.",
+  openGraph: {
+    siteName: "452WEAR",
+    locale: "tr_TR",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {

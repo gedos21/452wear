@@ -21,7 +21,31 @@ export async function generateMetadata({
   const { slug } = await params;
   const { urun } = await slugIleUrun(slug);
   if (!urun) return {};
-  return { title: urun.name, description: urun.description };
+  // Paylaşımda ürünün kapak görseli çıkar. openGraph alt sayfada bütünüyle
+  // yeniden tanımlandığı için site adı ve dil burada da verilir.
+  const kapak = urun.images[0];
+  return {
+    title: urun.name,
+    description: urun.description,
+    alternates: { canonical: `/urun/${urun.slug}` },
+    openGraph: {
+      siteName: "452WEAR",
+      locale: "tr_TR",
+      type: "website",
+      title: urun.name,
+      description: urun.description,
+      url: `/urun/${urun.slug}`,
+      ...(kapak ? { images: [{ url: kapak.src, alt: kapak.alt }] } : {}),
+    },
+    ...(kapak
+      ? {
+          twitter: {
+            card: "summary_large_image",
+            images: [{ url: kapak.src, alt: kapak.alt }],
+          },
+        }
+      : {}),
+  };
 }
 
 export default async function UrunSayfasi({

@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Ana klasörde (C:\Users\user) başıboş bir package-lock.json var; Next kök
+  // dizini yanlış tahmin etmesin diye proje kökü açıkça verilir.
+  turbopack: { root: process.cwd() },
   experimental: {
     serverActions: {
       // Admin ürün formu görselleri tek istekte gönderir; varsayılan 1 MB
