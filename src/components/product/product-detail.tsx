@@ -19,8 +19,17 @@ import {
   sizeAvailability,
 } from "@/lib/product-variants";
 import { cn } from "@/lib/utils";
+import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
 import { CATEGORIES } from "@/data/products";
 import type { Product, ProductSize } from "@/types/product";
+
+/**
+ * Giyim ürünlerinde "Ürün Detayları"nın altındaki manken bilgisi. Şimdilik
+ * tüm ürünlerde aynı. Ürün bazlı olacağı zaman: Product'a opsiyonel bir alan
+ * (ör. `modelInfo?: string`) eklenip burada `product.modelInfo ?? MODEL_BILGISI`
+ * kullanılır; admin kaydında (urunKaydet) bu alanın korunması unutulmamalı.
+ */
+const MODEL_BILGISI = "Model 1.85 m boyunda ve M beden giymektedir.";
 
 /** Sakin, "pop" yapmayan geçiş. */
 export const PANEL_SPRING = { type: "spring", stiffness: 240, damping: 30 } as const;
@@ -54,8 +63,8 @@ export function ProductDetail({
 
   const images = useMemo(() => imagesForColor(product, color), [product, color]);
   const sizes = useMemo(() => sizeAvailability(product, color), [product, color]);
-  const categoryLabel =
-    CATEGORIES.find((c) => c.slug === product.category)?.label ?? "";
+  const kategori = CATEGORIES.find((c) => c.slug === product.category);
+  const categoryLabel = kategori?.label ?? "";
   const favorite = isFavorite(product.id);
   const cover = images[Math.min(imageIndex, images.length - 1)];
   const shoe = product.category === "ayakkabi";
@@ -220,7 +229,9 @@ export function ProductDetail({
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...PANEL_SPRING, delay: 0.08 }}
         >
-          <p className="micro text-foreground/45">{categoryLabel}</p>
+          <p lang={kategori?.lang} className="micro text-foreground/45">
+            {categoryLabel}
+          </p>
 
           <Heading
             className={
@@ -394,9 +405,7 @@ export function ProductDetail({
                     <>
                       <p>{product.description}</p>
                       {!shoe && (
-                        <p className="mt-2">
-                          Model 1.85 m boyunda ve M beden giymektedir.
-                        </p>
+                        <p className="mt-2">{MODEL_BILGISI}</p>
                       )}
                     </>
                   ),
@@ -407,8 +416,9 @@ export function ProductDetail({
                     <>
                       <p>1–3 iş günü içinde kargoya verilir.</p>
                       <p className="mt-2">
-                        1.500 ₺ üzeri siparişlerde kargo ücretsiz. 14 gün
-                        içinde koşulsuz iade.
+                        {FREE_SHIPPING_THRESHOLD.toLocaleString("tr-TR")} ₺
+                        üzeri siparişlerde kargo ücretsiz. 14 gün içinde
+                        koşulsuz iade.
                       </p>
                     </>
                   ),

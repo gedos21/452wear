@@ -123,6 +123,7 @@ export function SearchOverlay({
                       key={category.slug}
                       type="button"
                       onClick={() => onQueryChange(category.label)}
+                      lang={category.lang}
                       className="h-9 rounded-full bg-muted px-4 micro text-foreground/70 transition-colors hover:text-foreground"
                     >
                       {category.label}

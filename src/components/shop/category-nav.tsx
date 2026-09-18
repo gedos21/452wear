@@ -4,9 +4,13 @@ import { motion } from "motion/react";
 import { CATEGORIES } from "@/data/products";
 import type { CategoryFilter } from "@/lib/product-filters";
 
-const TABS: { key: CategoryFilter; label: string }[] = [
+const TABS: { key: CategoryFilter; label: string; lang?: string }[] = [
   { key: "all", label: "Tümü" },
-  ...CATEGORIES.map((c) => ({ key: c.slug as CategoryFilter, label: c.label })),
+  ...CATEGORIES.map((c) => ({
+    key: c.slug as CategoryFilter,
+    label: c.label,
+    lang: c.lang,
+  })),
 ];
 
 /**
@@ -29,6 +33,7 @@ export function CategoryNav({
             key={tab.key}
             type="button"
             onClick={() => onChange(tab.key)}
+            lang={tab.lang}
             aria-current={active ? "true" : undefined}
             className={`relative shrink-0 py-2 micro transition-colors ${
               active ? "text-foreground" : "text-foreground/50 hover:text-foreground/80"

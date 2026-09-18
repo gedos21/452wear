@@ -88,6 +88,7 @@ export default async function UrunSayfasi({
                 <span aria-hidden>/</span>
                 <Link
                   href={categoryHref(kategori.slug)}
+                  lang={kategori.lang}
                   className="transition-colors hover:text-foreground"
                 >
                   {kategori.label}

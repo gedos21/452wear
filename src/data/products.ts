@@ -1,11 +1,20 @@
 import type { Product, ProductCategory } from "@/types/product";
 
-export const CATEGORIES: { slug: ProductCategory; label: string }[] = [
+/**
+ * `lang`: etiket büyük harfle (micro) gösterilirken hangi dilin kuralı
+ * uygulansın. Sayfa Türkçe olduğu için "Sweatshirt" → "SWEATSHİRT" oluyordu;
+ * İngilizce kelimeler "en" ile "SWEATSHIRT" kalır. Türkçe etiketlerde boş.
+ */
+export const CATEGORIES: {
+  slug: ProductCategory;
+  label: string;
+  lang?: "en";
+}[] = [
   { slug: "ayakkabi", label: "Ayakkabı" },
   { slug: "esofman", label: "Eşofman" },
   { slug: "hirka", label: "Hırka" },
   { slug: "tisort", label: "Tişört" },
-  { slug: "sweatshirt", label: "Sweatshirt" },
+  { slug: "sweatshirt", label: "Sweatshirt", lang: "en" },
 ];
 
 /**
