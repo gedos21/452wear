@@ -1,7 +1,7 @@
 import { LegalPageLayout, legalMetadata } from "@/components/legal/legal-page";
 import { List, P, Section, Slot } from "@/components/legal/prose";
 import { COMPANY, LEGAL_PAGES } from "@/lib/legal";
-import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
+import { FREE_SHIPPING_THRESHOLD, SHIPPING_FEE } from "@/lib/shipping";
 
 const page = LEGAL_PAGES.find((p) => p.slug === "/teslimat-ve-kargo")!;
 export const metadata = legalMetadata(page);
@@ -52,7 +52,10 @@ export default function ShippingPage() {
               </strong>{" "}
               siparişlerde kargo ücretsizdir.
             </>,
-            <>Bu tutarın altındaki siparişlerde kargo ücreti: <Slot>[KARGO ÜCRETİ]</Slot></>,
+            <>
+              Bu tutarın altındaki siparişlerde kargo ücreti:{" "}
+              {SHIPPING_FEE.toLocaleString("tr-TR")} TL
+            </>,
             "Kargo ücreti, ödeme adımında sipariş özetinde ayrıca gösterilir ve toplam tutara eklenir.",
           ]}
         />

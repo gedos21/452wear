@@ -67,7 +67,7 @@ export function CheckoutSummary() {
         <div className="flex items-baseline justify-between gap-4">
           <dt className="micro text-foreground/45">Kargo</dt>
           <dd className="text-muted-foreground">
-            {shipping.free ? "Ücretsiz" : "Ödeme adımında"}
+            {shipping.free ? "Ücretsiz" : formatPrice(shipping.fee, currency)}
           </dd>
         </div>
       </dl>

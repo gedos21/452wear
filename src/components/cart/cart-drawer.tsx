@@ -158,7 +158,9 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
                 </Row>
                 <Row label="Kargo">
                   <span className="text-muted-foreground">
-                    {shipping.free ? "Ücretsiz" : "Ödeme adımında"}
+                    {shipping.free
+                      ? "Ücretsiz"
+                      : formatPrice(shipping.fee, currency)}
                   </span>
                 </Row>
                 {!shipping.free && (
@@ -170,7 +172,9 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
                 <div className="flex items-baseline justify-between gap-4 border-t border-border/70 pt-4">
                   <dt className="micro">Toplam</dt>
                   <dd className="text-base font-medium">
-                    <AnimatedAmount value={formatPrice(subtotal, currency)} />
+                    <AnimatedAmount
+                      value={formatPrice(subtotal + shipping.fee, currency)}
+                    />
                   </dd>
                 </div>
               </dl>

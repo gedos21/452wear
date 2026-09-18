@@ -46,7 +46,7 @@ export function OrderSummaryTable() {
         <div className="flex justify-between gap-4">
           <dt className="text-muted-foreground">Kargo</dt>
           <dd className="text-muted-foreground">
-            {shipping.free ? "Ücretsiz" : "Ödeme adımında hesaplanır"}
+            {shipping.free ? "Ücretsiz" : formatPrice(shipping.fee, currency)}
           </dd>
         </div>
       </dl>
