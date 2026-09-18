@@ -293,6 +293,9 @@ async function kullanilmayanGorselleriSil(yollar: string[], urunId: string) {
 
 export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
   if (KAPALI) return KAPALI_SONUC;
+  // Diske yazılan yeni Pixel Fit PNG'si; ürün yazılamazsa sahipsiz kalmasın
+  // diye hata yolunda silinir.
+  let yetimPixel: { yol: string; urunId: string } | null = null;
   try {
     const a = urunuAyikla(fd);
     if (!a.ok) return { durum: "hata", mesaj: a.hata };
@@ -379,6 +382,9 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
         };
       tryOn = { layer, asset: sonuc.yol, status: "approved" };
       pixelEklendi = true;
+      // Aynı içerik zaten kayıtlıysa yol aynıdır; o dosya silinmemeli.
+      if (sonuc.yol !== mevcut?.tryOn?.asset)
+        yetimPixel = { yol: sonuc.yol, urunId: id };
     }
 
     const yuklenen = await gorselleriYaz(dosyalar, id, a.ad);
@@ -406,6 +412,7 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
     };
 
     await urunYaz(urun);
+    yetimPixel = null;
 
     // Eski dosyalar ürün yazıldıktan SONRA temizlenir: yazım başarısız olsaydı
     // ürün hâlâ onları gösteriyor olurdu.
@@ -427,6 +434,8 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
         (pixelEklendi ? " Pixel Fit hazır." : ""),
     };
   } catch (e) {
+    if (yetimPixel)
+      await pixelAssetSil(yetimPixel.yol, yetimPixel.urunId).catch(() => {});
     return { durum: "hata", mesaj: `Kaydedilemedi: ${(e as Error).message}` };
   }
 }
@@ -511,11 +520,18 @@ export async function pixelAssetYukle(
 
     // Doğrulamayı geçen asset doğrudan yayına girer: Pixel Fit = Hazır,
     // layer kategoriden gelir. (Eski "pending" kayıtlar onay düğmesiyle
-    // yayına alınmaya devam eder.)
-    await urunYaz({
-      ...urun,
-      tryOn: { layer, asset: sonuc.yol, status: "approved" },
-    });
+    // yayına alınmaya devam eder.) Ürün yazılamazsa yeni dosya sahipsiz
+    // kalmasın diye silinir; aynı içerik zaten kayıtlıysa dokunulmaz.
+    try {
+      await urunYaz({
+        ...urun,
+        tryOn: { layer, asset: sonuc.yol, status: "approved" },
+      });
+    } catch (e) {
+      if (sonuc.yol !== urun.tryOn?.asset)
+        await pixelAssetSil(sonuc.yol, urun.id).catch(() => {});
+      throw e;
+    }
 
     // Değiştirilen eski yükleme, ürün yazıldıktan sonra temizlenir (tohum
     // asset'lerine dokunmaz).

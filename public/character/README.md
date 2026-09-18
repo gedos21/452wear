@@ -62,8 +62,13 @@ Asset'i ilgili klasöre koy, ardından ürün datasında (`src/data/products.ts`
 tek alan doldur:
 
 ```ts
-tryOn: { layer: "top", asset: "/character/tops/tshirt.png" }
+tryOn: { layer: "top", asset: "/character/tops/tshirt.png", status: "approved" }
 ```
+
+`status: "approved"` olmayan katman mağazada çizilmez. `layer`, ürünün
+kategorisine uymalıdır (eşofman → `bottom`, tişört/sweatshirt/hırka → `top`);
+uymayan katman çizilmez. Admin panelinden (Pixel Fit Asset) yüklenen PNG bu
+alanları kendisi doldurur.
 
 Alan yoksa ürün normal ürün olarak çalışmaya devam eder; karakterde yalnızca
 o katman çizilmez. Kırık görsel veya yer tutucu gösterilmez.

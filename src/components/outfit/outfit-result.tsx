@@ -131,12 +131,14 @@ export function OutfitResult({
                   alternatifler={
                     // Ayakkabı karaktere çizilmediği için stoktaki tüm
                     // ayakkabılar seçenektir; üst/alt ise karakterde
-                    // gösterilebilen ürünlerle sınırlı.
+                    // gösterilebilen ürünlerle sınırlı. Tükenmiş ürün
+                    // sunulmaz: hiçbir bedeni seçilemez, kombin sepete
+                    // eklenemezdi.
                     yuva === "shoes"
                       ? products.filter(
                           (p) => p.category === "ayakkabi" && isAvailable(p),
                         )
-                      : wearableForSlot(products, yuva)
+                      : wearableForSlot(products, yuva).filter(isAvailable)
                   }
                   onDegistir={(p) => degistir(yuva, p)}
                   selectedSize={sizes[product.id] ?? null}

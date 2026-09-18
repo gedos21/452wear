@@ -56,6 +56,10 @@ export function tryOnAsset(
   if (!product?.tryOn) return null;
   // Onaylanmamış asset mağazaya sızmaz; admin önizlemesi override ile çizer.
   if (product.tryOn.status !== "approved") return null;
+  // Kategori sonradan değiştiyse (ör. tişört → eşofman) kayıtlı asset eski
+  // yuvaya aittir; yeni asset yüklenene kadar karakterde yanlış yuvada
+  // çizilmez.
+  if (slotForCategory(product.category) !== layer) return null;
   return product.tryOn.layer === layer ? product.tryOn.asset : null;
 }
 

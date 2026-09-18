@@ -49,7 +49,9 @@ export default async function UrunlerSayfasi() {
               <th className="px-4 py-3 font-normal">Ürün</th>
               <th className="px-4 py-3 font-normal">Kategori</th>
               <th className="px-4 py-3 font-normal">Fiyat</th>
-              <th className="px-4 py-3 font-normal">Pixel Fit</th>
+              <th lang="en" className="px-4 py-3 font-normal">
+                Pixel Fit
+              </th>
               <th className="px-4 py-3" />
             </tr>
           </thead>

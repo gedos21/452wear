@@ -24,6 +24,8 @@ const { width: GEN, height: YUK } = CHARACTER_CANVAS;
  */
 async function pngOnKontrol(dosya: File): Promise<string | null> {
   if (dosya.type !== "image/png") return "Pixel Fit asset PNG olmalı.";
+  // Sunucudaki sınırla aynı (lib/pixel-asset.ts).
+  if (dosya.size > 4 * 1024 * 1024) return "Dosya 4 MB'ı aşıyor.";
   const url = URL.createObjectURL(dosya);
   try {
     const img = await new Promise<HTMLImageElement>((ok, hata) => {
@@ -90,6 +92,13 @@ export function PixelFitPaneli({
         if (inputRef.current) inputRef.current.value = "";
         onPixelDosya?.(null);
         router.refresh();
+      } else if (r.durum === "hata") {
+        // React form gönderiminden sonra dosya girdisini boşaltır; önizleme
+        // kalırsa "PNG yükle" boş dosya gönderirdi. Seçim de temizlenir,
+        // yönetici dosyayı yeniden seçer. Blob URL'si yerel'i izleyen
+        // effect'in temizliğinde bırakılır.
+        setYerel(null);
+        onPixelDosya?.(null);
       }
       return r;
     },
@@ -220,7 +229,8 @@ export function PixelFitPaneli({
         aria-labelledby="pixel-fit-baslik"
         className="rounded-[var(--radius-product)] bg-muted/40 p-5 ring-1 ring-border/70 sm:p-6"
       >
-        <h2 id="pixel-fit-baslik" className="micro text-foreground">
+        {/* lang="en": micro uppercase Türkçe kipte "PİXEL FİT" üretiyor. */}
+        <h2 id="pixel-fit-baslik" lang="en" className="micro text-foreground">
           Pixel Fit Asset
         </h2>
         <p className="mt-4 text-[13px] leading-relaxed text-foreground/60">
@@ -260,7 +270,8 @@ export function PixelFitPaneli({
       aria-labelledby="pixel-fit-baslik"
       className="rounded-[var(--radius-product)] bg-muted/40 p-5 ring-1 ring-border/70 sm:p-6"
     >
-      <h2 id="pixel-fit-baslik" className="micro text-foreground">
+      {/* lang="en": micro uppercase Türkçe kipte "PİXEL FİT" üretiyor. */}
+        <h2 id="pixel-fit-baslik" lang="en" className="micro text-foreground">
         Pixel Fit Asset
       </h2>
 
