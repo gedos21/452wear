@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState, useRef, useState } from "react";
+import { startTransition, useActionState, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, Plus, Trash2, X } from "lucide-react";
 import { urunKaydet, urunSil, type Sonuc } from "@/app/admin/actions";
@@ -177,6 +177,21 @@ export function UrunFormu({
   const bedenSecenekleri = sizesForCategory(kategori);
   const secilenBedenler = bedenSecenekleri.filter((b) => bedenler.has(b));
 
+  /**
+   * Form elle gönderilir: React 19 `action` ile gönderilen formun durumsuz
+   * alanlarını (ad, slug, açıklama, fiyat) her gönderimden sonra sıfırlar;
+   * sunucu hata döndürünce yazılanlar kayboluyordu. Başarıda form zaten
+   * yeniden kurulur (bkz. UrunDuzenleyici). Silme düğmesi kendi formAction'ı
+   * ile gittiği için burada karışılmaz.
+   */
+  function gonder(e: React.FormEvent<HTMLFormElement>) {
+    const gonderen = (e.nativeEvent as SubmitEvent).submitter;
+    if (gonderen?.hasAttribute("data-sil")) return;
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget, gonderen);
+    startTransition(() => kaydet(fd));
+  }
+
   const gosterilenSonuc =
     sonuc.durum !== "bos"
       ? sonuc
@@ -185,7 +200,7 @@ export function UrunFormu({
         : null;
 
   return (
-    <form action={kaydet} className="grid gap-8">
+    <form onSubmit={gonder} className="grid gap-8">
       {urun && <input type="hidden" name="urunId" value={urun.id} />}
 
       {/* Temel bilgiler */}
@@ -531,6 +546,7 @@ export function UrunFormu({
                 </span>
                 <button
                   type="submit"
+                  data-sil
                   formAction={sil}
                   formNoValidate
                   disabled={siliniyor}

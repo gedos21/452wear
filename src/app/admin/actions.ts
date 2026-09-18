@@ -108,6 +108,17 @@ function urunuAyikla(fd: FormData): Ayiklama {
     .map((name, i) => ({ name, hex: hexler[i] ?? "#000000" }))
     .filter((c) => c.name.length > 0);
   if (colors.length === 0) return { ok: false, hata: "En az bir renk gir." };
+  // Aynı ad iki satırda olursa aynı renk+beden iki varyant olur; sepet
+  // satırları ve stok birbirine karışır.
+  const gorulen = new Set<string>();
+  for (const c of colors) {
+    const anahtar = c.name.toLocaleLowerCase("tr");
+    if (gorulen.has(anahtar))
+      return { ok: false, hata: `"${c.name}" rengi iki kez girilmiş.` };
+    gorulen.add(anahtar);
+    if (!/^#[0-9a-f]{6}$/i.test(c.hex))
+      return { ok: false, hata: `"${c.name}" için renk kodu geçersiz.` };
+  }
 
   // Yalnızca kategorinin beden sistemindeki değerler kabul edilir
   // (ayakkabıda numara, diğerlerinde harf beden).
@@ -326,6 +337,16 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
       return {
         durum: "hata",
         mesaj: "Stok ızgarasında en az bir hücre doldur.",
+      };
+    // Hiç bedeni olmayan renk sitede seçilemeyen, sönük bir renk olarak
+    // görünür ve filtrede yanlış eşleşir.
+    const bosRenk = a.colors.find(
+      (c) => !variants.some((v) => v.color === c.name),
+    );
+    if (bosRenk)
+      return {
+        durum: "hata",
+        mesaj: `"${bosRenk.name}" rengi için stok ızgarasında en az bir hücre doldur ya da rengi kaldır.`,
       };
 
     const dosyalar = gorselleriDogrula(fd);
