@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Check, Heart } from "lucide-react";
@@ -9,6 +9,7 @@ import { SizeGuide } from "./size-guide";
 import { PRODUCT_ASPECT, PRODUCT_SURFACE } from "./product-surface";
 import { productMediaLayoutId } from "./product-media-id";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
+import { useFinePointer } from "@/hooks/use-fine-pointer";
 import { useCart } from "@/lib/cart";
 import { useFavorites } from "@/lib/favorites";
 import { formatPrice } from "@/lib/format";
@@ -22,6 +23,9 @@ import { cn } from "@/lib/utils";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
 import { CATEGORIES } from "@/data/products";
 import type { Product, ProductSize } from "@/types/product";
+
+/** Masaüstünde büyük görselin üzerine gelince uygulanan büyütme (panel ve sayfa). */
+const HOVER_ZOOM = 1.9;
 
 /**
  * Giyim ürünlerinde "Ürün Detayları"nın altındaki manken bilgisi. Şimdilik
@@ -58,6 +62,31 @@ export function ProductDetail({
   const [color, setColor] = useState(() => defaultColor(product));
   const [size, setSize] = useState<ProductSize | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
+
+  // Hover zoom: panelde ve ürün sayfasında, yalnızca fare gibi hassas bir
+  // imleç varken; dokunmatikte hover olmadığı için hiç devreye girmez. Her
+  // fare hareketinde React render'ı olmasın diye stil doğrudan öğeye yazılır.
+  const fine = useFinePointer();
+  const zoomEnabled = fine;
+  const zoomRef = useRef<HTMLDivElement>(null);
+  const zoomFollow = (e: React.PointerEvent<HTMLDivElement>) => {
+    const el = zoomRef.current;
+    if (!el?.parentElement || e.pointerType !== "mouse") return;
+    // Ölçü büyümeyen çerçeveden alınır; büyümüş öğenin kutusu 1.9x ve
+    // kaymış olduğundan oran yanlış çıkardı.
+    const r = el.parentElement.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 100;
+    const y = ((e.clientY - r.top) / r.height) * 100;
+    el.style.transformOrigin = `${x}% ${y}%`;
+  };
+  const zoomIn = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse" || !zoomRef.current) return;
+    zoomFollow(e);
+    zoomRef.current.style.transform = `scale(${HOVER_ZOOM})`;
+  };
+  const zoomOut = () => {
+    if (zoomRef.current) zoomRef.current.style.transform = "";
+  };
   const [added, setAdded] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -170,19 +199,31 @@ export function ProductDetail({
             )}
             transition={PANEL_SPRING}
           >
-            <Image
-              key={cover.src}
-              src={cover.src}
-              alt={cover.alt}
-              fill
-              priority
-              sizes={
-                panel
-                  ? "(min-width: 1024px) 34vw, 92vw"
-                  : "(min-width: 1024px) 45vw, 92vw"
-              }
-              className="object-cover"
-            />
+            {/* Masaüstü hover zoom (panel ve sayfa, gerçek imleçte): görsel
+                ~1.9x büyür, odak noktası imleci izler. Yüzeyin
+                overflow-hidden'ı büyüyen görseli kırpar. */}
+            <div
+              ref={zoomRef}
+              className={cn(
+                "absolute inset-0 transition-transform duration-300 ease-out",
+                zoomEnabled && "cursor-zoom-in",
+              )}
+              onPointerEnter={zoomEnabled ? zoomIn : undefined}
+              onPointerMove={zoomEnabled ? zoomFollow : undefined}
+              onPointerLeave={zoomEnabled ? zoomOut : undefined}
+            >
+              <Image
+                key={cover.src}
+                src={cover.src}
+                alt={cover.alt}
+                fill
+                priority
+                // Zoom'da (1.9x) da net kalsın diye görünenin ~2 katı çözünürlük;
+                // panelde ve sayfada görsel ~35vw, büyüyünce ~68vw.
+                sizes="(min-width: 1024px) 68vw, 92vw"
+                className="object-cover"
+              />
+            </div>
           </motion.div>
         </div>
 
