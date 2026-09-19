@@ -78,13 +78,19 @@ export function EmptyState({ onClear }: { onClear: () => void }) {
 
 /**
  * Listenin sonu: gösterilecek başka ürün kalmadığında "Daha Fazla" yerine
- * görünür. Instagram adresi tanımlıysa takip bağlantısı olur.
+ * görünür. Arama/filtre açıkken "tüm ürünlerimiz" demek yanlış olur; o zaman
+ * seçime göre konuşur. Instagram adresi tanımlıysa takip bağlantısı olur.
  */
-export function EndOfList() {
+export function EndOfList({ filtered = false }: { filtered?: boolean }) {
   return (
-    <div className="mt-16 border-t border-border/70 pt-10 text-center sm:mt-20">
+    <div
+      role="status"
+      className="mt-12 border-t border-border/70 pt-10 text-center sm:mt-14"
+    >
       <p className="font-sf text-[15px] font-semibold">
-        Şimdilik tüm ürünlerimiz bu kadar.
+        {filtered
+          ? "Seçimine uyan tüm ürünler bu kadar."
+          : "Şimdilik tüm ürünlerimiz bu kadar."}
       </p>
       <p className="mt-1.5 font-sf text-[14px] text-foreground/55">
         Yeni ürünler için{" "}

@@ -27,7 +27,7 @@ export async function ShopListing({ category }: { category: CategoryFilter }) {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <Container className="pt-8 pb-20 sm:pt-10 sm:pb-24 lg:pb-28">
+        <Container className="pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pb-24">
           <ShopBrowser
             products={products}
             category={category}

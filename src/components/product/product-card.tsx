@@ -136,14 +136,18 @@ export function ProductCard({
             }}
             className="block after:absolute after:inset-0 after:content-['']"
           >
-            {/* Marka adları Latin yazımlı: Türkçe büyük harfte "NİKE" olmasın. */}
-            <span
-              lang="en"
-              className="block text-[13px] font-extrabold uppercase leading-tight tracking-[0.01em] sm:text-sm"
-            >
-              {nameParts.brand}
-            </span>
-            <span className="mt-0.5 block text-[13px] leading-snug text-foreground/75 sm:text-sm">
+            {/* Marka satırı yalnızca başka markalarda (NIKE, ADIDAS…); kendi
+                ürünlerimizde yazılmaz. Marka adları Latin yazımlı: Türkçe büyük
+                harfte "NİKE" olmasın. */}
+            {nameParts.brand && (
+              <span
+                lang="en"
+                className="mb-0.5 block text-[13px] font-extrabold uppercase leading-tight tracking-[0.01em] sm:text-sm"
+              >
+                {nameParts.brand}
+              </span>
+            )}
+            <span className="block text-[13px] font-medium leading-snug text-foreground/85 sm:text-sm">
               {nameParts.model}
             </span>
           </Link>
@@ -151,7 +155,7 @@ export function ProductCard({
 
         {/* Güncel fiyat kartın en güçlü öğesi; indirimde eski fiyat hemen
             altında küçük, gri ve üstü çizili. */}
-        <div className="mt-2 text-[17px] font-black leading-none tracking-[-0.01em] sm:text-lg">
+        <div className="mt-2.5 text-[17px] font-black leading-none tracking-[-0.01em] sm:text-lg">
           {formatPrice(product.price, product.currency)}
         </div>
         {discount !== null && (
@@ -160,7 +164,7 @@ export function ProductCard({
           </div>
         )}
 
-        <div className="mt-2.5 flex items-center gap-1.5">
+        <div className="mt-2 flex items-center gap-1.5">
           {dots.map((c) => (
             <span
               key={c.name}

@@ -73,6 +73,9 @@ const KNOWN_BRANDS = [
   "Reebok",
 ];
 
+/** Kendi ürünlerimizin markası (filtrede görünür, kartta yazılmaz). */
+export const OWN_BRAND = "452WEAR";
+
 export function productBrand(product: Product): string {
   const name = product.name.toLocaleLowerCase("tr-TR");
   const known = KNOWN_BRANDS.find((b) =>
@@ -80,19 +83,20 @@ export function productBrand(product: Product): string {
   );
   if (known) return known;
   if (product.category === "ayakkabi") return product.name.split(/\s+/)[0];
-  return "452WEAR";
+  return OWN_BRAND;
 }
 
 /**
  * Kartta iki satır halinde gösterilen ad: marka + model. Marka ürün adının
- * başındaysa modelden çıkarılır ("Nike Dunk Low" → NIKE / "Dunk Low"); kendi
- * ürünlerimizde (452WEAR) ad olduğu gibi model satırında kalır.
+ * başındaysa modelden çıkarılır ("Nike Dunk Low" → NIKE / "Dunk Low"). Kendi
+ * ürünlerimizde marka satırı yoktur (brand null); ad olduğu gibi kalır.
  */
 export function productNameParts(product: Product): {
-  brand: string;
+  brand: string | null;
   model: string;
 } {
   const brand = productBrand(product);
+  if (brand === OWN_BRAND) return { brand: null, model: product.name.trim() };
   const name = product.name.trim();
   const startsWithBrand = name
     .toLocaleLowerCase("tr-TR")

@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { categoryHref } from "@/components/layout/nav-links";
 import { ActiveFilters, ShopToolbar } from "./shop-controls";
 import { FilterDrawer } from "./filter-drawer";
@@ -132,6 +132,23 @@ export function ShopBrowser({
 
   const shown = results.slice(0, visible);
   const hasMore = results.length > shown.length;
+  const filtered = query.trim() !== "" || activeCount > 0;
+
+  // Son ürünler yüklenince kısa bir bildirim: yeni kartlar liste sonu
+  // mesajını ekranın altına ittiği için kullanıcı onu hemen görmeyebilir.
+  const [endNotice, setEndNotice] = useState(false);
+  const noticeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => () => clearTimeout(noticeTimer.current), []);
+
+  const loadMore = () => {
+    const next = visible + PAGE_SIZE;
+    setPage({ key: resetKey, visible: next });
+    if (next >= results.length) {
+      setEndNotice(true);
+      clearTimeout(noticeTimer.current);
+      noticeTimer.current = setTimeout(() => setEndNotice(false), 3200);
+    }
+  };
 
   // Kategori navbar'dan seçildiği için temizleme onu korur.
   const clearFilters = () => setFilters(EMPTY_FILTERS);
@@ -188,26 +205,41 @@ export function ShopBrowser({
               </div>
 
               {hasMore ? (
-                <div className="mt-16 flex justify-center">
+                <div className="mt-12 flex justify-center">
                   <button
                     type="button"
-                    onClick={() =>
-                      setPage({ key: resetKey, visible: visible + PAGE_SIZE })
-                    }
+                    onClick={loadMore}
                     className="inline-flex h-12 items-center rounded-full border border-foreground/20 px-7 micro transition-colors hover:border-foreground/60"
                   >
                     Daha Fazla Göster
                   </button>
                 </div>
               ) : (
-                // Listenin sonu. Arama/filtre açıkken "tüm ürünlerimiz" demek
-                // yanlış olur; mesaj yalnızca süzülmemiş listede görünür.
-                !query.trim() && activeCount === 0 && <EndOfList />
+                // Listenin sonu; arama/filtre açıkken mesaj ona göre değişir.
+                <EndOfList filtered={filtered} />
               )}
             </>
           )}
         </>
       )}
+
+      <AnimatePresence>
+        {endNotice && (
+          <motion.div
+            key="end-notice"
+            role="status"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 12 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-x-4 bottom-6 z-40 mx-auto w-fit max-w-[calc(100%-2rem)] rounded-full bg-foreground px-5 py-3 text-center font-sf text-[14px] font-semibold text-background shadow-[0_12px_32px_-12px_rgb(0_0_0/0.45)]"
+          >
+            {filtered
+              ? "Seçimine uyan tüm ürünler bu kadar."
+              : "Şimdilik tüm ürünlerimiz bu kadar."}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {drawerOpen && (
