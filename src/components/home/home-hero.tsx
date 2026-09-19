@@ -16,7 +16,10 @@ export function HomeHero() {
         alt=""
         fill
         priority
-        sizes="100vw"
+        // Dikey ekranda (mobil) kapak kırpması görseli yüksekliğe göre büyütür:
+        // görünen genişlik ekranın ~3–4 katıdır. "100vw" burada küçük bir
+        // sürüm seçtirip bulanıklaştırıyordu; dikeyde orijinal çözünürlük gelir.
+        sizes="(orientation: portrait) 400vw, 100vw"
         // Masaüstünde hero görselden daha yatay: üstten biraz fazla kırpılmasın
         // diye odak %30'da (kapüşon kesilmez, alttaki taş görünür kalır).
         // Mobilde yalnızca ortadaki şerit görünür; ürünlerin ortası kadrajda.

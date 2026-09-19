@@ -50,6 +50,14 @@ export function SiteHeader() {
           <MobileMenu pathname={pathname} />
           <Link
             href="/"
+            onClick={(e) => {
+              // Zaten ana sayfadaysa gidecek yer yok: sayfanın başına döner.
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            aria-label="452WEAR ana sayfa"
             className="font-display text-[18px] font-extrabold tracking-[0.1em] min-[375px]:text-[20px] min-[375px]:tracking-[0.14em] lg:text-[24px]"
           >
             452WEAR
