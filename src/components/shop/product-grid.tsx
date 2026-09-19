@@ -6,6 +6,7 @@ import {
   PRODUCT_GRID_COLUMNS,
   PRODUCT_GRID_SIZES,
 } from "@/components/product/product-grid-columns";
+import { INSTAGRAM_URL } from "@/lib/community";
 import type { Product } from "@/types/product";
 
 /**
@@ -71,6 +72,42 @@ export function EmptyState({ onClear }: { onClear: () => void }) {
       >
         Filtreleri Temizle
       </button>
+    </div>
+  );
+}
+
+/**
+ * Listenin sonu: gösterilecek başka ürün kalmadığında "Daha Fazla" yerine
+ * görünür. Arama/filtre açıkken "tüm ürünlerimiz" demek yanlış olur; o zaman
+ * seçime göre konuşur. Instagram adresi tanımlıysa takip bağlantısı olur.
+ */
+export function EndOfList({ filtered = false }: { filtered?: boolean }) {
+  return (
+    <div
+      role="status"
+      className="mt-12 border-t border-border/70 pt-10 text-center sm:mt-14"
+    >
+      <p className="font-sf text-[15px] font-semibold">
+        {filtered
+          ? "Seçimine uyan tüm ürünler bu kadar."
+          : "Şimdilik tüm ürünlerimiz bu kadar."}
+      </p>
+      <p className="mt-1.5 font-sf text-[14px] text-foreground/55">
+        Yeni ürünler için{" "}
+        {INSTAGRAM_URL ? (
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-4 transition-colors hover:text-brand"
+          >
+            bizi takip etmeyi
+          </a>
+        ) : (
+          "bizi takip etmeyi"
+        )}{" "}
+        unutma.
+      </p>
     </div>
   );
 }

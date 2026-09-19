@@ -63,6 +63,8 @@ function tazele(urunId?: string) {
   if (urunId) revalidatePath(`/admin/urunler/${urunId}`);
   revalidatePath("/");
   revalidatePath("/magaza");
+  revalidatePath("/ayakkabilar");
+  revalidatePath("/giyim");
   revalidatePath("/kombinini-bul");
 }
 

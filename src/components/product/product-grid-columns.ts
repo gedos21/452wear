@@ -3,7 +3,7 @@
  * kullansın diye tek yerden geliyor: mobil 2, tablet 3, masaüstü 4 kolon.
  */
 export const PRODUCT_GRID_COLUMNS =
-  "grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4";
+  "grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4";
 
 /** Izgaradaki kart genişliğine göre görsel boyut ipucu. */
 export const PRODUCT_GRID_SIZES =

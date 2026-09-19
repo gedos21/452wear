@@ -292,6 +292,33 @@ function enYeniOnce(k: Katman): Product[] {
   return [...eklenen, ...tohum];
 }
 
+/**
+ * Ana sayfa "Çok satanlar" için elle seçilmiş ürünler (slug). Satış verisi
+ * henüz yok (sipariş servisi bağlı değil, bkz. lib/orders.ts), bu yüzden bir
+ * satış sıralaması uydurulmaz.
+ */
+const COK_SATAN_SECIMI = [
+  "nike-dunk-low-iron-shadow",
+  "kapusonlu-sweatshirt",
+  "adidas-superstar",
+  "oversize-tisort",
+];
+
+/**
+ * "Çok satanlar" listesi. Şimdilik seçim listesindeki yayındaki ürünler;
+ * eksik kalırsa katalogdaki diğer ürünlerle tamamlanır. Gerçek satış verisi
+ * bağlandığında yalnızca bu fonksiyon satış adedine göre sıralayacak şekilde
+ * değişir; ana sayfa bileşeni aynı kalır.
+ */
+export async function cokSatanlar(limit = 4): Promise<Product[]> {
+  const urunler = await katalogOku();
+  const secilen = COK_SATAN_SECIMI.map((slug) =>
+    urunler.find((p) => p.slug === slug),
+  ).filter((p) => p !== undefined);
+  const kalan = urunler.filter((p) => !secilen.includes(p));
+  return [...secilen, ...kalan].slice(0, limit);
+}
+
 /** "Yeni" işaretli ürünler, en yenisi başta (hero vitrininin yedeği). */
 export async function yeniGelenler(limit = 4): Promise<Product[]> {
   return enYeniOnce(await katmanOku())

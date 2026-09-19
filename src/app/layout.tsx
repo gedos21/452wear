@@ -4,6 +4,7 @@ import { CartProvider } from "@/components/cart/cart-provider";
 import { SearchProvider } from "@/components/search/search-provider";
 import { QuickViewProvider } from "@/components/product/quick-view";
 import { CookieBanner } from "@/components/cookie/cookie-banner";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { CatalogProvider } from "@/components/product/catalog-provider";
 import { katalogOku } from "@/lib/catalog-store";
 import { SITE_URL } from "@/lib/site";
@@ -50,6 +51,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        {/* Navbar'ın üstünde; sayfayla kayar, sticky header yerinde kalır. */}
+        <AnnouncementBar />
         <CatalogProvider products={products}>
           {/* Sıralama önemli: Quick View en dışta, paneli aramanın üstünde
               (z-60/61 > z-55/56) çizilsin diye. */}

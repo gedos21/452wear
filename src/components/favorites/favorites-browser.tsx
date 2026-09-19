@@ -1,9 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ArrowRight } from "lucide-react";
-import { LuckyPicker } from "./lucky-picker";
+import { FavoritesWheel } from "./favorites-wheel";
 import { ProductCard } from "@/components/product/product-card";
 import {
   PRODUCT_GRID_COLUMNS,
@@ -23,7 +21,8 @@ export function FavoritesBrowser() {
   const products = useFavoriteProducts();
   const reduced = useReducedMotion();
 
-  if (products.length === 0) return <EmptyFavorites />;
+  // Favori yoksa çarkın boş hali sayfanın boş durumu olarak görünür.
+  if (products.length === 0) return <FavoritesWheel products={products} />;
 
   return (
     // QuickViewProvider kökte: ızgara, seçici ve arama sonuçları aynı paneli açar.
@@ -46,29 +45,9 @@ export function FavoritesBrowser() {
       </motion.div>
 
       <div className="mt-16 sm:mt-20">
-        <LuckyPicker products={products} />
+        <FavoritesWheel products={products} />
       </div>
     </>
-  );
-}
-
-function EmptyFavorites() {
-  return (
-    <div className="py-16 sm:py-24">
-      <h2 className="font-display text-2xl font-extrabold tracking-[-0.02em] sm:text-3xl">
-        FAVORİLERİN BOŞ<span className="text-brand">.</span>
-      </h2>
-      <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-        Beğendiğin ürünleri burada saklayabilirsin.
-      </p>
-      <Link
-        href="/magaza"
-        className="mt-9 inline-flex h-12 items-center gap-2.5 rounded-full bg-foreground px-7 micro text-background transition-colors hover:bg-foreground/90"
-      >
-        Mağazaya Git
-        <ArrowRight className="size-4" strokeWidth={1.8} />
-      </Link>
-    </div>
   );
 }
 

@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
 import { categoryHref } from "@/components/layout/nav-links";
+import { productNameParts } from "@/lib/product-filters";
 import { ProductPageDetail } from "@/components/product/product-detail";
 import { CATEGORIES } from "@/data/products";
 import { slugIleUrun } from "@/lib/catalog-store";
@@ -67,33 +68,45 @@ export default async function UrunSayfasi({
   if (yonlendir) permanentRedirect(`/urun/${urun.slug}`);
 
   const kategori = CATEGORIES.find((c) => c.slug === urun.category);
+  const ayakkabi = urun.category === "ayakkabi";
+  // Kendi ürünlerimizde marka yok; yolun son adımı kategori olur.
+  const marka = productNameParts(urun).brand;
 
   return (
     <>
       <SiteHeader />
       <main className="flex-1">
         <Container className="pt-8 pb-20 sm:pt-10 sm:pb-24 lg:pt-12 lg:pb-28">
+          {/* Sade konum yolu: Ana Sayfa / Ayakkabılar|Giyim / Marka|Kategori */}
           <nav
             aria-label="Konum"
-            className="flex flex-wrap items-center gap-2 micro text-foreground/45"
+            className="flex flex-wrap items-center gap-x-2 gap-y-1 font-sf text-[11px] font-medium uppercase tracking-[0.08em] text-foreground/45"
           >
+            <Link href="/" className="transition-colors hover:text-foreground">
+              Ana Sayfa
+            </Link>
+            <span aria-hidden>/</span>
             <Link
-              href="/magaza"
+              href={categoryHref(ayakkabi ? "ayakkabi" : "giyim")}
               className="transition-colors hover:text-foreground"
             >
-              Mağaza
+              {ayakkabi ? "Ayakkabılar" : "Giyim"}
             </Link>
-            {kategori && (
-              <>
-                <span aria-hidden>/</span>
+            <span aria-hidden>/</span>
+            {marka ? (
+              <span lang="en" className="text-foreground/70">
+                {marka}
+              </span>
+            ) : (
+              kategori && (
                 <Link
                   href={categoryHref(kategori.slug)}
                   lang={kategori.lang}
-                  className="transition-colors hover:text-foreground"
+                  className="text-foreground/70 transition-colors hover:text-foreground"
                 >
                   {kategori.label}
                 </Link>
-              </>
+              )
             )}
           </nav>
 
