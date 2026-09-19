@@ -11,7 +11,7 @@ type RevealProps = {
   variants?: Variants;
   /** "mount": sayfa açılışında, "view": görünür alana girince */
   trigger?: "mount" | "view";
-  as?: "div" | "section" | "li" | "article" | "h1" | "p";
+  as?: "div" | "section" | "li" | "article" | "h1" | "h2" | "p";
 };
 
 /**
