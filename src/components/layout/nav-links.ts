@@ -67,6 +67,4 @@ export const NAV_ITEMS: NavItem[] = [
       categoryItem("hirka"),
     ],
   },
-  // Aksesuar kategorisi henüz yok; ürünleri gelince href verilecek.
-  { label: "Aksesuarlar" },
 ];
