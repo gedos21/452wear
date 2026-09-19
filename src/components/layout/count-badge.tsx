@@ -20,7 +20,7 @@ export function CountBadge({ count }: { count: number }) {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.6, opacity: 0 }}
           transition={{ type: "spring", stiffness: 520, damping: 24 }}
-          className="absolute -right-2.5 -top-2 grid size-4 place-items-center rounded-full bg-brand text-[10px] leading-none text-background md:-right-3.5"
+          className="absolute -right-2.5 -top-2 grid size-4 place-items-center rounded-full bg-brand text-[10px] leading-none text-background"
           aria-hidden
         >
           <motion.span

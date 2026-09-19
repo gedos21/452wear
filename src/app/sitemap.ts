@@ -14,6 +14,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const vitrin: MetadataRoute.Sitemap = [
     { url: SITE_URL, changeFrequency: "daily", priority: 1 },
     { url: `${SITE_URL}/magaza`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${SITE_URL}/ayakkabilar`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${SITE_URL}/giyim`, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/kombinini-bul`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/hakkimizda`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/iletisim`, changeFrequency: "monthly", priority: 0.5 },
