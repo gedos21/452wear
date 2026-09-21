@@ -26,6 +26,9 @@ const girdi =
   "h-11 w-full rounded-lg bg-background px-3 text-sm ring-1 ring-border outline-none transition-shadow placeholder:text-foreground/30 focus-visible:ring-2 focus-visible:ring-ring";
 const etiket = "micro text-foreground/45";
 
+/** "Tüm bedenlere stok" tuşunun her hücreye yazdığı adet. */
+const TAM_STOK = 10;
+
 export function UrunFormu({
   urun,
   kategori,
@@ -33,6 +36,7 @@ export function UrunFormu({
   onKaydedildi,
   kayitMesaji,
   pixelDosya,
+  urunler = [],
 }: {
   urun?: Product;
   kategori: ProductCategory;
@@ -56,8 +60,15 @@ export function UrunFormu({
    * olduğu için aynı dosyanın iki yoldan da kaydedilmesi aynı sonucu verir.
    */
   pixelDosya?: File | null;
+  /**
+   * Öneri alanlarında seçilebilecek ürünler (yayındaki katalog). Boş
+   * gelirse bölüm çizilmez; alanlar zaten zorunlu değil.
+   */
+  urunler?: Product[];
 }) {
   const router = useRouter();
+  // Ürünün kendisi öneri listesinde çıkmasın.
+  const digerUrunler = urunler.filter((p) => p.id !== urun?.id);
 
   // Görseller ekrandaki sırayla tutulur: kayıtlı olanlar + bu kayıtta eklenecek
   // dosyalar. Kaydedince bu sıra gönderilir; listeden kaldırılan kayıtlı görsel
@@ -385,9 +396,30 @@ export function UrunFormu({
 
         {secilenBedenler.length > 0 && (
           <div className="mt-2">
-            <p className="text-[12px] text-foreground/45">
-              Stok — boş hücre o renk/beden yok demek, 0 tükendi demek.
-            </p>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-[12px] text-foreground/45">
+                Stok — boş hücre o renk/beden yok demek, 0 tükendi demek.
+              </p>
+              {/* Kolaylık: bütün renk/beden hücrelerini tek tıkla doldurur. */}
+              <button
+                type="button"
+                onClick={() =>
+                  setStok(
+                    Object.fromEntries(
+                      renkler.flatMap((r) =>
+                        secilenBedenler.map((b) => [
+                          `${r.key}-${b}`,
+                          String(TAM_STOK),
+                        ]),
+                      ),
+                    ),
+                  )
+                }
+                className="h-8 shrink-0 rounded-full bg-muted px-3 text-[12px] text-foreground/70 transition-colors hover:text-foreground"
+              >
+                Tüm bedenlere {TAM_STOK} stok
+              </button>
+            </div>
             <div className="mt-2 overflow-x-auto">
               <table className="text-sm">
                 <thead>
@@ -437,6 +469,29 @@ export function UrunFormu({
           </div>
         )}
       </fieldset>
+
+      {/* Öneriler — ikisi de isteğe bağlı; boş bırakılırsa site otomatik
+          öneri üretir (bkz. lib/recommendations). */}
+      {digerUrunler.length > 0 && (
+        <fieldset className="grid gap-3">
+          <legend className={etiket}>Öneriler</legend>
+          <p className="text-[13px] text-foreground/55">
+            Boş bırakırsan ürün sayfasında öneriler otomatik seçilir.
+          </p>
+          <UrunSecimi
+            ad="complementaryIds"
+            baslik="Tamamlayıcı ürünler (Bunu tamamla)"
+            urunler={digerUrunler}
+            secili={urun?.complementaryIds ?? []}
+          />
+          <UrunSecimi
+            ad="relatedIds"
+            baslik="Benzer ürünler (Buna da bak)"
+            urunler={digerUrunler}
+            secili={urun?.relatedIds ?? []}
+          />
+        </fieldset>
+      )}
 
       {/* Görseller */}
       <fieldset className="grid gap-3">
@@ -582,5 +637,44 @@ export function UrunFormu({
         )}
       </div>
     </form>
+  );
+}
+
+/**
+ * Öneri seçimi: katalogdaki ürünler arasından çoklu seçim. Değerler aynı
+ * isimle gönderilir; sunucu tarafı `getAll` ile okur.
+ */
+function UrunSecimi({
+  ad,
+  baslik,
+  urunler,
+  secili,
+}: {
+  ad: string;
+  baslik: string;
+  urunler: Product[];
+  secili: string[];
+}) {
+  return (
+    <div className="grid gap-2">
+      <p className="text-[13px] font-medium">{baslik}</p>
+      <div className="grid max-h-44 gap-1.5 overflow-y-auto rounded-lg border border-border/70 p-3 sm:grid-cols-2">
+        {urunler.map((p) => (
+          <label
+            key={p.id}
+            className="flex items-center gap-2 text-[13px] text-foreground/80"
+          >
+            <input
+              type="checkbox"
+              name={ad}
+              value={p.id}
+              defaultChecked={secili.includes(p.id)}
+              className="size-3.5"
+            />
+            <span className="truncate">{p.name}</span>
+          </label>
+        ))}
+      </div>
+    </div>
   );
 }

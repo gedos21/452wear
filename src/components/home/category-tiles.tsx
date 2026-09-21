@@ -31,13 +31,12 @@ const TILES: Tile[] = [
     text: "Giyim koleksiyonunu keşfet.",
     href: categoryHref("giyim"),
     image: {
-      src: "/editorial/kombinler.webp",
-      alt: "452WEAR kombinleri: askıda duran dört kombin ve sneaker'ları",
+      src: "/editorial/giyim.webp",
+      alt: "452WEAR giyim reyonu: askıda kapüşonlular ve altlarında pantolonlar",
     },
-    // Afişin üstündeki baskılı yazılar (başlık, alt yazı ve "01 DAILY" gibi
-    // pano etiketleri; görselin üst ~%30'u) kadraj dışında kalır; kombinler
-    // ve sneaker'lar görünür.
-    focus: "center 93%",
+    // Kare kadrajda üstten/alttan az miktar kırpılır; kapüşonlular ortada
+    // kalsın diye odak merkezde.
+    focus: "center center",
   },
 ];
 

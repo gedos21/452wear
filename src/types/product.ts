@@ -90,4 +90,11 @@ export type Product = {
   isNew: boolean;
   /** Karakter try-on katmanı — opsiyonel, yoksa katman çizilmez. */
   tryOn?: ProductTryOn;
+  /**
+   * "Bunu tamamla" için elle seçilen ürünler (id). Boşsa öneri kategorilere
+   * ve mevcut kombin mantığına göre otomatik türetilir — bkz. lib/recommendations.
+   */
+  complementaryIds?: string[];
+  /** "Buna da bak" için elle seçilen benzer ürünler (id). Boşsa otomatik. */
+  relatedIds?: string[];
 };

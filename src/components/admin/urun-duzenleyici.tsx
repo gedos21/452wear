@@ -22,7 +22,13 @@ function formAnahtari(urun: Product): string {
   return JSON.stringify(bilgi);
 }
 
-export function UrunDuzenleyici({ urun }: { urun?: Product }) {
+export function UrunDuzenleyici({
+  urun,
+  urunler = [],
+}: {
+  urun?: Product;
+  urunler?: Product[];
+}) {
   const [kategori, setKategori] = useState<ProductCategory>(
     urun?.category ?? "tisort",
   );
@@ -83,6 +89,7 @@ export function UrunDuzenleyici({ urun }: { urun?: Product }) {
           kayitMesaji={kayitMesaji}
           // Karakterde yuvası olmayan kategoride seçili PNG gönderilmez.
           pixelDosya={slotForCategory(kategori) ? pixelDosya : null}
+          urunler={urunler}
         />
         <div className="lg:sticky lg:top-20 lg:self-start">
           <PixelFitPaneli
