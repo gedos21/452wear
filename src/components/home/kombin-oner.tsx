@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/container";
+import { HOME_WIDTH } from "./home-layout";
 import { Reveal } from "@/components/motion";
 import { ActionButton } from "@/components/ui/action-button";
 import { ProductShowcase } from "./product-showcase";
@@ -13,8 +14,10 @@ export async function KombinOner() {
 
   return (
     // Ürün bölümlerinden ince bir çizgiyle ayrılır; içerik dikeyde ortalanır.
-    <section className="border-t border-border/70 py-14 sm:py-16 lg:py-20">
-      <Container className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-12 xl:max-w-[min(88vw,96rem)]">
+    <section className="border-t border-border/70 py-10 sm:py-12 lg:py-14">
+      <Container
+        className={`grid items-center gap-8 lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-12 ${HOME_WIDTH}`}
+      >
         <div>
           <Reveal as="h2">
             <span className="block font-display text-[clamp(2.5rem,13vw,3rem)] font-extrabold leading-[0.9] tracking-[-0.035em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">

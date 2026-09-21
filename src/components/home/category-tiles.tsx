@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { categoryHref } from "@/components/layout/nav-links";
+import { HOME_WIDTH } from "./home-layout";
 
 type Tile = {
   title: string;
@@ -46,13 +47,13 @@ const TILES: Tile[] = [
  */
 export function CategoryTiles() {
   return (
-    <section className="pb-16 sm:pb-20">
-      <Container className="grid gap-4 sm:gap-6 lg:grid-cols-2">
+    <section className="pb-12 sm:pb-14">
+      <Container className={`grid gap-4 sm:gap-5 lg:grid-cols-2 ${HOME_WIDTH}`}>
         {TILES.map((tile) => (
           <Link
             key={tile.href}
             href={tile.href}
-            className="group relative block aspect-square overflow-hidden rounded-product bg-muted"
+            className="group relative block aspect-4/5 overflow-hidden rounded-product bg-muted sm:aspect-video lg:aspect-4/5 xl:aspect-square"
           >
             <Image
               src={tile.image.src}
