@@ -27,7 +27,7 @@ export async function ShoeCampaign() {
   return (
     <CampaignBanner
       eyebrow="Kampanya"
-      title="Seçili spor ayakkabılar"
+      title="Seçili modeller"
       subtitle={`${formatPrice(enUcuz)}'dan başlayan fiyatlarla · %${enYuksekOran}'e varan indirim`}
       cta="Şimdi keşfet"
       href={categoryHref("ayakkabi")}
