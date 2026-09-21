@@ -530,7 +530,12 @@ export function ProductDetail({
                   title: "Ürün Detayları",
                   content: (
                     <>
-                      <p>{product.description}</p>
+                      {/* Açıklama admin'den serbest metin gelir: satır
+                          sonları korunur, yoksa maddeler tek paragrafa
+                          yapışıyordu. */}
+                      <p className="whitespace-pre-line">
+                        {product.description.replace(/\r\n?/g, "\n").trim()}
+                      </p>
                       {!shoe && <p className="mt-2">{MODEL_BILGISI}</p>}
                     </>
                   ),
