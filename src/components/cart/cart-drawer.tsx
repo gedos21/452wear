@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, X } from "lucide-react";
 import { CartLine, UnavailableNotice } from "./cart-line";
+import { CartRecommendation } from "./cart-recommendation";
 import { useCartLines } from "@/components/product/catalog-provider";
 import { useCart } from "@/lib/cart";
 import { formatPrice } from "@/lib/format";
@@ -93,7 +94,10 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
           <EmptyCart onClose={onClose} />
         ) : (
           <>
-            <div className="min-h-0 flex-1 overflow-y-auto px-6 sm:px-8">
+            {/* Kaydırılan alan: ürünler + promosyon + öneri. Alttaki toplam
+                ve ödeme bloğu sabit kalır; liste onların altında kalmaz ve
+                hiçbir ürün kartı kesilmez. */}
+            <div className="min-h-0 flex-1 overflow-y-auto px-6 pb-6 sm:px-8">
               <motion.ul layout className="divide-y divide-border/70">
                 <AnimatePresence initial={false}>
                   {lines.map(({ item, product }) => (
@@ -107,52 +111,57 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
                   ))}
                 </AnimatePresence>
               </motion.ul>
+
+              {/* Promosyon kodu — tıklayınca açılan küçük alan */}
+              <div className="border-t border-border/70 pt-5">
+                <div>
+                  {!promoOpen ? (
+                    <button
+                      type="button"
+                      onClick={() => setPromoOpen(true)}
+                      className="micro text-foreground/45 transition-colors hover:text-foreground"
+                    >
+                      Promosyon Kodu
+                    </button>
+                  ) : (
+                    <div>
+                      <div className="flex gap-2">
+                        <input
+                          autoFocus
+                          value={promo}
+                          onChange={(e) => setPromo(e.target.value)}
+                          placeholder="Kodu gir"
+                          aria-label="Promosyon kodu"
+                          className="h-10 min-w-0 flex-1 rounded-full bg-muted px-4 text-[13px] outline-none placeholder:text-foreground/35 focus-visible:ring-1 focus-visible:ring-foreground/30"
+                        />
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setPromoNote(
+                              "Kodlar ödeme adımında kontrol edilecek.",
+                            )
+                          }
+                          className="h-10 shrink-0 rounded-full bg-muted px-4 micro text-foreground/70 transition-colors hover:text-foreground"
+                        >
+                          Uygula
+                        </button>
+                      </div>
+                      {promoNote && (
+                        <p className="mt-2 text-[11px] text-muted-foreground">
+                          {promoNote}
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Tek, sakin öneri: sepettekini tamamlayan bir parça. */}
+              <CartRecommendation onNavigate={onClose} />
             </div>
 
             <footer className="shrink-0 border-t border-border/70 px-6 pb-7 pt-5 sm:px-8">
-              {/* Promosyon kodu — tıklayınca açılan küçük alan */}
-              <div className="pb-5">
-                {!promoOpen ? (
-                  <button
-                    type="button"
-                    onClick={() => setPromoOpen(true)}
-                    className="micro text-foreground/45 transition-colors hover:text-foreground"
-                  >
-                    Promosyon Kodu
-                  </button>
-                ) : (
-                  <div>
-                    <div className="flex gap-2">
-                      <input
-                        autoFocus
-                        value={promo}
-                        onChange={(e) => setPromo(e.target.value)}
-                        placeholder="Kodu gir"
-                        aria-label="Promosyon kodu"
-                        className="h-10 min-w-0 flex-1 rounded-full bg-muted px-4 text-[13px] outline-none placeholder:text-foreground/35 focus-visible:ring-1 focus-visible:ring-foreground/30"
-                      />
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setPromoNote(
-                            "Kodlar ödeme adımında kontrol edilecek.",
-                          )
-                        }
-                        className="h-10 shrink-0 rounded-full bg-muted px-4 micro text-foreground/70 transition-colors hover:text-foreground"
-                      >
-                        Uygula
-                      </button>
-                    </div>
-                    {promoNote && (
-                      <p className="mt-2 text-[11px] text-muted-foreground">
-                        {promoNote}
-                      </p>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              <dl className="space-y-2.5 border-t border-border/70 pt-5 text-sm">
+              <dl className="space-y-2.5 text-sm">
                 <Row label="Ara Toplam">
                   <AnimatedAmount value={formatPrice(subtotal, currency)} />
                 </Row>

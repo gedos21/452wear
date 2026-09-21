@@ -293,6 +293,27 @@ async function kullanilmayanGorselleriSil(yollar: string[], urunId: string) {
   }
 }
 
+/** Formdan gelen öneri id'lerini temizler; boş liste hiç yazılmaz. */
+function oneriAlanlari(fd: FormData, id: string) {
+  const oku = (ad: string, limit: number) => {
+    const temiz = [
+      ...new Set(
+        fd
+          .getAll(ad)
+          .map((v) => String(v).trim())
+          .filter((v) => v && v !== id),
+      ),
+    ].slice(0, limit);
+    return temiz;
+  };
+  const complementaryIds = oku("complementaryIds", 3);
+  const relatedIds = oku("relatedIds", 8);
+  return {
+    ...(complementaryIds.length ? { complementaryIds } : {}),
+    ...(relatedIds.length ? { relatedIds } : {}),
+  };
+}
+
 export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
   if (KAPALI) return KAPALI_SONUC;
   // Diske yazılan yeni Pixel Fit PNG'si; ürün yazılamazsa sahipsiz kalmasın
@@ -409,6 +430,8 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
       colors: a.colors,
       variants,
       isNew: fd.get("isNew") === "on",
+      // Öneri ilişkileri: isteğe bağlı, kendi id'si ve tekrarlar elenir.
+      ...oneriAlanlari(fd, id),
       // Yeni PNG gelmediyse mevcut Pixel Fit bağlantısı aynen korunur.
       ...(tryOn ? { tryOn } : {}),
     };

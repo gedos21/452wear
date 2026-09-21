@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { UrunDuzenleyici } from "@/components/admin/urun-duzenleyici";
-import { urunBul } from "@/lib/catalog-store";
+import { katalogOku, urunBul } from "@/lib/catalog-store";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +11,8 @@ export default async function UrunDuzenleSayfasi({
   const { id } = await params;
   const urun = await urunBul(id);
   if (!urun) notFound();
+  // Öneri alanlarında seçilecek ürünler.
+  const urunler = await katalogOku();
 
   return (
     <div>
@@ -27,7 +29,7 @@ export default async function UrunDuzenleSayfasi({
         </h1>
         <span className="text-[13px] text-foreground/40">{urun.id}</span>
       </div>
-      <UrunDuzenleyici urun={urun} />
+      <UrunDuzenleyici urun={urun} urunler={urunler} />
     </div>
   );
 }

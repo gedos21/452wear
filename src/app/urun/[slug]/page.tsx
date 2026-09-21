@@ -8,7 +8,13 @@ import { categoryHref } from "@/components/layout/nav-links";
 import { productNameParts } from "@/lib/product-filters";
 import { ProductPageDetail } from "@/components/product/product-detail";
 import { CATEGORIES } from "@/data/products";
-import { slugIleUrun } from "@/lib/catalog-store";
+import { katalogOku, slugIleUrun } from "@/lib/catalog-store";
+import { complementaryFor, outfitFor, relatedFor } from "@/lib/recommendations";
+import {
+  ComplementaryProducts,
+  OutfitRecommendation,
+  RelatedProducts,
+} from "@/components/product/recommendations";
 
 /**
  * Ürün sayfası. İçerik hızlı görünüm paneliyle aynı bileşenden gelir
@@ -68,6 +74,22 @@ export default async function UrunSayfasi({
   if (yonlendir) permanentRedirect(`/urun/${urun.slug}`);
 
   const kategori = CATEGORIES.find((c) => c.slug === urun.category);
+  // Öneriler: sayfanın zaten okuduğu katalogdan türetilir, ek istek yok.
+  // Aynı ürün iki bölümde tekrar etmesin diye "buna da bak" listesi
+  // tamamlayıcıları ve kombindekileri hariç tutar.
+  const katalog = await katalogOku();
+  const tamamlayici = complementaryFor(urun, katalog);
+  const kombin = outfitFor(
+    urun,
+    katalog,
+    tamamlayici.map((p) => p.id),
+  );
+  const gosterilen = [
+    ...tamamlayici.map((p) => p.id),
+    ...(kombin?.pieces.map((p) => p.id) ?? []),
+  ];
+  const benzer = relatedFor(urun, katalog, 4, gosterilen);
+
   const ayakkabi = urun.category === "ayakkabi";
   // Kendi ürünlerimizde marka yok; yolun son adımı kategori olur.
   const marka = productNameParts(urun).brand;
@@ -113,6 +135,10 @@ export default async function UrunSayfasi({
           <div className="mt-8 sm:mt-10">
             <ProductPageDetail product={urun} />
           </div>
+
+          <ComplementaryProducts products={tamamlayici} />
+          {kombin && <OutfitRecommendation outfit={kombin} current={urun} />}
+          <RelatedProducts products={benzer} />
         </Container>
       </main>
       <SiteFooter />

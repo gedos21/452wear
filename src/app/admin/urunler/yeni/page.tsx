@@ -1,9 +1,15 @@
 import Link from "next/link";
 import { UrunDuzenleyici } from "@/components/admin/urun-duzenleyici";
+import { katalogOku } from "@/lib/catalog-store";
 
 export const metadata = { title: "Yeni ürün" };
 
-export default function YeniUrunSayfasi() {
+export const dynamic = "force-dynamic";
+
+export default async function YeniUrunSayfasi() {
+  // Öneri alanlarında seçilecek ürünler.
+  const urunler = await katalogOku();
+
   return (
     <div>
       <Link
@@ -15,7 +21,7 @@ export default function YeniUrunSayfasi() {
       <h1 className="mt-4 mb-8 font-display text-[clamp(1.75rem,5vw,2.5rem)] font-extrabold leading-none tracking-[-0.03em]">
         YENİ ÜRÜN<span className="text-brand">.</span>
       </h1>
-      <UrunDuzenleyici />
+      <UrunDuzenleyici urunler={urunler} />
     </div>
   );
 }
