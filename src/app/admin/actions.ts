@@ -465,6 +465,213 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
   }
 }
 
+/* ---------------- Toplu düzenleme ---------------- */
+
+/** Toplu düzenlemede bir ürün için gönderilen değişiklikler; hepsi isteğe bağlı. */
+export type TopluDegisiklik = {
+  id: string;
+  ad?: string;
+  aciklama?: string;
+  fiyat?: number;
+  /** Sayı: yeni indirim öncesi fiyat. null: indirimi kaldır. */
+  indirimOncesi?: number | null;
+  kategori?: ProductCategory;
+  renkler?: { name: string; hex: string }[];
+  /** Seçilen bedenler/numaralar; varyant ızgarası buna göre kurulur. */
+  bedenler?: string[];
+  /** Yeni oluşan renk+beden hücrelerine yazılacak stok (varsayılan 0). */
+  stok?: number;
+  /** Ad değiştiyse adresi de yenile (eski adres yönlendirilir). */
+  slugYenile?: boolean;
+};
+
+export type TopluSonuc =
+  | { durum: "bos" }
+  | {
+      durum: "ok";
+      guncellenen: number;
+      hatalar: { id: string; ad: string; mesaj: string }[];
+    }
+  | { durum: "hata"; mesaj: string };
+
+const TOPLU_KAPALI: TopluSonuc = {
+  durum: "hata",
+  mesaj: "Admin yalnızca geliştirme ortamında çalışır.",
+};
+
+/**
+ * Tek bir ürüne toplu değişiklikleri uygular ve YENİ ürünü döndürür.
+ * Doğrulama kuralları tek ürün formuyla aynıdır; hata varsa metin döner.
+ *
+ * Varyantlar korunarak yeniden kurulur: yeni renk×beden ızgarasında zaten
+ * var olan hücrenin stoğu ve id'si aynen kalır, yalnızca yeni hücrelere
+ * `stok` (varsayılan 0) yazılır. Böylece "20 ayakkabıya 39–43 numaraları
+ * ekle" gibi bir işlem mevcut stokları silmez.
+ */
+function topluUygula(
+  mevcut: Product,
+  d: TopluDegisiklik,
+): { ok: true; urun: Product } | { ok: false; hata: string } {
+  const ad = d.ad?.trim() ?? mevcut.name;
+  if (!ad) return { ok: false, hata: "Ürün adı boş olamaz." };
+
+  const aciklama = d.aciklama?.trim() ?? mevcut.description;
+  if (!aciklama) return { ok: false, hata: "Açıklama boş olamaz." };
+
+  const kategori = d.kategori ?? mevcut.category;
+  if (!KATEGORILER.includes(kategori))
+    return { ok: false, hata: "Geçersiz kategori." };
+
+  const fiyat = d.fiyat ?? mevcut.price;
+  if (!Number.isFinite(fiyat) || fiyat <= 0)
+    return { ok: false, hata: "Fiyat sıfırdan büyük olmalı." };
+
+  const indirimOncesi =
+    d.indirimOncesi === undefined ? mevcut.compareAtPrice : d.indirimOncesi;
+  if (
+    indirimOncesi !== null &&
+    indirimOncesi !== undefined &&
+    (!Number.isFinite(indirimOncesi) || indirimOncesi <= fiyat)
+  )
+    return { ok: false, hata: "İndirim öncesi fiyat, fiyattan büyük olmalı." };
+
+  // Renkler
+  const renkler = d.renkler ?? mevcut.colors;
+  if (renkler.length === 0) return { ok: false, hata: "En az bir renk gerekli." };
+  const gorulen = new Set<string>();
+  for (const c of renkler) {
+    const anahtar = c.name.trim().toLocaleLowerCase("tr");
+    if (!anahtar) return { ok: false, hata: "Renk adı boş olamaz." };
+    if (gorulen.has(anahtar))
+      return { ok: false, hata: `"${c.name}" rengi iki kez girilmiş.` };
+    gorulen.add(anahtar);
+    if (!/^#[0-9a-f]{6}$/i.test(c.hex))
+      return { ok: false, hata: `"${c.name}" için renk kodu geçersiz.` };
+  }
+
+  // Bedenler: verilmediyse üründeki bedenler korunur.
+  const gecerli = sizesForCategory(kategori);
+  const mevcutBedenler = [
+    ...new Set(mevcut.variants.map((v) => v.size)),
+  ] as ProductSize[];
+  const istenen = (d.bedenler ?? mevcutBedenler) as ProductSize[];
+  const bedenler = gecerli.filter((b) => istenen.includes(b));
+  if (bedenler.length === 0)
+    return {
+      ok: false,
+      hata:
+        d.kategori && d.kategori !== mevcut.category
+          ? "Kategori değişti; yeni kategoriye uygun beden seç."
+          : "En az bir beden seç.",
+    };
+
+  const varsayilanStok =
+    Number.isFinite(d.stok) && (d.stok as number) > 0
+      ? Math.floor(d.stok as number)
+      : 0;
+
+  const variants: ProductVariant[] = [];
+  for (const c of renkler) {
+    for (const b of bedenler) {
+      const onceki = mevcut.variants.find(
+        (v) => v.color === c.name && v.size === b,
+      );
+      variants.push(
+        onceki ?? {
+          id: `${mevcut.id}-${slugYap(c.name)}-${b.toLowerCase()}`,
+          size: b,
+          color: c.name,
+          stock: varsayilanStok,
+        },
+      );
+    }
+  }
+
+  // Pixel Fit: kategoride yuva yoksa (ayakkabı) kayıtlı asset taşınamaz.
+  if (!slotForCategory(kategori) && mevcut.tryOn)
+    return {
+      ok: false,
+      hata: "Bu kategoride Pixel Fit yok; önce ürünün asset'ini kaldır.",
+    };
+
+  const urun: Product = {
+    ...mevcut,
+    name: ad,
+    description: aciklama,
+    category: kategori,
+    price: Math.round(fiyat),
+    colors: renkler.map((c) => ({ name: c.name.trim(), hex: c.hex })),
+    variants,
+  };
+  if (indirimOncesi === null || indirimOncesi === undefined)
+    delete urun.compareAtPrice;
+  else urun.compareAtPrice = Math.round(indirimOncesi);
+
+  return { ok: true, urun };
+}
+
+/**
+ * Birden çok ürünü tek işlemde günceller. Her ürün ayrı doğrulanır: biri
+ * reddedilse de diğerleri yazılır, reddedilenler listeyle geri döner.
+ */
+export async function topluGuncelle(
+  _onceki: TopluSonuc,
+  fd: FormData,
+): Promise<TopluSonuc> {
+  if (KAPALI) return TOPLU_KAPALI;
+  try {
+    const ham = String(fd.get("degisiklikler") ?? "");
+    let liste: TopluDegisiklik[];
+    try {
+      liste = JSON.parse(ham) as TopluDegisiklik[];
+    } catch {
+      return { durum: "hata", mesaj: "Değişiklikler okunamadı." };
+    }
+    if (!Array.isArray(liste) || liste.length === 0)
+      return { durum: "hata", mesaj: "Güncellenecek ürün yok." };
+
+    let guncellenen = 0;
+    const hatalar: { id: string; ad: string; mesaj: string }[] = [];
+
+    for (const d of liste) {
+      const mevcut = await urunBul(String(d.id ?? ""));
+      if (!mevcut) {
+        hatalar.push({ id: String(d.id), ad: String(d.id), mesaj: "Ürün bulunamadı." });
+        continue;
+      }
+      const sonuc = topluUygula(mevcut, d);
+      if (!sonuc.ok) {
+        hatalar.push({ id: mevcut.id, ad: mevcut.name, mesaj: sonuc.hata });
+        continue;
+      }
+
+      let urun = sonuc.urun;
+      // Adres yalnızca istenirse yenilenir; eski adres urunYaz içinde
+      // otomatik yönlendirmeye eklenir.
+      if (d.slugYenile && urun.name !== mevcut.name) {
+        const taban = slugYap(urun.name);
+        if (taban) urun = { ...urun, slug: await bosSlug(taban, urun.id) };
+      }
+
+      try {
+        await urunYaz(urun);
+        guncellenen++;
+      } catch (e) {
+        hatalar.push({
+          id: mevcut.id,
+          ad: mevcut.name,
+          mesaj: `Kaydedilemedi: ${(e as Error).message}`,
+        });
+      }
+    }
+
+    if (guncellenen > 0) tazele();
+    return { durum: "ok", guncellenen, hatalar };
+  } catch (e) {
+    return { durum: "hata", mesaj: `Güncellenemedi: ${(e as Error).message}` };
+  }
+}
+
 /** Ürünü çöp kutusuna taşır. Verisi ve görselleri durur; geri getirilebilir. */
 export async function urunSil(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
   if (KAPALI) return KAPALI_SONUC;
