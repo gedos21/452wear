@@ -35,14 +35,14 @@ export function UrunFormu({
   onKategori,
   onKaydedildi,
   kayitMesaji,
-  pixelDosya,
+
   urunler = [],
 }: {
   urun?: Product;
   kategori: ProductCategory;
   onKategori: (k: ProductCategory) => void;
   /**
-   * Kayıt başarılıysa çağrılır. Düzenleyici Pixel Fit seçimini sıfırlar; yeni
+   * Kayıt başarılıysa çağrılır. Düzenleyici, yeni
    * üründe formu boşaltıp bildirim gösterir, kayıtlı üründe mesajı saklar.
    */
   onKaydedildi?: (kayit: Kayit) => void;
@@ -51,15 +51,6 @@ export function UrunFormu({
    * kurulduğu için kendi sonucu sıfırlanır; mesaj buradan gösterilir.
    */
   kayitMesaji?: string | null;
-  /**
-   * Pixel Fit panelinde seçilmiş ama henüz yüklenmemiş PNG.
-   *
-   * Her iki ekranda da gönderilir: yeni üründe asset ürünle aynı kaydetmede
-   * oluşur, kayıtlı üründe ise yönetici "PNG yükle" yerine "Değişiklikleri
-   * kaydet"e bastığında seçim sessizce kaybolmaz. Dosya adı içerik hash'i
-   * olduğu için aynı dosyanın iki yoldan da kaydedilmesi aynı sonucu verir.
-   */
-  pixelDosya?: File | null;
   /**
    * Öneri alanlarında seçilebilecek ürünler (yayındaki katalog). Boş
    * gelirse bölüm çizilmez; alanlar zaten zorunlu değil.
@@ -119,7 +110,7 @@ export function UrunFormu({
   // yeniden kurulur ve bu bileşenin effect'i sonucu hiç görmeden kaybolur.
   const [sonuc, kaydet, kaydediliyor] = useActionState(
     async (onceki: Sonuc, fd: FormData) => {
-      if (pixelDosya) fd.append("pixelAsset", pixelDosya);
+
       // Görseller formdan değil bu listeden gider: sıra ve kaldırma burada.
       let yeniIndex = 0;
       for (const g of gorseller) {

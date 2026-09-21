@@ -5,10 +5,6 @@ import { CATEGORIES } from "@/data/products";
 import { Silinenler } from "@/components/admin/silinenler";
 import { copKutusu, katalogOku } from "@/lib/catalog-store";
 import { formatPrice } from "@/lib/format";
-import {
-  PixelFitRozet,
-  pixelFitDurumu,
-} from "@/components/admin/pixel-fit-durum";
 
 export const metadata = { title: "Ürünler" };
 
@@ -19,7 +15,7 @@ export default async function UrunlerSayfasi() {
   const [urunler, silinenler] = await Promise.all([katalogOku(), copKutusu()]);
   const kategoriAdi = (slug: string) =>
     CATEGORIES.find((c) => c.slug === slug)?.label ?? slug;
-  const hazir = urunler.filter((u) => pixelFitDurumu(u) === "hazir").length;
+
 
   return (
     <div>
@@ -29,7 +25,7 @@ export default async function UrunlerSayfasi() {
             ÜRÜNLER<span className="text-brand">.</span>
           </h1>
           <p className="mt-3 text-[13px] text-muted-foreground">
-            {urunler.length} ürün · {hazir} tanesi Pixel Fit için hazır
+            {urunler.length} ürün
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -59,9 +55,6 @@ export default async function UrunlerSayfasi() {
               <th className="px-4 py-3 font-normal">Ürün</th>
               <th className="px-4 py-3 font-normal">Kategori</th>
               <th className="px-4 py-3 font-normal">Fiyat</th>
-              <th lang="en" className="px-4 py-3 font-normal">
-                Pixel Fit
-              </th>
               <th className="px-4 py-3" />
             </tr>
           </thead>
@@ -83,9 +76,7 @@ export default async function UrunlerSayfasi() {
                 <td className="px-4 py-3">
                   {formatPrice(u.price, u.currency)}
                 </td>
-                <td className="px-4 py-3">
-                  <PixelFitRozet durum={pixelFitDurumu(u)} />
-                </td>
+
                 <td className="px-4 py-3 text-right">
                   <Link
                     href={`/admin/urunler/${u.id}`}
@@ -114,7 +105,7 @@ export default async function UrunlerSayfasi() {
                 <p className="mt-0.5 text-[12px] text-foreground/45">
                   {kategoriAdi(u.category)} · {formatPrice(u.price, u.currency)}
                 </p>
-                <PixelFitRozet durum={pixelFitDurumu(u)} className="mt-1.5" />
+
               </div>
               <span className="micro shrink-0 text-foreground/40">→</span>
             </Link>

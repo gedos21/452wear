@@ -1,4 +1,4 @@
-import type { Product, ProductCategory } from "@/types/product";
+import type { Product } from "@/types/product";
 
 /**
  * Kombin motoru — saf fonksiyonlar, React'ten bağımsız.
@@ -27,52 +27,6 @@ export type OutfitAnswers = {
   bottom: BottomChoice;
 };
 
-export type QuestionKey = keyof OutfitAnswers;
-
-export const QUESTIONS: {
-  key: QuestionKey;
-  prompt: string;
-  options: { value: string; label: string }[];
-}[] = [
-  {
-    key: "occasion",
-    prompt: "Bugün nereye gidiyorsun?",
-    options: [
-      { value: "gunluk", label: "Günlük" },
-      { value: "okul", label: "Okul" },
-      { value: "disari", label: "Dışarı" },
-      { value: "aksam", label: "Akşam" },
-    ],
-  },
-  {
-    key: "vibe",
-    prompt: "Bugün nasıl bir vibe?",
-    options: [
-      { value: "sade", label: "Sade" },
-      { value: "street", label: "Street" },
-      { value: "oversize", label: "Oversize" },
-      { value: "farkli", label: "Farklı" },
-    ],
-  },
-  {
-    key: "top",
-    prompt: "Üstte ne tercih edersin?",
-    options: [
-      { value: "tisort", label: "Tişört" },
-      { value: "sweatshirt", label: "Sweatshirt" },
-      { value: "hirka", label: "Hırka" },
-      { value: "farketmez", label: "Fark etmez" },
-    ],
-  },
-  {
-    key: "bottom",
-    prompt: "Altta?",
-    options: [
-      { value: "esofman", label: "Eşofman" },
-      { value: "farketmez", label: "Fark etmez" },
-    ],
-  },
-];
 
 /** Ürün metninde aranan sinyaller — hepsi mevcut ad/açıklamalardan. */
 const VIBE_KEYWORDS: Record<Vibe, string[]> = {
@@ -157,76 +111,4 @@ export function scoreProduct(
   if (product.isNew) score += 4;
 
   return score;
-}
-
-/** Puanı en yüksek adaylardan biri; beraberlikte tekdüzelik olmasın diye. */
-function pickTop(
-  candidates: { product: Product; score: number }[],
-): Product | null {
-  if (candidates.length === 0) return null;
-  const sorted = [...candidates].sort((a, b) => b.score - a.score);
-  const best = sorted[0].score;
-  // En iyiye yakın olanlar arasından seç — hâlâ en uygunlar, ama her
-  // denemede aynı sonuç gelmez.
-  const pool = sorted.filter((c) => c.score >= best - 6);
-  return pool[Math.floor(Math.random() * pool.length)].product;
-}
-
-/** Ayakkabı stokta uygun ürün varsa eklenir; yoksa kombin üst + alt kalır. */
-export type Outfit = {
-  top: Product;
-  bottom: Product;
-  shoes?: Product;
-  total: number;
-};
-
-/**
- * Üst + alt kombin kurar. Önce üst seçilir, sonra ona göre renk uyumlu alt.
- * Stokta ayakkabı varsa alta göre bir ayakkabı eklenir; karaktere çizilmez.
- * Aynı ürün iki kez gelemez (farklı kategoriler olduğu için zaten olamaz).
- */
-export function buildOutfit(
-  products: Product[],
-  answers: OutfitAnswers,
-): Outfit | null {
-  const available = products.filter(isAvailable);
-
-  const topCategories: ProductCategory[] =
-    answers.top === "farketmez"
-      ? ["tisort", "sweatshirt", "hirka"]
-      : [answers.top];
-
-  const tops = available.filter((p) => topCategories.includes(p.category));
-  const bottoms = available.filter((p) => p.category === "esofman");
-
-  const top = pickTop(
-    tops.map((product) => ({ product, score: scoreProduct(product, answers) })),
-  );
-  if (!top) return null;
-
-  const bottom = pickTop(
-    bottoms
-      .filter((p) => p.id !== top.id)
-      .map((product) => ({
-        product,
-        score: scoreProduct(product, answers, top),
-      })),
-  );
-  if (!bottom) return null;
-
-  const shoes = pickTop(
-    available
-      .filter((p) => p.category === "ayakkabi")
-      .map((product) => ({
-        product,
-        score: scoreProduct(product, answers, bottom),
-      })),
-  );
-
-  return {
-    top,
-    bottom,
-    ...(shoes ? { shoes } : {}),
-    total: top.price + bottom.price + (shoes?.price ?? 0),
-  };
 }

@@ -198,7 +198,7 @@ export async function kaliciSil(id: string): Promise<Product | null> {
  *     olabilir; yeni ürüne verilirse orada başka bir ürün olarak dirilir,
  *   • public/ altında o numarayla başlayan dosyalar olabilir (ör. p-005-b.png
  *     p-009'un görseli) ve yeni ürünle karışır.
- * Bu yüzden katalogdaki ve silinen id'lerin yanında görsel klasörlerindeki
+ * Bu yüzden katalogdaki ve silinen id'lerin yanında public/products altındaki
  * dosya adlarına da bakılır.
  */
 export async function yeniId(): Promise<string> {
@@ -208,16 +208,14 @@ export async function yeniId(): Promise<string> {
     ...k.eklenen.map((p) => p.id),
     ...k.silinen,
   ];
-  for (const klasor of ["products", "character"]) {
-    try {
-      const dosyalar = await fs.readdir(
-        path.join(process.cwd(), "public", klasor),
-        { recursive: true },
-      );
-      adlar.push(...dosyalar.map((d) => path.basename(d)));
-    } catch (e) {
-      if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
-    }
+  try {
+    const dosyalar = await fs.readdir(
+      path.join(process.cwd(), "public", "products"),
+      { recursive: true },
+    );
+    adlar.push(...dosyalar.map((d) => path.basename(d)));
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
   }
   const enBuyuk = Math.max(
     0,

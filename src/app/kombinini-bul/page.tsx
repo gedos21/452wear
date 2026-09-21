@@ -2,26 +2,28 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
-import { OutfitFlow } from "@/components/outfit/outfit-flow";
+import { KombinAkisi } from "@/components/kombin/kombin-akisi";
 import { katalogOku } from "@/lib/catalog-store";
 
 export const metadata: Metadata = {
   title: "Kombin Öner",
-  description: "Birkaç soruya cevap ver, sana bir kombin kuralım.",
+  description: "Birkaç soruya cevap ver, mağazadaki ürünlerden kombin kuralım.",
 };
 
-export default async function OutfitPage() {
+/**
+ * Kombin öner sayfası: dört soru, ardından katalogdaki stokta olan
+ * ürünlerden kurulmuş bir kombin. Ürünler sayfada sunucudan okunur;
+ * öneri istemcide bu listeden kurulur (ek istek yok).
+ */
+export default async function KombinSayfasi() {
   const products = await katalogOku();
 
   return (
     <>
       <SiteHeader />
       <main className="flex-1">
-        <Container className="pt-16 pb-24 sm:pt-24 sm:pb-32 lg:pt-28">
-          {/* Genişlik kelepçesi burada değil OutfitFlow içinde: soru adımları
-              dar bir kolonda kalır, iki kolonlu sonuç ekranı tam genişlik
-              kullanır (aksi halde ürün kartları 140px'e sıkışıyordu). */}
-          <OutfitFlow products={products} />
+        <Container className="pt-12 pb-20 sm:pt-16 sm:pb-24 lg:pt-20">
+          <KombinAkisi products={products} />
         </Container>
       </main>
       <SiteFooter />
