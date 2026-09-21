@@ -140,14 +140,12 @@ export function ShopBrowser({
   const noticeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(() => () => clearTimeout(noticeTimer.current), []);
 
+  // Tek tıkla kalan bütün ürünler açılır; düğmeye tekrar tekrar basılmaz.
   const loadMore = () => {
-    const next = visible + PAGE_SIZE;
-    setPage({ key: resetKey, visible: next });
-    if (next >= results.length) {
-      setEndNotice(true);
-      clearTimeout(noticeTimer.current);
-      noticeTimer.current = setTimeout(() => setEndNotice(false), 3200);
-    }
+    setPage({ key: resetKey, visible: results.length });
+    setEndNotice(true);
+    clearTimeout(noticeTimer.current);
+    noticeTimer.current = setTimeout(() => setEndNotice(false), 3200);
   };
 
   // Kategori navbar'dan seçildiği için temizleme onu korur.
@@ -211,7 +209,7 @@ export function ShopBrowser({
                     onClick={loadMore}
                     className="inline-flex h-12 items-center rounded-full border border-foreground/20 px-7 micro transition-colors hover:border-foreground/60"
                   >
-                    Daha Fazla Göster
+                    Tümünü Göster ({results.length - shown.length})
                   </button>
                 </div>
               ) : (

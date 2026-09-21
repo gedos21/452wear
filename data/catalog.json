@@ -349,6 +349,3984 @@
         }
       ],
       "isNew": true
+    },
+    {
+      "id": "p-015",
+      "slug": "vans-siyah-beyaz",
+      "name": "vans siyah beyaz",
+      "description": "düzenlenir",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1383,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-015-7d33dfac.webp",
+          "alt": "vans siyah beyaz"
+        },
+        {
+          "src": "/products/p-015-bf5e9c9b.webp",
+          "alt": "vans siyah beyaz"
+        },
+        {
+          "src": "/products/p-015-140d010b.webp",
+          "alt": "vans siyah beyaz"
+        },
+        {
+          "src": "/products/p-015-bb7cb399.webp",
+          "alt": "vans siyah beyaz"
+        },
+        {
+          "src": "/products/p-015-d231c78d.webp",
+          "alt": "vans siyah beyaz"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-015-siyah-36",
+          "size": "36",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-37",
+          "size": "37",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-38",
+          "size": "38",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-39",
+          "size": "39",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-40",
+          "size": "40",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-41",
+          "size": "41",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-42",
+          "size": "42",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-43",
+          "size": "43",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-44",
+          "size": "44",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-015-siyah-45",
+          "size": "45",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-016",
+      "slug": "vans-beyaz",
+      "name": "vans beyaz",
+      "description": "jjj",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-016-ef77e991.webp",
+          "alt": "vans beyaz"
+        },
+        {
+          "src": "/products/p-016-8045ee53.webp",
+          "alt": "vans beyaz"
+        },
+        {
+          "src": "/products/p-016-d0f9763e.webp",
+          "alt": "vans beyaz"
+        },
+        {
+          "src": "/products/p-016-98677b5e.webp",
+          "alt": "vans beyaz"
+        },
+        {
+          "src": "/products/p-016-012708ba.webp",
+          "alt": "vans beyaz"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-016-beyaz-36",
+          "size": "36",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-37",
+          "size": "37",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-38",
+          "size": "38",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-39",
+          "size": "39",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-40",
+          "size": "40",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-41",
+          "size": "41",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-42",
+          "size": "42",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-43",
+          "size": "43",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-44",
+          "size": "44",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-016-beyaz-45",
+          "size": "45",
+          "color": "Beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-017",
+      "slug": "jordan-4-yeni",
+      "name": "jordan 4 yeni",
+      "description": "ıkkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-017-d77ece4e.webp",
+          "alt": "jordan 4 yeni"
+        },
+        {
+          "src": "/products/p-017-a415c873.webp",
+          "alt": "jordan 4 yeni"
+        },
+        {
+          "src": "/products/p-017-487660d7.webp",
+          "alt": "jordan 4 yeni"
+        },
+        {
+          "src": "/products/p-017-ee18d133.webp",
+          "alt": "jordan 4 yeni"
+        },
+        {
+          "src": "/products/p-017-68c1cc1a.webp",
+          "alt": "jordan 4 yeni"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Bordo",
+          "hex": "#5e1212"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-017-bordo-36",
+          "size": "36",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-017-bordo-37",
+          "size": "37",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-017-bordo-38",
+          "size": "38",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-017-bordo-39",
+          "size": "39",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-017-bordo-40",
+          "size": "40",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-017-bordo-41",
+          "size": "41",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-017-bordo-42",
+          "size": "42",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-017-bordo-43",
+          "size": "43",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-017-bordo-44",
+          "size": "44",
+          "color": "Bordo",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-018",
+      "slug": "nike-sb-dunk",
+      "name": "nike sb dunk",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-018-bff6f0c2.webp",
+          "alt": "nike sb dunk"
+        },
+        {
+          "src": "/products/p-018-2daf2c83.webp",
+          "alt": "nike sb dunk"
+        },
+        {
+          "src": "/products/p-018-ce78e220.webp",
+          "alt": "nike sb dunk"
+        },
+        {
+          "src": "/products/p-018-2fed12bb.webp",
+          "alt": "nike sb dunk"
+        },
+        {
+          "src": "/products/p-018-ba6588de.webp",
+          "alt": "nike sb dunk"
+        }
+      ],
+      "colors": [
+        {
+          "name": "gri",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-018-gri-36",
+          "size": "36",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-018-gri-37",
+          "size": "37",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-018-gri-38",
+          "size": "38",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-018-gri-39",
+          "size": "39",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-018-gri-40",
+          "size": "40",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-018-gri-41",
+          "size": "41",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-018-gri-42",
+          "size": "42",
+          "color": "gri",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-019",
+      "slug": "nike-dragon",
+      "name": "nike dragon",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-019-69c98a1e.webp",
+          "alt": "nike dragon"
+        },
+        {
+          "src": "/products/p-019-273c2307.webp",
+          "alt": "nike dragon"
+        },
+        {
+          "src": "/products/p-019-dd98b3e4.webp",
+          "alt": "nike dragon"
+        },
+        {
+          "src": "/products/p-019-53249d52.webp",
+          "alt": "nike dragon"
+        },
+        {
+          "src": "/products/p-019-3a5fda84.webp",
+          "alt": "nike dragon"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Bordo",
+          "hex": "#8d1616"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-019-bordo-36",
+          "size": "36",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-019-bordo-37",
+          "size": "37",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-019-bordo-38",
+          "size": "38",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-019-bordo-39",
+          "size": "39",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-019-bordo-40",
+          "size": "40",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-019-bordo-41",
+          "size": "41",
+          "color": "Bordo",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-020",
+      "slug": "nike-gri-mavi",
+      "name": "nike gri mavi",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-020-3e8224ea.webp",
+          "alt": "nike gri mavi"
+        },
+        {
+          "src": "/products/p-020-dbc308db.webp",
+          "alt": "nike gri mavi"
+        },
+        {
+          "src": "/products/p-020-7d4ea4ac.webp",
+          "alt": "nike gri mavi"
+        },
+        {
+          "src": "/products/p-020-a783cca0.webp",
+          "alt": "nike gri mavi"
+        },
+        {
+          "src": "/products/p-020-45ca5db4.webp",
+          "alt": "nike gri mavi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz gri",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-020-beyaz-gri-36",
+          "size": "36",
+          "color": "beyaz gri",
+          "stock": 10
+        },
+        {
+          "id": "p-020-beyaz-gri-37",
+          "size": "37",
+          "color": "beyaz gri",
+          "stock": 10
+        },
+        {
+          "id": "p-020-beyaz-gri-38",
+          "size": "38",
+          "color": "beyaz gri",
+          "stock": 10
+        },
+        {
+          "id": "p-020-beyaz-gri-39",
+          "size": "39",
+          "color": "beyaz gri",
+          "stock": 10
+        },
+        {
+          "id": "p-020-beyaz-gri-40",
+          "size": "40",
+          "color": "beyaz gri",
+          "stock": 10
+        },
+        {
+          "id": "p-020-beyaz-gri-41",
+          "size": "41",
+          "color": "beyaz gri",
+          "stock": 10
+        },
+        {
+          "id": "p-020-beyaz-gri-42",
+          "size": "42",
+          "color": "beyaz gri",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-021",
+      "slug": "nike-sb-dunk-digeri",
+      "name": "nike sb dunk diğeri",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-021-e2be9cbf.webp",
+          "alt": "nike sb dunk diğeri"
+        },
+        {
+          "src": "/products/p-021-b1776fb7.webp",
+          "alt": "nike sb dunk diğeri"
+        },
+        {
+          "src": "/products/p-021-990d3b11.webp",
+          "alt": "nike sb dunk diğeri"
+        },
+        {
+          "src": "/products/p-021-bd85d67b.webp",
+          "alt": "nike sb dunk diğeri"
+        },
+        {
+          "src": "/products/p-021-6b9ac7fb.webp",
+          "alt": "nike sb dunk diğeri"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-021-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-021-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-021-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-021-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-021-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-021-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-022",
+      "slug": "af1-gri-logo",
+      "name": "af1 gri logo",
+      "description": "112kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-022-15373c60.webp",
+          "alt": "af1 gri logo"
+        },
+        {
+          "src": "/products/p-022-371df7ef.webp",
+          "alt": "af1 gri logo"
+        },
+        {
+          "src": "/products/p-022-bd266efc.webp",
+          "alt": "af1 gri logo"
+        },
+        {
+          "src": "/products/p-022-6b28bf7c.webp",
+          "alt": "af1 gri logo"
+        },
+        {
+          "src": "/products/p-022-6b9ac7fb.webp",
+          "alt": "af1 gri logo"
+        }
+      ],
+      "colors": [
+        {
+          "name": "gri",
+          "hex": "#808080"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-022-gri-36",
+          "size": "36",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-022-gri-37",
+          "size": "37",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-022-gri-38",
+          "size": "38",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-022-gri-39",
+          "size": "39",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-022-gri-40",
+          "size": "40",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-022-gri-41",
+          "size": "41",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-022-gri-42",
+          "size": "42",
+          "color": "gri",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-023",
+      "slug": "nike-parlak-siyah",
+      "name": "nike parlak siyah",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-023-ea33b3fd.webp",
+          "alt": "nike parlak siyah"
+        },
+        {
+          "src": "/products/p-023-ed542e0f.webp",
+          "alt": "nike parlak siyah"
+        },
+        {
+          "src": "/products/p-023-001da853.webp",
+          "alt": "nike parlak siyah"
+        },
+        {
+          "src": "/products/p-023-b5ba51c2.webp",
+          "alt": "nike parlak siyah"
+        },
+        {
+          "src": "/products/p-023-e8162d9a.webp",
+          "alt": "nike parlak siyah"
+        }
+      ],
+      "colors": [
+        {
+          "name": "kırmızı",
+          "hex": "#5d0909"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-023-kirmizi-36",
+          "size": "36",
+          "color": "kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-023-kirmizi-37",
+          "size": "37",
+          "color": "kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-023-kirmizi-38",
+          "size": "38",
+          "color": "kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-023-kirmizi-39",
+          "size": "39",
+          "color": "kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-023-kirmizi-40",
+          "size": "40",
+          "color": "kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-023-kirmizi-41",
+          "size": "41",
+          "color": "kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-023-kirmizi-42",
+          "size": "42",
+          "color": "kırmızı",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-024",
+      "slug": "af1-beyaz",
+      "name": "af1 beyaz",
+      "description": "jkj",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-024-90d97e49.webp",
+          "alt": "af1 beyaz"
+        },
+        {
+          "src": "/products/p-024-5735c717.webp",
+          "alt": "af1 beyaz"
+        },
+        {
+          "src": "/products/p-024-2d6b7192.webp",
+          "alt": "af1 beyaz"
+        },
+        {
+          "src": "/products/p-024-2dac7449.webp",
+          "alt": "af1 beyaz"
+        },
+        {
+          "src": "/products/p-024-5551a7f4.webp",
+          "alt": "af1 beyaz"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-024-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-024-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-024-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-024-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-024-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-024-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-024-beyaz-42",
+          "size": "42",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-025",
+      "slug": "nilke-dunk-beyaz-r",
+      "name": "nilke dunk beyaz r",
+      "description": "kkkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-025-90d97e49.webp",
+          "alt": "nilke dunk beyaz r"
+        },
+        {
+          "src": "/products/p-025-5735c717.webp",
+          "alt": "nilke dunk beyaz r"
+        },
+        {
+          "src": "/products/p-025-2d6b7192.webp",
+          "alt": "nilke dunk beyaz r"
+        },
+        {
+          "src": "/products/p-025-2dac7449.webp",
+          "alt": "nilke dunk beyaz r"
+        },
+        {
+          "src": "/products/p-025-5551a7f4.webp",
+          "alt": "nilke dunk beyaz r"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-025-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-025-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-025-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-025-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-025-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-025-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-026",
+      "slug": "af1-mavi-logo",
+      "name": "af1 mavi logo",
+      "description": "1400",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-026-507aaa3f.webp",
+          "alt": "af1 mavi logo"
+        },
+        {
+          "src": "/products/p-026-49cd16e0.webp",
+          "alt": "af1 mavi logo"
+        },
+        {
+          "src": "/products/p-026-1c6a99c9.webp",
+          "alt": "af1 mavi logo"
+        },
+        {
+          "src": "/products/p-026-d2789530.webp",
+          "alt": "af1 mavi logo"
+        },
+        {
+          "src": "/products/p-026-39589c30.webp",
+          "alt": "af1 mavi logo"
+        }
+      ],
+      "colors": [
+        {
+          "name": "mavi",
+          "hex": "#0069cc"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-026-mavi-36",
+          "size": "36",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-026-mavi-37",
+          "size": "37",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-026-mavi-38",
+          "size": "38",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-026-mavi-39",
+          "size": "39",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-026-mavi-40",
+          "size": "40",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-026-mavi-41",
+          "size": "41",
+          "color": "mavi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-027",
+      "slug": "dunk-beyaz",
+      "name": "dunk beyaz",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-027-49001f77.webp",
+          "alt": "dunk beyaz"
+        },
+        {
+          "src": "/products/p-027-07dd0cec.webp",
+          "alt": "dunk beyaz"
+        },
+        {
+          "src": "/products/p-027-1a983bdc.webp",
+          "alt": "dunk beyaz"
+        },
+        {
+          "src": "/products/p-027-5ee046f5.webp",
+          "alt": "dunk beyaz"
+        },
+        {
+          "src": "/products/p-027-97961838.webp",
+          "alt": "dunk beyaz"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-027-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-027-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-027-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-027-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-027-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-027-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-028",
+      "slug": "beyaz-superstar",
+      "name": "beyaz süperstar",
+      "description": "k",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-028-a744403f.webp",
+          "alt": "beyaz süperstar"
+        },
+        {
+          "src": "/products/p-028-fe473c65.webp",
+          "alt": "beyaz süperstar"
+        },
+        {
+          "src": "/products/p-028-89b14244.webp",
+          "alt": "beyaz süperstar"
+        },
+        {
+          "src": "/products/p-028-cb8fb345.webp",
+          "alt": "beyaz süperstar"
+        },
+        {
+          "src": "/products/p-028-fc6e3341.webp",
+          "alt": "beyaz süperstar"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-028-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-028-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-028-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-028-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-028-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-028-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-028-beyaz-42",
+          "size": "42",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-029",
+      "slug": "superstar-yesil-mavi",
+      "name": "superstar yeşil mavi",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-029-903cdd7b.webp",
+          "alt": "superstar yeşil mavi"
+        },
+        {
+          "src": "/products/p-029-23ee8ebe.webp",
+          "alt": "superstar yeşil mavi"
+        },
+        {
+          "src": "/products/p-029-9bef47fa.webp",
+          "alt": "superstar yeşil mavi"
+        },
+        {
+          "src": "/products/p-029-f4e145c7.webp",
+          "alt": "superstar yeşil mavi"
+        },
+        {
+          "src": "/products/p-029-51104006.webp",
+          "alt": "superstar yeşil mavi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-029-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-029-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-029-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-029-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-029-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-029-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-030",
+      "slug": "siyah-beyaz-superstar",
+      "name": "siyah beyaz superstar",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-030-d476bba6.webp",
+          "alt": "siyah beyaz superstar"
+        },
+        {
+          "src": "/products/p-030-ee1184f1.webp",
+          "alt": "siyah beyaz superstar"
+        },
+        {
+          "src": "/products/p-030-38563764.webp",
+          "alt": "siyah beyaz superstar"
+        },
+        {
+          "src": "/products/p-030-58a42fde.webp",
+          "alt": "siyah beyaz superstar"
+        },
+        {
+          "src": "/products/p-030-bb3c0ba2.webp",
+          "alt": "siyah beyaz superstar"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-030-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-030-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-030-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-030-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-030-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-030-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-031",
+      "slug": "superstar-renkli-horozlu",
+      "name": "superstar renkli horozlu",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-031-14f0bf42.webp",
+          "alt": "superstar renkli horozlu"
+        },
+        {
+          "src": "/products/p-031-356969d4.webp",
+          "alt": "superstar renkli horozlu"
+        },
+        {
+          "src": "/products/p-031-072f4888.webp",
+          "alt": "superstar renkli horozlu"
+        },
+        {
+          "src": "/products/p-031-bf080c4c.webp",
+          "alt": "superstar renkli horozlu"
+        },
+        {
+          "src": "/products/p-031-06b7c4f7.webp",
+          "alt": "superstar renkli horozlu"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-031-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-031-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-031-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-031-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-031-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-031-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-032",
+      "slug": "superstar-horozlu-siyah",
+      "name": "superstar horozlu siyah",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-032-72f4b383.webp",
+          "alt": "superstar horozlu siyah"
+        },
+        {
+          "src": "/products/p-032-9c48fadf.webp",
+          "alt": "superstar horozlu siyah"
+        },
+        {
+          "src": "/products/p-032-b18feb11.webp",
+          "alt": "superstar horozlu siyah"
+        },
+        {
+          "src": "/products/p-032-869863ea.webp",
+          "alt": "superstar horozlu siyah"
+        },
+        {
+          "src": "/products/p-032-23ec9060.webp",
+          "alt": "superstar horozlu siyah"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#000000"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-032-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-032-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-032-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-032-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-032-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-032-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-033",
+      "slug": "superstar-beyaz-kirmizi",
+      "name": "superstar beyaz kırmızı",
+      "description": "jkkj",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-033-903df7cf.webp",
+          "alt": "superstar beyaz kırmızı"
+        },
+        {
+          "src": "/products/p-033-29430ecb.webp",
+          "alt": "superstar beyaz kırmızı"
+        },
+        {
+          "src": "/products/p-033-72b69289.webp",
+          "alt": "superstar beyaz kırmızı"
+        },
+        {
+          "src": "/products/p-033-18c32824.webp",
+          "alt": "superstar beyaz kırmızı"
+        },
+        {
+          "src": "/products/p-033-175e2818.webp",
+          "alt": "superstar beyaz kırmızı"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-033-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-033-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-033-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-033-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-033-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-033-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-034",
+      "slug": "siyah-beyaz-superstar-2",
+      "name": "SİYAH BEYAZ SUPERSTAR",
+      "description": "KK",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-034-f4c9cb72.webp",
+          "alt": "SİYAH BEYAZ SUPERSTAR"
+        },
+        {
+          "src": "/products/p-034-b8a39323.webp",
+          "alt": "SİYAH BEYAZ SUPERSTAR"
+        },
+        {
+          "src": "/products/p-034-067e9bb9.webp",
+          "alt": "SİYAH BEYAZ SUPERSTAR"
+        },
+        {
+          "src": "/products/p-034-c0064634.webp",
+          "alt": "SİYAH BEYAZ SUPERSTAR"
+        },
+        {
+          "src": "/products/p-034-b5485e4d.webp",
+          "alt": "SİYAH BEYAZ SUPERSTAR"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-034-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-034-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-034-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-034-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-034-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-034-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-035",
+      "slug": "spezial-mavi",
+      "name": "spezial mavi",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-035-b838e1b1.webp",
+          "alt": "spezial mavi"
+        },
+        {
+          "src": "/products/p-035-5a1e86e3.webp",
+          "alt": "spezial mavi"
+        },
+        {
+          "src": "/products/p-035-68a0e99f.webp",
+          "alt": "spezial mavi"
+        },
+        {
+          "src": "/products/p-035-afeed973.webp",
+          "alt": "spezial mavi"
+        },
+        {
+          "src": "/products/p-035-70ac17c7.webp",
+          "alt": "spezial mavi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "mavi",
+          "hex": "#007db3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-035-mavi-36",
+          "size": "36",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-035-mavi-37",
+          "size": "37",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-035-mavi-38",
+          "size": "38",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-035-mavi-39",
+          "size": "39",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-035-mavi-40",
+          "size": "40",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-035-mavi-41",
+          "size": "41",
+          "color": "mavi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-036",
+      "slug": "spezial-bordo",
+      "name": "spezial bordo",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-036-b6f75e90.webp",
+          "alt": "spezial bordo"
+        },
+        {
+          "src": "/products/p-036-f9c4aa14.webp",
+          "alt": "spezial bordo"
+        },
+        {
+          "src": "/products/p-036-e74c1a5f.webp",
+          "alt": "spezial bordo"
+        },
+        {
+          "src": "/products/p-036-db2a419b.webp",
+          "alt": "spezial bordo"
+        },
+        {
+          "src": "/products/p-036-9551248f.webp",
+          "alt": "spezial bordo"
+        }
+      ],
+      "colors": [
+        {
+          "name": "bordo",
+          "hex": "#5b0101"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-036-bordo-36",
+          "size": "36",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-036-bordo-37",
+          "size": "37",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-036-bordo-38",
+          "size": "38",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-036-bordo-39",
+          "size": "39",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-036-bordo-40",
+          "size": "40",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-036-bordo-41",
+          "size": "41",
+          "color": "bordo",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-037",
+      "slug": "spezial-kahverengi",
+      "name": "spezial kahverengi",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-037-e71d4592.webp",
+          "alt": "spezial kahverengi"
+        },
+        {
+          "src": "/products/p-037-d6e9afb5.webp",
+          "alt": "spezial kahverengi"
+        },
+        {
+          "src": "/products/p-037-2c7f20e2.webp",
+          "alt": "spezial kahverengi"
+        },
+        {
+          "src": "/products/p-037-a06e9048.webp",
+          "alt": "spezial kahverengi"
+        },
+        {
+          "src": "/products/p-037-5a72e6f2.webp",
+          "alt": "spezial kahverengi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "kahverengi",
+          "hex": "#a35f1f"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-037-kahverengi-36",
+          "size": "36",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-037-kahverengi-37",
+          "size": "37",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-037-kahverengi-38",
+          "size": "38",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-037-kahverengi-39",
+          "size": "39",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-037-kahverengi-40",
+          "size": "40",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-037-kahverengi-41",
+          "size": "41",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-037-kahverengi-42",
+          "size": "42",
+          "color": "kahverengi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-038",
+      "slug": "spezial-mavi-2",
+      "name": "spezial mavi",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-038-45d30e92.webp",
+          "alt": "spezial mavi"
+        },
+        {
+          "src": "/products/p-038-32a436ab.webp",
+          "alt": "spezial mavi"
+        },
+        {
+          "src": "/products/p-038-bb63361e.webp",
+          "alt": "spezial mavi"
+        },
+        {
+          "src": "/products/p-038-3edea54a.webp",
+          "alt": "spezial mavi"
+        },
+        {
+          "src": "/products/p-038-11475c5d.webp",
+          "alt": "spezial mavi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "mavi",
+          "hex": "#0074ad"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-038-mavi-36",
+          "size": "36",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-038-mavi-37",
+          "size": "37",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-038-mavi-38",
+          "size": "38",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-038-mavi-39",
+          "size": "39",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-038-mavi-40",
+          "size": "40",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-038-mavi-41",
+          "size": "41",
+          "color": "mavi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-039",
+      "slug": "spezial-leopar",
+      "name": "spezial leopar",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-039-55dce415.webp",
+          "alt": "spezial leopar"
+        },
+        {
+          "src": "/products/p-039-626a68c2.webp",
+          "alt": "spezial leopar"
+        },
+        {
+          "src": "/products/p-039-3610499b.webp",
+          "alt": "spezial leopar"
+        },
+        {
+          "src": "/products/p-039-50f2152e.webp",
+          "alt": "spezial leopar"
+        },
+        {
+          "src": "/products/p-039-77bf8afd.webp",
+          "alt": "spezial leopar"
+        }
+      ],
+      "colors": [
+        {
+          "name": "leopar",
+          "hex": "#271111"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-039-leopar-36",
+          "size": "36",
+          "color": "leopar",
+          "stock": 10
+        },
+        {
+          "id": "p-039-leopar-37",
+          "size": "37",
+          "color": "leopar",
+          "stock": 10
+        },
+        {
+          "id": "p-039-leopar-38",
+          "size": "38",
+          "color": "leopar",
+          "stock": 10
+        },
+        {
+          "id": "p-039-leopar-39",
+          "size": "39",
+          "color": "leopar",
+          "stock": 10
+        },
+        {
+          "id": "p-039-leopar-40",
+          "size": "40",
+          "color": "leopar",
+          "stock": 10
+        },
+        {
+          "id": "p-039-leopar-41",
+          "size": "41",
+          "color": "leopar",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-040",
+      "slug": "spezial-kahverengi-gibi",
+      "name": "spezial kahverengi gibi",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-040-fee7c720.webp",
+          "alt": "spezial kahverengi gibi"
+        },
+        {
+          "src": "/products/p-040-0ae65dab.webp",
+          "alt": "spezial kahverengi gibi"
+        },
+        {
+          "src": "/products/p-040-7fbe796c.webp",
+          "alt": "spezial kahverengi gibi"
+        },
+        {
+          "src": "/products/p-040-c0e4a3ee.webp",
+          "alt": "spezial kahverengi gibi"
+        },
+        {
+          "src": "/products/p-040-b3eb59ea.webp",
+          "alt": "spezial kahverengi gibi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "kahverengi",
+          "hex": "#6a310c"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-040-kahverengi-36",
+          "size": "36",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-040-kahverengi-37",
+          "size": "37",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-040-kahverengi-38",
+          "size": "38",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-040-kahverengi-39",
+          "size": "39",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-040-kahverengi-40",
+          "size": "40",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-040-kahverengi-41",
+          "size": "41",
+          "color": "kahverengi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-041",
+      "slug": "nike-jordan-bebe-mavisi",
+      "name": "nike jordan bebe mavisi",
+      "description": "kık",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1378,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-041-4527a5c7.webp",
+          "alt": "nike jordan bebe mavisi"
+        },
+        {
+          "src": "/products/p-041-99aac31f.webp",
+          "alt": "nike jordan bebe mavisi"
+        },
+        {
+          "src": "/products/p-041-9ad27e00.webp",
+          "alt": "nike jordan bebe mavisi"
+        },
+        {
+          "src": "/products/p-041-6e9affa8.webp",
+          "alt": "nike jordan bebe mavisi"
+        },
+        {
+          "src": "/products/p-041-053a20b2.webp",
+          "alt": "nike jordan bebe mavisi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "bebe mavi",
+          "hex": "#1b949d"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-041-bebe-mavi-36",
+          "size": "36",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-041-bebe-mavi-37",
+          "size": "37",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-041-bebe-mavi-38",
+          "size": "38",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-041-bebe-mavi-39",
+          "size": "39",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-041-bebe-mavi-40",
+          "size": "40",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-041-bebe-mavi-41",
+          "size": "41",
+          "color": "bebe mavi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-042",
+      "slug": "nike-jordan-gri-siyah",
+      "name": "nike jordan gri siyah",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-042-c985256a.webp",
+          "alt": "nike jordan gri siyah"
+        },
+        {
+          "src": "/products/p-042-fe7ab7f0.webp",
+          "alt": "nike jordan gri siyah"
+        },
+        {
+          "src": "/products/p-042-7eaf7d49.webp",
+          "alt": "nike jordan gri siyah"
+        },
+        {
+          "src": "/products/p-042-bb36690c.webp",
+          "alt": "nike jordan gri siyah"
+        },
+        {
+          "src": "/products/p-042-a0dd11a6.webp",
+          "alt": "nike jordan gri siyah"
+        }
+      ],
+      "colors": [
+        {
+          "name": "gri siyah",
+          "hex": "#636363"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-042-gri-siyah-36",
+          "size": "36",
+          "color": "gri siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-042-gri-siyah-37",
+          "size": "37",
+          "color": "gri siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-042-gri-siyah-38",
+          "size": "38",
+          "color": "gri siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-042-gri-siyah-39",
+          "size": "39",
+          "color": "gri siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-042-gri-siyah-40",
+          "size": "40",
+          "color": "gri siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-042-gri-siyah-41",
+          "size": "41",
+          "color": "gri siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-043",
+      "slug": "nike-jordan-bordo-siyah",
+      "name": "nike jordan bordo siyah",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-043-e2b48163.webp",
+          "alt": "nike jordan bordo siyah"
+        },
+        {
+          "src": "/products/p-043-0ab63bfd.webp",
+          "alt": "nike jordan bordo siyah"
+        },
+        {
+          "src": "/products/p-043-fbaada78.webp",
+          "alt": "nike jordan bordo siyah"
+        },
+        {
+          "src": "/products/p-043-7f9d7422.webp",
+          "alt": "nike jordan bordo siyah"
+        },
+        {
+          "src": "/products/p-043-d7a56074.webp",
+          "alt": "nike jordan bordo siyah"
+        }
+      ],
+      "colors": [
+        {
+          "name": "bordo",
+          "hex": "#612424"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-043-bordo-36",
+          "size": "36",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-043-bordo-37",
+          "size": "37",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-043-bordo-38",
+          "size": "38",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-043-bordo-39",
+          "size": "39",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-043-bordo-40",
+          "size": "40",
+          "color": "bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-043-bordo-41",
+          "size": "41",
+          "color": "bordo",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-044",
+      "slug": "nike-jordan-pembe",
+      "name": "nike jordan pembe",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-044-77f45345.webp",
+          "alt": "nike jordan pembe"
+        },
+        {
+          "src": "/products/p-044-c3dc5949.webp",
+          "alt": "nike jordan pembe"
+        },
+        {
+          "src": "/products/p-044-03ce450f.webp",
+          "alt": "nike jordan pembe"
+        },
+        {
+          "src": "/products/p-044-36f94aa0.webp",
+          "alt": "nike jordan pembe"
+        },
+        {
+          "src": "/products/p-044-c571939b.webp",
+          "alt": "nike jordan pembe"
+        }
+      ],
+      "colors": [
+        {
+          "name": "pembe",
+          "hex": "#ff0095"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-044-pembe-36",
+          "size": "36",
+          "color": "pembe",
+          "stock": 10
+        },
+        {
+          "id": "p-044-pembe-37",
+          "size": "37",
+          "color": "pembe",
+          "stock": 10
+        },
+        {
+          "id": "p-044-pembe-38",
+          "size": "38",
+          "color": "pembe",
+          "stock": 10
+        },
+        {
+          "id": "p-044-pembe-39",
+          "size": "39",
+          "color": "pembe",
+          "stock": 10
+        },
+        {
+          "id": "p-044-pembe-40",
+          "size": "40",
+          "color": "pembe",
+          "stock": 10
+        },
+        {
+          "id": "p-044-pembe-41",
+          "size": "41",
+          "color": "pembe",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-045",
+      "slug": "superstar-beyaz-2",
+      "name": "superstar beyaz 2",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-045-f4351226.webp",
+          "alt": "superstar beyaz 2"
+        },
+        {
+          "src": "/products/p-045-71f3d3e7.webp",
+          "alt": "superstar beyaz 2"
+        },
+        {
+          "src": "/products/p-045-1a866979.webp",
+          "alt": "superstar beyaz 2"
+        },
+        {
+          "src": "/products/p-045-a63cb595.webp",
+          "alt": "superstar beyaz 2"
+        },
+        {
+          "src": "/products/p-045-b20fee1e.webp",
+          "alt": "superstar beyaz 2"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-045-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-045-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-045-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-045-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-045-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-045-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-046",
+      "slug": "adidas-campus-siyah",
+      "name": "adidas campus siyah",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-046-3f96a44f.webp",
+          "alt": "adidas campus siyah"
+        },
+        {
+          "src": "/products/p-046-61654299.webp",
+          "alt": "adidas campus siyah"
+        },
+        {
+          "src": "/products/p-046-dff88500.webp",
+          "alt": "adidas campus siyah"
+        },
+        {
+          "src": "/products/p-046-2916bacd.webp",
+          "alt": "adidas campus siyah"
+        },
+        {
+          "src": "/products/p-046-cfc9355f.webp",
+          "alt": "adidas campus siyah"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-046-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-046-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-046-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-046-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-046-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-046-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-047",
+      "slug": "adidas-campus-yesil",
+      "name": "adidas campus yeşil",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-047-dc4c2cff.webp",
+          "alt": "adidas campus yeşil"
+        },
+        {
+          "src": "/products/p-047-edd2c6ef.webp",
+          "alt": "adidas campus yeşil"
+        },
+        {
+          "src": "/products/p-047-191779c4.webp",
+          "alt": "adidas campus yeşil"
+        },
+        {
+          "src": "/products/p-047-0a71b168.webp",
+          "alt": "adidas campus yeşil"
+        },
+        {
+          "src": "/products/p-047-a78f84be.webp",
+          "alt": "adidas campus yeşil"
+        }
+      ],
+      "colors": [
+        {
+          "name": "yeşil",
+          "hex": "#00ff1e"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-047-yesil-36",
+          "size": "36",
+          "color": "yeşil",
+          "stock": 10
+        },
+        {
+          "id": "p-047-yesil-37",
+          "size": "37",
+          "color": "yeşil",
+          "stock": 10
+        },
+        {
+          "id": "p-047-yesil-38",
+          "size": "38",
+          "color": "yeşil",
+          "stock": 10
+        },
+        {
+          "id": "p-047-yesil-39",
+          "size": "39",
+          "color": "yeşil",
+          "stock": 10
+        },
+        {
+          "id": "p-047-yesil-40",
+          "size": "40",
+          "color": "yeşil",
+          "stock": 10
+        },
+        {
+          "id": "p-047-yesil-41",
+          "size": "41",
+          "color": "yeşil",
+          "stock": 10
+        },
+        {
+          "id": "p-047-yesil-42",
+          "size": "42",
+          "color": "yeşil",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-048",
+      "slug": "adidas-campus-kahverengi",
+      "name": "adidas campus kahverengi",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-048-c2d73d7e.webp",
+          "alt": "adidas campus kahverengi"
+        },
+        {
+          "src": "/products/p-048-f9fca18a.webp",
+          "alt": "adidas campus kahverengi"
+        },
+        {
+          "src": "/products/p-048-f98c5c00.webp",
+          "alt": "adidas campus kahverengi"
+        },
+        {
+          "src": "/products/p-048-6c0afa6c.webp",
+          "alt": "adidas campus kahverengi"
+        },
+        {
+          "src": "/products/p-048-6ef304d5.webp",
+          "alt": "adidas campus kahverengi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "kahverengi",
+          "hex": "#732b2b"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-048-kahverengi-36",
+          "size": "36",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-048-kahverengi-37",
+          "size": "37",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-048-kahverengi-38",
+          "size": "38",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-048-kahverengi-39",
+          "size": "39",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-048-kahverengi-40",
+          "size": "40",
+          "color": "kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-048-kahverengi-41",
+          "size": "41",
+          "color": "kahverengi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-049",
+      "slug": "nike-af1-mavi-cizgi",
+      "name": "nike af1 mavi çizgi",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-049-aec470de.webp",
+          "alt": "nike af1 mavi çizgi"
+        },
+        {
+          "src": "/products/p-049-9c661231.webp",
+          "alt": "nike af1 mavi çizgi"
+        },
+        {
+          "src": "/products/p-049-25e70211.webp",
+          "alt": "nike af1 mavi çizgi"
+        },
+        {
+          "src": "/products/p-049-2417279c.webp",
+          "alt": "nike af1 mavi çizgi"
+        },
+        {
+          "src": "/products/p-049-d63451ad.webp",
+          "alt": "nike af1 mavi çizgi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "mavi",
+          "hex": "#607ae2"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-049-mavi-36",
+          "size": "36",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-049-mavi-37",
+          "size": "37",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-049-mavi-38",
+          "size": "38",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-049-mavi-39",
+          "size": "39",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-049-mavi-40",
+          "size": "40",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-049-mavi-41",
+          "size": "41",
+          "color": "mavi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-050",
+      "slug": "nike-af1-altin-detay",
+      "name": "nike af1 altın detay",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-050-2c672c1b.webp",
+          "alt": "nike af1 altın detay"
+        },
+        {
+          "src": "/products/p-050-85eec24f.webp",
+          "alt": "nike af1 altın detay"
+        },
+        {
+          "src": "/products/p-050-8962247d.webp",
+          "alt": "nike af1 altın detay"
+        },
+        {
+          "src": "/products/p-050-5dc62a80.webp",
+          "alt": "nike af1 altın detay"
+        },
+        {
+          "src": "/products/p-050-7f5d9ecb.webp",
+          "alt": "nike af1 altın detay"
+        },
+        {
+          "src": "/products/p-050-93860919.webp",
+          "alt": "nike af1 altın detay"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-050-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-050-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-050-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-050-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-050-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-050-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-051",
+      "slug": "nike-af1-degisik-taban",
+      "name": "nike af1 degisik taban",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-051-8b6d2538.webp",
+          "alt": "nike af1 degisik taban"
+        },
+        {
+          "src": "/products/p-051-b7221903.webp",
+          "alt": "nike af1 degisik taban"
+        },
+        {
+          "src": "/products/p-051-8c9678db.webp",
+          "alt": "nike af1 degisik taban"
+        },
+        {
+          "src": "/products/p-051-0c91ccee.webp",
+          "alt": "nike af1 degisik taban"
+        },
+        {
+          "src": "/products/p-051-47a4812f.webp",
+          "alt": "nike af1 degisik taban"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-051-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-051-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-051-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-051-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-051-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-051-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-052",
+      "slug": "nike-x-travis-black",
+      "name": "nike x travis black",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-052-352ac868.webp",
+          "alt": "nike x travis black"
+        },
+        {
+          "src": "/products/p-052-af1ca1f5.webp",
+          "alt": "nike x travis black"
+        },
+        {
+          "src": "/products/p-052-d2c010d5.webp",
+          "alt": "nike x travis black"
+        },
+        {
+          "src": "/products/p-052-a9bb2d9a.webp",
+          "alt": "nike x travis black"
+        },
+        {
+          "src": "/products/p-052-2786916f.webp",
+          "alt": "nike x travis black"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-052-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-052-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-052-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-052-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-052-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-052-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-053",
+      "slug": "nike-bogazli-parlak-gold-detay",
+      "name": "nike boğazlı parlak gold detay",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-053-b4d6d66e.webp",
+          "alt": "nike boğazlı parlak gold detay"
+        },
+        {
+          "src": "/products/p-053-58d68f0a.webp",
+          "alt": "nike boğazlı parlak gold detay"
+        },
+        {
+          "src": "/products/p-053-c427dc78.webp",
+          "alt": "nike boğazlı parlak gold detay"
+        },
+        {
+          "src": "/products/p-053-2b16d3a8.webp",
+          "alt": "nike boğazlı parlak gold detay"
+        },
+        {
+          "src": "/products/p-053-930a34b7.webp",
+          "alt": "nike boğazlı parlak gold detay"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-053-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-053-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-053-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-053-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-053-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-053-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-054",
+      "slug": "nike-af1-duman-rengi",
+      "name": "nike af1 duman rengi",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-054-fd6dace5.webp",
+          "alt": "nike af1 duman rengi"
+        },
+        {
+          "src": "/products/p-054-a315e258.webp",
+          "alt": "nike af1 duman rengi"
+        },
+        {
+          "src": "/products/p-054-7c97b134.webp",
+          "alt": "nike af1 duman rengi"
+        },
+        {
+          "src": "/products/p-054-97a6fad1.webp",
+          "alt": "nike af1 duman rengi"
+        },
+        {
+          "src": "/products/p-054-1d1c4f98.webp",
+          "alt": "nike af1 duman rengi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "gri",
+          "hex": "#707070"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-054-gri-36",
+          "size": "36",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-054-gri-37",
+          "size": "37",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-054-gri-38",
+          "size": "38",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-054-gri-39",
+          "size": "39",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-054-gri-40",
+          "size": "40",
+          "color": "gri",
+          "stock": 10
+        },
+        {
+          "id": "p-054-gri-41",
+          "size": "41",
+          "color": "gri",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-055",
+      "slug": "nike-x-travis-mavi",
+      "name": "nike x travis mavi",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-055-4a8af9ce.webp",
+          "alt": "nike x travis mavi"
+        },
+        {
+          "src": "/products/p-055-2ceef3f9.webp",
+          "alt": "nike x travis mavi"
+        },
+        {
+          "src": "/products/p-055-b5db3968.webp",
+          "alt": "nike x travis mavi"
+        },
+        {
+          "src": "/products/p-055-4aba47eb.webp",
+          "alt": "nike x travis mavi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "mavi",
+          "hex": "#184081"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-055-mavi-36",
+          "size": "36",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-055-mavi-37",
+          "size": "37",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-055-mavi-38",
+          "size": "38",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-055-mavi-39",
+          "size": "39",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-055-mavi-40",
+          "size": "40",
+          "color": "mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-055-mavi-41",
+          "size": "41",
+          "color": "mavi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-056",
+      "slug": "nike-x-travis-beyaz",
+      "name": "nike x travis beyaz",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-056-230e2b06.webp",
+          "alt": "nike x travis beyaz"
+        },
+        {
+          "src": "/products/p-056-b0b64a21.webp",
+          "alt": "nike x travis beyaz"
+        },
+        {
+          "src": "/products/p-056-762d921f.webp",
+          "alt": "nike x travis beyaz"
+        },
+        {
+          "src": "/products/p-056-9c2ce07c.webp",
+          "alt": "nike x travis beyaz"
+        },
+        {
+          "src": "/products/p-056-1bed9fc4.webp",
+          "alt": "nike x travis beyaz"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-056-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-056-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-056-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-056-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-056-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-056-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-056-beyaz-42",
+          "size": "42",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-057",
+      "slug": "nike-beyaz-kahverengi-taban",
+      "name": "nike beyaz kahverengi taban",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-057-5704f0a8.webp",
+          "alt": "nike beyaz kahverengi taban"
+        },
+        {
+          "src": "/products/p-057-e4afab2c.webp",
+          "alt": "nike beyaz kahverengi taban"
+        },
+        {
+          "src": "/products/p-057-f6c14b87.webp",
+          "alt": "nike beyaz kahverengi taban"
+        },
+        {
+          "src": "/products/p-057-4873f12d.webp",
+          "alt": "nike beyaz kahverengi taban"
+        },
+        {
+          "src": "/products/p-057-7e9202be.webp",
+          "alt": "nike beyaz kahverengi taban"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-057-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-057-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-057-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-057-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-057-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-057-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-058",
+      "slug": "nike-x-travis-sari",
+      "name": "nike x travis sarı",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-058-96834047.webp",
+          "alt": "nike x travis sarı"
+        },
+        {
+          "src": "/products/p-058-119b4d28.webp",
+          "alt": "nike x travis sarı"
+        },
+        {
+          "src": "/products/p-058-f605fac1.webp",
+          "alt": "nike x travis sarı"
+        },
+        {
+          "src": "/products/p-058-de70dd2f.webp",
+          "alt": "nike x travis sarı"
+        },
+        {
+          "src": "/products/p-058-f8dadb1d.webp",
+          "alt": "nike x travis sarı"
+        }
+      ],
+      "colors": [
+        {
+          "name": "sarı",
+          "hex": "#c4fa00"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-058-sari-36",
+          "size": "36",
+          "color": "sarı",
+          "stock": 10
+        },
+        {
+          "id": "p-058-sari-37",
+          "size": "37",
+          "color": "sarı",
+          "stock": 10
+        },
+        {
+          "id": "p-058-sari-38",
+          "size": "38",
+          "color": "sarı",
+          "stock": 10
+        },
+        {
+          "id": "p-058-sari-39",
+          "size": "39",
+          "color": "sarı",
+          "stock": 10
+        },
+        {
+          "id": "p-058-sari-40",
+          "size": "40",
+          "color": "sarı",
+          "stock": 10
+        },
+        {
+          "id": "p-058-sari-41",
+          "size": "41",
+          "color": "sarı",
+          "stock": 10
+        },
+        {
+          "id": "p-058-sari-42",
+          "size": "42",
+          "color": "sarı",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-059",
+      "slug": "nike-x-travis-mor-beyaz",
+      "name": "nike x travis mor beyaz",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-059-1ae28b7d.webp",
+          "alt": "nike x travis mor beyaz"
+        },
+        {
+          "src": "/products/p-059-bfcb64e5.webp",
+          "alt": "nike x travis mor beyaz"
+        },
+        {
+          "src": "/products/p-059-a4ab9168.webp",
+          "alt": "nike x travis mor beyaz"
+        },
+        {
+          "src": "/products/p-059-ac3103b7.webp",
+          "alt": "nike x travis mor beyaz"
+        }
+      ],
+      "colors": [
+        {
+          "name": "mor",
+          "hex": "#9900ff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-059-mor-36",
+          "size": "36",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-059-mor-37",
+          "size": "37",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-059-mor-38",
+          "size": "38",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-059-mor-39",
+          "size": "39",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-059-mor-40",
+          "size": "40",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-059-mor-41",
+          "size": "41",
+          "color": "mor",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-060",
+      "slug": "nike-bogazli-mavi-gri",
+      "name": "nike boğazlı mavi gri",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-060-39d3fb8e.webp",
+          "alt": "nike boğazlı mavi gri"
+        },
+        {
+          "src": "/products/p-060-5ed5978a.webp",
+          "alt": "nike boğazlı mavi gri"
+        },
+        {
+          "src": "/products/p-060-a726755a.webp",
+          "alt": "nike boğazlı mavi gri"
+        },
+        {
+          "src": "/products/p-060-27f1ce65.webp",
+          "alt": "nike boğazlı mavi gri"
+        },
+        {
+          "src": "/products/p-060-f4cc2ab0.webp",
+          "alt": "nike boğazlı mavi gri"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-060-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-060-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-060-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-060-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-060-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-060-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-061",
+      "slug": "nike-bogazli-beyaz",
+      "name": "nike boğazlı beyaz",
+      "description": "kkk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-061-d3fd04aa.webp",
+          "alt": "nike boğazlı beyaz"
+        },
+        {
+          "src": "/products/p-061-942a62ec.webp",
+          "alt": "nike boğazlı beyaz"
+        },
+        {
+          "src": "/products/p-061-3301c035.webp",
+          "alt": "nike boğazlı beyaz"
+        },
+        {
+          "src": "/products/p-061-d43b52b0.webp",
+          "alt": "nike boğazlı beyaz"
+        },
+        {
+          "src": "/products/p-061-965add81.webp",
+          "alt": "nike boğazlı beyaz"
+        }
+      ],
+      "colors": [
+        {
+          "name": "beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-061-beyaz-36",
+          "size": "36",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-061-beyaz-37",
+          "size": "37",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-061-beyaz-38",
+          "size": "38",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-061-beyaz-39",
+          "size": "39",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-061-beyaz-40",
+          "size": "40",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-061-beyaz-41",
+          "size": "41",
+          "color": "beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-061-beyaz-42",
+          "size": "42",
+          "color": "beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-062",
+      "slug": "nike-bogazli-bebek-mavi",
+      "name": "nike boğazlı bebek mavi",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-062-c81583e8.webp",
+          "alt": "nike boğazlı bebek mavi"
+        },
+        {
+          "src": "/products/p-062-04b559b8.webp",
+          "alt": "nike boğazlı bebek mavi"
+        },
+        {
+          "src": "/products/p-062-6ac10193.webp",
+          "alt": "nike boğazlı bebek mavi"
+        },
+        {
+          "src": "/products/p-062-df3f41f8.webp",
+          "alt": "nike boğazlı bebek mavi"
+        },
+        {
+          "src": "/products/p-062-081d1462.webp",
+          "alt": "nike boğazlı bebek mavi"
+        }
+      ],
+      "colors": [
+        {
+          "name": "bebe mavi",
+          "hex": "#099f8e"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-062-bebe-mavi-36",
+          "size": "36",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-062-bebe-mavi-37",
+          "size": "37",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-062-bebe-mavi-38",
+          "size": "38",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-062-bebe-mavi-39",
+          "size": "39",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-062-bebe-mavi-40",
+          "size": "40",
+          "color": "bebe mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-062-bebe-mavi-41",
+          "size": "41",
+          "color": "bebe mavi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-063",
+      "slug": "nike-tn-gri-siyah",
+      "name": "nike tn gri siyah",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-063-67eea552.webp",
+          "alt": "nike tn gri siyah"
+        },
+        {
+          "src": "/products/p-063-c8cf56f0.webp",
+          "alt": "nike tn gri siyah"
+        },
+        {
+          "src": "/products/p-063-62ef6b28.webp",
+          "alt": "nike tn gri siyah"
+        },
+        {
+          "src": "/products/p-063-43f76aec.webp",
+          "alt": "nike tn gri siyah"
+        },
+        {
+          "src": "/products/p-063-fcfb7807.webp",
+          "alt": "nike tn gri siyah"
+        }
+      ],
+      "colors": [
+        {
+          "name": "siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-063-siyah-36",
+          "size": "36",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-063-siyah-37",
+          "size": "37",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-063-siyah-38",
+          "size": "38",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-063-siyah-39",
+          "size": "39",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-063-siyah-40",
+          "size": "40",
+          "color": "siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-063-siyah-41",
+          "size": "41",
+          "color": "siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-064",
+      "slug": "nike-tn-mor-pembe",
+      "name": "nike tn mor pembe",
+      "description": "kk",
+      "category": "ayakkabi",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-064-6c521653.webp",
+          "alt": "nike tn mor pembe"
+        },
+        {
+          "src": "/products/p-064-0cb82823.webp",
+          "alt": "nike tn mor pembe"
+        },
+        {
+          "src": "/products/p-064-a02ebeb4.webp",
+          "alt": "nike tn mor pembe"
+        },
+        {
+          "src": "/products/p-064-89c045e8.webp",
+          "alt": "nike tn mor pembe"
+        },
+        {
+          "src": "/products/p-064-bcfbe5fa.webp",
+          "alt": "nike tn mor pembe"
+        }
+      ],
+      "colors": [
+        {
+          "name": "mor",
+          "hex": "#5700c2"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-064-mor-36",
+          "size": "36",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-064-mor-37",
+          "size": "37",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-064-mor-38",
+          "size": "38",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-064-mor-39",
+          "size": "39",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-064-mor-40",
+          "size": "40",
+          "color": "mor",
+          "stock": 10
+        },
+        {
+          "id": "p-064-mor-41",
+          "size": "41",
+          "color": "mor",
+          "stock": 10
+        }
+      ],
+      "isNew": true
     }
   ],
   "degisen": {
@@ -751,6 +4729,12 @@
       "isNew": true
     }
   },
+  "cop": [
+    "p-011",
+    "p-014",
+    "p-013",
+    "p-012"
+  ],
   "yonlendirmeler": {
     "air-force-1": "p-012"
   }
