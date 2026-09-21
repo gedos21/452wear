@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/product/product-card";
 import { PRODUCT_GRID_COLUMNS, PRODUCT_GRID_SIZES } from "@/components/product/product-grid-columns";
 import { useCatalog } from "@/components/product/catalog-provider";
 import { useQuickView } from "@/components/product/quick-view";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 import { buildSearchIndex, searchProducts } from "@/lib/product-search";
 import { CATEGORIES } from "@/data/products";
 import type { ProductCategory } from "@/types/product";
@@ -28,6 +29,9 @@ export function SearchOverlay({
   const reduced = useReducedMotion();
   const quickView = useQuickView();
   const inputRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  // Arama açıkken odak katmanda kalır; kapanınca arama düğmesine döner.
+  useFocusTrap(panelRef);
   const { products } = useCatalog();
 
   // Index katalog başına bir kez kurulur; her tuşta yeniden hesaplanmaz.
@@ -74,6 +78,7 @@ export function SearchOverlay({
 
       <div className="pointer-events-none fixed inset-x-0 top-0 z-[56] flex justify-center p-0 sm:p-4">
         <motion.div
+          ref={panelRef}
           role="dialog"
           aria-modal="true"
           aria-label="Ürün ara"

@@ -298,10 +298,10 @@ function enYeniOnce(k: Katman): Product[] {
  * satış sıralaması uydurulmaz.
  */
 const COK_SATAN_SECIMI = [
-  "nike-dunk-low-iron-shadow",
-  "kapusonlu-sweatshirt",
-  "adidas-superstar",
+  "vans-siyah-beyaz",
   "oversize-tisort",
+  "jordan-4-yeni",
+  "kapusonlu-sweatshirt",
 ];
 
 /**
@@ -312,10 +312,13 @@ const COK_SATAN_SECIMI = [
  */
 export async function cokSatanlar(limit = 4): Promise<Product[]> {
   const urunler = await katalogOku();
+  const stokta = urunler.filter((p) => p.variants.some((v) => v.stock > 0));
   const secilen = COK_SATAN_SECIMI.map((slug) =>
-    urunler.find((p) => p.slug === slug),
+    stokta.find((p) => p.slug === slug),
   ).filter((p) => p !== undefined);
-  const kalan = urunler.filter((p) => !secilen.includes(p));
+  // Seçimdeki bir ürün satıştan kalkarsa yeri stoktaki başka ürünle dolar;
+  // vitrin hiçbir zaman eksik ya da tükenmiş ürünle çıkmaz.
+  const kalan = stokta.filter((p) => !secilen.includes(p));
   return [...secilen, ...kalan].slice(0, limit);
 }
 
