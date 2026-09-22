@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Heart, Search, ShoppingBag, User } from "lucide-react";
@@ -58,9 +59,21 @@ export function SiteHeader() {
               }
             }}
             aria-label="452WEAR ana sayfa"
-            className="font-display text-[18px] font-extrabold tracking-[0.1em] min-[375px]:text-[20px] min-[375px]:tracking-[0.14em] lg:text-[24px]"
+            className="flex items-center"
           >
-            452WEAR
+            {/* Marka logosu. Harf biçimleri orijinal görselden; yalnızca
+                kenarlardaki şeffaf pay kırpıldı ve WEAR'ın mürekkebi koyuya
+                çevrildi — beyaz başlıkta beyaz yazı okunmuyordu. Beyaz WEAR'lı
+                hâli public/logo/452wear-logo.webp olarak duruyor (koyu zemin).
+                alt boş: bağlantının aria-label'ı zaten okunuyor. */}
+            <Image
+              src="/logo/452wear-logo-koyu.webp"
+              alt=""
+              width={1572}
+              height={191}
+              priority
+              className="h-[18px] w-auto min-[375px]:h-5 lg:h-6"
+            />
           </Link>
         </div>
 
