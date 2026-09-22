@@ -75,9 +75,8 @@ export function SiteFooter() {
           </ul>
         </section>
 
-        <div className="mt-8 flex flex-col gap-3 micro text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 micro text-muted-foreground">
           <span>© {new Date().getFullYear()} 452WEAR</span>
-          <span>Türkiye&apos;de tasarlandı</span>
         </div>
       </Container>
     </footer>
