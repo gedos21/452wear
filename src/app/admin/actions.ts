@@ -439,6 +439,9 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
 export type TopluDegisiklik = {
   id: string;
   ad?: string;
+  /** Marka/model filtre alanları; boş metin alanı temizler. */
+  marka?: string;
+  model?: string;
   aciklama?: string;
   fiyat?: number;
   /** Sayı: yeni indirim öncesi fiyat. null: indirimi kaldır. */
@@ -485,6 +488,10 @@ function topluUygula(
 
   const aciklama = d.aciklama?.trim() ?? mevcut.description;
   if (!aciklama) return { ok: false, hata: "Açıklama boş olamaz." };
+
+  // Marka/model: verilmediyse üründeki değer kalır, boş metin alanı siler.
+  const marka = d.marka === undefined ? mevcut.brand : d.marka.trim();
+  const model = d.model === undefined ? mevcut.model : d.model.trim();
 
   const kategori = d.kategori ?? mevcut.category;
   if (!KATEGORILER.includes(kategori))
@@ -568,6 +575,11 @@ function topluUygula(
   if (indirimOncesi === null || indirimOncesi === undefined)
     delete urun.compareAtPrice;
   else urun.compareAtPrice = Math.round(indirimOncesi);
+
+  if (marka) urun.brand = marka;
+  else delete urun.brand;
+  if (model) urun.model = model;
+  else delete urun.model;
 
   return { ok: true, urun };
 }

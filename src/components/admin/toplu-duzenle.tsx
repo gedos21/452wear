@@ -64,6 +64,8 @@ function urunBedenleri(urun: Product): ProductSize[] {
 
 type Taslak = {
   ad?: string;
+  marka?: string;
+  model?: string;
   aciklama?: string;
   fiyat?: number;
   indirimOncesi?: number | null;
@@ -99,6 +101,8 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
 
   // Toplu alanlar
   const [tAd, setTAd] = useState("");
+  const [tMarka, setTMarka] = useState("");
+  const [tModel, setTModel] = useState("");
   const [tRenk, setTRenk] = useState("");
   const [tBedenler, setTBedenler] = useState<Set<ProductSize>>(new Set());
   const [tStok, setTStok] = useState("");
@@ -182,6 +186,8 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
   function seciliyeUygula() {
     const parca: Taslak = {};
     if (tAd.trim()) parca.ad = tAd.trim();
+    if (tMarka.trim()) parca.marka = tMarka.trim();
+    if (tModel.trim()) parca.model = tModel.trim();
     if (tRenk.trim()) parca.renkler = renkleriAyristir(tRenk);
     if (tBedenler.size > 0) parca.bedenler = [...tBedenler];
     if (tStok.trim() && Number(tStok) >= 0) parca.stok = Number(tStok);
@@ -273,6 +279,27 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
               className={girdi}
             />
           </label>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="grid gap-1.5">
+              <span className={etiket}>Marka</span>
+              <input
+                value={tMarka}
+                onChange={(e) => setTMarka(e.target.value)}
+                placeholder="Nike, Adidas, Vans…"
+                className={girdi}
+              />
+            </label>
+            <label className="grid gap-1.5">
+              <span className={etiket}>Model</span>
+              <input
+                value={tModel}
+                onChange={(e) => setTModel(e.target.value)}
+                placeholder="Dunk Low, Superstar…"
+                className={girdi}
+              />
+            </label>
+          </div>
 
           <label className="grid gap-1.5">
             <span className={etiket}>Renk</span>
@@ -438,6 +465,8 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
               </th>
               <th className="px-3 py-3 font-normal">Ürün</th>
               <th className="px-3 py-3 font-normal">Ad</th>
+              <th className="px-3 py-3 font-normal">Marka</th>
+              <th className="px-3 py-3 font-normal">Model</th>
               <th className="px-3 py-3 font-normal">Renk</th>
               <th className="px-3 py-3 font-normal">Numara / beden</th>
               <th className="px-3 py-3 font-normal">Fiyat</th>
@@ -506,6 +535,26 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
                       onChange={(e) => taslakYaz(u.id, { ad: e.target.value })}
                       aria-label={`${u.name} adı`}
                       className={cn(girdi, "min-w-[12rem]")}
+                    />
+                  </td>
+
+                  <td className="px-3 py-3">
+                    <input
+                      value={t.marka ?? u.brand ?? ""}
+                      onChange={(e) => taslakYaz(u.id, { marka: e.target.value })}
+                      placeholder="—"
+                      aria-label={`${u.name} markası`}
+                      className={cn(girdi, "w-28")}
+                    />
+                  </td>
+
+                  <td className="px-3 py-3">
+                    <input
+                      value={t.model ?? u.model ?? ""}
+                      onChange={(e) => taslakYaz(u.id, { model: e.target.value })}
+                      placeholder="—"
+                      aria-label={`${u.name} modeli`}
+                      className={cn(girdi, "w-36")}
                     />
                   </td>
 
