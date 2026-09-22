@@ -17,7 +17,10 @@ import {
   deriveFacets,
   EMPTY_FILTERS,
   filterProducts,
+  filterSlug,
   matchesCategory,
+  productBrand,
+  productModel,
   sortProducts,
   type CategoryFilter,
   type ProductFilters,
@@ -45,14 +48,34 @@ export function ShopBrowser({
   products,
   category,
   title,
+  initialBrand,
+  initialModel,
 }: {
   products: Product[];
   category: CategoryFilter;
   title: { label: string; lang?: "en" };
+  /** Adresten gelen marka/model (slug); navbar menüsü bunları kullanır. */
+  initialBrand?: string;
+  initialModel?: string;
 }) {
   const router = useRouter();
 
-  const [filters, setFilters] = useState<ProductFilters>(EMPTY_FILTERS);
+  // Adresteki slug katalogdaki gerçek ada çevrilir; karşılığı yoksa yok
+  // sayılır (yanlış bağlantı listeyi boşaltmasın).
+  const [filters, setFilters] = useState<ProductFilters>(() => {
+    const eslestir = (slug: string | undefined, deger: (p: Product) => string | null) => {
+      if (!slug) return [];
+      const ad = products
+        .map(deger)
+        .find((v): v is string => !!v && filterSlug(v) === slug);
+      return ad ? [ad] : [];
+    };
+    return {
+      ...EMPTY_FILTERS,
+      brands: eslestir(initialBrand, productBrand),
+      models: eslestir(initialModel, productModel),
+    };
+  });
   const [sort, setSort] = useState<SortKey>("recommended");
   const [query, setQuery] = useState("");
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -90,6 +113,15 @@ export function ShopBrowser({
       ),
       brands: filters.brands.filter((b) =>
         facets.brands.some((f) => f.name === b),
+      ),
+      // Model seçimi markasına bağlıdır: marka değişince ya da kategori
+      // dışında kalınca düşer, yoksa görünmeyen bir filtre listeyi boşaltır.
+      models: filters.models.filter((m) =>
+        facets.models.some(
+          (f) =>
+            f.name === m &&
+            (filters.brands.length === 0 || filters.brands.includes(f.brand)),
+        ),
       ),
       price:
         price.min === undefined && price.max === undefined ? undefined : price,

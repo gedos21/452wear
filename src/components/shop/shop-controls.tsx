@@ -241,6 +241,15 @@ export function ActiveFilters({
           brands: filters.brands.filter((b) => b !== brand),
         }),
     })),
+    ...filters.models.map((model) => ({
+      key: `m-${model}`,
+      label: model,
+      remove: () =>
+        onChange({
+          ...filters,
+          models: filters.models.filter((m) => m !== model),
+        }),
+    })),
     ...filters.colors.map((color) => ({
       key: `c-${color}`,
       label: color,

@@ -353,8 +353,8 @@
     {
       "id": "p-015",
       "slug": "vans-siyah-beyaz",
-      "name": "vans siyah beyaz",
-      "description": "düzenlenir",
+      "name": "Vans Old Skool",
+      "description": "İkonik yan şerit detayıyla öne çıkan Old Skool, günlük streetwear kombinlerine kolayca uyum sağlayan zamansız bir sneaker.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1383,
@@ -383,7 +383,7 @@
       ],
       "colors": [
         {
-          "name": "Siyah",
+          "name": "Siyah / Beyaz",
           "hex": "#1a1a1a"
         }
       ],
@@ -391,71 +391,73 @@
         {
           "id": "p-015-siyah-36",
           "size": "36",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-37",
           "size": "37",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-38",
           "size": "38",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-39",
           "size": "39",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-40",
           "size": "40",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-41",
           "size": "41",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-42",
           "size": "42",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-43",
           "size": "43",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-44",
           "size": "44",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-015-siyah-45",
           "size": "45",
-          "color": "Siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Vans",
+      "model": "Old Skool"
     },
     {
       "id": "p-016",
       "slug": "vans-beyaz",
-      "name": "vans beyaz",
-      "description": "jjj",
+      "name": "Vans Old Skool",
+      "description": "Temiz beyaz görünümü ve gum tabanıyla klasik Vans stilini sade ve günlük bir görünümle tamamlayan sneaker.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -484,7 +486,7 @@
       ],
       "colors": [
         {
-          "name": "Beyaz",
+          "name": "Beyaz / Gum",
           "hex": "#ffffff"
         }
       ],
@@ -492,71 +494,73 @@
         {
           "id": "p-016-beyaz-36",
           "size": "36",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-37",
           "size": "37",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-38",
           "size": "38",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-39",
           "size": "39",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-40",
           "size": "40",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-41",
           "size": "41",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-42",
           "size": "42",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-43",
           "size": "43",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-44",
           "size": "44",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         },
         {
           "id": "p-016-beyaz-45",
           "size": "45",
-          "color": "Beyaz",
+          "color": "Beyaz / Gum",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Vans",
+      "model": "Old Skool"
     },
     {
       "id": "p-017",
       "slug": "jordan-4-yeni",
-      "name": "jordan 4 yeni",
-      "description": "ıkkk",
+      "name": "Air Jordan 4",
+      "description": "Güçlü detaylarıyla öne çıkan Jordan 4 silüeti, sneaker koleksiyonlarına dikkat çekici ve karakterli bir görünüm kazandırır.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -585,7 +589,7 @@
       ],
       "colors": [
         {
-          "name": "Bordo",
+          "name": "Beyaz / Bordo Detay",
           "hex": "#5e1212"
         }
       ],
@@ -593,65 +597,67 @@
         {
           "id": "p-017-bordo-36",
           "size": "36",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         },
         {
           "id": "p-017-bordo-37",
           "size": "37",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         },
         {
           "id": "p-017-bordo-38",
           "size": "38",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         },
         {
           "id": "p-017-bordo-39",
           "size": "39",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         },
         {
           "id": "p-017-bordo-40",
           "size": "40",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         },
         {
           "id": "p-017-bordo-41",
           "size": "41",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         },
         {
           "id": "p-017-bordo-42",
           "size": "42",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         },
         {
           "id": "p-017-bordo-43",
           "size": "43",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         },
         {
           "id": "p-017-bordo-44",
           "size": "44",
-          "color": "Bordo",
+          "color": "Beyaz / Bordo Detay",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 4"
     },
     {
       "id": "p-018",
       "slug": "nike-sb-dunk",
-      "name": "nike sb dunk",
-      "description": "kkk",
+      "name": "Nike SB Dunk Low",
+      "description": "Klasik Dunk silüetini skate kültürünün karakteriyle buluşturan model, günlük streetwear kombinleri için güçlü bir seçenek.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -680,7 +686,7 @@
       ],
       "colors": [
         {
-          "name": "gri",
+          "name": "Lacivert / Beyaz",
           "hex": "#1a1a1a"
         }
       ],
@@ -688,53 +694,61 @@
         {
           "id": "p-018-gri-36",
           "size": "36",
-          "color": "gri",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-018-gri-37",
           "size": "37",
-          "color": "gri",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-018-gri-38",
           "size": "38",
-          "color": "gri",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-018-gri-39",
           "size": "39",
-          "color": "gri",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-018-gri-40",
           "size": "40",
-          "color": "gri",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-018-gri-41",
           "size": "41",
-          "color": "gri",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-018-gri-42",
           "size": "42",
-          "color": "gri",
+          "color": "Lacivert / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-018-gri-43",
+          "size": "43",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "SB Dunk Low"
     },
     {
       "id": "p-019",
       "slug": "nike-dragon",
-      "name": "nike dragon",
-      "description": "kk",
+      "name": "Nike Dunk Low",
+      "description": "Bordo ve beyaz renk kontrastını altın detaylarla tamamlayan Dunk Low, sade kombinlere güçlü bir vurgu katar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -763,7 +777,7 @@
       ],
       "colors": [
         {
-          "name": "Bordo",
+          "name": "Bordo / Beyaz / Altın",
           "hex": "#8d1616"
         }
       ],
@@ -771,47 +785,61 @@
         {
           "id": "p-019-bordo-36",
           "size": "36",
-          "color": "Bordo",
+          "color": "Bordo / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-019-bordo-37",
           "size": "37",
-          "color": "Bordo",
+          "color": "Bordo / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-019-bordo-38",
           "size": "38",
-          "color": "Bordo",
+          "color": "Bordo / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-019-bordo-39",
           "size": "39",
-          "color": "Bordo",
+          "color": "Bordo / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-019-bordo-40",
           "size": "40",
-          "color": "Bordo",
+          "color": "Bordo / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-019-bordo-41",
           "size": "41",
-          "color": "Bordo",
+          "color": "Bordo / Beyaz / Altın",
+          "stock": 10
+        },
+        {
+          "id": "p-019-bordo-42",
+          "size": "42",
+          "color": "Bordo / Beyaz / Altın",
+          "stock": 10
+        },
+        {
+          "id": "p-019-bordo-43",
+          "size": "43",
+          "color": "Bordo / Beyaz / Altın",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Dunk Low"
     },
     {
       "id": "p-020",
       "slug": "nike-gri-mavi",
-      "name": "nike gri mavi",
-      "description": "kkk",
+      "name": "Air Jordan 1 Low",
+      "description": "Alçak bilekli Jordan 1 silüeti, gri ve lacivert tonlarıyla günlük kullanım için sportif ve dengeli bir görünüm sunar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -840,7 +868,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz gri",
+          "name": "Gri / Lacivert",
           "hex": "#ffffff"
         }
       ],
@@ -848,53 +876,61 @@
         {
           "id": "p-020-beyaz-gri-36",
           "size": "36",
-          "color": "beyaz gri",
+          "color": "Gri / Lacivert",
           "stock": 10
         },
         {
           "id": "p-020-beyaz-gri-37",
           "size": "37",
-          "color": "beyaz gri",
+          "color": "Gri / Lacivert",
           "stock": 10
         },
         {
           "id": "p-020-beyaz-gri-38",
           "size": "38",
-          "color": "beyaz gri",
+          "color": "Gri / Lacivert",
           "stock": 10
         },
         {
           "id": "p-020-beyaz-gri-39",
           "size": "39",
-          "color": "beyaz gri",
+          "color": "Gri / Lacivert",
           "stock": 10
         },
         {
           "id": "p-020-beyaz-gri-40",
           "size": "40",
-          "color": "beyaz gri",
+          "color": "Gri / Lacivert",
           "stock": 10
         },
         {
           "id": "p-020-beyaz-gri-41",
           "size": "41",
-          "color": "beyaz gri",
+          "color": "Gri / Lacivert",
           "stock": 10
         },
         {
           "id": "p-020-beyaz-gri-42",
           "size": "42",
-          "color": "beyaz gri",
+          "color": "Gri / Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-020-beyaz-gri-43",
+          "size": "43",
+          "color": "Gri / Lacivert",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-021",
       "slug": "nike-sb-dunk-digeri",
-      "name": "nike sb dunk diğeri",
-      "description": "kk",
+      "name": "Nike SB Dunk Low",
+      "description": "Kontrast renk yapısı ve düşük bilekli formuyla streetwear stiline kolayca uyum sağlayan klasik SB Dunk görünümü.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -923,7 +959,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Lacivert / Beyaz",
           "hex": "#ffffff"
         }
       ],
@@ -931,47 +967,61 @@
         {
           "id": "p-021-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-021-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-021-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-021-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-021-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-021-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Lacivert / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-021-beyaz-42",
+          "size": "42",
+          "color": "Lacivert / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-021-beyaz-43",
+          "size": "43",
+          "color": "Lacivert / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "SB Dunk Low"
     },
     {
       "id": "p-022",
       "slug": "af1-gri-logo",
-      "name": "af1 gri logo",
-      "description": "112kk",
+      "name": "Nike Air Force 1 '07",
+      "description": "Klasik AF1 formunu gri tonlarla modernleştiren model, günlük kullanım ve minimal kombinler için ideal.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1000,7 +1050,7 @@
       ],
       "colors": [
         {
-          "name": "gri",
+          "name": "Gri / Beyaz",
           "hex": "#808080"
         }
       ],
@@ -1008,53 +1058,61 @@
         {
           "id": "p-022-gri-36",
           "size": "36",
-          "color": "gri",
+          "color": "Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-022-gri-37",
           "size": "37",
-          "color": "gri",
+          "color": "Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-022-gri-38",
           "size": "38",
-          "color": "gri",
+          "color": "Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-022-gri-39",
           "size": "39",
-          "color": "gri",
+          "color": "Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-022-gri-40",
           "size": "40",
-          "color": "gri",
+          "color": "Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-022-gri-41",
           "size": "41",
-          "color": "gri",
+          "color": "Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-022-gri-42",
           "size": "42",
-          "color": "gri",
+          "color": "Gri / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-022-gri-43",
+          "size": "43",
+          "color": "Gri / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Force 1 '07"
     },
     {
       "id": "p-023",
       "slug": "nike-parlak-siyah",
-      "name": "nike parlak siyah",
-      "description": "kkk",
+      "name": "Nike Dunk Low",
+      "description": "Parlak siyah yüzeyi ve kırmızı detaylarıyla daha iddialı bir Dunk görünümü sunan model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1083,7 +1141,7 @@
       ],
       "colors": [
         {
-          "name": "kırmızı",
+          "name": "Parlak Siyah / Kırmızı",
           "hex": "#5d0909"
         }
       ],
@@ -1091,53 +1149,61 @@
         {
           "id": "p-023-kirmizi-36",
           "size": "36",
-          "color": "kırmızı",
+          "color": "Parlak Siyah / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-023-kirmizi-37",
           "size": "37",
-          "color": "kırmızı",
+          "color": "Parlak Siyah / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-023-kirmizi-38",
           "size": "38",
-          "color": "kırmızı",
+          "color": "Parlak Siyah / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-023-kirmizi-39",
           "size": "39",
-          "color": "kırmızı",
+          "color": "Parlak Siyah / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-023-kirmizi-40",
           "size": "40",
-          "color": "kırmızı",
+          "color": "Parlak Siyah / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-023-kirmizi-41",
           "size": "41",
-          "color": "kırmızı",
+          "color": "Parlak Siyah / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-023-kirmizi-42",
           "size": "42",
-          "color": "kırmızı",
+          "color": "Parlak Siyah / Kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-023-kirmizi-43",
+          "size": "43",
+          "color": "Parlak Siyah / Kırmızı",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Dunk Low"
     },
     {
       "id": "p-024",
       "slug": "af1-beyaz",
-      "name": "af1 beyaz",
-      "description": "jkj",
+      "name": "Nike Air Force 1 '07",
+      "description": "Temiz ve zamansız beyaz AF1 görünümü; jean, eşofman ve oversize parçalarla kolayca kombinlenebilir.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1166,7 +1232,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz",
           "hex": "#ffffff"
         }
       ],
@@ -1174,53 +1240,61 @@
         {
           "id": "p-024-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-024-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-024-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-024-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-024-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-024-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-024-beyaz-42",
           "size": "42",
-          "color": "beyaz",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-024-beyaz-43",
+          "size": "43",
+          "color": "Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Force 1 '07"
     },
     {
       "id": "p-025",
       "slug": "nilke-dunk-beyaz-r",
-      "name": "nilke dunk beyaz r",
-      "description": "kkkk",
+      "name": "Nike Dunk Low",
+      "description": "Minimal beyaz Dunk görünümüyle günlük sneaker rotasyonunun sade ve kullanışlı tamamlayıcılarından biri.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1249,7 +1323,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz",
           "hex": "#ffffff"
         }
       ],
@@ -1257,47 +1331,61 @@
         {
           "id": "p-025-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-025-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-025-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-025-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-025-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-025-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-025-beyaz-42",
+          "size": "42",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-025-beyaz-43",
+          "size": "43",
+          "color": "Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Dunk Low"
     },
     {
       "id": "p-026",
       "slug": "af1-mavi-logo",
-      "name": "af1 mavi logo",
-      "description": "1400",
+      "name": "Nike Air Force 1 '07",
+      "description": "Beyaz gövdeyi mavi detaylarla hareketlendiren klasik AF1 tasarımı, günlük kombinlere sportif bir dokunuş katar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1326,7 +1414,7 @@
       ],
       "colors": [
         {
-          "name": "mavi",
+          "name": "Beyaz / Mavi",
           "hex": "#0069cc"
         }
       ],
@@ -1334,47 +1422,61 @@
         {
           "id": "p-026-mavi-36",
           "size": "36",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-026-mavi-37",
           "size": "37",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-026-mavi-38",
           "size": "38",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-026-mavi-39",
           "size": "39",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-026-mavi-40",
           "size": "40",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-026-mavi-41",
           "size": "41",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-026-mavi-42",
+          "size": "42",
+          "color": "Beyaz / Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-026-mavi-43",
+          "size": "43",
+          "color": "Beyaz / Mavi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Force 1 '07"
     },
     {
       "id": "p-027",
       "slug": "dunk-beyaz",
-      "name": "dunk beyaz",
-      "description": "kkk",
+      "name": "Nike Dunk Low",
+      "description": "Siyah-beyaz renk bloklarıyla zamansız Dunk görünümü sunan model, farklı tarz ve renklerdeki kombinlere kolayca uyum sağlar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1403,7 +1505,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz / Siyah",
           "hex": "#ffffff"
         }
       ],
@@ -1411,47 +1513,61 @@
         {
           "id": "p-027-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-027-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-027-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-027-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-027-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-027-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-027-beyaz-42",
+          "size": "42",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-027-beyaz-43",
+          "size": "43",
+          "color": "Beyaz / Siyah",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Dunk Low"
     },
     {
       "id": "p-028",
       "slug": "beyaz-superstar",
-      "name": "beyaz süperstar",
-      "description": "k",
+      "name": "Adidas Superstar",
+      "description": "İkonik 3 bant ve klasik kabuk burun tasarımıyla günlük stile retro bir dokunuş katan Superstar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1480,7 +1596,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz / Siyah",
           "hex": "#ffffff"
         }
       ],
@@ -1488,53 +1604,61 @@
         {
           "id": "p-028-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-42",
           "size": "42",
-          "color": "beyaz",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-028-beyaz-43",
+          "size": "43",
+          "color": "Beyaz / Siyah",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Superstar"
     },
     {
       "id": "p-029",
       "slug": "superstar-yesil-mavi",
-      "name": "superstar yeşil mavi",
-      "description": "kkk",
+      "name": "Adidas Superstar",
+      "description": "Klasik Superstar silüetini renkli detaylarla daha enerjik hale getiren günlük sneaker.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1563,7 +1687,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz / Yeşil / Mavi",
           "hex": "#ffffff"
         }
       ],
@@ -1571,47 +1695,61 @@
         {
           "id": "p-029-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz / Yeşil / Mavi",
           "stock": 10
         },
         {
           "id": "p-029-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz / Yeşil / Mavi",
           "stock": 10
         },
         {
           "id": "p-029-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz / Yeşil / Mavi",
           "stock": 10
         },
         {
           "id": "p-029-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz / Yeşil / Mavi",
           "stock": 10
         },
         {
           "id": "p-029-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz / Yeşil / Mavi",
           "stock": 10
         },
         {
           "id": "p-029-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz / Yeşil / Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-029-beyaz-42",
+          "size": "42",
+          "color": "Beyaz / Yeşil / Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-029-beyaz-43",
+          "size": "43",
+          "color": "Beyaz / Yeşil / Mavi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Superstar"
     },
     {
       "id": "p-030",
       "slug": "siyah-beyaz-superstar",
-      "name": "siyah beyaz superstar",
-      "description": "kk",
+      "name": "Adidas Superstar",
+      "description": "Siyah gövde ve beyaz 3 bant kontrastıyla güçlü, sade ve kolay kombinlenebilir Superstar görünümü.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1640,7 +1778,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Siyah / Beyaz",
           "hex": "#1a1a1a"
         }
       ],
@@ -1648,47 +1786,61 @@
         {
           "id": "p-030-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-030-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-030-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-030-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-030-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-030-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-030-siyah-42",
+          "size": "42",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-030-siyah-43",
+          "size": "43",
+          "color": "Siyah / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Superstar"
     },
     {
       "id": "p-031",
       "slug": "superstar-renkli-horozlu",
-      "name": "superstar renkli horozlu",
-      "description": "kkk",
+      "name": "Adidas Superstar",
+      "description": "Klasik Superstar formuna renkli detaylar ekleyen model, sade kombinlere hareket kazandırır.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1717,7 +1869,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz / Çok Renkli",
           "hex": "#ffffff"
         }
       ],
@@ -1725,47 +1877,61 @@
         {
           "id": "p-031-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz / Çok Renkli",
           "stock": 10
         },
         {
           "id": "p-031-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz / Çok Renkli",
           "stock": 10
         },
         {
           "id": "p-031-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz / Çok Renkli",
           "stock": 10
         },
         {
           "id": "p-031-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz / Çok Renkli",
           "stock": 10
         },
         {
           "id": "p-031-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz / Çok Renkli",
           "stock": 10
         },
         {
           "id": "p-031-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz / Çok Renkli",
+          "stock": 10
+        },
+        {
+          "id": "p-031-beyaz-42",
+          "size": "42",
+          "color": "Beyaz / Çok Renkli",
+          "stock": 10
+        },
+        {
+          "id": "p-031-beyaz-43",
+          "size": "43",
+          "color": "Beyaz / Çok Renkli",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Superstar"
     },
     {
       "id": "p-032",
       "slug": "superstar-horozlu-siyah",
-      "name": "superstar horozlu siyah",
-      "description": "kkk",
+      "name": "Adidas Superstar",
+      "description": "Zamansız siyah-beyaz renk kombinasyonu ve ikonik 3 bant detaylarıyla günlük kullanıma uygun Superstar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1794,7 +1960,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Siyah / Beyaz",
           "hex": "#000000"
         }
       ],
@@ -1802,47 +1968,61 @@
         {
           "id": "p-032-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-032-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-032-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-032-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-032-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
           "stock": 10
         },
         {
           "id": "p-032-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-032-siyah-42",
+          "size": "42",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-032-siyah-43",
+          "size": "43",
+          "color": "Siyah / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Superstar"
     },
     {
       "id": "p-033",
       "slug": "superstar-beyaz-kirmizi",
-      "name": "superstar beyaz kırmızı",
-      "description": "jkkj",
+      "name": "Adidas Superstar",
+      "description": "Beyaz taban üzerinde kırmızı detaylarıyla daha sportif ve canlı bir Superstar görünümü.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1871,7 +2051,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz / Kırmızı",
           "hex": "#ffffff"
         }
       ],
@@ -1879,47 +2059,61 @@
         {
           "id": "p-033-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-033-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-033-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-033-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-033-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı",
           "stock": 10
         },
         {
           "id": "p-033-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-033-beyaz-42",
+          "size": "42",
+          "color": "Beyaz / Kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-033-beyaz-43",
+          "size": "43",
+          "color": "Beyaz / Kırmızı",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Superstar"
     },
     {
       "id": "p-034",
       "slug": "siyah-beyaz-superstar-2",
-      "name": "SİYAH BEYAZ SUPERSTAR",
-      "description": "KK",
+      "name": "Adidas Superstar",
+      "description": "Temiz beyaz gövde ve siyah detayların oluşturduğu klasik Superstar renk kombinasyonu.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1948,7 +2142,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Beyaz / Siyah",
           "hex": "#1a1a1a"
         }
       ],
@@ -1956,47 +2150,61 @@
         {
           "id": "p-034-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-034-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-034-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-034-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-034-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Beyaz / Siyah",
           "stock": 10
         },
         {
           "id": "p-034-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-034-siyah-42",
+          "size": "42",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-034-siyah-43",
+          "size": "43",
+          "color": "Beyaz / Siyah",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Superstar"
     },
     {
       "id": "p-035",
       "slug": "spezial-mavi",
-      "name": "spezial mavi",
-      "description": "kk",
+      "name": "Adidas Handball Spezial",
+      "description": "Süet görünümü ve gum tabanıyla retro adidas estetiğini taşıyan Handball Spezial, günlük streetwear kombinlerine uyum sağlar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2025,7 +2233,7 @@
       ],
       "colors": [
         {
-          "name": "mavi",
+          "name": "Açık Mavi",
           "hex": "#007db3"
         }
       ],
@@ -2033,47 +2241,61 @@
         {
           "id": "p-035-mavi-36",
           "size": "36",
-          "color": "mavi",
+          "color": "Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-035-mavi-37",
           "size": "37",
-          "color": "mavi",
+          "color": "Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-035-mavi-38",
           "size": "38",
-          "color": "mavi",
+          "color": "Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-035-mavi-39",
           "size": "39",
-          "color": "mavi",
+          "color": "Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-035-mavi-40",
           "size": "40",
-          "color": "mavi",
+          "color": "Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-035-mavi-41",
           "size": "41",
-          "color": "mavi",
+          "color": "Açık Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-035-mavi-42",
+          "size": "42",
+          "color": "Açık Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-035-mavi-43",
+          "size": "43",
+          "color": "Açık Mavi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Handball Spezial"
     },
     {
       "id": "p-036",
       "slug": "spezial-bordo",
-      "name": "spezial bordo",
-      "description": "kk",
+      "name": "Adidas Handball Spezial",
+      "description": "Bordo süet görünümü ve gum tabanıyla retro karakteri güçlü, dikkat çekici bir Spezial modeli.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2102,7 +2324,7 @@
       ],
       "colors": [
         {
-          "name": "bordo",
+          "name": "Bordo",
           "hex": "#5b0101"
         }
       ],
@@ -2110,47 +2332,61 @@
         {
           "id": "p-036-bordo-36",
           "size": "36",
-          "color": "bordo",
+          "color": "Bordo",
           "stock": 10
         },
         {
           "id": "p-036-bordo-37",
           "size": "37",
-          "color": "bordo",
+          "color": "Bordo",
           "stock": 10
         },
         {
           "id": "p-036-bordo-38",
           "size": "38",
-          "color": "bordo",
+          "color": "Bordo",
           "stock": 10
         },
         {
           "id": "p-036-bordo-39",
           "size": "39",
-          "color": "bordo",
+          "color": "Bordo",
           "stock": 10
         },
         {
           "id": "p-036-bordo-40",
           "size": "40",
-          "color": "bordo",
+          "color": "Bordo",
           "stock": 10
         },
         {
           "id": "p-036-bordo-41",
           "size": "41",
-          "color": "bordo",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-036-bordo-42",
+          "size": "42",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-036-bordo-43",
+          "size": "43",
+          "color": "Bordo",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Handball Spezial"
     },
     {
       "id": "p-037",
       "slug": "spezial-kahverengi",
-      "name": "spezial kahverengi",
-      "description": "kk",
+      "name": "Adidas Handball Spezial",
+      "description": "Toprak tonları ve gum tabanıyla vintage havası taşıyan, günlük kombinlerde kolay kullanılabilecek Spezial.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2179,7 +2415,7 @@
       ],
       "colors": [
         {
-          "name": "kahverengi",
+          "name": "Kahverengi",
           "hex": "#a35f1f"
         }
       ],
@@ -2187,53 +2423,61 @@
         {
           "id": "p-037-kahverengi-36",
           "size": "36",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-037-kahverengi-37",
           "size": "37",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-037-kahverengi-38",
           "size": "38",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-037-kahverengi-39",
           "size": "39",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-037-kahverengi-40",
           "size": "40",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-037-kahverengi-41",
           "size": "41",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-037-kahverengi-42",
           "size": "42",
-          "color": "kahverengi",
+          "color": "Kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-037-kahverengi-43",
+          "size": "43",
+          "color": "Kahverengi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Handball Spezial"
     },
     {
       "id": "p-038",
       "slug": "spezial-mavi-2",
-      "name": "spezial mavi",
-      "description": "kk",
+      "name": "Adidas Handball Spezial",
+      "description": "Mavi tonları ve klasik gum tabanıyla sportif-retro görünümü öne çıkaran Spezial modeli.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2262,7 +2506,7 @@
       ],
       "colors": [
         {
-          "name": "mavi",
+          "name": "Mavi",
           "hex": "#0074ad"
         }
       ],
@@ -2270,47 +2514,61 @@
         {
           "id": "p-038-mavi-36",
           "size": "36",
-          "color": "mavi",
+          "color": "Mavi",
           "stock": 10
         },
         {
           "id": "p-038-mavi-37",
           "size": "37",
-          "color": "mavi",
+          "color": "Mavi",
           "stock": 10
         },
         {
           "id": "p-038-mavi-38",
           "size": "38",
-          "color": "mavi",
+          "color": "Mavi",
           "stock": 10
         },
         {
           "id": "p-038-mavi-39",
           "size": "39",
-          "color": "mavi",
+          "color": "Mavi",
           "stock": 10
         },
         {
           "id": "p-038-mavi-40",
           "size": "40",
-          "color": "mavi",
+          "color": "Mavi",
           "stock": 10
         },
         {
           "id": "p-038-mavi-41",
           "size": "41",
-          "color": "mavi",
+          "color": "Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-038-mavi-42",
+          "size": "42",
+          "color": "Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-038-mavi-43",
+          "size": "43",
+          "color": "Mavi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Handball Spezial"
     },
     {
       "id": "p-039",
       "slug": "spezial-leopar",
-      "name": "spezial leopar",
-      "description": "kk",
+      "name": "Adidas Handball Spezial",
+      "description": "Klasik Spezial silüetini dikkat çekici leopar detaylarla buluşturan, daha iddialı bir yorum.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2339,7 +2597,7 @@
       ],
       "colors": [
         {
-          "name": "leopar",
+          "name": "Leopar / Krem",
           "hex": "#271111"
         }
       ],
@@ -2347,47 +2605,61 @@
         {
           "id": "p-039-leopar-36",
           "size": "36",
-          "color": "leopar",
+          "color": "Leopar / Krem",
           "stock": 10
         },
         {
           "id": "p-039-leopar-37",
           "size": "37",
-          "color": "leopar",
+          "color": "Leopar / Krem",
           "stock": 10
         },
         {
           "id": "p-039-leopar-38",
           "size": "38",
-          "color": "leopar",
+          "color": "Leopar / Krem",
           "stock": 10
         },
         {
           "id": "p-039-leopar-39",
           "size": "39",
-          "color": "leopar",
+          "color": "Leopar / Krem",
           "stock": 10
         },
         {
           "id": "p-039-leopar-40",
           "size": "40",
-          "color": "leopar",
+          "color": "Leopar / Krem",
           "stock": 10
         },
         {
           "id": "p-039-leopar-41",
           "size": "41",
-          "color": "leopar",
+          "color": "Leopar / Krem",
+          "stock": 10
+        },
+        {
+          "id": "p-039-leopar-42",
+          "size": "42",
+          "color": "Leopar / Krem",
+          "stock": 10
+        },
+        {
+          "id": "p-039-leopar-43",
+          "size": "43",
+          "color": "Leopar / Krem",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Handball Spezial"
     },
     {
       "id": "p-040",
       "slug": "spezial-kahverengi-gibi",
-      "name": "spezial kahverengi gibi",
-      "description": "kk",
+      "name": "Adidas Handball Spezial",
+      "description": "Kahverengi ve açık tonların dengeli birlikteliğiyle retro ve sade bir görünüm sunan Spezial.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2416,7 +2688,7 @@
       ],
       "colors": [
         {
-          "name": "kahverengi",
+          "name": "Kahverengi / Krem",
           "hex": "#6a310c"
         }
       ],
@@ -2424,47 +2696,61 @@
         {
           "id": "p-040-kahverengi-36",
           "size": "36",
-          "color": "kahverengi",
+          "color": "Kahverengi / Krem",
           "stock": 10
         },
         {
           "id": "p-040-kahverengi-37",
           "size": "37",
-          "color": "kahverengi",
+          "color": "Kahverengi / Krem",
           "stock": 10
         },
         {
           "id": "p-040-kahverengi-38",
           "size": "38",
-          "color": "kahverengi",
+          "color": "Kahverengi / Krem",
           "stock": 10
         },
         {
           "id": "p-040-kahverengi-39",
           "size": "39",
-          "color": "kahverengi",
+          "color": "Kahverengi / Krem",
           "stock": 10
         },
         {
           "id": "p-040-kahverengi-40",
           "size": "40",
-          "color": "kahverengi",
+          "color": "Kahverengi / Krem",
           "stock": 10
         },
         {
           "id": "p-040-kahverengi-41",
           "size": "41",
-          "color": "kahverengi",
+          "color": "Kahverengi / Krem",
+          "stock": 10
+        },
+        {
+          "id": "p-040-kahverengi-42",
+          "size": "42",
+          "color": "Kahverengi / Krem",
+          "stock": 10
+        },
+        {
+          "id": "p-040-kahverengi-43",
+          "size": "43",
+          "color": "Kahverengi / Krem",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Handball Spezial"
     },
     {
       "id": "p-041",
       "slug": "nike-jordan-bebe-mavisi",
-      "name": "nike jordan bebe mavisi",
-      "description": "kık",
+      "name": "Air Jordan 1 Low",
+      "description": "Açık mavi tonlarını klasik Jordan 1 Low silüetiyle bir araya getiren, temiz ve günlük bir model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1378,
@@ -2493,7 +2779,7 @@
       ],
       "colors": [
         {
-          "name": "bebe mavi",
+          "name": "Bebek Mavisi / Beyaz",
           "hex": "#1b949d"
         }
       ],
@@ -2501,47 +2787,61 @@
         {
           "id": "p-041-bebe-mavi-36",
           "size": "36",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-041-bebe-mavi-37",
           "size": "37",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-041-bebe-mavi-38",
           "size": "38",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-041-bebe-mavi-39",
           "size": "39",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-041-bebe-mavi-40",
           "size": "40",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-041-bebe-mavi-41",
           "size": "41",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-041-bebe-mavi-42",
+          "size": "42",
+          "color": "Bebek Mavisi / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-041-bebe-mavi-43",
+          "size": "43",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-042",
       "slug": "nike-jordan-gri-siyah",
-      "name": "nike jordan gri siyah",
-      "description": "kk",
+      "name": "Air Jordan 1 Low",
+      "description": "Gri ve siyah renk bloklarıyla daha koyu ve şehirli bir Jordan 1 Low görünümü.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2570,7 +2870,7 @@
       ],
       "colors": [
         {
-          "name": "gri siyah",
+          "name": "Gri / Siyah",
           "hex": "#636363"
         }
       ],
@@ -2578,47 +2878,61 @@
         {
           "id": "p-042-gri-siyah-36",
           "size": "36",
-          "color": "gri siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-042-gri-siyah-37",
           "size": "37",
-          "color": "gri siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-042-gri-siyah-38",
           "size": "38",
-          "color": "gri siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-042-gri-siyah-39",
           "size": "39",
-          "color": "gri siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-042-gri-siyah-40",
           "size": "40",
-          "color": "gri siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-042-gri-siyah-41",
           "size": "41",
-          "color": "gri siyah",
+          "color": "Gri / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-042-gri-siyah-42",
+          "size": "42",
+          "color": "Gri / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-042-gri-siyah-43",
+          "size": "43",
+          "color": "Gri / Siyah",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-043",
       "slug": "nike-jordan-bordo-siyah",
-      "name": "nike jordan bordo siyah",
-      "description": "kk",
+      "name": "Air Jordan 1 Low",
+      "description": "Bordo ve siyah tonlarıyla daha güçlü bir karakter kazanan Jordan 1 Low.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2647,7 +2961,7 @@
       ],
       "colors": [
         {
-          "name": "bordo",
+          "name": "Bordo / Siyah",
           "hex": "#612424"
         }
       ],
@@ -2655,47 +2969,61 @@
         {
           "id": "p-043-bordo-36",
           "size": "36",
-          "color": "bordo",
+          "color": "Bordo / Siyah",
           "stock": 10
         },
         {
           "id": "p-043-bordo-37",
           "size": "37",
-          "color": "bordo",
+          "color": "Bordo / Siyah",
           "stock": 10
         },
         {
           "id": "p-043-bordo-38",
           "size": "38",
-          "color": "bordo",
+          "color": "Bordo / Siyah",
           "stock": 10
         },
         {
           "id": "p-043-bordo-39",
           "size": "39",
-          "color": "bordo",
+          "color": "Bordo / Siyah",
           "stock": 10
         },
         {
           "id": "p-043-bordo-40",
           "size": "40",
-          "color": "bordo",
+          "color": "Bordo / Siyah",
           "stock": 10
         },
         {
           "id": "p-043-bordo-41",
           "size": "41",
-          "color": "bordo",
+          "color": "Bordo / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-043-bordo-42",
+          "size": "42",
+          "color": "Bordo / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-043-bordo-43",
+          "size": "43",
+          "color": "Bordo / Siyah",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-044",
       "slug": "nike-jordan-pembe",
-      "name": "nike jordan pembe",
-      "description": "kk",
+      "name": "Air Jordan 1 Low",
+      "description": "Pembe ve açık mavi detaylarıyla daha soft ve enerjik bir Jordan 1 Low görünümü.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2724,7 +3052,7 @@
       ],
       "colors": [
         {
-          "name": "pembe",
+          "name": "Pembe / Açık Mavi",
           "hex": "#ff0095"
         }
       ],
@@ -2732,47 +3060,61 @@
         {
           "id": "p-044-pembe-36",
           "size": "36",
-          "color": "pembe",
+          "color": "Pembe / Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-044-pembe-37",
           "size": "37",
-          "color": "pembe",
+          "color": "Pembe / Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-044-pembe-38",
           "size": "38",
-          "color": "pembe",
+          "color": "Pembe / Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-044-pembe-39",
           "size": "39",
-          "color": "pembe",
+          "color": "Pembe / Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-044-pembe-40",
           "size": "40",
-          "color": "pembe",
+          "color": "Pembe / Açık Mavi",
           "stock": 10
         },
         {
           "id": "p-044-pembe-41",
           "size": "41",
-          "color": "pembe",
+          "color": "Pembe / Açık Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-044-pembe-42",
+          "size": "42",
+          "color": "Pembe / Açık Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-044-pembe-43",
+          "size": "43",
+          "color": "Pembe / Açık Mavi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-045",
       "slug": "superstar-beyaz-2",
-      "name": "superstar beyaz 2",
-      "description": "kk",
+      "name": "Adidas Superstar",
+      "description": "Temiz beyaz görünümü ve klasik Superstar çizgileriyle günlük kombinlerin sade tamamlayıcısı.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2801,7 +3143,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz",
           "hex": "#ffffff"
         }
       ],
@@ -2809,47 +3151,61 @@
         {
           "id": "p-045-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-045-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-045-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-045-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-045-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-045-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-045-beyaz-42",
+          "size": "42",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-045-beyaz-43",
+          "size": "43",
+          "color": "Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Superstar"
     },
     {
       "id": "p-046",
       "slug": "adidas-campus-siyah",
-      "name": "adidas campus siyah",
-      "description": "kkk",
+      "name": "Adidas Campus 00s",
+      "description": "2000'ler esintili geniş silüetiyle güçlü bir streetwear görünümü sunan siyah Campus 00s.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2878,7 +3234,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Siyah",
           "hex": "#1a1a1a"
         }
       ],
@@ -2886,47 +3242,61 @@
         {
           "id": "p-046-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-046-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-046-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-046-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-046-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-046-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-046-siyah-42",
+          "size": "42",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-046-siyah-43",
+          "size": "43",
+          "color": "Siyah",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Campus 00s"
     },
     {
       "id": "p-047",
       "slug": "adidas-campus-yesil",
-      "name": "adidas campus yeşil",
-      "description": "kkk",
+      "name": "Adidas Campus 00s",
+      "description": "Yeşil süet görünümü ve açık renk detaylarıyla retro Campus stiline renk katan model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -2955,7 +3325,7 @@
       ],
       "colors": [
         {
-          "name": "yeşil",
+          "name": "Yeşil / Beyaz",
           "hex": "#00ff1e"
         }
       ],
@@ -2963,53 +3333,61 @@
         {
           "id": "p-047-yesil-36",
           "size": "36",
-          "color": "yeşil",
+          "color": "Yeşil / Beyaz",
           "stock": 10
         },
         {
           "id": "p-047-yesil-37",
           "size": "37",
-          "color": "yeşil",
+          "color": "Yeşil / Beyaz",
           "stock": 10
         },
         {
           "id": "p-047-yesil-38",
           "size": "38",
-          "color": "yeşil",
+          "color": "Yeşil / Beyaz",
           "stock": 10
         },
         {
           "id": "p-047-yesil-39",
           "size": "39",
-          "color": "yeşil",
+          "color": "Yeşil / Beyaz",
           "stock": 10
         },
         {
           "id": "p-047-yesil-40",
           "size": "40",
-          "color": "yeşil",
+          "color": "Yeşil / Beyaz",
           "stock": 10
         },
         {
           "id": "p-047-yesil-41",
           "size": "41",
-          "color": "yeşil",
+          "color": "Yeşil / Beyaz",
           "stock": 10
         },
         {
           "id": "p-047-yesil-42",
           "size": "42",
-          "color": "yeşil",
+          "color": "Yeşil / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-047-yesil-43",
+          "size": "43",
+          "color": "Yeşil / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Campus 00s"
     },
     {
       "id": "p-048",
       "slug": "adidas-campus-kahverengi",
-      "name": "adidas campus kahverengi",
-      "description": "kk",
+      "name": "Adidas Campus 00s",
+      "description": "Kahverengi tonları ve gum tabanıyla retro/Y2K kombinlere uyum sağlayan Campus 00s.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3038,7 +3416,7 @@
       ],
       "colors": [
         {
-          "name": "kahverengi",
+          "name": "Kahverengi",
           "hex": "#732b2b"
         }
       ],
@@ -3046,47 +3424,61 @@
         {
           "id": "p-048-kahverengi-36",
           "size": "36",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-048-kahverengi-37",
           "size": "37",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-048-kahverengi-38",
           "size": "38",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-048-kahverengi-39",
           "size": "39",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-048-kahverengi-40",
           "size": "40",
-          "color": "kahverengi",
+          "color": "Kahverengi",
           "stock": 10
         },
         {
           "id": "p-048-kahverengi-41",
           "size": "41",
-          "color": "kahverengi",
+          "color": "Kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-048-kahverengi-42",
+          "size": "42",
+          "color": "Kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-048-kahverengi-43",
+          "size": "43",
+          "color": "Kahverengi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas",
+      "model": "Campus 00s"
     },
     {
       "id": "p-049",
       "slug": "nike-af1-mavi-cizgi",
-      "name": "nike af1 mavi çizgi",
-      "description": "kkk",
+      "name": "Nike Air Force 1 '07",
+      "description": "Klasik beyaz AF1 gövdesini mavi detaylarla tamamlayan sade ve sportif model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3115,7 +3507,7 @@
       ],
       "colors": [
         {
-          "name": "mavi",
+          "name": "Beyaz / Mavi",
           "hex": "#607ae2"
         }
       ],
@@ -3123,47 +3515,61 @@
         {
           "id": "p-049-mavi-36",
           "size": "36",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-049-mavi-37",
           "size": "37",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-049-mavi-38",
           "size": "38",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-049-mavi-39",
           "size": "39",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-049-mavi-40",
           "size": "40",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
           "stock": 10
         },
         {
           "id": "p-049-mavi-41",
           "size": "41",
-          "color": "mavi",
+          "color": "Beyaz / Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-049-mavi-42",
+          "size": "42",
+          "color": "Beyaz / Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-049-mavi-43",
+          "size": "43",
+          "color": "Beyaz / Mavi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Force 1 '07"
     },
     {
       "id": "p-050",
       "slug": "nike-af1-altin-detay",
-      "name": "nike af1 altın detay",
-      "description": "kk",
+      "name": "Nike Air Force 1 '07",
+      "description": "Beyaz gövde, koyu detaylar ve altın dokunuşlarla daha dikkat çekici görünen AF1 yorumu.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3196,7 +3602,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Beyaz / Lacivert / Altın",
           "hex": "#1a1a1a"
         }
       ],
@@ -3204,47 +3610,61 @@
         {
           "id": "p-050-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Beyaz / Lacivert / Altın",
           "stock": 10
         },
         {
           "id": "p-050-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Beyaz / Lacivert / Altın",
           "stock": 10
         },
         {
           "id": "p-050-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Beyaz / Lacivert / Altın",
           "stock": 10
         },
         {
           "id": "p-050-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Beyaz / Lacivert / Altın",
           "stock": 10
         },
         {
           "id": "p-050-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Beyaz / Lacivert / Altın",
           "stock": 10
         },
         {
           "id": "p-050-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Beyaz / Lacivert / Altın",
+          "stock": 10
+        },
+        {
+          "id": "p-050-siyah-42",
+          "size": "42",
+          "color": "Beyaz / Lacivert / Altın",
+          "stock": 10
+        },
+        {
+          "id": "p-050-siyah-43",
+          "size": "43",
+          "color": "Beyaz / Lacivert / Altın",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Force 1 '07"
     },
     {
       "id": "p-051",
       "slug": "nike-af1-degisik-taban",
-      "name": "nike af1 degisik taban",
-      "description": "kk",
+      "name": "Nike Air Force 1",
+      "description": "Klasik AF1 görünümünü farklı taban ve renk detaylarıyla yeniden yorumlayan dikkat çekici model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3273,7 +3693,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz / Kırmızı / Mavi",
           "hex": "#ffffff"
         }
       ],
@@ -3281,47 +3701,61 @@
         {
           "id": "p-051-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı / Mavi",
           "stock": 10
         },
         {
           "id": "p-051-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı / Mavi",
           "stock": 10
         },
         {
           "id": "p-051-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı / Mavi",
           "stock": 10
         },
         {
           "id": "p-051-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı / Mavi",
           "stock": 10
         },
         {
           "id": "p-051-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı / Mavi",
           "stock": 10
         },
         {
           "id": "p-051-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz / Kırmızı / Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-051-beyaz-42",
+          "size": "42",
+          "color": "Beyaz / Kırmızı / Mavi",
+          "stock": 10
+        },
+        {
+          "id": "p-051-beyaz-43",
+          "size": "43",
+          "color": "Beyaz / Kırmızı / Mavi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Force 1"
     },
     {
       "id": "p-052",
       "slug": "nike-x-travis-black",
-      "name": "nike x travis black",
-      "description": "kk",
+      "name": "Travis Scott x Air Jordan 1 Low",
+      "description": "Jordan 1 Low silüetini Travis Scott estetiğiyle birleştiren koyu tonlu streetwear modeli.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3350,7 +3784,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Siyah",
           "hex": "#1a1a1a"
         }
       ],
@@ -3358,47 +3792,61 @@
         {
           "id": "p-052-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-052-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-052-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-052-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-052-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Siyah",
           "stock": 10
         },
         {
           "id": "p-052-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-052-siyah-42",
+          "size": "42",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-052-siyah-43",
+          "size": "43",
+          "color": "Siyah",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-053",
       "slug": "nike-bogazli-parlak-gold-detay",
-      "name": "nike boğazlı parlak gold detay",
-      "description": "kkk",
+      "name": "Air Jordan 1 Mid",
+      "description": "Yüksek bilekli Jordan 1 formu, siyah-beyaz yapı ve altın detaylarla daha iddialı bir görünüm kazanıyor.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3427,7 +3875,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Siyah / Beyaz / Altın",
           "hex": "#1a1a1a"
         }
       ],
@@ -3435,47 +3883,61 @@
         {
           "id": "p-053-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Siyah / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-053-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Siyah / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-053-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Siyah / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-053-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Siyah / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-053-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Siyah / Beyaz / Altın",
           "stock": 10
         },
         {
           "id": "p-053-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Siyah / Beyaz / Altın",
+          "stock": 10
+        },
+        {
+          "id": "p-053-siyah-42",
+          "size": "42",
+          "color": "Siyah / Beyaz / Altın",
+          "stock": 10
+        },
+        {
+          "id": "p-053-siyah-43",
+          "size": "43",
+          "color": "Siyah / Beyaz / Altın",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Mid"
     },
     {
       "id": "p-054",
       "slug": "nike-af1-duman-rengi",
-      "name": "nike af1 duman rengi",
-      "description": "kkk",
+      "name": "Nike Air Force 1 '07",
+      "description": "Duman gri tonlarıyla klasik AF1 tasarımını daha sakin ve modern bir görünüme taşıyan model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3504,7 +3966,7 @@
       ],
       "colors": [
         {
-          "name": "gri",
+          "name": "Duman Gri / Beyaz",
           "hex": "#707070"
         }
       ],
@@ -3512,47 +3974,61 @@
         {
           "id": "p-054-gri-36",
           "size": "36",
-          "color": "gri",
+          "color": "Duman Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-054-gri-37",
           "size": "37",
-          "color": "gri",
+          "color": "Duman Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-054-gri-38",
           "size": "38",
-          "color": "gri",
+          "color": "Duman Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-054-gri-39",
           "size": "39",
-          "color": "gri",
+          "color": "Duman Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-054-gri-40",
           "size": "40",
-          "color": "gri",
+          "color": "Duman Gri / Beyaz",
           "stock": 10
         },
         {
           "id": "p-054-gri-41",
           "size": "41",
-          "color": "gri",
+          "color": "Duman Gri / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-054-gri-42",
+          "size": "42",
+          "color": "Duman Gri / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-054-gri-43",
+          "size": "43",
+          "color": "Duman Gri / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Force 1 '07"
     },
     {
       "id": "p-055",
       "slug": "nike-x-travis-mavi",
-      "name": "nike x travis mavi",
-      "description": "kk",
+      "name": "Travis Scott x Air Jordan 1 Low",
+      "description": "Açık ve koyu mavi tonların birleşimiyle dikkat çeken, güçlü streetwear karakterine sahip Jordan 1 Low yorumu.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3577,7 +4053,7 @@
       ],
       "colors": [
         {
-          "name": "mavi",
+          "name": "Mavi / Beyaz",
           "hex": "#184081"
         }
       ],
@@ -3585,47 +4061,61 @@
         {
           "id": "p-055-mavi-36",
           "size": "36",
-          "color": "mavi",
+          "color": "Mavi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-055-mavi-37",
           "size": "37",
-          "color": "mavi",
+          "color": "Mavi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-055-mavi-38",
           "size": "38",
-          "color": "mavi",
+          "color": "Mavi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-055-mavi-39",
           "size": "39",
-          "color": "mavi",
+          "color": "Mavi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-055-mavi-40",
           "size": "40",
-          "color": "mavi",
+          "color": "Mavi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-055-mavi-41",
           "size": "41",
-          "color": "mavi",
+          "color": "Mavi / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-055-mavi-42",
+          "size": "42",
+          "color": "Mavi / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-055-mavi-43",
+          "size": "43",
+          "color": "Mavi / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-056",
       "slug": "nike-x-travis-beyaz",
-      "name": "nike x travis beyaz",
-      "description": "kk",
+      "name": "Travis Scott x Air Jordan 1 Low",
+      "description": "Beyaz ağırlıklı temiz görünümüyle daha minimal bir Travis Scott x Jordan 1 Low yorumu.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3654,7 +4144,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz",
           "hex": "#ffffff"
         }
       ],
@@ -3662,53 +4152,61 @@
         {
           "id": "p-056-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-056-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-056-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-056-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-056-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-056-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-056-beyaz-42",
           "size": "42",
-          "color": "beyaz",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-056-beyaz-43",
+          "size": "43",
+          "color": "Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-057",
       "slug": "nike-beyaz-kahverengi-taban",
-      "name": "nike beyaz kahverengi taban",
-      "description": "kk",
+      "name": "Nike Air Force 1 '07",
+      "description": "Beyaz üst yüzeyi kahverengi taban detayıyla tamamlayan, klasik AF1'e retro bir hava katan model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3737,7 +4235,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Beyaz / Kahverengi",
           "hex": "#1a1a1a"
         }
       ],
@@ -3745,47 +4243,61 @@
         {
           "id": "p-057-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Beyaz / Kahverengi",
           "stock": 10
         },
         {
           "id": "p-057-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Beyaz / Kahverengi",
           "stock": 10
         },
         {
           "id": "p-057-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Beyaz / Kahverengi",
           "stock": 10
         },
         {
           "id": "p-057-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Beyaz / Kahverengi",
           "stock": 10
         },
         {
           "id": "p-057-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Beyaz / Kahverengi",
           "stock": 10
         },
         {
           "id": "p-057-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Beyaz / Kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-057-siyah-42",
+          "size": "42",
+          "color": "Beyaz / Kahverengi",
+          "stock": 10
+        },
+        {
+          "id": "p-057-siyah-43",
+          "size": "43",
+          "color": "Beyaz / Kahverengi",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Force 1 '07"
     },
     {
       "id": "p-058",
       "slug": "nike-x-travis-sari",
-      "name": "nike x travis sarı",
-      "description": "kk",
+      "name": "Travis Scott x Air Jordan 1 Low",
+      "description": "Sarı ve lacivert kontrastıyla daha enerjik bir streetwear görünümü sunan Jordan 1 Low yorumu.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3814,7 +4326,7 @@
       ],
       "colors": [
         {
-          "name": "sarı",
+          "name": "Sarı / Lacivert / Beyaz",
           "hex": "#c4fa00"
         }
       ],
@@ -3822,53 +4334,61 @@
         {
           "id": "p-058-sari-36",
           "size": "36",
-          "color": "sarı",
+          "color": "Sarı / Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-058-sari-37",
           "size": "37",
-          "color": "sarı",
+          "color": "Sarı / Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-058-sari-38",
           "size": "38",
-          "color": "sarı",
+          "color": "Sarı / Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-058-sari-39",
           "size": "39",
-          "color": "sarı",
+          "color": "Sarı / Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-058-sari-40",
           "size": "40",
-          "color": "sarı",
+          "color": "Sarı / Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-058-sari-41",
           "size": "41",
-          "color": "sarı",
+          "color": "Sarı / Lacivert / Beyaz",
           "stock": 10
         },
         {
           "id": "p-058-sari-42",
           "size": "42",
-          "color": "sarı",
+          "color": "Sarı / Lacivert / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-058-sari-43",
+          "size": "43",
+          "color": "Sarı / Lacivert / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-059",
       "slug": "nike-x-travis-mor-beyaz",
-      "name": "nike x travis mor beyaz",
-      "description": "kkk",
+      "name": "Travis Scott x Air Jordan 1 Low",
+      "description": "Mor tonları ve açık renk detaylarıyla daha cesur ve dikkat çekici bir streetwear görünümü.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3893,7 +4413,7 @@
       ],
       "colors": [
         {
-          "name": "mor",
+          "name": "Mor / Beyaz",
           "hex": "#9900ff"
         }
       ],
@@ -3901,47 +4421,61 @@
         {
           "id": "p-059-mor-36",
           "size": "36",
-          "color": "mor",
+          "color": "Mor / Beyaz",
           "stock": 10
         },
         {
           "id": "p-059-mor-37",
           "size": "37",
-          "color": "mor",
+          "color": "Mor / Beyaz",
           "stock": 10
         },
         {
           "id": "p-059-mor-38",
           "size": "38",
-          "color": "mor",
+          "color": "Mor / Beyaz",
           "stock": 10
         },
         {
           "id": "p-059-mor-39",
           "size": "39",
-          "color": "mor",
+          "color": "Mor / Beyaz",
           "stock": 10
         },
         {
           "id": "p-059-mor-40",
           "size": "40",
-          "color": "mor",
+          "color": "Mor / Beyaz",
           "stock": 10
         },
         {
           "id": "p-059-mor-41",
           "size": "41",
-          "color": "mor",
+          "color": "Mor / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-059-mor-42",
+          "size": "42",
+          "color": "Mor / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-059-mor-43",
+          "size": "43",
+          "color": "Mor / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Low"
     },
     {
       "id": "p-060",
       "slug": "nike-bogazli-mavi-gri",
-      "name": "nike boğazlı mavi gri",
-      "description": "kk",
+      "name": "Air Jordan 1 Mid",
+      "description": "Mavi ve gri tonlarıyla klasik Jordan 1 Mid silüetini daha soft bir renk paletiyle sunan model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -3970,7 +4504,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Mavi / Gri",
           "hex": "#1a1a1a"
         }
       ],
@@ -3978,47 +4512,61 @@
         {
           "id": "p-060-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Mavi / Gri",
           "stock": 10
         },
         {
           "id": "p-060-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Mavi / Gri",
           "stock": 10
         },
         {
           "id": "p-060-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Mavi / Gri",
           "stock": 10
         },
         {
           "id": "p-060-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Mavi / Gri",
           "stock": 10
         },
         {
           "id": "p-060-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Mavi / Gri",
           "stock": 10
         },
         {
           "id": "p-060-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Mavi / Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-060-siyah-42",
+          "size": "42",
+          "color": "Mavi / Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-060-siyah-43",
+          "size": "43",
+          "color": "Mavi / Gri",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Mid"
     },
     {
       "id": "p-061",
       "slug": "nike-bogazli-beyaz",
-      "name": "nike boğazlı beyaz",
-      "description": "kkk",
+      "name": "Air Jordan 1 Mid",
+      "description": "Temiz beyaz görünümüyle Jordan 1 Mid'in klasik yüksek bilekli yapısını öne çıkaran model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -4047,7 +4595,7 @@
       ],
       "colors": [
         {
-          "name": "beyaz",
+          "name": "Beyaz",
           "hex": "#ffffff"
         }
       ],
@@ -4055,53 +4603,61 @@
         {
           "id": "p-061-beyaz-36",
           "size": "36",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-061-beyaz-37",
           "size": "37",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-061-beyaz-38",
           "size": "38",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-061-beyaz-39",
           "size": "39",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-061-beyaz-40",
           "size": "40",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-061-beyaz-41",
           "size": "41",
-          "color": "beyaz",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-061-beyaz-42",
           "size": "42",
-          "color": "beyaz",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-061-beyaz-43",
+          "size": "43",
+          "color": "Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Mid"
     },
     {
       "id": "p-062",
       "slug": "nike-bogazli-bebek-mavi",
-      "name": "nike boğazlı bebek mavi",
-      "description": "kk",
+      "name": "Air Jordan 1 Mid",
+      "description": "Açık mavi ve beyaz tonlarıyla daha soft ve günlük bir Jordan 1 Mid görünümü.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -4130,7 +4686,7 @@
       ],
       "colors": [
         {
-          "name": "bebe mavi",
+          "name": "Bebek Mavisi / Beyaz",
           "hex": "#099f8e"
         }
       ],
@@ -4138,47 +4694,61 @@
         {
           "id": "p-062-bebe-mavi-36",
           "size": "36",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-062-bebe-mavi-37",
           "size": "37",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-062-bebe-mavi-38",
           "size": "38",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-062-bebe-mavi-39",
           "size": "39",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-062-bebe-mavi-40",
           "size": "40",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         },
         {
           "id": "p-062-bebe-mavi-41",
           "size": "41",
-          "color": "bebe mavi",
+          "color": "Bebek Mavisi / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-062-bebe-mavi-42",
+          "size": "42",
+          "color": "Bebek Mavisi / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-062-bebe-mavi-43",
+          "size": "43",
+          "color": "Bebek Mavisi / Beyaz",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Jordan 1 Mid"
     },
     {
       "id": "p-063",
       "slug": "nike-tn-gri-siyah",
-      "name": "nike tn gri siyah",
-      "description": "kk",
+      "name": "Nike Air Max Plus",
+      "description": "Karakteristik kafes yapısı ve sportif silüetiyle daha agresif bir sneaker karakteri sunan Air Max Plus.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -4207,7 +4777,7 @@
       ],
       "colors": [
         {
-          "name": "siyah",
+          "name": "Gri / Siyah",
           "hex": "#1a1a1a"
         }
       ],
@@ -4215,47 +4785,61 @@
         {
           "id": "p-063-siyah-36",
           "size": "36",
-          "color": "siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-063-siyah-37",
           "size": "37",
-          "color": "siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-063-siyah-38",
           "size": "38",
-          "color": "siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-063-siyah-39",
           "size": "39",
-          "color": "siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-063-siyah-40",
           "size": "40",
-          "color": "siyah",
+          "color": "Gri / Siyah",
           "stock": 10
         },
         {
           "id": "p-063-siyah-41",
           "size": "41",
-          "color": "siyah",
+          "color": "Gri / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-063-siyah-42",
+          "size": "42",
+          "color": "Gri / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-063-siyah-43",
+          "size": "43",
+          "color": "Gri / Siyah",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Max Plus"
     },
     {
       "id": "p-064",
       "slug": "nike-tn-mor-pembe",
-      "name": "nike tn mor pembe",
-      "description": "kk",
+      "name": "Nike Air Max Plus",
+      "description": "Mor ve pembe tonlarını sportif Air Max Plus silüetiyle bir araya getiren, daha renkli ve dikkat çekici model.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -4284,7 +4868,7 @@
       ],
       "colors": [
         {
-          "name": "mor",
+          "name": "Mor / Pembe",
           "hex": "#5700c2"
         }
       ],
@@ -4292,71 +4876,82 @@
         {
           "id": "p-064-mor-36",
           "size": "36",
-          "color": "mor",
+          "color": "Mor / Pembe",
           "stock": 10
         },
         {
           "id": "p-064-mor-37",
           "size": "37",
-          "color": "mor",
+          "color": "Mor / Pembe",
           "stock": 10
         },
         {
           "id": "p-064-mor-38",
           "size": "38",
-          "color": "mor",
+          "color": "Mor / Pembe",
           "stock": 10
         },
         {
           "id": "p-064-mor-39",
           "size": "39",
-          "color": "mor",
+          "color": "Mor / Pembe",
           "stock": 10
         },
         {
           "id": "p-064-mor-40",
           "size": "40",
-          "color": "mor",
+          "color": "Mor / Pembe",
           "stock": 10
         },
         {
           "id": "p-064-mor-41",
           "size": "41",
-          "color": "mor",
+          "color": "Mor / Pembe",
+          "stock": 10
+        },
+        {
+          "id": "p-064-mor-42",
+          "size": "42",
+          "color": "Mor / Pembe",
+          "stock": 10
+        },
+        {
+          "id": "p-064-mor-43",
+          "size": "43",
+          "color": "Mor / Pembe",
           "stock": 10
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Nike",
+      "model": "Air Max Plus"
     }
   ],
   "degisen": {
     "p-001": {
       "id": "p-001",
-      "slug": "oversize-tisort",
-      "name": "Oversize Tişört",
+      "slug": "oversize-sweatshirt",
+      "name": "Champion Sweatshirt",
       "description": "Ağır gramajlı %100 pamuk, oversize kalıp. Yıkamada çekmeye karşı ön işlemli.",
-      "category": "tisort",
+      "category": "sweatshirt",
+      "brand": "Champion",
       "price": 749,
       "compareAtPrice": 899,
       "currency": "TRY",
       "images": [
         {
-          "src": "/products/p-001-77487dd7.jpg",
-          "alt": "Oversize Tişört"
+          "src": "/products/p-001-196f9141.jpg",
+          "alt": "Champion Sweatshirt"
         },
         {
-          "src": "/products/p-001-ad3236f2.jpg",
-          "alt": "Oversize Tişört"
+          "src": "/products/p-001-0322a8d1.jpg",
+          "alt": "Champion Sweatshirt"
         }
       ],
       "colors": [
         {
           "name": "Siyah",
           "hex": "#1a1a1a"
-        },
-        {
-          "name": "Kemik",
-          "hex": "#e6e1d6"
         }
       ],
       "variants": [
@@ -4364,82 +4959,79 @@
           "id": "p-001-s",
           "size": "S",
           "color": "Siyah",
-          "stock": 12
+          "stock": 10
         },
         {
           "id": "p-001-m",
           "size": "M",
           "color": "Siyah",
-          "stock": 8
+          "stock": 10
         },
         {
-          "id": "p-001-l",
+          "id": "p-001-siyah-l",
           "size": "L",
-          "color": "Kemik",
-          "stock": 4
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-001-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
         }
       ],
-      "isNew": true,
-      "tryOn": {
-        "layer": "top",
-        "asset": "/character/tops/tshirt-black.png",
-        "status": "approved"
-      }
+      "isNew": true
     },
     "p-009": {
       "id": "p-009",
-      "slug": "bisiklet-yaka-sweatshirt",
-      "name": "Bisiklet Yaka Sweatshirt",
+      "slug": "adidas-sweat",
+      "name": "Adidas Sweat",
       "description": "Klasik crewneck kalıp, ribana yaka ve manşet.",
       "category": "sweatshirt",
       "price": 1349,
       "currency": "TRY",
       "images": [
         {
-          "src": "/products/p-009-9c525b5b.jpg",
-          "alt": "Bisiklet Yaka Sweatshirt"
+          "src": "/products/p-009-7e1ed813.jpg",
+          "alt": "Adidas Sweat"
         },
         {
-          "src": "/products/p-009-f68e49d4.jpg",
-          "alt": "Bisiklet Yaka Sweatshirt"
+          "src": "/products/p-009-d1994831.jpg",
+          "alt": "Adidas Sweat"
         }
       ],
       "colors": [
         {
-          "name": "Kemik",
-          "hex": "#e6e1d6"
-        },
-        {
-          "name": "Haki",
-          "hex": "#6e7358"
+          "name": "Beyaz",
+          "hex": "#ffffff"
         }
       ],
       "variants": [
         {
-          "id": "p-009-s",
+          "id": "p-009-beyaz-s",
           "size": "S",
-          "color": "Kemik",
-          "stock": 9
+          "color": "Beyaz",
+          "stock": 10
         },
         {
-          "id": "p-009-xxl",
-          "size": "XXL",
-          "color": "Kemik",
-          "stock": 2
-        },
-        {
-          "id": "p-009-l",
+          "id": "p-009-beyaz-l",
           "size": "L",
-          "color": "Haki",
-          "stock": 6
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-009-beyaz-xxl",
+          "size": "XXL",
+          "color": "Beyaz",
+          "stock": 10
         }
       ],
       "isNew": false
     },
     "p-008": {
       "id": "p-008",
-      "slug": "fermuarli-sweatshirt",
-      "name": "Fermuarlı Sweatshirt",
+      "slug": "sweatshirt-adidas",
+      "name": "Adidas Sweat",
       "description": "Tam boy fermuar, yan cepli, şardonlu iç yüzey.",
       "category": "sweatshirt",
       "price": 1699,
@@ -4447,36 +5039,26 @@
       "currency": "TRY",
       "images": [
         {
-          "src": "/products/p-008-aee1c63c.jpg",
-          "alt": "Fermuarlı Sweatshirt"
+          "src": "/products/p-008-d0e3a42a.jpg",
+          "alt": "Adidas Sweat"
         },
         {
-          "src": "/products/p-008-fdf25d81.jpg",
-          "alt": "Fermuarlı Sweatshirt"
+          "src": "/products/p-008-a4975ff1.jpg",
+          "alt": "Adidas Sweat"
         }
       ],
       "colors": [
         {
-          "name": "Antrasit",
-          "hex": "#3a3b3c"
-        },
-        {
-          "name": "Bej",
-          "hex": "#c9b79c"
+          "name": "Lacivert",
+          "hex": "#2a6bac"
         }
       ],
       "variants": [
         {
-          "id": "p-008-m",
+          "id": "p-008-lacivert-m",
           "size": "M",
-          "color": "Antrasit",
+          "color": "Lacivert",
           "stock": 7
-        },
-        {
-          "id": "p-008-l",
-          "size": "L",
-          "color": "Bej",
-          "stock": 3
         }
       ],
       "isNew": false
@@ -4586,50 +5168,46 @@
     },
     "p-002": {
       "id": "p-002",
-      "slug": "kapusonlu-sweatshirt",
-      "name": "Kapüşonlu Sweatshirt",
+      "slug": "sweatshirt",
+      "name": "Champion Sweat",
       "description": "Üç iplik şardonlu kumaş, geniş kapüşon ve ribana detay.",
       "category": "sweatshirt",
       "price": 1499,
       "currency": "TRY",
       "images": [
         {
-          "src": "/products/p-002-69c043ce.jpg",
-          "alt": "Kapüşonlu Sweatshirt"
+          "src": "/products/p-002-3b944998.jpg",
+          "alt": "Champion Sweat"
         },
         {
-          "src": "/products/p-002-4a91b9ad.jpg",
-          "alt": "Kapüşonlu Sweatshirt"
+          "src": "/products/p-002-f1256f1b.jpg",
+          "alt": "Champion Sweat"
         }
       ],
       "colors": [
         {
-          "name": "Gri",
-          "hex": "#9b9b96"
-        },
-        {
-          "name": "Siyah",
-          "hex": "#1a1a1a"
+          "name": "Beyaz",
+          "hex": "#ffffff"
         }
       ],
       "variants": [
         {
-          "id": "p-002-m",
+          "id": "p-002-beyaz-m",
           "size": "M",
-          "color": "Gri",
-          "stock": 5
+          "color": "Beyaz",
+          "stock": 10
         },
         {
-          "id": "p-002-l",
+          "id": "p-002-beyaz-l",
           "size": "L",
-          "color": "Gri",
-          "stock": 9
+          "color": "Beyaz",
+          "stock": 10
         },
         {
-          "id": "p-002-xl",
+          "id": "p-002-beyaz-xl",
           "size": "XL",
-          "color": "Siyah",
-          "stock": 3
+          "color": "Beyaz",
+          "stock": 10
         }
       ],
       "isNew": true
@@ -4733,9 +5311,18 @@
     "p-011",
     "p-014",
     "p-013",
-    "p-012"
+    "p-012",
+    "p-003",
+    "p-004",
+    "p-006",
+    "p-007",
+    "p-010"
   ],
   "yonlendirmeler": {
-    "air-force-1": "p-012"
+    "air-force-1": "p-012",
+    "oversize-tisort": "p-001",
+    "kapusonlu-sweatshirt": "p-002",
+    "fermuarli-sweatshirt": "p-008",
+    "bisiklet-yaka-sweatshirt": "p-009"
   }
 }

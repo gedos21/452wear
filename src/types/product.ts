@@ -78,6 +78,14 @@ export type Product = {
   name: string;
   description: string;
   category: ProductCategory;
+  /**
+   * Marka ve model — filtrelerin kullandığı düzenli alanlar. Boş bırakılırsa
+   * marka eskisi gibi ürün adının başından okunur (bkz. lib/product-filters),
+   * model filtresi de o üründe görünmez. Kart görünümü bu alanlardan
+   * etkilenmez; kartta ad neyse o yazar.
+   */
+  brand?: string;
+  model?: string;
   /** TL cinsinden tam fiyat */
   price: number;
   /** İndirim öncesi fiyat; yoksa undefined */

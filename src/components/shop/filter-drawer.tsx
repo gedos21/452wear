@@ -66,8 +66,16 @@ export function FilterDrawer({
   }, []);
 
   const offscreen = desktop ? { x: "100%" } : { y: "100%" };
+  // Model listesi marka seçimini izler: marka seçiliyken yalnızca o markanın
+  // modelleri görünür, hiç marka seçili değilse hepsi listelenir.
+  const models =
+    filters.brands.length > 0
+      ? facets.models.filter((m) => filters.brands.includes(m.brand))
+      : facets.models;
+
   const hasFilters =
     filters.brands.length +
+      filters.models.length +
       filters.colors.length +
       filters.sizes.length +
       (filters.inStock ? 1 : 0) +
@@ -139,6 +147,28 @@ export function FilterDrawer({
                       }
                       label={brand.name}
                       meta={brand.count}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </Section>
+          )}
+
+          {models.length > 0 && (
+            <Section title="Model">
+              <ul className="space-y-1">
+                {models.map((model) => (
+                  <li key={`${model.brand}-${model.name}`}>
+                    <CheckRow
+                      checked={filters.models.includes(model.name)}
+                      onChange={() =>
+                        onChange({
+                          ...filters,
+                          models: toggle(filters.models, model.name),
+                        })
+                      }
+                      label={model.name}
+                      meta={model.count}
                     />
                   </li>
                 ))}

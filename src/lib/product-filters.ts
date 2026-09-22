@@ -41,6 +41,8 @@ export type ProductFilters = {
   sizes: ProductSize[];
   colors: string[];
   brands: string[];
+  /** Marka altındaki model/koleksiyon (ör. "Dunk Low"). */
+  models: string[];
   /** Yalnızca en az bir varyantı stokta olan ürünler. */
   inStock: boolean;
   /** TL; sınırlardan biri yoksa o yönde kısıt yok. */
@@ -52,18 +54,78 @@ export const EMPTY_FILTERS: ProductFilters = {
   sizes: [],
   colors: [],
   brands: [],
+  models: [],
   inStock: false,
 };
 
 /**
- * Bilinen markalar. Katalogda ayrı bir marka alanı yok; marka ürün adının
- * başından okunur ("Nike Dunk Low…" → Nike). Listede olmayan bir marka
- * eklenirse ayakkabıda adın ilk kelimesi kullanılır; kendi üretimimiz olan
- * giyim ürünleri 452WEAR sayılır.
+ * Renk adı filtre birimlerine ayrılır: "Siyah / Beyaz" ürünü hem Siyah hem
+ * Beyaz filtresinde çıkar. Ürün verisi değişmez; yalnızca filtre listesi
+ * sadeleşir. Tek renkli adlarda ("Siyah") davranış aynı kalır.
+ */
+export function colorTokens(name: string): string[] {
+  return name
+    .split("/")
+    .map((p) => normalizeColor(p.trim()))
+    .filter(Boolean);
+}
+
+/**
+ * Filtre listesini sadeleştiren eşleme: ton belirten sıfatlar ana renge
+ * indirilir ("Parlak Siyah" → Siyah). Ürünün kendi renk adı olduğu gibi
+ * kalır, yalnızca filtre birimi sadeleşir. Lacivert ayrı bir renk olarak
+ * durur; maviye katılmaz.
+ */
+const COLOR_ALIASES: Record<string, string> = {
+  "parlak siyah": "Siyah",
+  "duman gri": "Gri",
+  "açık mavi": "Mavi",
+  "bebek mavisi": "Mavi",
+  "bebek mavi": "Mavi",
+};
+
+function normalizeColor(token: string): string {
+  // "Bordo Detay" gibi eklerde renk adı başta durur.
+  const sade = token.replace(/\s+detay$/i, "").trim();
+  return COLOR_ALIASES[sade.toLocaleLowerCase("tr-TR")] ?? sade;
+}
+
+/**
+ * Filtredeki renk noktaları için standart kodlar. Listede olmayan bir renk
+ * ürünün kendi kodunu kullanır — katalogdaki renk kodlarına dokunulmaz.
+ */
+const COLOR_SWATCHES: Record<string, string> = {
+  siyah: "#1a1a1a",
+  beyaz: "#f2efe9",
+  gri: "#9b9b96",
+  lacivert: "#1c2b4a",
+  mavi: "#1d6fd0",
+  kırmızı: "#c0332e",
+  bordo: "#5b1414",
+  yeşil: "#2e7d4f",
+  kahverengi: "#6a4a2a",
+  pembe: "#e58ab0",
+  mor: "#6b3fa0",
+  sarı: "#e3b23c",
+  turuncu: "#d9762b",
+  krem: "#e8dcc4",
+  bej: "#d8c3a5",
+};
+
+/**
+ * Bilinen markalar. Ürünün `brand` alanı boşsa marka ürün adının başından
+ * okunur ("Nike Dunk Low…" → Nike). Listede olmayan bir marka eklenirse
+ * ayakkabıda adın ilk kelimesi kullanılır; kendi üretimimiz olan giyim
+ * ürünleri 452WEAR sayılır.
  */
 const KNOWN_BRANDS = [
   "Nike",
   "Adidas",
+  // "Air Jordan" ve "Travis Scott", "Jordan"dan önce gelir: aksi halde
+  // "Air Jordan 1 Low" listede karşılık bulamayıp ilk kelimeye ("Air")
+  // düşer ve kartta marka satırı yanlış görünür.
+  "Air Jordan",
+  "Travis Scott",
   "Jordan",
   "New Balance",
   "Puma",
@@ -76,7 +138,8 @@ const KNOWN_BRANDS = [
 /** Kendi ürünlerimizin markası (filtrede görünür, kartta yazılmaz). */
 export const OWN_BRAND = "452WEAR";
 
-export function productBrand(product: Product): string {
+/** Ürün adının başından okunan marka — `brand` alanı yokken kullanılır. */
+function brandFromName(product: Product): string {
   const name = product.name.toLocaleLowerCase("tr-TR");
   const known = KNOWN_BRANDS.find((b) =>
     name.startsWith(b.toLocaleLowerCase("tr-TR")),
@@ -87,22 +150,65 @@ export function productBrand(product: Product): string {
 }
 
 /**
+ * Filtrelerin kullandığı marka: önce ürünün kendi `brand` alanı, yoksa addan
+ * okunan marka. Alan sayesinde iş birliği ürünleri gerçek markası altında
+ * gruplanır ("Travis Scott x Air Jordan 1 Low" → Air Jordan) ama kartta adı
+ * olduğu gibi kalır (bkz. productNameParts).
+ */
+export function productBrand(product: Product): string {
+  return product.brand?.trim() || brandFromName(product);
+}
+
+/**
+ * Marka/model adının adres (URL) karşılığı: "Air Force 1 '07" → air-force-1-07.
+ * Navbar bağlantıları ve ?marka= / ?model= parametreleri bunu kullanır.
+ */
+export function filterSlug(value: string): string {
+  const harita: Record<string, string> = {
+    ç: "c",
+    ğ: "g",
+    ı: "i",
+    ö: "o",
+    ş: "s",
+    ü: "u",
+  };
+  return value
+    .toLocaleLowerCase("tr-TR")
+    .split("")
+    .map((c) => harita[c] ?? c)
+    .join("")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/** Filtredeki model; tanımlı değilse ürün model filtresine girmez. */
+export function productModel(product: Product): string | null {
+  return product.model?.trim() || null;
+}
+
+/**
  * Kartta iki satır halinde gösterilen ad: marka + model. Marka ürün adının
  * başındaysa modelden çıkarılır ("Nike Dunk Low" → NIKE / "Dunk Low"). Kendi
  * ürünlerimizde marka satırı yoktur (brand null); ad olduğu gibi kalır.
+ *
+ * Burada bilerek `brand` alanı değil addan okunan marka kullanılır: alan
+ * yalnızca filtre taksonomisi içindir, kart görünümünü değiştirmez.
  */
 export function productNameParts(product: Product): {
   brand: string | null;
   model: string;
 } {
-  const brand = productBrand(product);
+  const brand = brandFromName(product);
   if (brand === OWN_BRAND) return { brand: null, model: product.name.trim() };
   const name = product.name.trim();
   const startsWithBrand = name
     .toLocaleLowerCase("tr-TR")
     .startsWith(brand.toLocaleLowerCase("tr-TR"));
   const model = startsWithBrand ? name.slice(brand.length).trim() : name;
-  return { brand, model: model || name };
+  // İş birliği adlarında marka çıkınca başta kalan "x" atılır:
+  // "Travis Scott x Air Jordan 1 Low" → TRAVIS SCOTT / "Air Jordan 1 Low".
+  const temiz = model.replace(/^x\s+/i, "");
+  return { brand, model: temiz || name };
 }
 
 export function isInStock(product: Product): boolean {
@@ -160,6 +266,7 @@ export function activeFilterCount(filters: ProductFilters) {
     filters.sizes.length +
     filters.colors.length +
     filters.brands.length +
+    filters.models.length +
     (filters.inStock ? 1 : 0) +
     (filters.price ? 1 : 0)
   );
@@ -181,6 +288,11 @@ export function filterProducts(
       return false;
     }
 
+    if (filters.models.length > 0) {
+      const model = productModel(product);
+      if (!model || !filters.models.includes(model)) return false;
+    }
+
     if (filters.inStock && !isInStock(product)) return false;
 
     // Beden ve renk AYNI varyantta, stokta aranır: "M + Beyaz" seçilince
@@ -191,7 +303,8 @@ export function filterProducts(
         (v) =>
           v.stock > 0 &&
           (filters.sizes.length === 0 || filters.sizes.includes(v.size)) &&
-          (filters.colors.length === 0 || filters.colors.includes(v.color)),
+          (filters.colors.length === 0 ||
+            colorTokens(v.color).some((t) => filters.colors.includes(t))),
       )
     ) {
       return false;
@@ -233,24 +346,46 @@ export function deriveFacets(products: Product[]) {
   const sizes = new Set<ProductSize>();
   const colors = new Map<string, string>();
   const brands = new Map<string, number>();
+  // Model adları markasıyla birlikte tutulur: aynı model adı iki markada
+  // geçerse listede ayrı satırlar olur ve marka seçimine göre süzülür.
+  const models = new Map<string, { brand: string; count: number }>();
   let min = Infinity;
   let max = 0;
 
   for (const product of products) {
     for (const variant of product.variants) sizes.add(variant.size);
-    for (const color of product.colors) colors.set(color.name, color.hex);
+    for (const color of product.colors) {
+      for (const token of colorTokens(color.name)) {
+        const standart = COLOR_SWATCHES[token.toLocaleLowerCase("tr-TR")];
+        if (!colors.has(token)) colors.set(token, standart ?? color.hex);
+      }
+    }
     const brand = productBrand(product);
     brands.set(brand, (brands.get(brand) ?? 0) + 1);
+    const model = productModel(product);
+    if (model) {
+      const onceki = models.get(model);
+      models.set(model, { brand, count: (onceki?.count ?? 0) + 1 });
+    }
     min = Math.min(min, product.price);
     max = Math.max(max, product.price);
   }
 
   return {
     sizes: SIZE_ORDER.filter((s) => sizes.has(s)),
-    colors: [...colors].map(([name, hex]) => ({ name, hex })),
+    colors: [...colors]
+      .map(([name, hex]) => ({ name, hex }))
+      .sort((a, b) => a.name.localeCompare(b.name, "tr")),
     brands: [...brands]
       .map(([name, count]) => ({ name, count }))
       .sort((a, b) => a.name.localeCompare(b.name, "tr")),
+    models: [...models]
+      .map(([name, { brand, count }]) => ({ name, brand, count }))
+      .sort(
+        (a, b) =>
+          a.brand.localeCompare(b.brand, "tr") ||
+          a.name.localeCompare(b.name, "tr"),
+      ),
     price: { min: products.length ? min : 0, max },
   };
 }

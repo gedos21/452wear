@@ -20,7 +20,16 @@ function pageTitle(category: CategoryFilter): { label: string; lang?: "en" } {
  * aynı bileşeni kullanır. Hero yok: sayfa doğrudan başlık + ürün sayısı,
  * arama/filtre/sıralama ve ızgara ile açılır.
  */
-export async function ShopListing({ category }: { category: CategoryFilter }) {
+export async function ShopListing({
+  category,
+  brand,
+  model,
+}: {
+  category: CategoryFilter;
+  /** Adresten gelen ön seçim (slug) — navbar menüsündeki marka/model. */
+  brand?: string;
+  model?: string;
+}) {
   const products = await katalogOku();
 
   return (
@@ -28,10 +37,15 @@ export async function ShopListing({ category }: { category: CategoryFilter }) {
       <SiteHeader />
       <main className="flex-1">
         <Container className="pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pb-24">
+          {/* key: adresteki marka/model değişince filtreler baştan kurulur;
+              yoksa ilk açılışın seçimi ekranda kalırdı. */}
           <ShopBrowser
+            key={`${category}|${brand ?? ""}|${model ?? ""}`}
             products={products}
             category={category}
             title={pageTitle(category)}
+            initialBrand={brand}
+            initialModel={model}
           />
         </Container>
       </main>

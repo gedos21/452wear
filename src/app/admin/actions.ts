@@ -4,7 +4,6 @@ import { revalidatePath } from "next/cache";
 import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { slotForCategory } from "@/lib/character";
 import {
   bosSlug,
   copeTasi,
@@ -17,7 +16,6 @@ import {
   urunYaz,
   yeniId,
 } from "@/lib/catalog-store";
-import { pixelAssetKaydet, pixelAssetSil } from "@/lib/pixel-asset";
 import { sizesForCategory } from "@/lib/product-variants";
 import type {
   Product,
@@ -293,6 +291,12 @@ async function kullanilmayanGorselleriSil(yollar: string[], urunId: string) {
   }
 }
 
+/** Formdaki tek satırlık metin alanı; boşsa ürüne hiç yazılmaz. */
+function metinAlani(fd: FormData, alan: string, anahtar: "brand" | "model") {
+  const deger = String(fd.get(alan) ?? "").trim();
+  return deger ? { [anahtar]: deger } : {};
+}
+
 /** Formdan gelen öneri id'lerini temizler; boş liste hiç yazılmaz. */
 function oneriAlanlari(fd: FormData, id: string) {
   const oku = (ad: string, limit: number) => {
@@ -316,9 +320,6 @@ function oneriAlanlari(fd: FormData, id: string) {
 
 export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
   if (KAPALI) return KAPALI_SONUC;
-  // Diske yazılan yeni Pixel Fit PNG'si; ürün yazılamazsa sahipsiz kalmasın
-  // diye hata yolunda silinir.
-  let yetimPixel: { yol: string; urunId: string } | null = null;
   try {
     const a = urunuAyikla(fd);
     if (!a.ok) return { durum: "hata", mesaj: a.hata };
@@ -381,35 +382,6 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
     if (sira.liste.length === 0)
       return { durum: "hata", mesaj: "En az bir ürün görseli yükle." };
 
-    const layer = slotForCategory(a.kategori);
-    const pixelDosya = fd.get("pixelAsset");
-    const pixelSecildi = pixelDosya instanceof File && pixelDosya.size > 0;
-    if (!layer && (pixelSecildi || mevcut?.tryOn))
-      return {
-        durum: "hata",
-        mesaj: pixelSecildi
-          ? "Bu kategoride Pixel Fit kullanılmıyor; seçilen PNG'yi kaldır."
-          : "Bu kategoride Pixel Fit kullanılmıyor; önce kayıtlı Pixel Fit asset'ini kaldır.",
-      };
-
-    // Pixel Fit: en sık reddedilen dosya bu olduğu için görsellerden ÖNCE
-    // işlenir. Reddedilirse ne ürün ne de görseller yazılır.
-    let tryOn = mevcut?.tryOn;
-    let pixelEklendi = false;
-    if (pixelDosya instanceof File && pixelDosya.size > 0 && layer) {
-      const sonuc = await pixelAssetKaydet(pixelDosya, layer, id);
-      if (!sonuc.ok)
-        return {
-          durum: "hata",
-          mesaj: `Pixel Fit PNG reddedildi, ürün kaydedilmedi: ${sonuc.hata}`,
-        };
-      tryOn = { layer, asset: sonuc.yol, status: "approved" };
-      pixelEklendi = true;
-      // Aynı içerik zaten kayıtlıysa yol aynıdır; o dosya silinmemeli.
-      if (sonuc.yol !== mevcut?.tryOn?.asset)
-        yetimPixel = { yol: sonuc.yol, urunId: id };
-    }
-
     const yuklenen = await gorselleriYaz(dosyalar, id, a.ad);
     const images = sira.liste.map((s) =>
       s.tip === "mevcut" ? s.gorsel : yuklenen[s.index],
@@ -421,6 +393,9 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
       name: a.ad,
       description: a.aciklama,
       category: a.kategori,
+      // Marka/model filtre taksonomisi; boş bırakılan alan hiç yazılmaz.
+      ...metinAlani(fd, "marka", "brand"),
+      ...metinAlani(fd, "model", "model"),
       price: Math.round(a.fiyat),
       ...(a.indirimOncesi
         ? { compareAtPrice: Math.round(a.indirimOncesi) }
@@ -432,17 +407,15 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
       isNew: fd.get("isNew") === "on",
       // Öneri ilişkileri: isteğe bağlı, kendi id'si ve tekrarlar elenir.
       ...oneriAlanlari(fd, id),
-      // Yeni PNG gelmediyse mevcut Pixel Fit bağlantısı aynen korunur.
-      ...(tryOn ? { tryOn } : {}),
+      // Kombin karakterindeki katman bilgisi ürüne aitse korunur; admin
+      // burada değiştirmez, yalnızca olduğu gibi taşır.
+      ...(mevcut?.tryOn ? { tryOn: mevcut.tryOn } : {}),
     };
 
     await urunYaz(urun);
-    yetimPixel = null;
 
     // Eski dosyalar ürün yazıldıktan SONRA temizlenir: yazım başarısız olsaydı
     // ürün hâlâ onları gösteriyor olurdu.
-    if (mevcut?.tryOn && tryOn && mevcut.tryOn.asset !== tryOn.asset)
-      await pixelAssetSil(mevcut.tryOn.asset, id);
     // Kaldırılan görseller de burada gider (yalnızca başka ürün kullanmıyorsa).
     if (mevcut)
       await kullanilmayanGorselleriSil(
@@ -454,13 +427,9 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
     return {
       durum: "ok",
       urunId: id,
-      mesaj:
-        (mevcut ? "Ürün güncellendi." : `Ürün oluşturuldu (${id}).`) +
-        (pixelEklendi ? " Pixel Fit hazır." : ""),
+      mesaj: mevcut ? "Ürün güncellendi." : `Ürün oluşturuldu (${id}).`,
     };
   } catch (e) {
-    if (yetimPixel)
-      await pixelAssetSil(yetimPixel.yol, yetimPixel.urunId).catch(() => {});
     return { durum: "hata", mesaj: `Kaydedilemedi: ${(e as Error).message}` };
   }
 }
@@ -516,96 +485,9 @@ export async function urunKaliciSil(
       urun.images.map((g) => g.src),
       urun.id,
     );
-    if (urun.tryOn) await pixelAssetSil(urun.tryOn.asset, urun.id);
     tazele();
     return { durum: "ok", mesaj: `"${urun.name}" kalıcı olarak silindi.` };
   } catch (e) {
     return { durum: "hata", mesaj: `Silinemedi: ${(e as Error).message}` };
-  }
-}
-
-export async function pixelAssetYukle(
-  _onceki: Sonuc,
-  fd: FormData,
-): Promise<Sonuc> {
-  if (KAPALI) return KAPALI_SONUC;
-  try {
-    const urun = await urunBul(String(fd.get("urunId") ?? ""));
-    if (!urun) return { durum: "hata", mesaj: "Önce ürünü kaydet." };
-
-    const dosya = fd.get("asset");
-    if (!(dosya instanceof File) || dosya.size === 0)
-      return { durum: "hata", mesaj: "PNG dosyası seç." };
-
-    const layer = slotForCategory(urun.category);
-    if (!layer)
-      return { durum: "hata", mesaj: "Bu kategoride Pixel Fit kullanılmıyor." };
-    const sonuc = await pixelAssetKaydet(dosya, layer, urun.id);
-    if (!sonuc.ok) return { durum: "hata", mesaj: sonuc.hata };
-
-    // Doğrulamayı geçen asset doğrudan yayına girer: Pixel Fit = Hazır,
-    // layer kategoriden gelir. (Eski "pending" kayıtlar onay düğmesiyle
-    // yayına alınmaya devam eder.) Ürün yazılamazsa yeni dosya sahipsiz
-    // kalmasın diye silinir; aynı içerik zaten kayıtlıysa dokunulmaz.
-    try {
-      await urunYaz({
-        ...urun,
-        tryOn: { layer, asset: sonuc.yol, status: "approved" },
-      });
-    } catch (e) {
-      if (sonuc.yol !== urun.tryOn?.asset)
-        await pixelAssetSil(sonuc.yol, urun.id).catch(() => {});
-      throw e;
-    }
-
-    // Değiştirilen eski yükleme, ürün yazıldıktan sonra temizlenir (tohum
-    // asset'lerine dokunmaz).
-    if (urun.tryOn && urun.tryOn.asset !== sonuc.yol)
-      await pixelAssetSil(urun.tryOn.asset, urun.id);
-
-    tazele(urun.id);
-    return { durum: "ok", mesaj: "Asset yüklendi. Pixel Fit hazır." };
-  } catch (e) {
-    return { durum: "hata", mesaj: `Yüklenemedi: ${(e as Error).message}` };
-  }
-}
-
-export async function pixelAssetOnayla(
-  _onceki: Sonuc,
-  fd: FormData,
-): Promise<Sonuc> {
-  if (KAPALI) return KAPALI_SONUC;
-  try {
-    const urun = await urunBul(String(fd.get("urunId") ?? ""));
-    if (!urun?.tryOn) return { durum: "hata", mesaj: "Onaylanacak asset yok." };
-    await urunYaz({ ...urun, tryOn: { ...urun.tryOn, status: "approved" } });
-    tazele(urun.id);
-    return { durum: "ok", mesaj: "Asset onaylandı; karakterde kullanılıyor." };
-  } catch (e) {
-    return { durum: "hata", mesaj: `Onaylanamadı: ${(e as Error).message}` };
-  }
-}
-
-export async function pixelAssetKaldir(
-  _onceki: Sonuc,
-  fd: FormData,
-): Promise<Sonuc> {
-  if (KAPALI) return KAPALI_SONUC;
-  try {
-    const urun = await urunBul(String(fd.get("urunId") ?? ""));
-    if (!urun?.tryOn)
-      return { durum: "hata", mesaj: "Kaldırılacak asset yok." };
-    await pixelAssetSil(urun.tryOn.asset, urun.id);
-    // Ürün silinmez; yalnızca Pixel Fit bağlantısı düşer.
-    const kalan: Product = { ...urun };
-    delete kalan.tryOn;
-    await urunYaz(kalan);
-    tazele(urun.id);
-    return {
-      durum: "ok",
-      mesaj: "Pixel Fit bağlantısı kaldırıldı. Ürün duruyor.",
-    };
-  } catch (e) {
-    return { durum: "hata", mesaj: `Kaldırılamadı: ${(e as Error).message}` };
   }
 }

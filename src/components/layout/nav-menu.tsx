@@ -142,9 +142,23 @@ export function DesktopNav({ pathname }: { pathname: string }) {
                       <li key={link.label}>
                         <DropdownLink
                           link={link}
-                          primary={i === 0}
+                          primary={i === 0 || !!link.children}
                           onNavigate={close}
                         />
+                        {link.children && (
+                          <ul className="pb-1">
+                            {link.children.map((child) => (
+                              <li key={child.label}>
+                                <DropdownLink
+                                  link={child}
+                                  primary={false}
+                                  nested
+                                  onNavigate={close}
+                                />
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </li>
                     ))}
                   </motion.ul>
@@ -192,13 +206,19 @@ export function DesktopNav({ pathname }: { pathname: string }) {
 function DropdownLink({
   link,
   primary,
+  nested = false,
   onNavigate,
 }: {
   link: MenuLink;
   primary: boolean;
+  /** Marka altındaki model satırı: girintili ve daha küçük. */
+  nested?: boolean;
   onNavigate: () => void;
 }) {
-  const base = "font-sf flex items-baseline gap-2 px-4 py-2 text-[15px]";
+  const base = cn(
+    "font-sf flex items-baseline gap-2 px-4 text-[15px]",
+    nested ? "py-1.5 pl-7 text-[14px]" : "py-2",
+  );
 
   if (!link.href) {
     return (
@@ -361,9 +381,23 @@ export function MobileMenu({ pathname }: { pathname: string }) {
                                 <li key={link.label}>
                                   <DropdownLink
                                     link={link}
-                                    primary={i === 0}
+                                    primary={i === 0 || !!link.children}
                                     onNavigate={close}
                                   />
+                                  {link.children && (
+                                    <ul className="pb-1">
+                                      {link.children.map((child) => (
+                                        <li key={child.label}>
+                                          <DropdownLink
+                                            link={child}
+                                            primary={false}
+                                            nested
+                                            onNavigate={close}
+                                          />
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  )}
                                 </li>
                               ))}
                             </ul>
