@@ -155,9 +155,13 @@ export type OutfitSuggestion = {
 };
 
 /**
- * "Kombini tamamla": ürünün içinde yer aldığı bir kombin. Mevcut kombin
- * motorunun puanlaması kullanılır, ama seçim deterministiktir. Üst ve alt
- * birlikte kurulamıyorsa null döner (yarım kombin gösterilmez).
+ * "Bunu tamamla": ürünün içinde yer aldığı bir kombin. Mevcut kombin
+ * motorunun puanlaması kullanılır, ama seçim deterministiktir.
+ *
+ * Yuvalar sırayla doldurulur (üst → alt → ayakkabı) ve en fazla üç parça
+ * olur. Bir yuvada katalogda uygun ürün yoksa kombin o yuvasız kurulur —
+ * yer doldurmak için ürün uydurulmaz. Ürünün kendisinden başka parça
+ * bulunamazsa null döner; tek parçalık "kombin" gösterilmez.
  */
 export function outfitFor(
   product: Product,
@@ -182,10 +186,10 @@ export function outfitFor(
     pairWith = bulunan;
   }
 
-  if (!parcalar.ust || !parcalar.alt) return null;
-
   const pieces = [parcalar.ust, parcalar.alt, parcalar.ayakkabi].filter(
     (p): p is Product => p !== undefined,
   );
+  if (pieces.length < 2) return null;
+
   return { pieces, total: pieces.reduce((t, p) => t + p.price, 0) };
 }

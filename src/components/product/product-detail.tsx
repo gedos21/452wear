@@ -7,11 +7,13 @@ import {
   ArrowRight,
   Check,
   Heart,
+  Lock,
   RotateCcw,
   Timer,
   Truck,
 } from "lucide-react";
 import { Accordion } from "./accordion";
+import { PaymentMarks } from "@/components/payment/payment-marks";
 import { SizeGuide } from "./size-guide";
 import { PRODUCT_ASPECT, PRODUCT_SURFACE } from "./product-surface";
 import { productMediaLayoutId } from "./product-media-id";
@@ -508,6 +510,17 @@ export function ProductDetail({
                 fill={favorite ? "currentColor" : "none"}
               />
             </button>
+          </div>
+
+          {/* Güvenli ödeme: yalnızca kabul edilen kart şemaları. Ödeme
+              sağlayıcısı bağlanana kadar sağlayıcı adı ya da fazladan
+              güvence cümlesi yazılmaz. */}
+          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 font-sf">
+            <span className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.06em] text-foreground/55">
+              <Lock className="size-3.5" strokeWidth={2} />
+              Güvenli ödeme
+            </span>
+            <PaymentMarks logoClassName="h-[18px]" className="gap-3.5" />
           </div>
 
           {/* Kargo / iade — projedeki mevcut metinler (bkz. İade ve Cayma). */}

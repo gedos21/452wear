@@ -1,10 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, RotateCcw, Shuffle } from "lucide-react";
 import { ProductCard } from "@/components/product/product-card";
+import {
+  PRODUCT_ASPECT,
+  PRODUCT_SURFACE,
+} from "@/components/product/product-surface";
 import { formatPrice } from "@/lib/format";
 import {
   BUTCE_SECENEKLERI,
@@ -12,6 +17,7 @@ import {
   TARZ_SECENEKLERI,
   TUR_SECENEKLERI,
   kombinKur,
+  tarzOrnekleri,
   type Butce,
   type Cevaplar,
   type Kombin,
@@ -70,6 +76,12 @@ export function KombinAkisi({ products }: { products: Product[] }) {
     setSonucVar(false);
     setVaryasyon(0);
   }
+
+  // İlk adımda seçilen tarzın katalogdaki karşılığı (küçük görsel önizleme).
+  const ornekler = useMemo(
+    () => (tarz ? tarzOrnekleri(products, tarz) : []),
+    [products, tarz],
+  );
 
   const devamAktif =
     (adim === 0 && tarz !== null) ||
@@ -175,6 +187,18 @@ export function KombinAkisi({ products }: { products: Product[] }) {
   /* ---------------- Sorular ---------------- */
   return (
     <div className="mx-auto max-w-2xl">
+      {/* Giriş: kullanıcı sayfaya düştüğünde ne yapacağını görsün. Sonuç
+          ekranının kendi başlığı var, bu yüzden yalnızca sorular sürerken. */}
+      <header className="mb-10 sm:mb-12">
+        <h1 className="font-display text-[clamp(2rem,7vw,3.25rem)] font-extrabold leading-[1] tracking-[-0.035em]">
+          KOMBİNİNİ BUL<span className="text-brand">.</span>
+        </h1>
+        <p className="mt-4 max-w-md text-muted-foreground">
+          Tarzını seç, mağazadaki stokta olan parçalardan sana bir kombin
+          kuralım. Dört kısa soru.
+        </p>
+      </header>
+
       {/* İlerleme */}
       <div className="flex items-center gap-4">
         <span className="micro text-foreground/45">
@@ -201,17 +225,47 @@ export function KombinAkisi({ products }: { products: Product[] }) {
         className="mt-8"
       >
         {adim === 0 && (
-          <Soru baslik="Nasıl bir tarz arıyorsun?">
-            {TARZ_SECENEKLERI.map((s) => (
-              <Secenek
-                key={s.deger}
-                aktif={tarz === s.deger}
-                onClick={() => setTarz(s.deger)}
-              >
-                {s.etiket}
-              </Secenek>
-            ))}
-          </Soru>
+          <>
+            <Soru baslik="Nasıl bir tarz arıyorsun?">
+              {TARZ_SECENEKLERI.map((s) => (
+                <Secenek
+                  key={s.deger}
+                  aktif={tarz === s.deger}
+                  onClick={() => setTarz(s.deger)}
+                >
+                  {s.etiket}
+                </Secenek>
+              ))}
+            </Soru>
+
+            {/* Seçimin karşılığı: katalogdaki gerçek ürünlerden üç görsel.
+                Kombin bu üçünden kurulmaz; yalnızca tarzın neye benzediğini
+                gösterir. */}
+            {ornekler.length > 0 && (
+              <div className="mt-8">
+                <p className="micro text-foreground/45">
+                  Bu tarzda öne çıkanlar
+                </p>
+                <ul className="mt-3 grid grid-cols-3 gap-3 sm:max-w-sm">
+                  {ornekler.map((urun) => (
+                    <li key={urun.id}>
+                      <div
+                        className={`relative ${PRODUCT_SURFACE} ${PRODUCT_ASPECT}`}
+                      >
+                        <Image
+                          src={urun.images[0].src}
+                          alt={urun.images[0].alt}
+                          fill
+                          sizes="(min-width: 640px) 120px, 30vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </>
         )}
 
         {adim === 1 && (

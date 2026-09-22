@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { categoryHref } from "@/components/layout/nav-links";
 import { ActiveFilters, ShopToolbar } from "./shop-controls";
+import { CategoryTabs } from "./category-tabs";
 import { FilterDrawer } from "./filter-drawer";
 import {
   EmptyCategory,
@@ -199,6 +200,11 @@ export function ShopBrowser({
         <span className="shrink-0 pb-0.5 font-sf text-[13px] font-semibold uppercase tracking-[0.06em] text-foreground/45">
           {results.length} ürün
         </span>
+      </div>
+
+      {/* Kategori sekmeleri: filtre panelinden bağımsız, adres tabanlı. */}
+      <div className="mt-5 sm:mt-6">
+        <CategoryTabs category={category} products={products} />
       </div>
 
       {kategoriBos ? (

@@ -14,7 +14,7 @@ import { katalogOku, slugIleUrun } from "@/lib/catalog-store";
 import { complementaryFor, outfitFor, relatedFor } from "@/lib/recommendations";
 import {
   ComplementaryProducts,
-  OutfitRecommendation,
+  OutfitComplete,
   RelatedProducts,
 } from "@/components/product/recommendations";
 
@@ -81,12 +81,11 @@ export default async function UrunSayfasi({
   // Aynı ürün iki bölümde tekrar etmesin diye "buna da bak" listesi
   // tamamlayıcıları ve kombindekileri hariç tutar.
   const katalog = await katalogOku();
-  const tamamlayici = complementaryFor(urun, katalog);
-  const kombin = outfitFor(
-    urun,
-    katalog,
-    tamamlayici.map((p) => p.id),
-  );
+  // "Bunu tamamla" önce kombin olarak denenir (üst + alt + varsa ayakkabı).
+  // Kombin kurulamıyorsa (ör. tamamlayıcı yuvada ürün yok) aynı bölüm eski
+  // hâliyle, tamamlayıcı parça ızgarası olarak çizilir.
+  const kombin = outfitFor(urun, katalog);
+  const tamamlayici = kombin ? [] : complementaryFor(urun, katalog);
   const gosterilen = [
     ...tamamlayici.map((p) => p.id),
     ...(kombin?.pieces.map((p) => p.id) ?? []),
@@ -144,8 +143,11 @@ export default async function UrunSayfasi({
             <ProductPageDetail product={urun} />
           </div>
 
-          <ComplementaryProducts products={tamamlayici} />
-          {kombin && <OutfitRecommendation outfit={kombin} current={urun} />}
+          {kombin ? (
+            <OutfitComplete outfit={kombin} current={urun} />
+          ) : (
+            <ComplementaryProducts products={tamamlayici} />
+          )}
           <RelatedProducts products={benzer} />
         </Container>
       </main>

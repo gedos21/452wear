@@ -157,6 +157,39 @@ export type Kombin = {
   toplam: number;
 };
 
+/**
+ * Seçilen tarza en uygun, stokta olan birkaç ürün — ilk adımdaki küçük
+ * önizleme için. Kombin kurmaz, yalnızca aynı puanlamayla sıralar; mümkün
+ * olduğunca farklı kategorilerden seçer ki önizleme tek tip olmasın.
+ */
+export function tarzOrnekleri(
+  products: Product[],
+  tarz: Tarz,
+  limit = 3,
+): Product[] {
+  const cevaplar: Cevaplar = { tarz, tur: "tam", renkler: [], butce: null };
+  const sirali = products
+    .filter(stokta)
+    .map((p) => ({ p, puan: urunPuani(p, cevaplar) }))
+    .sort((a, b) => b.puan - a.puan || a.p.price - b.p.price)
+    .map((x) => x.p);
+
+  const secilen: Product[] = [];
+  const kategoriler = new Set<string>();
+  for (const urun of sirali) {
+    if (secilen.length >= limit) break;
+    if (kategoriler.has(urun.category)) continue;
+    secilen.push(urun);
+    kategoriler.add(urun.category);
+  }
+  // Kategori çeşitliliği yetmediyse kalan yerler sıradan doldurulur.
+  for (const urun of sirali) {
+    if (secilen.length >= limit) break;
+    if (!secilen.includes(urun)) secilen.push(urun);
+  }
+  return secilen;
+}
+
 /** Yuvaya uyan, stokta olan ürünler; puana göre sıralı. */
 function adaylar(
   products: Product[],
