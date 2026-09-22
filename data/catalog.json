@@ -5159,12 +5159,7 @@
           "stock": 5
         }
       ],
-      "isNew": false,
-      "tryOn": {
-        "layer": "top",
-        "asset": "/character/tops/tshirt-white.png",
-        "status": "approved"
-      }
+      "isNew": false
     },
     "p-002": {
       "id": "p-002",

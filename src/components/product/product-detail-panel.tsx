@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { X } from "lucide-react";
 import { PANEL_SPRING, ProductDetail } from "./product-detail";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 import { SizeGuide } from "./size-guide";
 import { cn } from "@/lib/utils";
 import type { Product } from "@/types/product";
@@ -24,6 +25,8 @@ export function ProductDetailPanel({
 
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  // Panel açıkken odak panelde kalır; kapanınca ürün kartına geri döner.
+  useFocusTrap(panelRef);
 
   // ESC ile kapat + açılışta odağı panele al
   useEffect(() => {

@@ -6,6 +6,8 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
 import { categoryHref } from "@/components/layout/nav-links";
 import { productNameParts } from "@/lib/product-filters";
+import { ozetMetin } from "@/lib/text";
+import { ProductJsonLd } from "@/components/product/product-jsonld";
 import { ProductPageDetail } from "@/components/product/product-detail";
 import { CATEGORIES } from "@/data/products";
 import { katalogOku, slugIleUrun } from "@/lib/catalog-store";
@@ -31,16 +33,17 @@ export async function generateMetadata({
   // Paylaşımda ürünün kapak görseli çıkar. openGraph alt sayfada bütünüyle
   // yeniden tanımlandığı için site adı ve dil burada da verilir.
   const kapak = urun.images[0];
+  const ozet = ozetMetin(urun.description);
   return {
     title: urun.name,
-    description: urun.description,
+    description: ozet,
     alternates: { canonical: `/urun/${urun.slug}` },
     openGraph: {
       siteName: "452WEAR",
       locale: "tr_TR",
       type: "website",
       title: urun.name,
-      description: urun.description,
+      description: ozet,
       url: `/urun/${urun.slug}`,
       ...(kapak ? { images: [{ url: kapak.src, alt: kapak.alt }] } : {}),
     },
@@ -96,6 +99,11 @@ export default async function UrunSayfasi({
 
   return (
     <>
+      <ProductJsonLd
+        product={urun}
+        categoryLabel={kategori?.label}
+        categoryHref={kategori ? categoryHref(kategori.slug) : undefined}
+      />
       <SiteHeader />
       <main className="flex-1">
         <Container className="pt-8 pb-20 sm:pt-10 sm:pb-24 lg:pt-12 lg:pb-28">

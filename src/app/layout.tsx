@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo, Inter } from "next/font/google";
 import { CartProvider } from "@/components/cart/cart-provider";
 import { SearchProvider } from "@/components/search/search-provider";
@@ -38,6 +38,15 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: { card: "summary_large_image" },
+};
+
+/**
+ * Mobil tarayıcı arayüzü sayfanın zeminiyle aynı renge boyanır; site tek
+ * temalı (açık) olduğu için renk şeması da açıkça bildirilir.
+ */
+export const viewport: Viewport = {
+  themeColor: "#faf9f5",
+  colorScheme: "light",
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {

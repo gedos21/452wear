@@ -10,7 +10,7 @@ import { Reveal } from "@/components/motion";
  */
 export function HomeHero() {
   return (
-    <section className="relative isolate mb-14 flex h-[clamp(460px,72svh,720px)] items-center justify-center overflow-hidden bg-foreground">
+    <section className="relative isolate mb-10 flex h-[clamp(420px,64svh,640px)] items-center justify-center overflow-hidden bg-foreground sm:mb-12">
       <Image
         src="/editorial/hero-yeni-gelenler.webp"
         alt=""

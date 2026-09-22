@@ -7,6 +7,7 @@ import { ArrowRight, X } from "lucide-react";
 import { CartLine, UnavailableNotice } from "./cart-line";
 import { CartRecommendation } from "./cart-recommendation";
 import { useCartLines } from "@/components/product/catalog-provider";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 import { useCart } from "@/lib/cart";
 import { formatPrice } from "@/lib/format";
 import { shippingFor } from "@/lib/shipping";
@@ -19,6 +20,9 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
   // Görünen satırlar, adet ve tutar aynı çözülmüş listeden gelir.
   const { lines, unavailable, count, subtotal, currency } = useCartLines();
   const closeRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
+  // Çekmece açıkken Tab dışarı kaçmaz; kapanınca odak sepet düğmesine döner.
+  useFocusTrap(panelRef);
   const [promoOpen, setPromoOpen] = useState(false);
   const [promo, setPromo] = useState("");
   const [promoNote, setPromoNote] = useState<string | null>(null);
@@ -47,6 +51,7 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
       />
 
       <motion.aside
+        ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-label="Sepet"

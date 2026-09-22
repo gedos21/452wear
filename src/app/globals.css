@@ -218,8 +218,3 @@
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
-
-/* Pixel-art asset'ler büyütülürken interpolasyonla yumuşamasın. */
-@utility pixelated {
-  image-rendering: pixelated;
-}

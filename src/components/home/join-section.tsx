@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/container";
+import { HOME_WIDTH } from "./home-layout";
 import { Reveal } from "@/components/motion";
 import { NewsletterForm } from "./newsletter-form";
 import { INSTAGRAM_URL, instagramHandle } from "@/lib/community";
@@ -10,8 +11,8 @@ import { INSTAGRAM_URL, instagramHandle } from "@/lib/community";
  */
 export function JoinSection() {
   return (
-    <section className="mt-10 border-t border-border/70 pt-16 sm:mt-14 sm:pt-20 lg:pt-24">
-      <Container>
+    <section className="mt-8 border-t border-border/70 pt-12 sm:mt-10 sm:pt-14 lg:pt-16">
+      <Container className={HOME_WIDTH}>
         <div
           className={
             INSTAGRAM_URL

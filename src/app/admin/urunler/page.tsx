@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Plus } from "lucide-react";
+import { ListChecks, Plus } from "lucide-react";
 import { CATEGORIES } from "@/data/products";
 import { Silinenler } from "@/components/admin/silinenler";
 import { copKutusu, katalogOku } from "@/lib/catalog-store";
@@ -27,13 +27,23 @@ export default async function UrunlerSayfasi() {
             {urunler.length} ürün
           </p>
         </div>
-        <Link
-          href="/admin/urunler/yeni"
-          className="inline-flex h-11 items-center gap-2 rounded-full bg-foreground px-6 micro text-background transition-colors hover:bg-foreground/90"
-        >
-          <Plus className="size-4" strokeWidth={2} />
-          Yeni Ürün
-        </Link>
+        <div className="flex flex-wrap items-center gap-2">
+          {/* Çok sayıda ürünü tek ekrandan düzenlemek için. */}
+          <Link
+            href="/admin/urunler/toplu"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-background px-5 micro ring-1 ring-border transition-colors hover:ring-foreground/40"
+          >
+            <ListChecks className="size-4" strokeWidth={2} />
+            Toplu Düzenle
+          </Link>
+          <Link
+            href="/admin/urunler/yeni"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-foreground px-6 micro text-background transition-colors hover:bg-foreground/90"
+          >
+            <Plus className="size-4" strokeWidth={2} />
+            Yeni Ürün
+          </Link>
+        </div>
       </div>
 
       {/* Masaüstü: tablo */}

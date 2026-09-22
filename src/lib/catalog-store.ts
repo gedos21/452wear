@@ -198,7 +198,7 @@ export async function kaliciSil(id: string): Promise<Product | null> {
  *     olabilir; yeni ürüne verilirse orada başka bir ürün olarak dirilir,
  *   • public/ altında o numarayla başlayan dosyalar olabilir (ör. p-005-b.png
  *     p-009'un görseli) ve yeni ürünle karışır.
- * Bu yüzden katalogdaki ve silinen id'lerin yanında görsel klasörlerindeki
+ * Bu yüzden katalogdaki ve silinen id'lerin yanında public/products altındaki
  * dosya adlarına da bakılır.
  */
 export async function yeniId(): Promise<string> {
@@ -208,16 +208,14 @@ export async function yeniId(): Promise<string> {
     ...k.eklenen.map((p) => p.id),
     ...k.silinen,
   ];
-  for (const klasor of ["products", "character"]) {
-    try {
-      const dosyalar = await fs.readdir(
-        path.join(process.cwd(), "public", klasor),
-        { recursive: true },
-      );
-      adlar.push(...dosyalar.map((d) => path.basename(d)));
-    } catch (e) {
-      if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
-    }
+  try {
+    const dosyalar = await fs.readdir(
+      path.join(process.cwd(), "public", "products"),
+      { recursive: true },
+    );
+    adlar.push(...dosyalar.map((d) => path.basename(d)));
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
   }
   const enBuyuk = Math.max(
     0,
@@ -298,10 +296,10 @@ function enYeniOnce(k: Katman): Product[] {
  * satış sıralaması uydurulmaz.
  */
 const COK_SATAN_SECIMI = [
-  "nike-dunk-low-iron-shadow",
-  "kapusonlu-sweatshirt",
-  "adidas-superstar",
+  "vans-siyah-beyaz",
   "oversize-tisort",
+  "jordan-4-yeni",
+  "kapusonlu-sweatshirt",
 ];
 
 /**
@@ -312,10 +310,13 @@ const COK_SATAN_SECIMI = [
  */
 export async function cokSatanlar(limit = 4): Promise<Product[]> {
   const urunler = await katalogOku();
+  const stokta = urunler.filter((p) => p.variants.some((v) => v.stock > 0));
   const secilen = COK_SATAN_SECIMI.map((slug) =>
-    urunler.find((p) => p.slug === slug),
+    stokta.find((p) => p.slug === slug),
   ).filter((p) => p !== undefined);
-  const kalan = urunler.filter((p) => !secilen.includes(p));
+  // Seçimdeki bir ürün satıştan kalkarsa yeri stoktaki başka ürünle dolar;
+  // vitrin hiçbir zaman eksik ya da tükenmiş ürünle çıkmaz.
+  const kalan = stokta.filter((p) => !secilen.includes(p));
   return [...secilen, ...kalan].slice(0, limit);
 }
 

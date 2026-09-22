@@ -35,6 +35,7 @@ export function UrunFormu({
   onKategori,
   onKaydedildi,
   kayitMesaji,
+
   urunler = [],
 }: {
   urun?: Product;
@@ -109,6 +110,7 @@ export function UrunFormu({
   // yeniden kurulur ve bu bileşenin effect'i sonucu hiç görmeden kaybolur.
   const [sonuc, kaydet, kaydediliyor] = useActionState(
     async (onceki: Sonuc, fd: FormData) => {
+
       // Görseller formdan değil bu listeden gider: sıra ve kaldırma burada.
       let yeniIndex = 0;
       for (const g of gorseller) {

@@ -3,17 +3,17 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Check, X } from "lucide-react";
+
 import type { Product, ProductCategory } from "@/types/product";
+
 import { UrunFormu, type Kayit } from "./urun-formu";
 
 /**
- * Ürün düzenleme ekranı: form + kayıt bildirimleri. Kategori burada tutulur;
- * form onu denetimli alan olarak kullanır.
+ * Ürün formu kabuğu. Kategori burada tutulur ki formun beden sistemi
+ * seçimle canlı değişsin; kayıt bildirimleri de burada gösterilir.
  */
 function formAnahtari(urun: Product): string {
-  const { tryOn: _yoksay, ...bilgi } = urun;
-  void _yoksay;
-  return JSON.stringify(bilgi);
+  return JSON.stringify(urun);
 }
 
 export function UrunDuzenleyici({
@@ -26,6 +26,7 @@ export function UrunDuzenleyici({
   const [kategori, setKategori] = useState<ProductCategory>(
     urun?.category ?? "tisort",
   );
+
   // Form kayıttan sonra yeniden kurulduğu için son kayıt mesajı burada tutulur.
   const [kayitMesaji, setKayitMesaji] = useState<string | null>(null);
 
@@ -38,6 +39,7 @@ export function UrunDuzenleyici({
 
   const kaydedildi = useCallback(
     (kayit: Kayit) => {
+
       if (!urun && kayit.urunId) {
         // Sıradaki ürün için temiz form.
         setEklenen({ id: kayit.urunId, ad: kayit.ad });
@@ -60,20 +62,19 @@ export function UrunDuzenleyici({
 
   return (
     <>
-      <div className="max-w-3xl">
-        {/* Form yalnızca ÜRÜN bilgisi değişince yeniden kurulur (kayıttan sonra
-            sunucudaki normalize veriyle dolsun diye). Yeni ürün ekranında her
-            eklemeden sonra boş olarak yeniden kurulur. */}
-        <UrunFormu
-          key={urun ? formAnahtari(urun) : `yeni-${formNo}`}
-          urun={urun}
-          kategori={kategori}
-          onKategori={setKategori}
-          onKaydedildi={kaydedildi}
-          kayitMesaji={kayitMesaji}
-          urunler={urunler}
-        />
-      </div>
+
+      {/* Form yalnızca ÜRÜN bilgisi değişince yeniden kurulur (kayıttan sonra
+          sunucudaki normalize veriyle dolsun diye). Yeni ürün ekranında her
+          eklemeden sonra boş olarak yeniden kurulur. */}
+      <UrunFormu
+        key={urun ? formAnahtari(urun) : `yeni-${formNo}`}
+        urun={urun}
+        kategori={kategori}
+        onKategori={setKategori}
+        onKaydedildi={kaydedildi}
+        kayitMesaji={kayitMesaji}
+        urunler={urunler}
+      />
 
       {eklenen && (
         <div

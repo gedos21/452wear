@@ -24,7 +24,6 @@ export const CATEGORIES: {
 export const PRODUCTS: Product[] = [
   {
     id: "p-001",
-    tryOn: { layer: "top", asset: "/character/tops/tshirt-black.png", status: "approved" },
     slug: "oversize-tisort",
     name: "Oversize Tişört",
     description:
@@ -126,7 +125,6 @@ export const PRODUCTS: Product[] = [
 PRODUCTS.push(
   {
     id: "p-006",
-    tryOn: { layer: "top", asset: "/character/tops/tshirt-washed.png", status: "approved" },
     slug: "eye-dagger-tisort",
     name: "Eye & Dagger Tişört",
     description: "Kırık beyaz ağır gramaj tişört, önden gravür baskı.",
@@ -148,7 +146,6 @@ PRODUCTS.push(
   },
   {
     id: "p-007",
-    tryOn: { layer: "top", asset: "/character/tops/tshirt-white.png", status: "approved" },
     slug: "basic-tisort",
     name: "Basic Tişört",
     description: "Düz kalıp, orta gramaj, günlük kullanım için.",

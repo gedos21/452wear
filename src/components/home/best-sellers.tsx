@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { ProductCard } from "@/components/product/product-card";
 import { cokSatanlar } from "@/lib/catalog-store";
+import { HOME_WIDTH } from "./home-layout";
 
 /**
  * Ana sayfa "Çok Satanlar": katalogdan dört ürün, mevcut ürün kartıyla
@@ -14,8 +15,8 @@ export async function BestSellers() {
   if (products.length === 0) return null;
 
   return (
-    <section className="pb-16 sm:pb-20">
-      <Container>
+    <section className="pb-12 sm:pb-14">
+      <Container className={HOME_WIDTH}>
         {/* Çok dar ekranda "Tümünü gör" başlığı kırmak yerine alta iner. */}
         <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3">
           <h2 className="whitespace-nowrap font-sf text-[24px] font-bold uppercase leading-none tracking-[-0.01em] sm:text-[32px]">
@@ -29,7 +30,7 @@ export async function BestSellers() {
           </Link>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-7 sm:gap-x-5 lg:grid-cols-4">
           {products.map((product) => (
             <ProductCard
               key={product.id}
