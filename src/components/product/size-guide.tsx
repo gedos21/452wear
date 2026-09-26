@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
+import { SIZE_CHART } from "@/lib/size-profile";
 import type { ProductCategory } from "@/types/product";
 
 type Guide = { columns: string[]; rows: string[][]; note: string };
@@ -74,36 +75,70 @@ export function SizeGuide({
             </button>
           </div>
 
-          <div className="mt-6 overflow-auto">
-            <table className="w-full text-left text-sm">
-              <thead>
-                <tr className="micro text-foreground/45">
-                  {guide.columns.map((column) => (
-                    <th key={column} className="pb-3 font-normal">
-                      {column}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {guide.rows.map(([first, ...rest]) => (
-                  <tr key={first} className="border-t border-border/70">
-                    <td className="py-3 font-medium">{first}</td>
-                    {rest.map((cell, i) => (
-                      <td key={i} className="py-3 text-muted-foreground">
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <p className="mt-6 text-[13px] leading-relaxed text-muted-foreground">
+          {/* Üst boşluk: kaydırma alanı ilk satırın büyük harf
+              noktalarını (Ö, İ, Ğ) kırpmasın. */}
+          <div className="mt-5 overflow-auto pt-1">
+            {/* Giyimde önce boy/kilo tablosu: "Sana uyan bedeni bul"
+                önerisiyle aynı kaynaktan okunur (lib/size-profile). */}
+            {category !== "ayakkabi" && (
+              <>
+                <h4 className="mb-3 micro text-foreground/45">
+                  Boy ve kiloya göre
+                </h4>
+                <GuideTable guide={FIT_GUIDE} />
+                <p className="mt-4 mb-10 text-[13px] leading-relaxed text-muted-foreground">
+                  {FIT_GUIDE.note}
+                </p>
+                <h4 className="mb-3 micro text-foreground/45">
+                  Ürün ölçüleri
+                </h4>
+              </>
+            )}
+            <GuideTable guide={guide} />
+            <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
               {guide.note}
             </p>
           </div>
         </motion.div>
       )}
     </AnimatePresence>
+  );
+}
+
+const FIT_GUIDE: Guide = {
+  columns: ["Beden", "Boy (cm)", "Kilo (kg)"],
+  rows: SIZE_CHART.map((r) => [
+    r.size,
+    `${r.height[0]}–${r.height[1]}`,
+    `${r.weight[0]}–${r.weight[1]}`,
+  ]),
+  note: "Normal kalıp için tipik vücut ölçüleri. İki beden arasında kalırsan ürünün kalıbına bak: oversize ürünlerde küçük, dar kalıplarda büyük olanı seç.",
+};
+
+function GuideTable({ guide }: { guide: Guide }) {
+  return (
+    <table className="w-full text-left text-sm">
+      <thead>
+        <tr className="micro text-foreground/45">
+          {guide.columns.map((column) => (
+            <th key={column} className="pb-3 font-normal">
+              {column}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {guide.rows.map(([first, ...rest]) => (
+          <tr key={first} className="border-t border-border/70">
+            <td className="py-3 font-medium">{first}</td>
+            {rest.map((cell, i) => (
+              <td key={i} className="py-3 text-muted-foreground">
+                {cell}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }

@@ -16,6 +16,7 @@ import {
 import { Accordion } from "./accordion";
 import { PaymentMarks } from "@/components/payment/payment-marks";
 import { SizeGuide } from "./size-guide";
+import { SizeFinder, type RecommendationState } from "./size-finder";
 import { PRODUCT_ASPECT, PRODUCT_SURFACE } from "./product-surface";
 import { productMediaLayoutId } from "./product-media-id";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
@@ -33,6 +34,7 @@ import { discountPercent, productNameParts } from "@/lib/product-filters";
 import { cn } from "@/lib/utils";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
 import { COMPANY } from "@/lib/legal";
+import { recommendSize, useSizeProfile } from "@/lib/size-profile";
 import type { Product, ProductSize } from "@/types/product";
 
 /** Masaüstünde büyük görselin üzerine gelince uygulanan büyütme (panel ve sayfa). */
@@ -82,7 +84,7 @@ export function ProductDetail({
   // Varsayılan beden: yalnızca seçili renkte tek bir stoklu seçenek varsa o
   // seçili gelir (görünür şekilde). Birden fazlaysa kullanıcı seçer; fark
   // etmeden yanlış varyant sepete girmesin.
-  const [size, setSize] = useState<ProductSize | null>(() =>
+  const [pickedSize, setSize] = useState<ProductSize | null>(() =>
     onlyInStockSize(product, defaultColor(product)),
   );
   const [imageIndex, setImageIndex] = useState(0);
@@ -131,6 +133,27 @@ export function ProductDetail({
   const discount = discountPercent(product);
   const soldOut = !product.variants.some((v) => v.stock > 0);
   const colorSoldOut = !soldOut && !colorInStock(product, color);
+
+  // Beden önerisi (yalnızca giyim): profil tarayıcıda, bütün ürünlerde ortak.
+  const { profile, save: saveProfile } = useSizeProfile();
+  const recommended =
+    !shoe && profile ? recommendSize(profile, product.fit) : null;
+  const recommendation: RecommendationState | null = recommended
+    ? (() => {
+        const entry = sizes.find((s) => s.size === recommended);
+        if (!entry) return { kind: "notOffered", size: recommended };
+        if (!entry.inStock) return { kind: "soldOut", size: recommended };
+        return { kind: "ok", size: recommended };
+      })()
+    : null;
+
+  // Kullanıcı beden seçmediyse önerilen (stoktaki) beden seçili sayılır.
+  // Efektle state'e yazılmaz: seçim hep kullanıcınınki önce olmak üzere
+  // türetilir, renk değişince öneri de kendiliğinden güncellenir.
+  const recommendedInStock =
+    recommendation?.kind === "ok" ? recommendation.size : null;
+  const size = pickedSize ?? recommendedInStock;
+
   const selectedStock = size
     ? (product.variants.find((v) => v.size === size && v.color === color)
         ?.stock ?? 0)
@@ -419,11 +442,32 @@ export function ProductDetail({
             )}
           </div>
 
+          {!shoe && !soldOut && (
+            <div className="mt-8">
+              <SizeFinder
+                profile={profile}
+                recommendation={recommendation}
+                onSave={(p) => {
+                  saveProfile(p);
+                  // Elle seçim bırakılır; yeni öneri stoktaysa seçili gelir.
+                  setSize(null);
+                  setError(null);
+                }}
+                onOpenGuide={onOpenGuide}
+              />
+            </div>
+          )}
+
           {/* Numara / Beden */}
           <div className="mt-8 font-sf">
             <div className="flex items-center justify-between gap-4">
               <p className="text-[13px] font-bold uppercase tracking-[0.04em]">
                 {shoe ? "Numara" : "Beden"}
+                {!shoe && product.fit && product.fit !== "normal" && (
+                  <span className="ml-2 font-semibold normal-case tracking-normal text-foreground/45">
+                    · {product.fit === "dar" ? "Dar kalıp" : "Oversize kalıp"}
+                  </span>
+                )}
               </p>
               <button
                 type="button"
@@ -437,6 +481,7 @@ export function ProductDetail({
             <div className="mt-3 flex flex-wrap gap-2">
               {sizes.map(({ size: s, inStock }) => {
                 const active = s === size;
+                const suggested = s === recommendedInStock;
                 return (
                   <button
                     key={s}
@@ -447,10 +492,16 @@ export function ProductDetail({
                       setError(null);
                     }}
                     aria-pressed={active}
-                    aria-label={inStock ? s : `${s} (stokta yok)`}
+                    aria-label={
+                      inStock
+                        ? suggested
+                          ? `${s} (sana önerilen)`
+                          : s
+                        : `${s} (stokta yok)`
+                    }
                     title={inStock ? undefined : "Stokta yok"}
                     className={cn(
-                      "h-11 min-w-[52px] rounded-full border px-3.5 text-[14px] font-semibold transition-colors",
+                      "relative h-11 min-w-[52px] rounded-full border px-3.5 text-[14px] font-semibold transition-colors",
                       active
                         ? "border-foreground bg-foreground text-background"
                         : "border-foreground/15 hover:border-foreground/50",
@@ -459,6 +510,12 @@ export function ProductDetail({
                     )}
                   >
                     {s}
+                    {suggested && (
+                      <span
+                        aria-hidden
+                        className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full border-2 border-background bg-brand"
+                      />
+                    )}
                   </button>
                 );
               })}

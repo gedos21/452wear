@@ -44,7 +44,7 @@ export const CONSENT_CATEGORIES: {
     key: "necessary",
     label: "Zorunlu",
     description:
-      "Sitenin çalışması için gereklidir: sepetin, favorilerin ve çerez tercihin tarayıcında saklanır. Kapatılamaz.",
+      "Sitenin çalışması için gereklidir: sepetin, favorilerin, beden profilin ve çerez tercihin tarayıcında saklanır. Kapatılamaz.",
     required: true,
   },
   {

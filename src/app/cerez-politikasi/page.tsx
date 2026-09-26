@@ -22,7 +22,7 @@ export default function CookiePolicyPage() {
         <P>
           {COMPANY.brand} sitesi şu anda <strong>hiçbir çerez (cookie)
           kullanmamaktadır</strong>. Bunun yerine, sitenin çalışması için
-          gereken üç bilgi tarayıcının yerel depolamasında tutulur. Bu veriler
+          gereken bilgiler tarayıcının yerel depolamasında tutulur. Bu veriler
           sunucumuza gönderilmez ve sen silene kadar cihazında kalır.
         </P>
         <Table
@@ -38,6 +38,13 @@ export default function CookiePolicyPage() {
             [
               <Slot key="f">452wear:favorites</Slot>,
               "Favorilediğin ürünlerin hatırlanması",
+              "Zorunlu · localStorage",
+              "Sen silene kadar",
+              "Birinci taraf",
+            ],
+            [
+              <Slot key="s">452wear:size-profile</Slot>,
+              "\"Sana uyan bedeni bul\" için girdiğin boy, kilo ve kesim tercihi (yalnızca sen girersen)",
               "Zorunlu · localStorage",
               "Sen silene kadar",
               "Birinci taraf",

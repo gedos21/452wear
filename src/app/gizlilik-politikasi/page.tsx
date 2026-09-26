@@ -26,13 +26,14 @@ export default function PrivacyPage() {
           items={[
             "Sen verdiğinde: ad, soyad, e-posta, telefon, teslimat ve fatura adresi, sipariş içeriği, destek yazışmaları.",
             "Otomatik oluşan teknik kayıtlar: IP adresi, tarayıcı ve cihaz bilgisi, ziyaret edilen sayfalar, hata kayıtları.",
-            "Tarayıcında saklanan tercihler: sepetin, favorilerin ve çerez tercihin.",
+            "Tarayıcında saklanan tercihler: sepetin, favorilerin, çerez tercihin ve beden önerisi için girdiğin boy/kilo.",
           ]}
         />
         <P>
-          Sepet ve favori bilgileri şu anda yalnızca senin tarayıcının yerel
-          depolamasında (<Slot>452wear:cart</Slot>,{" "}
-          <Slot>452wear:favorites</Slot>) tutulur ve sunucumuza
+          Sepet, favori ve beden profili bilgileri şu anda yalnızca senin
+          tarayıcının yerel depolamasında (<Slot>452wear:cart</Slot>,{" "}
+          <Slot>452wear:favorites</Slot>,{" "}
+          <Slot>452wear:size-profile</Slot>) tutulur ve sunucumuza
           gönderilmez. Tarayıcı verisini temizlediğinde bu bilgiler kaybolur.
         </P>
       </Section>

@@ -26,6 +26,12 @@ export type ProductCategory =
   | "tisort"
   | "sweatshirt";
 
+/**
+ * Giyim kalıbı; beden önerisini kaydırır (bkz. lib/size-profile). Dar kalıp
+ * öneriyi büyüğe, oversize küçüğe çeker. Yoksa "normal" sayılır.
+ */
+export type ProductFit = "dar" | "normal" | "oversize";
+
 export type ProductImage = {
   /** /public altındaki yol veya uzak URL */
   src: string;
@@ -61,6 +67,8 @@ export type Product = {
    */
   brand?: string;
   model?: string;
+  /** Giyim kalıbı; boşsa normal. Ayakkabıda kullanılmaz. */
+  fit?: ProductFit;
   /** TL cinsinden tam fiyat */
   price: number;
   /** İndirim öncesi fiyat; yoksa undefined */

@@ -86,7 +86,8 @@ export default function KvkkPage() {
           toplanır.
         </P>
         <P>
-          Sepet ve favori bilgileri hâlihazırda yalnızca tarayıcının yerel
+          Sepet, favori ve beden profili (boy/kilo) bilgileri hâlihazırda
+          yalnızca tarayıcının yerel
           depolamasında tutulmakta olup sunucuya iletilmemektedir. Ayrıntı için{" "}
           <Slot>Çerez Politikası</Slot> bölümüne bakabilirsin.
         </P>

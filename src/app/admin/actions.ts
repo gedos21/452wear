@@ -22,6 +22,7 @@ import { sizesForCategory } from "@/lib/product-variants";
 import type {
   Product,
   ProductCategory,
+  ProductFit,
   ProductColor,
   ProductImage,
   ProductSize,
@@ -299,6 +300,15 @@ function metinAlani(fd: FormData, alan: string, anahtar: "brand" | "model") {
   return deger ? { [anahtar]: deger } : {};
 }
 
+/** Giyim kalıbı; ayakkabıda ya da "normal"da hiç yazılmaz. */
+function kalipAlani(fd: FormData, kategori: ProductCategory) {
+  const deger = String(fd.get("kalip") ?? "");
+  if (kategori === "ayakkabi") return {};
+  return deger === "dar" || deger === "oversize"
+    ? { fit: deger as ProductFit }
+    : {};
+}
+
 /** Formdan gelen öneri id'lerini temizler; boş liste hiç yazılmaz. */
 function oneriAlanlari(fd: FormData, id: string) {
   const oku = (ad: string, limit: number) => {
@@ -398,6 +408,7 @@ export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
       // Marka/model filtre taksonomisi; boş bırakılan alan hiç yazılmaz.
       ...metinAlani(fd, "marka", "brand"),
       ...metinAlani(fd, "model", "model"),
+      ...kalipAlani(fd, a.kategori),
       price: Math.round(a.fiyat),
       ...(a.indirimOncesi
         ? { compareAtPrice: Math.round(a.indirimOncesi) }

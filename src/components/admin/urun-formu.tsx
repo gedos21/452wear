@@ -300,6 +300,24 @@ export function UrunFormu({
             </select>
           </label>
         </div>
+        {kategori !== "ayakkabi" && (
+          <label className="grid gap-2">
+            <span className={etiket}>Kalıp</span>
+            <select
+              name="kalip"
+              defaultValue={urun?.fit ?? "normal"}
+              className={girdi}
+            >
+              <option value="dar">Dar (küçük kalıp)</option>
+              <option value="normal">Normal</option>
+              <option value="oversize">Oversize (bol kalıp)</option>
+            </select>
+            <span className="text-[12px] text-foreground/45">
+              &quot;Sana uyan bedeni bul&quot; önerisini kaydırır: dar kalıpta
+              bir büyük, oversize&apos;da bir küçük beden önerilir.
+            </span>
+          </label>
+        )}
         <label className="inline-flex items-center gap-2.5 text-sm">
           <input
             type="checkbox"
