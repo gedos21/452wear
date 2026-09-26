@@ -32,7 +32,7 @@ const TILES: Tile[] = [
     href: categoryHref("giyim"),
     image: {
       src: "/editorial/giyim-reyon.webp",
-      alt: "452WEAR giyim reyonu: askıda kapüşonlular ve altlarında pantolonlar",
+      alt: "452WEAR giyim reyonu: karanlık depoda askıda Bape, Slaughter Gang ve Sp5der kapüşonlular",
     },
     // Kare kadrajda üstten/alttan az miktar kırpılır; kapüşonlular ortada
     // kalsın diye odak merkezde.
