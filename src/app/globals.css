@@ -231,11 +231,6 @@
   animation: hero-452-fade 2.4s ease-out 0.3s both;
 }
 
-/* Çok hafif bloom: kromun çevresinde mavi-beyaz hale (post-processing yok). */
-.hero-452-canvas canvas {
-  filter: drop-shadow(0 0 18px rgb(170 205 255 / 0.22));
-}
-
 .hero-452-fallback {
   animation: hero-452-fade 1.6s ease-out 0.2s both;
 }

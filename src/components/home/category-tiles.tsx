@@ -31,7 +31,7 @@ const TILES: Tile[] = [
     text: "Giyim koleksiyonunu keşfet.",
     href: categoryHref("giyim"),
     image: {
-      src: "/editorial/giyim.webp",
+      src: "/editorial/giyim-kristal.webp",
       alt: "452WEAR giyim reyonu: askıda kapüşonlular ve altlarında pantolonlar",
     },
     // Kare kadrajda üstten/alttan az miktar kırpılır; kapüşonlular ortada

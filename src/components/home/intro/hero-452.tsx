@@ -8,7 +8,9 @@ import {
   useSyncExternalStore,
 } from "react";
 import dynamic from "next/dynamic";
-import { GLYPHS_452 } from "./glyphs-452";
+import { BACKDROP_HORIZON, BACKDROP_URL } from "./backdrop";
+import { LOGO_452_PATHS, LOGO_452_VIEWBOX } from "./glyphs-452";
+import { HERO_EXIT_EVENT } from "./intro-timing";
 
 /**
  * Hero'daki krom "452": WebGL varsa gerçek zamanlı 3B sahne, yoksa (ya da
@@ -21,13 +23,25 @@ const Chrome452Scene = dynamic(() => import("./chrome-452-scene"), {
   ssr: false,
 });
 
+/**
+ * Sonuç önbelleğe alınır: useSyncExternalStore bu fonksiyonu her render'da
+ * çağırır ve her çağrı yeni bir WebGL bağlamı açarsa tarayıcı sınırı aşılır
+ * ("Too many active WebGL contexts"), sahnenin gerçek bağlamı kaybolabilir.
+ * Test bağlamı hemen serbest bırakılır.
+ */
+let webglSupport: boolean | undefined;
+
 function supportsWebGL(): boolean {
+  if (webglSupport !== undefined) return webglSupport;
   try {
     const canvas = document.createElement("canvas");
-    return !!(canvas.getContext("webgl2") ?? canvas.getContext("webgl"));
+    const gl = canvas.getContext("webgl2") ?? canvas.getContext("webgl");
+    gl?.getExtension("WEBGL_lose_context")?.loseContext();
+    webglSupport = !!gl;
   } catch {
-    return false;
+    webglSupport = false;
   }
+  return webglSupport;
 }
 
 const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
@@ -62,6 +76,14 @@ export function Hero452() {
   const [active, setActive] = useState(true);
   const box = useRef<HTMLDivElement>(null);
 
+  // Çıkışta 2B yedek de söner (3B sahne olayı kendisi dinler).
+  const [exiting, setExiting] = useState(false);
+  useEffect(() => {
+    const onExit = () => setExiting(true);
+    window.addEventListener(HERO_EXIT_EVENT, onExit);
+    return () => window.removeEventListener(HERO_EXIT_EVENT, onExit);
+  }, []);
+
   // Hero görünmüyorken 3B çizim durur.
   useEffect(() => {
     const el = box.current;
@@ -88,7 +110,13 @@ export function Hero452() {
           </div>
         </SceneBoundary>
       ) : (
-        webgl !== null && <Chrome452Fallback />
+        webgl !== null && (
+          <div
+            className={`absolute inset-0 transition-opacity duration-[650ms] ${exiting ? "opacity-0" : ""}`}
+          >
+            <Chrome452Fallback />
+          </div>
+        )
       )}
     </div>
   );
@@ -113,22 +141,19 @@ class SceneBoundary extends Component<
 
 /** Aynı dış hatlardan 2B krom "452" (WebGL yoksa). */
 function Chrome452Fallback() {
-  const xs = GLYPHS_452.flatMap((g) => g.outer.map((p) => p[0]));
-  const ys = GLYPHS_452.flatMap((g) => g.outer.map((p) => p[1]));
-  const minX = Math.min(...xs);
-  const maxX = Math.max(...xs);
-  const minY = Math.min(...ys);
-  const maxY = Math.max(...ys);
-  const ring = (r: [number, number][]) =>
-    "M" + r.map(([x, y]) => `${x},${-y}`).join("L") + "Z";
-  const d = GLYPHS_452.map(
-    (g) => ring(g.outer) + g.holes.map(ring).join(""),
-  ).join("");
+  // Tek path + evenodd: "4"ün iç boşluğu delik olarak kalır.
+  const d = LOGO_452_PATHS.join(" ");
 
   return (
-    <div className="hero-452-fallback absolute inset-0 grid place-items-center">
+    <div
+      className="hero-452-fallback absolute inset-0 grid place-items-center bg-cover"
+      style={{
+        backgroundImage: `url(${BACKDROP_URL})`,
+        backgroundPosition: `50% ${BACKDROP_HORIZON * 100}%`,
+      }}
+    >
       <svg
-        viewBox={`${minX - 6} ${-maxY - 6} ${maxX - minX + 12} ${maxY - minY + 12}`}
+        viewBox={`0 0 ${LOGO_452_VIEWBOX.width} ${LOGO_452_VIEWBOX.height}`}
         className="w-[min(86vw,62%)] max-h-[50%] drop-shadow-[0_0_28px_rgb(150_195_255/0.28)]"
       >
         <defs>
