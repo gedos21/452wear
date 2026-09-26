@@ -296,10 +296,14 @@ function enYeniOnce(k: Katman): Product[] {
  * satış sıralaması uydurulmaz.
  */
 const COK_SATAN_SECIMI = [
-  "vans-siyah-beyaz",
-  "oversize-tisort",
-  "jordan-4-yeni",
-  "kapusonlu-sweatshirt",
+  // Yeni kapüşonlular: ilk dördü vitrinde, diğerleri biri tükenirse yedek.
+  "bape-ape-head-hoodie-gri",
+  "trapstar-london-hoodie-siyah",
+  "corteiz-slaughter-gang-hoodie-beyaz",
+  "sp5der-web-hoodie-siyah",
+  "bape-ekose-ape-head-fermuarli-hoodie-siyah",
+  "sp5der-pembe-baskili-hoodie-siyah",
+  "grafik-baskili-hoodie-siyah",
 ];
 
 /**
