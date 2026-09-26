@@ -19,9 +19,13 @@ import { HERO_EXIT_EVENT } from "./intro-timing";
  * Sahne yalnızca istemcide yüklenir; yüklenene kadar alan siyah kalır
  * (intro zaten siyahtan başlıyor), ayrı bir yükleniyor ekranı yok.
  */
-const Chrome452Scene = dynamic(() => import("./chrome-452-scene"), {
-  ssr: false,
-});
+const loadScene = () => import("./chrome-452-scene");
+
+// Sahne kodu (three.js) sayfanın JS'i yüklenir yüklenmez inmeye başlar;
+// hydration'ın bitmesini ve bileşenin çizilmesini beklemez.
+if (typeof window !== "undefined") void loadScene();
+
+const Chrome452Scene = dynamic(loadScene, { ssr: false });
 
 /**
  * Sonuç önbelleğe alınır: useSyncExternalStore bu fonksiyonu her render'da

@@ -18,7 +18,11 @@ import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import * as THREE from "three";
 import { HDRLoader } from "three/examples/jsm/loaders/HDRLoader.js";
 import { toCreasedNormals } from "three/examples/jsm/utils/BufferGeometryUtils.js";
-import { BACKDROP_HORIZON, BACKDROP_URL } from "./backdrop";
+import {
+  BACKDROP_HORIZON,
+  BACKDROP_URL,
+  STUDIO_HDRI_URL,
+} from "./backdrop";
 import { GLYPHS_452 } from "./glyphs-452";
 import { EXIT_TIMING, HERO_EXIT_EVENT, INTRO_TIMING } from "./intro-timing";
 
@@ -530,7 +534,7 @@ const RING_RADIUS = 10;
  * soğuğa çekilir ki sahne karanlık ve mavi kalsın.
  */
 const STUDIO_HDRI = {
-  url: "/intro/studio_small_03_1k.hdr",
+  url: STUDIO_HDRI_URL,
   /** Işık halkasının gerisinde kalacak kadar büyük küre. */
   radius: 40,
   /** Parlaklık ve ton çarpanı (doğrusal renk; mavi kanal biraz fazla). */

@@ -1,4 +1,6 @@
 import { ArrowRight } from "lucide-react";
+import { preload } from "react-dom";
+import { BACKDROP_URL, STUDIO_HDRI_URL } from "./intro/backdrop";
 import { HeroCta } from "./intro/hero-cta";
 import { Hero452 } from "./intro/hero-452";
 import { INTRO_END } from "./intro/intro-timing";
@@ -11,6 +13,12 @@ import { INTRO_END } from "./intro/intro-timing";
  * zamanlama: components/home/intro.
  */
 export function HomeHero() {
+  // 3B sahnenin dosyaları sayfa açılır açılmaz, sahne kodunu beklemeden
+  // paralel inmeye başlar. crossOrigin, three.js yükleyicilerinin istek
+  // ayarıyla aynı olmalı; yoksa tarayıcı dosyayı ikinci kez indirir.
+  preload(BACKDROP_URL, { as: "image", crossOrigin: "anonymous" });
+  preload(STUDIO_HDRI_URL, { as: "fetch", crossOrigin: "anonymous" });
+
   return (
     <section
       className="relative isolate mb-10 flex h-[clamp(480px,76svh,760px)] items-end justify-center overflow-hidden bg-black sm:mb-12"
