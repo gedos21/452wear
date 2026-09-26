@@ -9,7 +9,11 @@ import { productMediaLayoutId } from "./product-media-id";
 import { useQuickView } from "./quick-view";
 import { cn } from "@/lib/utils";
 import { formatPrice } from "@/lib/format";
-import { discountPercent, productNameParts } from "@/lib/product-filters";
+import {
+  discountPercent,
+  productNameParts,
+  variantSummary,
+} from "@/lib/product-filters";
 import type { Product } from "@/types/product";
 
 const MAX_DOTS = 3;
@@ -41,6 +45,7 @@ export function ProductCard({
   const nameParts = productNameParts(product);
   const dots = product.colors.slice(0, MAX_DOTS);
   const rest = product.colors.length - dots.length;
+  const summary = variantSummary(product);
 
   return (
     <motion.article
@@ -176,6 +181,11 @@ export function ProductCard({
           {rest > 0 && (
             <span className="ml-0.5 text-[11px] text-muted-foreground">
               +{rest}
+            </span>
+          )}
+          {summary && (
+            <span className="ml-1 text-[11px] leading-none text-muted-foreground">
+              {summary}
             </span>
           )}
         </div>

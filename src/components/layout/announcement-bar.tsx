@@ -8,7 +8,7 @@ export const ANNOUNCEMENTS: string[] = [
   "KREDİ KARTINA 6 TAKSİT İMKANI",
   // Eşik elle yazılmaz; kargo kuralından okunur (3.000 TL).
   `${FREE_SHIPPING_THRESHOLD.toLocaleString("tr-TR")} TL ÜZERİ ÜCRETSİZ KARGO`,
-  "AYNI GÜN KARGO İMKANI",
+  "AYNI GÜN KARGO",
 ];
 
 /**

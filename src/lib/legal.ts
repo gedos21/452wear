@@ -93,6 +93,11 @@ export const COMPANY = {
   address: "[ŞİRKET ADRESİ]",
   email: "[DESTEK E-POSTASI]",
   phone: "[TELEFON]",
+  /**
+   * Ürün sayfasındaki "WhatsApp'tan sor" numarası, ülke koduyla ve yalnızca
+   * rakam (ör. 905321234567). Placeholder kaldıkça buton görünmez.
+   */
+  whatsapp: "[WHATSAPP]",
   kep: "[KEP ADRESİ]",
   returnAddress: "[İADE ADRESİ]",
 } as const;

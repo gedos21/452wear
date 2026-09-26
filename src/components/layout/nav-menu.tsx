@@ -1,10 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { NAV_ITEMS, type MenuLink } from "./nav-links";
+import { useCatalog } from "@/components/product/catalog-provider";
+import { formatPrice } from "@/lib/format";
+import {
+  matchesCategory,
+  productNameParts,
+  variantSummary,
+  type CategoryFilter,
+} from "@/lib/product-filters";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
 import { cn } from "@/lib/utils";
 
@@ -126,7 +135,7 @@ export function DesktopNav({ pathname }: { pathname: string }) {
 
               <AnimatePresence>
                 {isOpen && (
-                  <motion.ul
+                  <motion.div
                     id={menuId}
                     key={menuId}
                     initial={{ opacity: 0, y: 6 }}
@@ -136,32 +145,45 @@ export function DesktopNav({ pathname }: { pathname: string }) {
                       transition: { duration: 0.22, ease: EASE },
                     }}
                     exit={{ opacity: 0, y: 4, transition: { duration: 0.14 } }}
-                    className="absolute -left-4 top-[calc(100%-10px)] min-w-60 rounded-md border border-black/[0.07] bg-white py-2 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.25)]"
+                    className={cn(
+                      "absolute top-[calc(100%-10px)] flex rounded-md border border-black/[0.07] bg-white shadow-[0_18px_40px_-18px_rgba(0,0,0,0.25)]",
+                      // Vitrinli menü geniş: sağdaki öğede ekrandan taşmasın
+                      // diye öğenin ortasına hizalanır.
+                      item.showcase ? "left-1/2 -translate-x-1/2" : "-left-4",
+                    )}
                   >
-                    {item.menu.map((link, i) => (
-                      <li key={link.label}>
-                        <DropdownLink
-                          link={link}
-                          primary={i === 0 || !!link.children}
-                          onNavigate={close}
-                        />
-                        {link.children && (
-                          <ul className="pb-1">
-                            {link.children.map((child) => (
-                              <li key={child.label}>
-                                <DropdownLink
-                                  link={child}
-                                  primary={false}
-                                  nested
-                                  onNavigate={close}
-                                />
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </li>
-                    ))}
-                  </motion.ul>
+                    <ul className="min-w-60 py-2">
+                      {item.menu.map((link, i) => (
+                        <li key={link.label}>
+                          <DropdownLink
+                            link={link}
+                            primary={i === 0 || !!link.children}
+                            onNavigate={close}
+                          />
+                          {link.children && (
+                            <ul className="pb-1">
+                              {link.children.map((child) => (
+                                <li key={child.label}>
+                                  <DropdownLink
+                                    link={child}
+                                    primary={false}
+                                    nested
+                                    onNavigate={close}
+                                  />
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                    {item.showcase && (
+                      <MenuShowcase
+                        category={item.showcase}
+                        onNavigate={close}
+                      />
+                    )}
+                  </motion.div>
                 )}
               </AnimatePresence>
             </div>
@@ -200,6 +222,88 @@ export function DesktopNav({ pathname }: { pathname: string }) {
       })}
     </nav>
   );
+}
+
+const SHOWCASE_COUNT = 3;
+
+/**
+ * Açılır menünün sağındaki "Yeni gelenler": kategorinin stokta olan en yeni
+ * ürünleri. Admin'den eklenen ürünlerin id'si sırayla büyüdüğü için en yeni
+ * ürün en büyük id'lidir.
+ */
+function MenuShowcase({
+  category,
+  onNavigate,
+}: {
+  category: CategoryFilter;
+  onNavigate: () => void;
+}) {
+  const { products } = useCatalog();
+  const items = products
+    .filter(
+      (p) =>
+        matchesCategory(p.category, category) &&
+        p.variants.some((v) => v.stock > 0),
+    )
+    .sort((a, b) => idNumber(b.id) - idNumber(a.id))
+    .slice(0, SHOWCASE_COUNT);
+  if (items.length === 0) return null;
+
+  return (
+    <div className="w-72 border-l border-black/[0.07] p-4">
+      <p className="px-1 font-sf text-[11px] font-bold uppercase tracking-[0.1em] text-black/40">
+        Yeni Gelenler
+      </p>
+      <ul className="mt-2 space-y-1">
+        {items.map((p) => {
+          const { brand, model } = productNameParts(p);
+          const summary = variantSummary(p);
+          return (
+            <li key={p.id}>
+              <Link
+                href={`/urun/${p.slug}`}
+                onClick={onNavigate}
+                className="flex items-center gap-3 rounded-md p-1 transition-colors hover:bg-black/[0.04]"
+              >
+                <span className="relative aspect-4/5 w-14 shrink-0 overflow-hidden rounded-sm bg-muted">
+                  <Image
+                    src={p.images[0].src}
+                    alt=""
+                    fill
+                    sizes="56px"
+                    className="object-cover"
+                  />
+                </span>
+                <span className="min-w-0 font-sf">
+                  {brand && (
+                    <span
+                      lang="en"
+                      className="block truncate text-[11px] font-extrabold uppercase"
+                    >
+                      {brand}
+                    </span>
+                  )}
+                  <span className="line-clamp-2 text-[13px] font-medium leading-snug text-black/80">
+                    {model}
+                  </span>
+                  <span className="mt-0.5 block text-[12px] text-black/45">
+                    <span className="font-bold text-black">
+                      {formatPrice(p.price, p.currency)}
+                    </span>
+                    {summary && <> · {summary}</>}
+                  </span>
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+function idNumber(id: string): number {
+  return Number(id.replace(/\D/g, "")) || 0;
 }
 
 /** Açılır menü satırı: bağlantı ya da henüz yayında olmayan pasif öğe. */

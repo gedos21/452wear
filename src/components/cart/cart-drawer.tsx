@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, X } from "lucide-react";
 import { CartLine, UnavailableNotice } from "./cart-line";
 import { CartRecommendation } from "./cart-recommendation";
+import { FreeShippingProgress } from "./free-shipping-progress";
 import { useCartLines } from "@/components/product/catalog-provider";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
 import { useCart } from "@/lib/cart";
@@ -99,6 +100,12 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
           <EmptyCart onClose={onClose} />
         ) : (
           <>
+            <FreeShippingProgress
+              subtotal={subtotal}
+              currency={currency}
+              className="shrink-0 px-6 pt-5 pb-1 sm:px-8"
+            />
+
             {/* Kaydırılan alan: ürünler + promosyon + öneri. Alttaki toplam
                 ve ödeme bloğu sabit kalır; liste onların altında kalmaz ve
                 hiçbir ürün kartı kesilmez. */}
@@ -177,12 +184,6 @@ export function CartDrawer({ onClose }: { onClose: () => void }) {
                       : formatPrice(shipping.fee, currency)}
                   </span>
                 </Row>
-                {!shipping.free && (
-                  <p className="pt-1 text-[11px] text-muted-foreground">
-                    {formatPrice(shipping.remaining, currency)} daha ekle, kargo
-                    ücretsiz olsun.
-                  </p>
-                )}
                 <div className="flex items-baseline justify-between gap-4 border-t border-border/70 pt-4">
                   <dt className="micro">Toplam</dt>
                   <dd className="text-base font-medium">

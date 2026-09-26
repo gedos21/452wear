@@ -1,4 +1,5 @@
 import { CATEGORIES } from "@/data/products";
+import type { CategoryFilter } from "@/lib/product-filters";
 import type { ProductCategory } from "@/types/product";
 
 /** Mağaza filtresini taşıyan sorgu parametresi. Tek yerden tanımlı. */
@@ -49,7 +50,11 @@ export type MenuLink = {
  * Navbar öğesi: bağlantı (`href`), açılır menü (`menu`; `href` ile birlikte
  * olabilir — yazı sayfaya gider, ok menüyü açar) ya da pasif öğe (ikisi de yok).
  */
-export type NavItem = MenuLink & { menu?: MenuLink[] };
+export type NavItem = MenuLink & {
+  menu?: MenuLink[];
+  /** Masaüstü açılır menünün yanında en yeni ürünleri gösterilen kategori. */
+  showcase?: CategoryFilter;
+};
 
 /** Ayakkabı modeli menü satırı; slug katalogdaki model adından türer. */
 function model(label: string, slug: string): MenuLink {
@@ -73,6 +78,7 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "Ayakkabılar",
     href: categoryHref("ayakkabi"),
+    showcase: "ayakkabi",
     // Marka ve model bağlantıları listeleme sayfasını o filtre seçili açar.
     // Buradaki slug'lar kataloğun marka/model alanlarıyla eşleşmeli
     // (bkz. filterSlug); karşılığı olmayan bağlantı filtresiz açılır.
@@ -115,6 +121,7 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "Giyim",
     href: categoryHref("giyim"),
+    showcase: "giyim",
     menu: [
       { label: "Tüm Giyim", href: categoryHref("giyim") },
       categoryItem("tisort"),

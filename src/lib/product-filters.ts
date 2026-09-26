@@ -391,3 +391,20 @@ export function deriveFacets(products: Product[]) {
 }
 
 export type Facets = ReturnType<typeof deriveFacets>;
+
+/**
+ * Kısa varyant özeti (kart ve menü): "5 Beden", "2 Renk · 5 Beden",
+ * ayakkabıda "8 Numara". Yalnızca stokta olan bedenler sayılır; hepsi
+ * tükenmişse özet yazılmaz (görselde "Tükendi" zaten var).
+ */
+export function variantSummary(product: Product): string | null {
+  const sizes = new Set(
+    product.variants.filter((v) => v.stock > 0).map((v) => v.size),
+  );
+  if (sizes.size === 0) return null;
+  const unit = product.category === "ayakkabi" ? "Numara" : "Beden";
+  const sizeText = `${sizes.size} ${unit}`;
+  return product.colors.length > 1
+    ? `${product.colors.length} Renk · ${sizeText}`
+    : sizeText;
+}

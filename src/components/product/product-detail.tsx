@@ -8,6 +8,7 @@ import {
   Check,
   Heart,
   Lock,
+  MessageCircle,
   RotateCcw,
   Timer,
   Truck,
@@ -31,6 +32,7 @@ import {
 import { discountPercent, productNameParts } from "@/lib/product-filters";
 import { cn } from "@/lib/utils";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
+import { COMPANY } from "@/lib/legal";
 import type { Product, ProductSize } from "@/types/product";
 
 /** Masaüstünde büyük görselin üzerine gelince uygulanan büyütme (panel ve sayfa). */
@@ -43,6 +45,14 @@ const HOVER_ZOOM = 1.9;
  * kullanılır; admin kaydında (urunKaydet) bu alanın korunması unutulmamalı.
  */
 const MODEL_BILGISI = "Model 1.85 m boyunda ve M beden giymektedir.";
+
+/** Seçili bedende bu adet ve altı kaldığında "son N ürün" uyarısı çıkar. */
+const LOW_STOCK_LIMIT = 3;
+
+/** Numara placeholder değilse (yalnızca rakamsa) WhatsApp butonu görünür. */
+const WHATSAPP_NUMBER = /^\d{10,15}$/.test(COMPANY.whatsapp)
+  ? COMPANY.whatsapp
+  : null;
 
 /** Sakin, "pop" yapmayan geçiş. */
 export const PANEL_SPRING = { type: "spring", stiffness: 240, damping: 30 } as const;
@@ -121,6 +131,27 @@ export function ProductDetail({
   const discount = discountPercent(product);
   const soldOut = !product.variants.some((v) => v.stock > 0);
   const colorSoldOut = !soldOut && !colorInStock(product, color);
+  const selectedStock = size
+    ? (product.variants.find((v) => v.size === size && v.color === color)
+        ?.stock ?? 0)
+    : 0;
+  const lowStock = selectedStock > 0 && selectedStock <= LOW_STOCK_LIMIT;
+
+  /**
+   * Ürün adı, seçili beden ve bağlantıyla hazır mesaj. Adres tıklama anında
+   * sayfanın kendi alan adından alınır; istemcide SITE_URL üretim adresini
+   * bilmez.
+   */
+  function askOnWhatsApp() {
+    if (!WHATSAPP_NUMBER) return;
+    const olcu = size ? ` (${shoe ? "numara" : "beden"}: ${size})` : "";
+    const text = `Merhaba, ${product.name}${olcu} hakkında bilgi almak istiyorum.\n${window.location.origin}/urun/${product.slug}`;
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  }
 
   /**
    * Renk değişimi: galeri başa döner, seçili beden yeni renkte yoksa düşer.
@@ -437,6 +468,18 @@ export function ProductDetail({
                 Üstü çizili {shoe ? "numaralar" : "bedenler"} stokta yok.
               </p>
             )}
+            {lowStock && (
+              <p
+                className="mt-3 inline-flex items-center gap-2 text-[13px] font-semibold text-brand"
+                role="status"
+              >
+                <span
+                  aria-hidden
+                  className="size-1.5 rounded-full bg-brand motion-safe:animate-pulse"
+                />
+                Bu {shoe ? "numarada" : "bedende"} son {selectedStock} ürün
+              </p>
+            )}
 
             {error && (
               <p
@@ -512,6 +555,17 @@ export function ProductDetail({
             </button>
           </div>
 
+          {WHATSAPP_NUMBER && (
+            <button
+              type="button"
+              onClick={askOnWhatsApp}
+              className="mt-3 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-foreground/15 font-sf text-[13px] font-bold uppercase tracking-[0.05em] text-foreground/75 transition-colors hover:border-foreground/50 hover:text-foreground"
+            >
+              <MessageCircle className="size-4" strokeWidth={2} />
+              WhatsApp&apos;tan Sor
+            </button>
+          )}
+
           {/* Güvenli ödeme: yalnızca kabul edilen kart şemaları. Ödeme
               sağlayıcısı bağlanana kadar sağlayıcı adı ya da fazladan
               güvence cümlesi yazılmaz. */}
@@ -528,8 +582,8 @@ export function ProductDetail({
             <ServiceNote icon={Truck} title="Ücretsiz kargo">
               {formatPrice(FREE_SHIPPING_THRESHOLD)} üzeri siparişlerde.
             </ServiceNote>
-            <ServiceNote icon={Timer} title="Hızlı gönderim">
-              1–3 iş günü içinde kargoya verilir.
+            <ServiceNote icon={Timer} title="Aynı gün kargo">
+              Siparişin aynı gün kargoya verilir.
             </ServiceNote>
             <ServiceNote icon={RotateCcw} title="Kolay iade">
               14 gün içinde koşulsuz iade.

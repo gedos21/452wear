@@ -11,14 +11,13 @@ export default function ShippingPage() {
     <LegalPageLayout page={page}>
       <Section no={1} title="Sipariş Hazırlama">
         <P>
-          Siparişin, ödeme onayının ardından hazırlanmaya başlar. Hazırlama
-          süresi <Slot>[TAHMİNİ HAZIRLAMA SÜRESİ]</Slot> olarak
-          planlanmaktadır; kesin süre operasyon kurulduğunda bu sayfada
-          yayımlanacaktır.
+          Siparişin, ödeme onayının ardından aynı gün hazırlanır ve kargoya
+          verilir.
         </P>
         <P>
           Hafta sonu ve resmî tatillerde hazırlama ve kargo teslimi yapılmaz;
-          bu günler süreye dâhil edilmez.
+          bu günlerde verilen siparişler takip eden ilk iş günü kargoya
+          verilir.
         </P>
       </Section>
 
