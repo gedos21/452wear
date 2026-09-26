@@ -4925,6 +4925,383 @@
       "isNew": true,
       "brand": "Nike",
       "model": "Air Max Plus"
+    },
+    {
+      "id": "p-065",
+      "slug": "bape-ape-head-hoodie-gri",
+      "name": "Bape Ape Head Hoodie",
+      "description": "Mavi kamuflaj Ape Head baskısıyla BAPE’in en tanınan detayını taşıyan gri kapüşonlu sweatshirt; kanguru cebi ve rahat kalıbıyla günlük kombinlerin merkezinde.",
+      "category": "sweatshirt",
+      "brand": "Bape",
+      "price": 999,
+      "compareAtPrice": 1300,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-065-c2d8c53c.png",
+          "alt": "Bape Ape Head Hoodie"
+        },
+        {
+          "src": "/products/p-065-cc634ec0.png",
+          "alt": "Bape Ape Head Hoodie"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Gri",
+          "hex": "#7a7a7a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-065-gri-xs",
+          "size": "XS",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-065-gri-s",
+          "size": "S",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-065-gri-m",
+          "size": "M",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-065-gri-l",
+          "size": "L",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-065-gri-xl",
+          "size": "XL",
+          "color": "Gri",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-066",
+      "slug": "grafik-baskili-hoodie-siyah",
+      "name": "Grafik Baskılı Hoodie",
+      "description": "Göğüste küçük amblem, sırtta büyük grafik baskı. Siyah kapüşonlu sweatshirt, sade önü ve dikkat çeken arkasıyla iki farklı görünüm sunar.",
+      "category": "sweatshirt",
+      "price": 999,
+      "compareAtPrice": 1300,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-066-4fc80029.png",
+          "alt": "Grafik Baskılı Hoodie"
+        },
+        {
+          "src": "/products/p-066-8d787646.png",
+          "alt": "Grafik Baskılı Hoodie"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-066-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-066-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-066-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-066-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-067",
+      "slug": "trapstar-london-hoodie-siyah",
+      "name": "Trapstar London Hoodie",
+      "description": "Göğüste Trapstar London yazısıyla Londra sokak kültürünün imzasını taşıyan siyah kapüşonlu sweatshirt; kalın ipli kapüşon ve kanguru cebiyle.",
+      "category": "sweatshirt",
+      "brand": "Trapstar",
+      "price": 999,
+      "compareAtPrice": 1300,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-067-a3b61528.png",
+          "alt": "Trapstar London Hoodie"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-067-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-067-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-067-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-067-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-068",
+      "slug": "corteiz-slaughter-gang-hoodie-beyaz",
+      "name": "Corteiz Slaughter Gang Hoodie",
+      "description": "Kırmızı Slaughter Gang baskısı ve arkada Alcatraz logosuyla Corteiz’in karakterini yansıtan beyaz kapüşonlu sweatshirt.",
+      "category": "sweatshirt",
+      "brand": "Corteiz",
+      "price": 999,
+      "compareAtPrice": 1200,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-068-51d508c8.png",
+          "alt": "Corteiz Slaughter Gang Hoodie"
+        },
+        {
+          "src": "/products/p-068-8a1ca137.png",
+          "alt": "Corteiz Slaughter Gang Hoodie"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Beyaz",
+          "hex": "#ffffff"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-068-beyaz-xs",
+          "size": "XS",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-068-beyaz-s",
+          "size": "S",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-068-beyaz-m",
+          "size": "M",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-068-beyaz-l",
+          "size": "L",
+          "color": "Beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-069",
+      "slug": "sp5der-web-hoodie-siyah",
+      "name": "Sp5der Web Hoodie",
+      "description": "Kırmızı örümcek ağı ve beyaz Sp5der logosuyla markanın en bilinen tasarımı; siyah kapüşonlu sweatshirt, rahat kalıp.",
+      "category": "sweatshirt",
+      "brand": "Sp5der",
+      "price": 999,
+      "compareAtPrice": 1300,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-069-2656e3cf.png",
+          "alt": "Sp5der Web Hoodie"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-069-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-069-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-069-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-069-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-070",
+      "slug": "sp5der-pembe-baskili-hoodie-siyah",
+      "name": "Sp5der Pembe Baskılı Hoodie",
+      "description": "Pembe Sp5der yazısı ve beyaz örümcek ağı baskısıyla siyah kapüşonlu sweatshirt; sade kombinlere renkli bir vurgu katar.",
+      "category": "sweatshirt",
+      "brand": "Sp5der",
+      "price": 999,
+      "compareAtPrice": 1300,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-070-42ae30e2.png",
+          "alt": "Sp5der Pembe Baskılı Hoodie"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-070-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-070-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-070-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-070-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-070-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-071",
+      "slug": "bape-ekose-ape-head-fermuarli-hoodie-siyah",
+      "name": "Bape Ekose Ape Head Fermuarlı Hoodie",
+      "description": "Sırtta ekose desenli Ape Head baskısı, önde fermuar ve göğüste küçük BAPE yazısı. Siyah fermuarlı kapüşonlu sweatshirt.",
+      "category": "sweatshirt",
+      "brand": "Bape",
+      "price": 999,
+      "compareAtPrice": 1300,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-071-1440f1c7.png",
+          "alt": "Bape Ekose Ape Head Fermuarlı Hoodie"
+        },
+        {
+          "src": "/products/p-071-db0057e5.png",
+          "alt": "Bape Ekose Ape Head Fermuarlı Hoodie"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-071-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-071-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-071-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-071-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
     }
   ],
   "degisen": {
