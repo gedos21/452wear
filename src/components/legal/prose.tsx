@@ -58,6 +58,9 @@ export function List({ items }: { items: React.ReactNode[] }) {
 
 /** Placeholder alanları görsel olarak ayırır. */
 export function Slot({ children }: { children: React.ReactNode }) {
+  // Doldurulmuş değer ("[...]" değilse) düz metin olarak akar.
+  if (typeof children === "string" && !/^\[.*\]$/.test(children.trim()))
+    return <>{children}</>;
   return (
     <span className="rounded-[4px] bg-brand/10 px-1.5 py-0.5 text-[13px] text-brand">
       {children}

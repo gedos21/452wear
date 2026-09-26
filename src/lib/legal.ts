@@ -92,7 +92,7 @@ export const COMPANY = {
   mersis: "[MERSİS NUMARASI]",
   address: "[ŞİRKET ADRESİ]",
   email: "[DESTEK E-POSTASI]",
-  phone: "[TELEFON]",
+  phone: "0546 155 76 43",
   /**
    * Ürün sayfasındaki "WhatsApp'tan sor" numarası, ülke koduyla ve yalnızca
    * rakam (ör. 905321234567). Placeholder kaldıkça buton görünmez.
