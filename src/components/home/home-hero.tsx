@@ -21,7 +21,7 @@ export function HomeHero() {
 
   return (
     <section
-      className="relative isolate mb-10 flex h-[clamp(480px,76svh,760px)] items-end justify-center overflow-hidden bg-black sm:mb-12"
+      className="relative isolate mb-10 flex h-[clamp(420px,60svh,760px)] sm:h-[clamp(480px,76svh,760px)] items-end justify-center overflow-hidden bg-black sm:mb-12"
       style={{ ["--intro-end" as string]: `${INTRO_END}s` }}
     >
       {/* Rakamların arkasında çok hafif soğuk ışıma; silüet evresinde

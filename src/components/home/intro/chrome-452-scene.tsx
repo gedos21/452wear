@@ -217,7 +217,9 @@ function useStageLayout() {
     const height = 1.85;
     const aspect = size.width / size.height;
     const tanHalf = Math.tan(THREE.MathUtils.degToRad(cam.fov) / 2);
-    const fillW = aspect < 0.8 ? 0.88 : 0.65;
+    // Dikey ekranda (mobil) 452 genişliğe göre sığar; sürekli döndüğü için
+    // çoğu an yandan (daha dar) görünür, pay küçük tutulur.
+    const fillW = aspect < 0.8 ? 0.93 : 0.65;
     const fillH = 0.62;
     const dist = Math.max(
       width / fillW / (2 * tanHalf * aspect),
