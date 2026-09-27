@@ -2,6 +2,7 @@ import { categoryHref } from "@/components/layout/nav-links";
 import { katalogOku } from "@/lib/catalog-store";
 import { discountPercent, isInStock } from "@/lib/product-filters";
 import { formatPrice } from "@/lib/format";
+import { sayiEki } from "@/lib/text";
 import { CampaignBanner } from "./campaign-banner";
 
 /**
@@ -28,7 +29,7 @@ export async function ShoeCampaign() {
     <CampaignBanner
       eyebrow="Kampanya"
       title="Seçili modeller"
-      subtitle={`${formatPrice(enUcuz)}'dan başlayan fiyatlarla · %${enYuksekOran}'e varan indirim`}
+      subtitle={`${formatPrice(enUcuz)}'${sayiEki(enUcuz, "den")} başlayan fiyatlarla · %${enYuksekOran}'${sayiEki(enYuksekOran, "e")} varan indirim`}
       cta="Şimdi keşfet"
       href={categoryHref("ayakkabi")}
       image={{

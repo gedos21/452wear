@@ -688,7 +688,7 @@ export function ProductDetail({
               Siparişin aynı gün kargoya verilir.
             </ServiceNote>
             <ServiceNote icon={RotateCcw} title="Kolay iade">
-              14 gün içinde koşulsuz iade.
+              14 gün içinde gerekçesiz iade.
             </ServiceNote>
           </ul>
 
