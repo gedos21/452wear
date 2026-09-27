@@ -17,6 +17,7 @@ import {
   OutfitComplete,
   RelatedProducts,
 } from "@/components/product/recommendations";
+import { RecentlyViewedOnProduct } from "@/components/product/recently-viewed";
 
 /**
  * Ürün sayfası. İçerik hızlı görünüm paneliyle aynı bileşenden gelir
@@ -149,6 +150,7 @@ export default async function UrunSayfasi({
             <ComplementaryProducts products={tamamlayici} />
           )}
           <RelatedProducts products={benzer} />
+          <RecentlyViewedOnProduct productId={urun.id} />
         </Container>
       </main>
       <SiteFooter />

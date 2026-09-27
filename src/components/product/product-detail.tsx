@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
   ArrowRight,
+  BellRing,
   Check,
   Heart,
   Lock,
@@ -166,9 +167,28 @@ export function ProductDetail({
    * bilmez.
    */
   function askOnWhatsApp() {
-    if (!WHATSAPP_NUMBER) return;
     const olcu = size ? ` (${shoe ? "numara" : "beden"}: ${size})` : "";
-    const text = `Merhaba, ${product.name}${olcu} hakkında bilgi almak istiyorum.\n${window.location.origin}/urun/${product.slug}`;
+    openWhatsApp(`Merhaba, ${product.name}${olcu} hakkında bilgi almak istiyorum.`);
+  }
+
+  /**
+   * "Gelince haber ver": tükenen ürün / renk / bedenler için hazır mesaj.
+   * Stok takibi mağaza tarafında WhatsApp üzerinden yapılır; sunucu ya da
+   * e-posta sistemi gerektirmez.
+   */
+  function notifyOnWhatsApp(olculer: string[]) {
+    const renk = product.colors.length > 1 ? ` (${color})` : "";
+    const olcu = olculer.length
+      ? ` ${olculer.join(", ")} ${shoe ? "numarası" : "bedeni"}`
+      : "";
+    openWhatsApp(
+      `Merhaba, ${product.name}${renk}${olcu} stoğa girince haber verebilir misiniz?`,
+    );
+  }
+
+  function openWhatsApp(mesaj: string) {
+    if (!WHATSAPP_NUMBER) return;
+    const text = `${mesaj}\n${window.location.origin}/urun/${product.slug}`;
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,
       "_blank",
@@ -437,7 +457,15 @@ export function ProductDetail({
             </div>
             {colorSoldOut && (
               <p className="mt-3 text-[13px] font-semibold" role="status">
-                Bu renk tükendi; başka bir renk seç.
+                Bu renk tükendi; başka bir renk seç
+                {WHATSAPP_NUMBER ? (
+                  <>
+                    {" ya da "}
+                    <NotifyLink onClick={() => notifyOnWhatsApp([])} />
+                  </>
+                ) : (
+                  "."
+                )}
               </p>
             )}
           </div>
@@ -523,6 +551,18 @@ export function ProductDetail({
             {!soldOut && !colorSoldOut && sizes.some((x) => !x.inStock) && (
               <p className="mt-2.5 text-[12px] text-foreground/45">
                 Üstü çizili {shoe ? "numaralar" : "bedenler"} stokta yok.
+                {WHATSAPP_NUMBER && (
+                  <>
+                    {" "}
+                    <NotifyLink
+                      onClick={() =>
+                        notifyOnWhatsApp(
+                          sizes.filter((x) => !x.inStock).map((x) => x.size),
+                        )
+                      }
+                    />
+                  </>
+                )}
               </p>
             )}
             {lowStock && (
@@ -612,14 +652,19 @@ export function ProductDetail({
             </button>
           </div>
 
+          {/* Ürün tamamen tükendiyse "sor" yerine "gelince haber ver". */}
           {WHATSAPP_NUMBER && (
             <button
               type="button"
-              onClick={askOnWhatsApp}
+              onClick={soldOut ? () => notifyOnWhatsApp([]) : askOnWhatsApp}
               className="mt-3 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-foreground/15 font-sf text-[13px] font-bold uppercase tracking-[0.05em] text-foreground/75 transition-colors hover:border-foreground/50 hover:text-foreground"
             >
-              <MessageCircle className="size-4" strokeWidth={2} />
-              WhatsApp&apos;tan Sor
+              {soldOut ? (
+                <BellRing className="size-4" strokeWidth={2} />
+              ) : (
+                <MessageCircle className="size-4" strokeWidth={2} />
+              )}
+              {soldOut ? "Gelince Haber Ver" : "WhatsApp'tan Sor"}
             </button>
           )}
 
@@ -775,5 +820,19 @@ function ServiceNote({
         <p className="mt-0.5 text-[14px] text-foreground/60">{children}</p>
       </div>
     </li>
+  );
+}
+
+/** Tükenen beden / renk için satır içi "Gelince haber ver" bağlantısı. */
+function NotifyLink({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="inline-flex items-center gap-1 font-semibold text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground"
+    >
+      <BellRing className="size-3.5" strokeWidth={2} />
+      Gelince haber ver
+    </button>
   );
 }

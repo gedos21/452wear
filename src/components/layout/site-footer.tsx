@@ -26,6 +26,12 @@ export function SiteFooter() {
           >
             İletişim
           </Link>
+          <Link
+            href="/sss"
+            className="micro text-foreground/70 transition-colors hover:text-foreground"
+          >
+            SSS
+          </Link>
         </nav>
 
         {/* Yasal bağlantılar tek kayıttan üretilir (lib/legal). */}
