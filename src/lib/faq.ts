@@ -92,7 +92,9 @@ export const FAQ: FaqGroup[] = [
       },
       {
         q: "Fiziksel mağazanız var mı?",
-        a: `Evet. Mağazamız ${STORE.address} adresinde; ürünleri yerinde görebilirsin.`,
+        a: `Evet. Mağazamız ${STORE.address} adresinde; ürünleri yerinde görebilirsin. Açılış saatleri: ${STORE.hours
+          .map((h) => `${h.label} ${h.opens}–${h.closes}`)
+          .join(", ")}.`,
         link: { href: STORE.mapsUrl, label: "Yol tarifi al" },
       },
       {

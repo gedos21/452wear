@@ -111,6 +111,26 @@ export const STORE = {
   street: "Yeni Mahallesi, İsmetpaşa Caddesi No:40/A",
   district: "Altınordu",
   city: "Ordu",
+  /**
+   * Açılış saatleri. `label` sitede gösterilir; `days` arama motorları için
+   * (schema.org gün adları).
+   */
+  hours: [
+    {
+      label: "Pazartesi – Cumartesi",
+      short: "Pzt–Cmt",
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:30",
+      closes: "20:00",
+    },
+    {
+      label: "Pazar",
+      short: "Paz",
+      days: ["Sunday"],
+      opens: "10:30",
+      closes: "20:00",
+    },
+  ],
   /** Tek satır gösterim. */
   get address() {
     return `${this.street}, ${this.district} / ${this.city}`;

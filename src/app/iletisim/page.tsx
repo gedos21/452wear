@@ -42,6 +42,13 @@ export default function ContactPage() {
       deger: (
         <>
           <span className="block">{STORE.address}</span>
+          <span className="mt-2 block text-[14px] text-muted-foreground">
+            {STORE.hours.map((h) => (
+              <span key={h.label} className="block">
+                {h.label}: {h.opens}–{h.closes}
+              </span>
+            ))}
+          </span>
           <a
             href={STORE.mapsUrl}
             target="_blank"
@@ -140,7 +147,6 @@ export default function ContactPage() {
       <script
         type="application/ld+json"
         // Yerel mağaza verisi (Google'da "Ordu streetwear" gibi aramalar).
-        // Açılış saatleri henüz girilmediği için yazılmaz; uydurulmaz.
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -149,6 +155,12 @@ export default function ContactPage() {
             url: SITE_URL,
             telephone: COMPANY.phone,
             hasMap: STORE.mapsUrl,
+            openingHoursSpecification: STORE.hours.map((h) => ({
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: h.days,
+              opens: h.opens,
+              closes: h.closes,
+            })),
             address: {
               "@type": "PostalAddress",
               streetAddress: STORE.street,

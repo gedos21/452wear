@@ -61,6 +61,11 @@ export function SiteFooter() {
               Yol tarifi →
             </span>
           </a>
+          <p className="mt-1.5 text-[13px] text-foreground/50">
+            {STORE.hours
+              .map((h) => `${h.short} ${h.opens}–${h.closes}`)
+              .join(" · ")}
+          </p>
         </section>
 
         {/* Ödeme yöntemleri: kabul edilen kart şemaları. Logolar markaların
