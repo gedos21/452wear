@@ -17,14 +17,18 @@ export type ShoeSize =
   | "45"
   | "46";
 
-export type ProductSize = ApparelSize | ShoeSize;
+/** Tek bedenli ürünler (saat): seçim gösterilmez, sepete bununla girer. */
+export type OneSize = "Standart";
+
+export type ProductSize = ApparelSize | ShoeSize | OneSize;
 
 export type ProductCategory =
   | "ayakkabi"
   | "esofman"
   | "hirka"
   | "tisort"
-  | "sweatshirt";
+  | "sweatshirt"
+  | "saat";
 
 /**
  * Giyim kalıbı; beden önerisini kaydırır (bkz. lib/size-profile). Dar kalıp

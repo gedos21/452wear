@@ -11,6 +11,7 @@ const PARCA: Record<ProductCategory, string> = {
   hirka: "Üst",
   esofman: "Alt",
   ayakkabi: "Ayakkabı",
+  saat: "Aksesuar",
 };
 
 /**

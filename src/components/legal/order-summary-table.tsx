@@ -4,6 +4,7 @@ import { Table } from "./prose";
 import { useCartLines } from "@/components/product/catalog-provider";
 import { formatPrice } from "@/lib/format";
 import { shippingFor } from "@/lib/shipping";
+import { variantLabel } from "@/lib/product-variants";
 
 /**
  * Ön Bilgilendirme Formundaki ürün/fiyat tablosu. Veriyi mevcut sepetten
@@ -30,7 +31,7 @@ export function OrderSummaryTable() {
         head={["Ürün", "Adet", "Birim Fiyat", "Ara Toplam"]}
         rows={lines.map(({ item, product }) => {
           return [
-            `${product.name} · ${item.color} / ${item.size}`,
+            `${product.name} · ${variantLabel(item.color, item.size)}`,
             String(item.qty),
             formatPrice(product.price, product.currency),
             formatPrice(product.price * item.qty, product.currency),

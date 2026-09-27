@@ -7,6 +7,7 @@ import { PRODUCT_ASPECT, PRODUCT_SURFACE } from "@/components/product/product-su
 import { formatPrice } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import type { CartItem } from "@/lib/cart";
+import { variantLabel } from "@/lib/product-variants";
 import type { Product } from "@/types/product";
 
 /** Sepetteki tek satır. Ürün bulunamazsa (katalogdan kalkmışsa) çizilmez. */
@@ -54,7 +55,7 @@ export function CartLine({
           <div className="min-w-0">
             <h3 className="text-sm font-medium leading-snug">{product.name}</h3>
             <p className="mt-1 text-[13px] text-muted-foreground">
-              {item.color} / {item.size}
+              {variantLabel(item.color, item.size)}
             </p>
           </div>
           <span className="shrink-0 text-sm font-medium">

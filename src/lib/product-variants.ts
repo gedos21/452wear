@@ -3,6 +3,7 @@ import type {
   Product,
   ProductCategory,
   ProductImage,
+  OneSize,
   ProductSize,
   ShoeSize,
 } from "@/types/product";
@@ -13,12 +14,34 @@ export const SHOE_SIZES: ShoeSize[] = [
   "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46",
 ];
 
-/** Beden sıralaması — veri hangi sırada gelirse gelsin UI hep aynı sırada gösterir. */
-export const SIZE_ORDER: ProductSize[] = [...APPAREL_SIZES, ...SHOE_SIZES];
+/** Saat gibi tek bedenli ürünler. */
+export const ONE_SIZE: OneSize = "Standart";
 
-/** Kategorinin beden sistemi: ayakkabıda numara, diğerlerinde harf beden. */
+/** Beden sıralaması — veri hangi sırada gelirse gelsin UI hep aynı sırada gösterir. */
+export const SIZE_ORDER: ProductSize[] = [
+  ...APPAREL_SIZES,
+  ...SHOE_SIZES,
+  ONE_SIZE,
+];
+
+/** Beden seçimi olmayan (tek bedenli) kategori mi. */
+export function isOneSizeCategory(category: ProductCategory): boolean {
+  return category === "saat";
+}
+
+/** Sepet/sipariş satırındaki varyant yazısı; tek bedende yalnızca renk. */
+export function variantLabel(color: string, size: ProductSize): string {
+  return size === ONE_SIZE ? color : `${color} / ${size}`;
+}
+
+/**
+ * Kategorinin beden sistemi: ayakkabıda numara, saatte tek beden, diğerlerinde
+ * harf beden.
+ */
 export function sizesForCategory(category: ProductCategory): ProductSize[] {
-  return category === "ayakkabi" ? SHOE_SIZES : APPAREL_SIZES;
+  if (category === "ayakkabi") return SHOE_SIZES;
+  if (isOneSizeCategory(category)) return [ONE_SIZE];
+  return APPAREL_SIZES;
 }
 
 /**

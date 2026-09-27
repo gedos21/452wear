@@ -51,6 +51,7 @@ const KAPALI_SONUC: Sonuc = {
 
 const KATEGORILER: ProductCategory[] = [
   "ayakkabi",
+  "saat",
   "esofman",
   "hirka",
   "tisort",
@@ -303,7 +304,7 @@ function metinAlani(fd: FormData, alan: string, anahtar: "brand" | "model") {
 /** Giyim kalıbı; ayakkabıda ya da "normal"da hiç yazılmaz. */
 function kalipAlani(fd: FormData, kategori: ProductCategory) {
   const deger = String(fd.get("kalip") ?? "");
-  if (kategori === "ayakkabi") return {};
+  if (kategori === "ayakkabi" || kategori === "saat") return {};
   return deger === "dar" || deger === "oversize"
     ? { fit: deger as ProductFit }
     : {};

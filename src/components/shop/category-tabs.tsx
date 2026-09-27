@@ -70,6 +70,12 @@ export function CategoryTabs({
         <Sekme href={categoryHref("ayakkabi")} aktif={category === "ayakkabi"}>
           Ayakkabı
         </Sekme>
+        {/* Saatler 452 Watch sayfasında listelenir; sekme oraya gider. */}
+        {dolu.has("saat") && (
+          <Sekme href={categoryHref("saat")} aktif={category === "saat"}>
+            Saat
+          </Sekme>
+        )}
       </div>
 
       {giyim && (

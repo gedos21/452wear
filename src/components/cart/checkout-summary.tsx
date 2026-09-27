@@ -7,6 +7,7 @@ import { useCartLines } from "@/components/product/catalog-provider";
 import { useCart } from "@/lib/cart";
 import { formatPrice } from "@/lib/format";
 import { shippingFor } from "@/lib/shipping";
+import { variantLabel } from "@/lib/product-variants";
 
 /** Sepet özeti. Sepet çekmecesiyle aynı çözülmüş satırlardan okur. */
 export function CheckoutSummary() {
@@ -48,7 +49,7 @@ export function CheckoutSummary() {
               <div className="min-w-0">
                 <p className="text-sm font-medium">{product.name}</p>
                 <p className="mt-1 text-[13px] text-muted-foreground">
-                  {item.color} / {item.size} · {item.qty} adet
+                  {variantLabel(item.color, item.size)} · {item.qty} adet
                 </p>
               </div>
               <span className="shrink-0 text-sm font-medium">

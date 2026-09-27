@@ -29,6 +29,7 @@ import {
   colorInStock,
   defaultColor,
   imagesForColor,
+  isOneSizeCategory,
   sizeAvailability,
 } from "@/lib/product-variants";
 import { discountPercent, productNameParts } from "@/lib/product-filters";
@@ -58,7 +59,11 @@ const WHATSAPP_NUMBER = /^\d{10,15}$/.test(COMPANY.whatsapp)
   : null;
 
 /** Sakin, "pop" yapmayan geçiş. */
-export const PANEL_SPRING = { type: "spring", stiffness: 240, damping: 30 } as const;
+export const PANEL_SPRING = {
+  type: "spring",
+  stiffness: 240,
+  damping: 30,
+} as const;
 
 /**
  * Ürün detayının içeriği: galeri, renk/beden seçimi, sepete ekleme, favori ve
@@ -130,6 +135,9 @@ export function ProductDetail({
   const favorite = isFavorite(product.id);
   const cover = images[Math.min(imageIndex, images.length - 1)];
   const shoe = product.category === "ayakkabi";
+  // Saat gibi tek bedenli ürünlerde beden seçimi gösterilmez; tek beden
+  // otomatik seçilidir (bkz. onlyInStockSize).
+  const oneSize = isOneSizeCategory(product.category);
   const nameParts = productNameParts(product);
   const discount = discountPercent(product);
   const soldOut = !product.variants.some((v) => v.stock > 0);
@@ -167,8 +175,11 @@ export function ProductDetail({
    * bilmez.
    */
   function askOnWhatsApp() {
-    const olcu = size ? ` (${shoe ? "numara" : "beden"}: ${size})` : "";
-    openWhatsApp(`Merhaba, ${product.name}${olcu} hakkında bilgi almak istiyorum.`);
+    const olcu =
+      size && !oneSize ? ` (${shoe ? "numara" : "beden"}: ${size})` : "";
+    openWhatsApp(
+      `Merhaba, ${product.name}${olcu} hakkında bilgi almak istiyorum.`,
+    );
   }
 
   /**
@@ -470,7 +481,7 @@ export function ProductDetail({
             )}
           </div>
 
-          {!shoe && !soldOut && (
+          {!shoe && !oneSize && !soldOut && (
             <div className="mt-8">
               <SizeFinder
                 profile={profile}
@@ -486,84 +497,91 @@ export function ProductDetail({
             </div>
           )}
 
-          {/* Numara / Beden */}
-          <div className="mt-8 font-sf">
-            <div className="flex items-center justify-between gap-4">
-              <p className="text-[13px] font-bold uppercase tracking-[0.04em]">
-                {shoe ? "Numara" : "Beden"}
-                {!shoe && product.fit && product.fit !== "normal" && (
-                  <span className="ml-2 font-semibold normal-case tracking-normal text-foreground/45">
-                    · {product.fit === "dar" ? "Dar kalıp" : "Oversize kalıp"}
-                  </span>
-                )}
-              </p>
-              <button
-                type="button"
-                onClick={onOpenGuide}
-                className="text-[12px] font-semibold uppercase tracking-[0.04em] text-foreground/55 underline underline-offset-4 transition-colors hover:text-foreground"
-              >
-                Beden Rehberi
-              </button>
-            </div>
-
-            <div className="mt-3 flex flex-wrap gap-2">
-              {sizes.map(({ size: s, inStock }) => {
-                const active = s === size;
-                const suggested = s === recommendedInStock;
-                return (
+          {/* Numara / Beden (tek bedenli üründe yalnızca stok/hata notu) */}
+          <div className={cn("font-sf", !oneSize && "mt-8")}>
+            {!oneSize && (
+              <>
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-[13px] font-bold uppercase tracking-[0.04em]">
+                    {shoe ? "Numara" : "Beden"}
+                    {!shoe && product.fit && product.fit !== "normal" && (
+                      <span className="ml-2 font-semibold normal-case tracking-normal text-foreground/45">
+                        ·{" "}
+                        {product.fit === "dar" ? "Dar kalıp" : "Oversize kalıp"}
+                      </span>
+                    )}
+                  </p>
                   <button
-                    key={s}
                     type="button"
-                    disabled={!inStock}
-                    onClick={() => {
-                      setSize(s);
-                      setError(null);
-                    }}
-                    aria-pressed={active}
-                    aria-label={
-                      inStock
-                        ? suggested
-                          ? `${s} (sana önerilen)`
-                          : s
-                        : `${s} (stokta yok)`
-                    }
-                    title={inStock ? undefined : "Stokta yok"}
-                    className={cn(
-                      "relative h-11 min-w-[52px] rounded-full border px-3.5 text-[14px] font-semibold transition-colors",
-                      active
-                        ? "border-foreground bg-foreground text-background"
-                        : "border-foreground/15 hover:border-foreground/50",
-                      !inStock &&
-                        "cursor-not-allowed border-dashed border-foreground/15 font-medium text-foreground/25 line-through hover:border-foreground/15",
-                    )}
+                    onClick={onOpenGuide}
+                    className="text-[12px] font-semibold uppercase tracking-[0.04em] text-foreground/55 underline underline-offset-4 transition-colors hover:text-foreground"
                   >
-                    {s}
-                    {suggested && (
-                      <span
-                        aria-hidden
-                        className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full border-2 border-background bg-brand"
-                      />
-                    )}
+                    Beden Rehberi
                   </button>
-                );
-              })}
-            </div>
-            {!soldOut && !colorSoldOut && sizes.some((x) => !x.inStock) && (
-              <p className="mt-2.5 text-[12px] text-foreground/45">
-                Üstü çizili {shoe ? "numaralar" : "bedenler"} stokta yok.
-                {WHATSAPP_NUMBER && (
-                  <>
-                    {" "}
-                    <NotifyLink
-                      onClick={() =>
-                        notifyOnWhatsApp(
-                          sizes.filter((x) => !x.inStock).map((x) => x.size),
-                        )
-                      }
-                    />
-                  </>
+                </div>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {sizes.map(({ size: s, inStock }) => {
+                    const active = s === size;
+                    const suggested = s === recommendedInStock;
+                    return (
+                      <button
+                        key={s}
+                        type="button"
+                        disabled={!inStock}
+                        onClick={() => {
+                          setSize(s);
+                          setError(null);
+                        }}
+                        aria-pressed={active}
+                        aria-label={
+                          inStock
+                            ? suggested
+                              ? `${s} (sana önerilen)`
+                              : s
+                            : `${s} (stokta yok)`
+                        }
+                        title={inStock ? undefined : "Stokta yok"}
+                        className={cn(
+                          "relative h-11 min-w-[52px] rounded-full border px-3.5 text-[14px] font-semibold transition-colors",
+                          active
+                            ? "border-foreground bg-foreground text-background"
+                            : "border-foreground/15 hover:border-foreground/50",
+                          !inStock &&
+                            "cursor-not-allowed border-dashed border-foreground/15 font-medium text-foreground/25 line-through hover:border-foreground/15",
+                        )}
+                      >
+                        {s}
+                        {suggested && (
+                          <span
+                            aria-hidden
+                            className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full border-2 border-background bg-brand"
+                          />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+                {!soldOut && !colorSoldOut && sizes.some((x) => !x.inStock) && (
+                  <p className="mt-2.5 text-[12px] text-foreground/45">
+                    Üstü çizili {shoe ? "numaralar" : "bedenler"} stokta yok.
+                    {WHATSAPP_NUMBER && (
+                      <>
+                        {" "}
+                        <NotifyLink
+                          onClick={() =>
+                            notifyOnWhatsApp(
+                              sizes
+                                .filter((x) => !x.inStock)
+                                .map((x) => x.size),
+                            )
+                          }
+                        />
+                      </>
+                    )}
+                  </p>
                 )}
-              </p>
+              </>
             )}
             {lowStock && (
               <p
@@ -574,7 +592,9 @@ export function ProductDetail({
                   aria-hidden
                   className="size-1.5 rounded-full bg-brand motion-safe:animate-pulse"
                 />
-                Bu {shoe ? "numarada" : "bedende"} son {selectedStock} ürün
+                {oneSize
+                  ? `Son ${selectedStock} ürün`
+                  : `Bu ${shoe ? "numarada" : "bedende"} son ${selectedStock} ürün`}
               </p>
             )}
 
@@ -715,16 +735,15 @@ export function ProductDetail({
                     <>
                       <p>Nemli, yumuşak bir bezle silin.</p>
                       <p className="mt-2">
-                        Doğrudan ısı kaynağında ya da güneş altında
-                        kurutmayın.
+                        Doğrudan ısı kaynağında ya da güneş altında kurutmayın.
                       </p>
                     </>
                   ) : (
                     <>
                       <p>30°C&apos;de tersten yıkayın.</p>
                       <p className="mt-2">
-                        Çamaşır suyu kullanmayın, baskı üzerine ütü
-                        yapmayın, kurutma makinesinde kurutmayın.
+                        Çamaşır suyu kullanmayın, baskı üzerine ütü yapmayın,
+                        kurutma makinesinde kurutmayın.
                       </p>
                     </>
                   ),

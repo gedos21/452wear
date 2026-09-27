@@ -300,7 +300,7 @@ export function UrunFormu({
             </select>
           </label>
         </div>
-        {kategori !== "ayakkabi" && (
+        {kategori !== "ayakkabi" && kategori !== "saat" && (
           <label className="grid gap-2">
             <span className={etiket}>Kalıp</span>
             <select

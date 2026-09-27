@@ -5,10 +5,14 @@ import type { ProductCategory } from "@/types/product";
 /** Mağaza filtresini taşıyan sorgu parametresi. Tek yerden tanımlı. */
 export const CATEGORY_PARAM = "kategori";
 
+/** 452 Watch koleksiyon sayfası (saat kategorisinin vitrini). */
+export const WATCH_HREF = "/452-watch";
+
 /** Kendi adresi olan ana kategoriler. Diğerleri mağaza filtresiyle açılır. */
 export const CATEGORY_ROUTES: Record<string, string> = {
   ayakkabi: "/ayakkabilar",
   giyim: "/giyim",
+  saat: WATCH_HREF,
 };
 
 /** Ayakkabı listesinde marka/model ön seçimini taşıyan parametreler. */
@@ -51,6 +55,8 @@ export type MenuLink = {
  * olabilir — yazı sayfaya gider, ok menüyü açar) ya da pasif öğe (ikisi de yok).
  */
 export type NavItem = MenuLink & {
+  /** Alt marka bağlantısı (452 Watch): menüde ayrı renkte öne çıkar. */
+  accent?: boolean;
   menu?: MenuLink[];
   /** Masaüstü açılır menünün yanında en yeni ürünleri gösterilen kategori. */
   showcase?: CategoryFilter;
@@ -130,4 +136,5 @@ export const NAV_ITEMS: NavItem[] = [
       categoryItem("hirka"),
     ],
   },
+  { label: "452 Watch", href: WATCH_HREF, lang: "en", accent: true },
 ];

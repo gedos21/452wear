@@ -4,7 +4,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
-import { categoryHref } from "@/components/layout/nav-links";
+import { WATCH_HREF, categoryHref } from "@/components/layout/nav-links";
 import { productNameParts } from "@/lib/product-filters";
 import { ozetMetin } from "@/lib/text";
 import { ProductJsonLd } from "@/components/product/product-jsonld";
@@ -94,6 +94,13 @@ export default async function UrunSayfasi({
   const benzer = relatedFor(urun, katalog, 4, gosterilen);
 
   const ayakkabi = urun.category === "ayakkabi";
+  const saat = urun.category === "saat";
+  // Konum yolunun ikinci adımı: ürünün ait olduğu vitrin.
+  const vitrin = saat
+    ? { href: WATCH_HREF, label: "452 Watch" }
+    : ayakkabi
+      ? { href: categoryHref("ayakkabi"), label: "Ayakkabılar" }
+      : { href: categoryHref("giyim"), label: "Giyim" };
   // Kendi ürünlerimizde marka yok; yolun son adımı kategori olur.
   const marka = productNameParts(urun).brand;
 
@@ -117,10 +124,10 @@ export default async function UrunSayfasi({
             </Link>
             <span aria-hidden>/</span>
             <Link
-              href={categoryHref(ayakkabi ? "ayakkabi" : "giyim")}
+              href={vitrin.href}
               className="transition-colors hover:text-foreground"
             >
-              {ayakkabi ? "Ayakkabılar" : "Giyim"}
+              {vitrin.label}
             </Link>
             <span aria-hidden>/</span>
             {marka ? (

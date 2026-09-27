@@ -402,6 +402,8 @@ export function variantSummary(product: Product): string | null {
     product.variants.filter((v) => v.stock > 0).map((v) => v.size),
   );
   if (sizes.size === 0) return null;
+  // Tek bedenli üründe (saat) beden sayısı bilgi vermez.
+  if (product.category === "saat") return null;
   const unit = product.category === "ayakkabi" ? "Numara" : "Beden";
   const sizeText = `${sizes.size} ${unit}`;
   return product.colors.length > 1

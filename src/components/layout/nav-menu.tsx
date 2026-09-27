@@ -208,12 +208,14 @@ export function DesktopNav({ pathname }: { pathname: string }) {
           <Link
             key={item.label}
             href={item.href}
+            lang={item.lang}
             aria-current={active ? "page" : undefined}
             className={cn(
               NAV_TEXT,
               UNDERLINE,
               "hover:after:scale-x-100",
               active && "after:scale-x-100",
+              item.accent && "nav-accent",
             )}
           >
             {item.label}
@@ -518,12 +520,14 @@ export function MobileMenu({ pathname }: { pathname: string }) {
                       <Link
                         href={item.href}
                         onClick={close}
+                        lang={item.lang}
                         aria-current={
                           pathname === item.href ? "page" : undefined
                         }
                         className={cn(
                           row,
                           pathname === item.href && "text-brand",
+                          item.accent && "nav-accent",
                         )}
                       >
                         {item.label}

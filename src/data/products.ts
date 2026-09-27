@@ -15,6 +15,7 @@ export const CATEGORIES: {
   { slug: "hirka", label: "Hırka" },
   { slug: "tisort", label: "Tişört" },
   { slug: "sweatshirt", label: "Sweatshirt", lang: "en" },
+  { slug: "saat", label: "Saat" },
 ];
 
 /**
