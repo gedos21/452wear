@@ -101,3 +101,24 @@ export const COMPANY = {
   kep: "[KEP ADRESİ]",
   returnAddress: "[İADE ADRESİ]",
 } as const;
+
+/**
+ * Fiziksel mağaza. Şirketin yasal adresinden (COMPANY.address) ayrı tutulur;
+ * resmî adres farklı olabilir. İletişim sayfası, footer, SSS ve arama
+ * motorları için mağaza verisi buradan okunur.
+ */
+export const STORE = {
+  street: "Yeni Mahallesi, İsmetpaşa Caddesi No:40/A",
+  district: "Altınordu",
+  city: "Ordu",
+  /** Tek satır gösterim. */
+  get address() {
+    return `${this.street}, ${this.district} / ${this.city}`;
+  },
+  /** Yol tarifi: telefonda Google Haritalar uygulamasını açar. */
+  get mapsUrl() {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      `452WEAR, ${this.street}, ${this.district}, ${this.city}`,
+    )}`;
+  },
+};

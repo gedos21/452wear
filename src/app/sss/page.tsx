@@ -69,6 +69,11 @@ export default function FaqPage() {
                           {item.link && (
                             <Link
                               href={item.link.href}
+                              // Dış bağlantı (ör. yol tarifi) yeni sekmede.
+                              {...(item.link.href.startsWith("http") && {
+                                target: "_blank",
+                                rel: "noopener noreferrer",
+                              })}
                               className="mt-3 inline-block font-semibold text-foreground underline decoration-foreground/25 underline-offset-4 transition-colors hover:decoration-foreground"
                             >
                               {item.link.label} →

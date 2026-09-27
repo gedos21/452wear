@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "./container";
 import { PaymentMarks } from "@/components/payment/payment-marks";
-import { LEGAL_PAGES } from "@/lib/legal";
+import { LEGAL_PAGES, STORE } from "@/lib/legal";
 
 export function SiteFooter() {
   return (
@@ -46,6 +46,22 @@ export function SiteFooter() {
             </Link>
           ))}
         </nav>
+
+        {/* Fiziksel mağaza (lib/legal STORE). */}
+        <section className="mt-10">
+          <h2 className="micro text-foreground/50">Mağazamız</h2>
+          <a
+            href={STORE.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-[14px] text-foreground/70 transition-colors hover:text-foreground"
+          >
+            {STORE.address}
+            <span className="ml-2 font-semibold text-foreground">
+              Yol tarifi →
+            </span>
+          </a>
+        </section>
 
         {/* Ödeme yöntemleri: kabul edilen kart şemaları. Logolar markaların
             kendi SVG'leri (public/logo/odeme), yükseklikleri eşit. */}

@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion";
 import { Slot } from "@/components/legal/prose";
-import { COMPANY } from "@/lib/legal";
+import { COMPANY, STORE } from "@/lib/legal";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "İletişim",
@@ -35,6 +36,23 @@ function Deger({ deger, href }: { deger: string; href?: string }) {
  */
 export default function ContactPage() {
   const kanallar = [
+    {
+      baslik: "Mağazamız",
+      aciklama: "Ordu'daki mağazamız",
+      deger: (
+        <>
+          <span className="block">{STORE.address}</span>
+          <a
+            href={STORE.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-block font-semibold underline decoration-foreground/25 underline-offset-4 transition-colors hover:decoration-foreground"
+          >
+            Yol tarifi al →
+          </a>
+        </>
+      ),
+    },
     {
       baslik: "E-posta",
       aciklama: "Sipariş, iade ve ürün soruları",
@@ -119,6 +137,28 @@ export default function ContactPage() {
         </Container>
       </main>
       <SiteFooter />
+      <script
+        type="application/ld+json"
+        // Yerel mağaza verisi (Google'da "Ordu streetwear" gibi aramalar).
+        // Açılış saatleri henüz girilmediği için yazılmaz; uydurulmaz.
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ClothingStore",
+            name: COMPANY.brand,
+            url: SITE_URL,
+            telephone: COMPANY.phone,
+            hasMap: STORE.mapsUrl,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: STORE.street,
+              addressLocality: STORE.district,
+              addressRegion: STORE.city,
+              addressCountry: "TR",
+            },
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
     </>
   );
 }

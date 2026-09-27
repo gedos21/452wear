@@ -1,4 +1,4 @@
-import { COMPANY } from "@/lib/legal";
+import { COMPANY, STORE } from "@/lib/legal";
 import { FREE_SHIPPING_THRESHOLD, SHIPPING_FEE } from "@/lib/shipping";
 
 /**
@@ -89,6 +89,11 @@ export const FAQ: FaqGroup[] = [
         q: "Neyle giyeceğime karar veremiyorum.",
         a: "Kombinini Bul'da birkaç soruya cevap ver, mağazadaki ürünlerden sana kombin kuralım. Ürün sayfalarındaki \"Bunu tamamla\" bölümü de o ürünle giyilecek parçaları gösterir.",
         link: { href: "/kombinini-bul", label: "Kombinini Bul" },
+      },
+      {
+        q: "Fiziksel mağazanız var mı?",
+        a: `Evet. Mağazamız ${STORE.address} adresinde; ürünleri yerinde görebilirsin.`,
+        link: { href: STORE.mapsUrl, label: "Yol tarifi al" },
       },
       {
         q: "Size nasıl ulaşırım?",
