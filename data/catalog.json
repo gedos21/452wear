@@ -5307,6 +5307,182 @@
         }
       ],
       "isNew": true
+    },
+    {
+      "id": "p-072",
+      "slug": "test-452-chrono-buz-mavisi",
+      "name": "452 Chrono Buz Mavisi",
+      "description": "TEST ÜRÜNÜ — yayına almadan önce silinecek. Buz Mavisi kadranlı, çelik kasalı kronograf; görseller 452 Watch tanıtım videosundan üretildi.",
+      "category": "saat",
+      "brand": "452 Watch",
+      "price": 3499,
+      "compareAtPrice": 4299,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-072-kapak-d7a2a9d1.webp",
+          "alt": "452 Chrono Buz Mavisi"
+        },
+        {
+          "src": "/products/p-072-detay-98e11d4d.webp",
+          "alt": "452 Chrono Buz Mavisi — açılan cam ve bezel"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Buz Mavisi",
+          "hex": "#bcd6e6"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-072-buz-mavisi-standart",
+          "size": "Standart",
+          "color": "Buz Mavisi",
+          "stock": 5
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-073",
+      "slug": "test-452-chrono-yesil",
+      "name": "452 Chrono Yeşil",
+      "description": "TEST ÜRÜNÜ — yayına almadan önce silinecek. Yeşil kadranlı, çelik kasalı kronograf; görseller 452 Watch tanıtım videosundan üretildi.",
+      "category": "saat",
+      "brand": "452 Watch",
+      "price": 3799,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-073-kapak-e63c2f13.webp",
+          "alt": "452 Chrono Yeşil"
+        },
+        {
+          "src": "/products/p-073-detay-6a011153.webp",
+          "alt": "452 Chrono Yeşil — açılan cam ve bezel"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Yeşil",
+          "hex": "#9fcfae"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-073-yesil-standart",
+          "size": "Standart",
+          "color": "Yeşil",
+          "stock": 2
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-074",
+      "slug": "test-452-chrono-lila",
+      "name": "452 Chrono Lila",
+      "description": "TEST ÜRÜNÜ — yayına almadan önce silinecek. Lila kadranlı, çelik kasalı kronograf; görseller 452 Watch tanıtım videosundan üretildi.",
+      "category": "saat",
+      "brand": "452 Watch",
+      "price": 3299,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-074-kapak-6df06e41.webp",
+          "alt": "452 Chrono Lila"
+        },
+        {
+          "src": "/products/p-074-detay-526a16e9.webp",
+          "alt": "452 Chrono Lila — açılan cam ve bezel"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Lila",
+          "hex": "#bfb0e0"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-074-lila-standart",
+          "size": "Standart",
+          "color": "Lila",
+          "stock": 8
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-075",
+      "slug": "test-452-chrono-somon",
+      "name": "452 Chrono Somon",
+      "description": "TEST ÜRÜNÜ — yayına almadan önce silinecek. Somon kadranlı, çelik kasalı kronograf; görseller 452 Watch tanıtım videosundan üretildi.",
+      "category": "saat",
+      "brand": "452 Watch",
+      "price": 3999,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-075-kapak-0faf5f4d.webp",
+          "alt": "452 Chrono Somon"
+        },
+        {
+          "src": "/products/p-075-detay-d5c32a35.webp",
+          "alt": "452 Chrono Somon — açılan cam ve bezel"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Somon",
+          "hex": "#f0b8a0"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-075-somon-standart",
+          "size": "Standart",
+          "color": "Somon",
+          "stock": 0
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-076",
+      "slug": "test-452-chrono-gumus",
+      "name": "452 Chrono Gümüş",
+      "description": "TEST ÜRÜNÜ — yayına almadan önce silinecek. Gümüş kadranlı, çelik kasalı kronograf; görseller 452 Watch tanıtım videosundan üretildi.",
+      "category": "saat",
+      "brand": "452 Watch",
+      "price": 2999,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-076-kapak-b1e62341.webp",
+          "alt": "452 Chrono Gümüş"
+        },
+        {
+          "src": "/products/p-076-detay-b343b22f.webp",
+          "alt": "452 Chrono Gümüş — açılan cam ve bezel"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Gümüş",
+          "hex": "#c9ccd1"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-076-gumus-standart",
+          "size": "Standart",
+          "color": "Gümüş",
+          "stock": 4
+        }
+      ],
+      "isNew": true
     }
   ],
   "degisen": {
