@@ -248,7 +248,7 @@ export function WatchScroll() {
         {/* Başlık: scroll başlayınca yukarı doğru kaybolur. */}
         <div
           ref={intro}
-          className="pointer-events-none absolute inset-x-0 top-[9%] px-6 text-center"
+          className="pointer-events-none absolute inset-x-0 top-[9%] px-6 text-center lg:top-[4%]"
         >
           <h1 className="watch-title font-sf text-[44px] font-black uppercase leading-none tracking-[-0.03em] sm:text-[72px] lg:text-[88px]">
             452 Watch
@@ -257,7 +257,7 @@ export function WatchScroll() {
             Zamanın parçaları.
           </p>
           {animated && (
-            <p className="mt-6 inline-flex items-center gap-2 font-sf text-[11px] font-semibold uppercase tracking-[0.18em] text-white/45">
+            <p className="mt-6 inline-flex items-center gap-2 font-sf text-[11px] lg:hidden font-semibold uppercase tracking-[0.18em] text-white/45">
               Kaydır
               <ArrowDown className="size-3.5 motion-safe:animate-bounce" />
             </p>

@@ -67,7 +67,9 @@ for (const v of VARIANTS) {
   if (REVERSE) filters.push("reverse");
   filters.push(`fps=${fps}`);
   if (v.crop) filters.push(`crop=trunc(ih*${v.crop}/2)*2:ih`);
-  filters.push(`scale=${v.width}:-2:flags=lanczos`);
+  // Kaynaktan büyük ölçeklenmez: büyütmek kalite katmaz, dosyayı şişirir.
+  const cropW = v.crop ? Math.floor((srcH * v.crop) / 2) * 2 : srcW;
+  filters.push(`scale=${Math.min(v.width, cropW)}:-2:flags=lanczos`);
 
   // Önce kayıpsız PNG, sonra sharp ile WebP.
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), `watch-${v.name}-`));
