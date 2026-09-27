@@ -74,7 +74,6 @@ export function WatchScroll() {
 
   const track = useRef<HTMLElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
-  const intro = useRef<HTMLDivElement>(null);
   const outro = useRef<HTMLDivElement>(null);
   const captions = useRef<(HTMLDivElement | null)[]>([]);
   // İlk kare çizilene kadar poster görünür (siyah boşluk olmasın).
@@ -144,11 +143,6 @@ export function WatchScroll() {
       current = Math.round(p * (count - 1));
       draw();
 
-      if (intro.current) {
-        const o = 1 - clamp01((p - 0.04) / 0.12);
-        intro.current.style.opacity = String(o);
-        intro.current.style.transform = `translateY(${(1 - o) * -24}px)`;
-      }
       CAPTIONS.forEach((c, i) => {
         const node = captions.current[i];
         if (!node) return;
@@ -245,24 +239,8 @@ export function WatchScroll() {
           />
         )}
 
-        {/* Başlık: scroll başlayınca yukarı doğru kaybolur. */}
-        <div
-          ref={intro}
-          className="pointer-events-none absolute inset-x-0 top-[9%] px-6 text-center lg:top-[4%]"
-        >
-          <h1 className="watch-title font-sf text-[44px] font-black uppercase leading-none tracking-[-0.03em] sm:text-[72px] lg:text-[88px]">
-            452 Watch
-          </h1>
-          <p className="mt-3 font-sf text-[15px] text-white/60 sm:text-[17px]">
-            Zamanın parçaları.
-          </p>
-          {animated && (
-            <p className="mt-6 inline-flex items-center gap-2 font-sf text-[11px] lg:hidden font-semibold uppercase tracking-[0.18em] text-white/45">
-              Kaydır
-              <ArrowDown className="size-3.5 motion-safe:animate-bounce" />
-            </p>
-          )}
-        </div>
+        {/* Görünür başlık yok: sahnede yalnızca kaydırınca çıkan yazılar. */}
+        <h1 className="sr-only">452 Watch</h1>
 
         {/* Mobilde yazılar saatin üstüne denk gelir: altta hafif karartma. */}
         {animated && (
