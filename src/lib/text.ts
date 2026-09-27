@@ -20,12 +20,17 @@ function sonOkunus(n: number): string {
  * Sayıya gelen Türkçe ek, sayının okunuşuna göre (ünlü uyumu ve ünsüz
  * benzeşmesi): sayiEki(1200, "den") → "den" (bin iki yüz), sayiEki(999,
  * "den") → "dan" (dokuz yüz doksan dokuz), sayiEki(14, "e") → "e",
- * sayiEki(10, "e") → "a". Ondalıklı sayıda ek, ondalık kısmın okunuşuna
- * uyar (999,90 → "doksan"). Kullanım: `${fiyat}'${sayiEki(n, "den")}`.
+ * sayiEki(10, "e") → "a". Ondalıklı sayıda ek, ekranda görünen iki haneli
+ * ondalık kısmın okunuşuna uyar (formatPrice ile aynı yuvarlama: 999,90 →
+ * "doksan", 999,999 → "1.000,00" → "sıfır"). Kullanım:
+ * `${fiyat}'${sayiEki(n, "den")}`.
  */
 export function sayiEki(sayi: number, ek: "den" | "e"): string {
-  const kurus = Math.round((Math.abs(sayi) % 1) * 100);
-  const kelime = sonOkunus(kurus || Math.floor(Math.abs(sayi)));
+  const toplamKurus = Math.round(Math.abs(sayi) * 100);
+  // formatPrice tam sayı olmayan her değeri iki ondalıkla yazar (",00" dahil).
+  const kelime = Number.isInteger(sayi)
+    ? sonOkunus(Math.abs(sayi))
+    : sonOkunus(toplamKurus % 100);
   const sonUnlu = [...kelime].reverse().find((h) => "aeıioöuü".includes(h));
   const kalin = sonUnlu !== undefined && "aıou".includes(sonUnlu);
   const sonHarf = kelime.at(-1) ?? "";
