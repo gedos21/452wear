@@ -9,12 +9,12 @@ export const WATCH_FRAMES: {
   "count": 120,
   "variants": {
     "lg": {
-      "width": 1280,
-      "height": 720
+      "width": 1600,
+      "height": 900
     },
     "sm": {
-      "width": 540,
-      "height": 720
+      "width": 720,
+      "height": 960
     }
   }
 };
