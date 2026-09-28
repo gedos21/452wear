@@ -7,7 +7,7 @@
 // görünsün diye son kare başa gelir. Video zaten açılma yönündeyse --forward.
 //
 // Çıktı:
-//   public/watch/frames/lg/0001.webp …  (masaüstü, 1600 px genişlik, 16:9)
+//   public/watch/frames/lg/0001.webp …  (masaüstü, 1920 px genişlik, 16:9)
 //   public/watch/frames/sm/0001.webp …  (mobil, ortadan dikey kırpılmış)
 //   src/components/watch/watch-frames.ts (kare sayısı ve boyutlar)
 //
@@ -40,8 +40,8 @@ const OUT = path.join(ROOT, "public/watch/frames");
 // Masaüstü ve mobil çıktılar. Mobilde saat ortadaki dikey şeritte durduğu
 // için 16:9 kare ortadan ~3:4 oranında kırpılır.
 const VARIANTS = [
-  { name: "lg", width: 1600, crop: null, quality: 74 },
-  { name: "sm", width: 720, crop: 3 / 4, quality: 70 },
+  { name: "lg", width: 1920, crop: null, quality: 84 },
+  { name: "sm", width: 810, crop: 3 / 4, quality: 82 },
 ];
 
 const probe = JSON.parse(
@@ -85,7 +85,10 @@ for (const v of VARIANTS) {
   let dims = [0, 0];
   for (const f of pngs) {
     const out = path.join(dir, f.replace(".png", ".webp"));
+    // Hafif keskinleştirme: yapay zekâ videosunun yumuşak kenarlarını
+    // (kadran işaretleri, rakamlar, ibreler) toparlar; hale oluşturmaz.
     const info = await sharp(path.join(tmp, f))
+      .sharpen({ sigma: 0.9, m1: 0.6, m2: 2.2 })
       .webp({ quality: v.quality, effort: 5 })
       .toFile(out);
     bytes += info.size;
