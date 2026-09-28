@@ -2,9 +2,9 @@ import { UrunDuzenleSayfasi } from "@/components/admin/urun-duzenle-sayfasi";
 
 export const dynamic = "force-dynamic";
 
-export default async function UrunDuzenle({
+export default async function SaatDuzenle({
   params,
-}: PageProps<"/admin/urunler/[id]">) {
+}: PageProps<"/admin/452-watch/[id]">) {
   const { id } = await params;
-  return <UrunDuzenleSayfasi id={id} bolum="urunler" />;
+  return <UrunDuzenleSayfasi id={id} bolum="452-watch" />;
 }

@@ -128,7 +128,10 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
   );
 
   const markalar = useMemo(
-    () => [...new Set(urunler.map(productBrand))].sort((a, b) => a.localeCompare(b, "tr")),
+    () =>
+      [...new Set(urunler.map(productBrand))].sort((a, b) =>
+        a.localeCompare(b, "tr"),
+      ),
     [urunler],
   );
 
@@ -315,7 +318,9 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
                   key={r.name}
                   type="button"
                   onClick={() =>
-                    setTRenk((v) => (v.trim() ? `${v.trim()}, ${r.name}` : r.name))
+                    setTRenk((v) =>
+                      v.trim() ? `${v.trim()}, ${r.name}` : r.name,
+                    )
                   }
                   className="inline-flex items-center gap-1.5 rounded-full bg-background px-2.5 py-1 text-[12px] ring-1 ring-border transition-colors hover:ring-foreground/40"
                 >
@@ -377,7 +382,8 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
               className={girdi}
             >
               <option value="">Değiştirme</option>
-              {CATEGORIES.map((c) => (
+              {/* Saatler 452 Watch bölümünde; buradan saate çevrilmez. */}
+              {CATEGORIES.filter((c) => c.slug !== "saat").map((c) => (
                 <option key={c.slug} value={c.slug}>
                   {c.label}
                 </option>
@@ -541,7 +547,9 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
                   <td className="px-3 py-3">
                     <input
                       value={t.marka ?? u.brand ?? ""}
-                      onChange={(e) => taslakYaz(u.id, { marka: e.target.value })}
+                      onChange={(e) =>
+                        taslakYaz(u.id, { marka: e.target.value })
+                      }
                       placeholder="—"
                       aria-label={`${u.name} markası`}
                       className={cn(girdi, "w-28")}
@@ -551,7 +559,9 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
                   <td className="px-3 py-3">
                     <input
                       value={t.model ?? u.model ?? ""}
-                      onChange={(e) => taslakYaz(u.id, { model: e.target.value })}
+                      onChange={(e) =>
+                        taslakYaz(u.id, { model: e.target.value })
+                      }
                       placeholder="—"
                       aria-label={`${u.name} modeli`}
                       className={cn(girdi, "w-36")}
@@ -628,7 +638,7 @@ export function TopluDuzenle({ urunler }: { urunler: Product[] }) {
                       aria-label={`${u.name} kategorisi`}
                       className={cn(girdi, "w-32")}
                     >
-                      {CATEGORIES.map((c) => (
+                      {CATEGORIES.filter((c) => c.slug !== "saat").map((c) => (
                         <option key={c.slug} value={c.slug}>
                           {c.label}
                         </option>

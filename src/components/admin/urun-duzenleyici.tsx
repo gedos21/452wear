@@ -19,12 +19,16 @@ function formAnahtari(urun: Product): string {
 export function UrunDuzenleyici({
   urun,
   urunler = [],
+  watch = urun?.category === "saat",
 }: {
   urun?: Product;
   urunler?: Product[];
+  /** 452 Watch bölümü: kategori "saat" olarak sabit (bkz. UrunFormu). */
+  watch?: boolean;
 }) {
+  const bosKategori: ProductCategory = watch ? "saat" : "tisort";
   const [kategori, setKategori] = useState<ProductCategory>(
-    urun?.category ?? "tisort",
+    urun?.category ?? bosKategori,
   );
 
   // Form kayıttan sonra yeniden kurulduğu için son kayıt mesajı burada tutulur.
@@ -39,18 +43,17 @@ export function UrunDuzenleyici({
 
   const kaydedildi = useCallback(
     (kayit: Kayit) => {
-
       if (!urun && kayit.urunId) {
         // Sıradaki ürün için temiz form.
         setEklenen({ id: kayit.urunId, ad: kayit.ad });
-        setKategori("tisort");
+        setKategori(bosKategori);
         setFormNo((n) => n + 1);
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
       setKayitMesaji(kayit.mesaj);
     },
-    [urun],
+    [urun, bosKategori],
   );
 
   // Bildirim birkaç saniye sonra kendiliğinden kapanır.
@@ -62,13 +65,13 @@ export function UrunDuzenleyici({
 
   return (
     <>
-
       {/* Form yalnızca ÜRÜN bilgisi değişince yeniden kurulur (kayıttan sonra
           sunucudaki normalize veriyle dolsun diye). Yeni ürün ekranında her
           eklemeden sonra boş olarak yeniden kurulur. */}
       <UrunFormu
         key={urun ? formAnahtari(urun) : `yeni-${formNo}`}
         urun={urun}
+        watch={watch}
         kategori={kategori}
         onKategori={setKategori}
         onKaydedildi={kaydedildi}
@@ -86,13 +89,13 @@ export function UrunDuzenleyici({
             <Check className="size-4" strokeWidth={2} />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="micro">Ürün eklendi</p>
+            <p className="micro">{watch ? "Saat eklendi" : "Ürün eklendi"}</p>
             <p className="mt-1 truncate text-[13px] text-background/65">
               {eklenen.ad} · {eklenen.id}
             </p>
           </div>
           <Link
-            href={`/admin/urunler/${eklenen.id}`}
+            href={`${watch ? "/admin/452-watch" : "/admin/urunler"}/${eklenen.id}`}
             className="shrink-0 micro text-background/70 transition-colors hover:text-background"
           >
             Düzenle →

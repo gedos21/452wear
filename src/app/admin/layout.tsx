@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/container";
+import { AdminNav } from "@/components/admin/admin-nav";
 
 // absolute: kök şablon ("%s | 452WEAR") başlığa ikinci kez eklenmesin.
 export const metadata = {
@@ -22,14 +23,19 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
     <div className="min-h-dvh bg-background">
       <header className="sticky top-0 z-30 border-b border-border/60 bg-background/90 backdrop-blur">
         <Container className="flex h-14 items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Link
-              href="/admin/urunler"
-              className="font-display text-sm font-extrabold tracking-[-0.02em]"
-            >
-              452WEAR
-            </Link>
-            <span className="micro text-foreground/40">Admin</span>
+          <div className="flex items-center gap-6 sm:gap-8">
+            <div className="flex items-center gap-3">
+              <Link
+                href="/admin/urunler"
+                className="font-display text-sm font-extrabold tracking-[-0.02em]"
+              >
+                452WEAR
+              </Link>
+              <span className="hidden micro text-foreground/40 sm:inline">
+                Admin
+              </span>
+            </div>
+            <AdminNav />
           </div>
           <Link
             href="/"

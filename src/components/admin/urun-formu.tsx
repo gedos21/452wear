@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, Plus, Trash2, X } from "lucide-react";
 import { urunKaydet, urunSil, type Sonuc } from "@/app/admin/actions";
 import { CATEGORIES } from "@/data/products";
-import { sizesForCategory } from "@/lib/product-variants";
+import { ONE_SIZE, sizesForCategory } from "@/lib/product-variants";
 import { cn } from "@/lib/utils";
 import type { Product, ProductCategory, ProductSize } from "@/types/product";
 
@@ -35,10 +35,16 @@ export function UrunFormu({
   onKategori,
   onKaydedildi,
   kayitMesaji,
-
+  watch = false,
   urunler = [],
 }: {
   urun?: Product;
+  /**
+   * 452 Watch bölümü: kategori "saat" olarak sabitlenir ve seçici gösterilmez.
+   * Normal ürün formunda da "saat" seçeneği çıkmaz; iki bölüm birbirine
+   * karışmaz.
+   */
+  watch?: boolean;
   kategori: ProductCategory;
   onKategori: (k: ProductCategory) => void;
   /**
@@ -110,7 +116,6 @@ export function UrunFormu({
   // yeniden kurulur ve bu bileşenin effect'i sonucu hiç görmeden kaybolur.
   const [sonuc, kaydet, kaydediliyor] = useActionState(
     async (onceki: Sonuc, fd: FormData) => {
-
       // Görseller formdan değil bu listeden gider: sıra ve kaldırma burada.
       let yeniIndex = 0;
       for (const g of gorseller) {
@@ -144,7 +149,8 @@ export function UrunFormu({
   const [silSonuc, sil, siliniyor] = useActionState(
     async (onceki: Sonuc, fd: FormData) => {
       const r = await urunSil(onceki, fd);
-      if (r.durum === "ok") router.push("/admin/urunler");
+      if (r.durum === "ok")
+        router.push(watch ? "/admin/452-watch" : "/admin/urunler");
       return r;
     },
     BOS,
@@ -159,8 +165,10 @@ export function UrunFormu({
   );
   const [sonrakiKey, setSonrakiKey] = useState(renkler.length);
 
+  // Yeni saatte tek beden baştan seçili gelir; stok yazmak yeterli.
   const [bedenler, setBedenler] = useState<Set<ProductSize>>(
-    () => new Set(urun?.variants.map((v) => v.size) ?? []),
+    () =>
+      new Set(urun?.variants.map((v) => v.size) ?? (watch ? [ONE_SIZE] : [])),
   );
 
   // Stok ızgarası: "renkKey-beden" → metin. Boş = o kombinasyon yok.
@@ -173,7 +181,6 @@ export function UrunFormu({
     );
     return out;
   });
-
 
   // Kategori değişince beden sistemi de değişir (ayakkabıda numara).
   const bedenSecenekleri = sizesForCategory(kategori);
@@ -222,8 +229,10 @@ export function UrunFormu({
             <span className={etiket}>Marka</span>
             <input
               name="marka"
-              defaultValue={urun?.brand}
-              placeholder="Nike, adidas, Air Jordan, Vans…"
+              defaultValue={urun?.brand ?? (watch ? "452 Watch" : undefined)}
+              placeholder={
+                watch ? "452 Watch" : "Nike, adidas, Air Jordan, Vans…"
+              }
               className={girdi}
             />
           </label>
@@ -232,7 +241,9 @@ export function UrunFormu({
             <input
               name="model"
               defaultValue={urun?.model}
-              placeholder="Dunk Low, Superstar, Old Skool…"
+              placeholder={
+                watch ? "Chrono, Diver…" : "Dunk Low, Superstar, Old Skool…"
+              }
               className={girdi}
             />
           </label>
@@ -284,21 +295,33 @@ export function UrunFormu({
               className={girdi}
             />
           </label>
-          <label className="grid gap-2">
-            <span className={etiket}>Kategori</span>
-            <select
-              name="kategori"
-              value={kategori}
-              onChange={(e) => onKategori(e.target.value as ProductCategory)}
-              className={girdi}
-            >
-              {CATEGORIES.map((c) => (
-                <option key={c.slug} value={c.slug}>
-                  {c.label}
-                </option>
-              ))}
-            </select>
-          </label>
+          {watch ? (
+            // 452 Watch: kategori sabit, seçici yok.
+            <div className="grid gap-2">
+              <span className={etiket}>Kategori</span>
+              <input type="hidden" name="kategori" value="saat" />
+              <p className="flex h-11 items-center rounded-lg bg-muted/60 px-3 text-sm text-foreground/60 ring-1 ring-border/60">
+                Saat · 452 Watch
+              </p>
+            </div>
+          ) : (
+            <label className="grid gap-2">
+              <span className={etiket}>Kategori</span>
+              <select
+                name="kategori"
+                value={kategori}
+                onChange={(e) => onKategori(e.target.value as ProductCategory)}
+                className={girdi}
+              >
+                {/* Saatler 452 Watch bölümünden eklenir. */}
+                {CATEGORIES.filter((c) => c.slug !== "saat").map((c) => (
+                  <option key={c.slug} value={c.slug}>
+                    {c.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
         </div>
         {kategori !== "ayakkabi" && kategori !== "saat" && (
           <label className="grid gap-2">

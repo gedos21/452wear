@@ -13,7 +13,8 @@ export const dynamic = "force-dynamic";
  * kutusundaki ürünler burada görünmez — önce geri getirilmeleri gerekir.
  */
 export default async function TopluDuzenleSayfasi() {
-  const urunler = await katalogOku();
+  // Saatler 452 Watch bölümünde yönetilir; toplu düzenlemeye karışmaz.
+  const urunler = (await katalogOku()).filter((u) => u.category !== "saat");
 
   return (
     <div>
