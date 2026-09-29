@@ -121,12 +121,6 @@ export function ProductCard({
         </motion.span>
       </motion.div>
 
-      {/* Yalnızca gerçek indirimde; oran eski ve güncel fiyattan hesaplanır.
-          Görselin kırpma alanının dışında durur ki kenardan taşabilsin. */}
-      {discount !== null && !detailOpen && (
-        <DiscountRibbon percent={discount} />
-      )}
-
       {/* Bilgi alanı: marka (güçlü) → model (sakin) → fiyat (en güçlü) →
           indirimde eski fiyat → renkler. */}
       <div className="mt-3.5 font-sf">
@@ -158,16 +152,26 @@ export function ProductCard({
           </Link>
         </h3>
 
-        {/* Güncel fiyat kartın en güçlü öğesi; indirimde eski fiyat hemen
-            altında küçük, gri ve üstü çizili. */}
-        <div className="mt-2.5 text-[17px] font-black leading-none tracking-[-0.01em] sm:text-lg">
-          {formatPrice(product.price, product.currency)}
+        {/* Güncel fiyat kartın en güçlü öğesi. İndirim yalnızca gerçek
+            indirimde, aynı satırda: üstü çizili eski fiyat ve kırmızı oran
+            (eski ve güncel fiyattan hesaplanır). Görselin üstünde etiket yok. */}
+        <div className="mt-2.5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          <span className="text-[17px] font-black leading-none tracking-[-0.01em] sm:text-lg">
+            {formatPrice(product.price, product.currency)}
+          </span>
+          {discount !== null && (
+            <>
+              <span className="text-[12px] font-medium leading-none text-foreground/45 line-through sm:text-[13px]">
+                <span className="sr-only">İndirimsiz fiyat: </span>
+                {formatPrice(product.compareAtPrice!, product.currency)}
+              </span>
+              <span className="text-[12px] font-bold leading-none text-destructive sm:text-[13px]">
+                <span aria-hidden>%{discount}</span>
+                <span className="sr-only">Yüzde {discount} indirim</span>
+              </span>
+            </>
+          )}
         </div>
-        {discount !== null && (
-          <div className="mt-1 text-[11px] font-medium leading-none text-foreground/45 line-through sm:text-xs">
-            {formatPrice(product.compareAtPrice!, product.currency)}
-          </div>
-        )}
 
         <div className="mt-2 flex items-center gap-1.5">
           {dots.map((c) => (
@@ -191,37 +195,5 @@ export function ProductCard({
         </div>
       </div>
     </motion.article>
-  );
-}
-
-/**
- * İndirim kurdelesi rengi. Kırmızıya çevirmek için yalnızca bunu değiştirmek
- * yeter (ör. "var(--destructive)"); kıvrım gölgesi bu renkten türetilir.
- */
-const DISCOUNT_RIBBON_COLOR = "var(--brand)";
-
-/**
- * Görselin sağ üstünde, sağ kenardan hafif taşan indirim kurdelesi. Favori
- * düğmesinin (sağ üst köşe, 10–38px) altından başlar; alttaki küçük üçgen,
- * kurdelenin kartın arkasına kıvrıldığı hissini verir.
- */
-function DiscountRibbon({ percent }: { percent: number }) {
-  return (
-    <span
-      className="pointer-events-none absolute -right-[5px] top-12 z-10"
-      style={{ ["--ribbon" as string]: DISCOUNT_RIBBON_COLOR }}
-    >
-      <span className="block rounded-l-sm bg-[var(--ribbon)] py-[3px] pl-1.5 pr-1.5 font-sf text-[9px] font-bold uppercase leading-none tracking-[0.02em] text-white shadow-[0_3px_8px_-4px_rgb(0_0_0/0.35)] sm:pl-2 sm:pr-2.5 sm:text-[10px] sm:tracking-[0.03em]">
-        <span aria-hidden>%{percent} İndirim</span>
-        <span className="sr-only">Yüzde {percent} indirim</span>
-      </span>
-      <span
-        aria-hidden
-        className="absolute right-0 top-full size-[5px] [clip-path:polygon(0_0,100%_0,0_100%)]"
-        style={{
-          backgroundColor: `color-mix(in oklab, ${DISCOUNT_RIBBON_COLOR} 60%, black)`,
-        }}
-      />
-    </span>
   );
 }

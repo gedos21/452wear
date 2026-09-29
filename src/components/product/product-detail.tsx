@@ -272,6 +272,42 @@ export function ProductDetail({
     setAdded(true);
   }
 
+  // Mobil yapışkan çubuk (yalnızca ürün sayfasında): ana "Sepete Ekle"
+  // ekranda değilken altta görünür.
+  const actionsRef = useRef<HTMLDivElement>(null);
+  const sizesRef = useRef<HTMLDivElement>(null);
+  const [actionsVisible, setActionsVisible] = useState(true);
+  // Sayfanın sonunda footer'ın üstüne binmesin.
+  const [footerVisible, setFooterVisible] = useState(false);
+  useEffect(() => {
+    const el = actionsRef.current;
+    if (panel || !el) return;
+    const footer = document.querySelector("body footer");
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.target === el) setActionsVisible(entry.isIntersecting);
+        else setFooterVisible(entry.isIntersecting);
+      }
+    });
+    io.observe(el);
+    if (footer) io.observe(footer);
+    return () => io.disconnect();
+  }, [panel]);
+  const showStickyBar = !panel && !soldOut && !actionsVisible && !footerVisible;
+
+  /** Çubuktan ekleme: beden seçilmemişse önce bedenlere götürür. */
+  function stickyAdd() {
+    if (!oneSize && !size && sizes.some((s) => s.inStock)) {
+      setError(shoe ? "Lütfen bir numara seç." : "Lütfen bir beden seç.");
+      sizesRef.current?.scrollIntoView({
+        behavior: reduced ? "auto" : "smooth",
+        block: "start",
+      });
+      return;
+    }
+    handleAdd();
+  }
+
   return (
     <div
       className={
@@ -403,22 +439,26 @@ export function ProductDetail({
             {nameParts.model}
           </Heading>
 
-          {/* Fiyat: güncel fiyat en güçlü öğe; indirimde eski fiyat ve
-              gerçek fiyatlardan hesaplanan yüzde. */}
+          {/* Fiyat: güncel fiyat en güçlü öğe; indirimde aynı satırda üstü
+              çizili eski fiyat ve kırmızı oran (ürün kartıyla aynı dil). */}
           <div className="mt-5 font-sf">
-            <p className="text-[28px] font-black leading-none tracking-[-0.02em] sm:text-[32px]">
-              {formatPrice(product.price, product.currency)}
+            <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
+              <span className="text-[28px] font-black leading-none tracking-[-0.02em] sm:text-[32px]">
+                {formatPrice(product.price, product.currency)}
+              </span>
+              {discount !== null && (
+                <>
+                  <span className="text-[16px] font-medium leading-none text-foreground/45 line-through sm:text-[17px]">
+                    <span className="sr-only">İndirimsiz fiyat: </span>
+                    {formatPrice(product.compareAtPrice!, product.currency)}
+                  </span>
+                  <span className="text-[16px] font-bold leading-none text-destructive sm:text-[17px]">
+                    <span aria-hidden>%{discount}</span>
+                    <span className="sr-only">Yüzde {discount} indirim</span>
+                  </span>
+                </>
+              )}
             </p>
-            {discount !== null && (
-              <div className="mt-2 flex items-center gap-2.5">
-                <span className="text-[15px] font-medium text-foreground/45 line-through">
-                  {formatPrice(product.compareAtPrice!, product.currency)}
-                </span>
-                <span className="rounded-sm bg-brand px-2 py-1 text-[11px] font-bold uppercase leading-none tracking-[0.04em] text-white">
-                  %{discount} İndirim
-                </span>
-              </div>
-            )}
             {soldOut && (
               <p className="mt-3 text-[14px] font-semibold" role="status">
                 Bu ürün tükendi.
@@ -498,7 +538,10 @@ export function ProductDetail({
           )}
 
           {/* Numara / Beden (tek bedenli üründe yalnızca stok/hata notu) */}
-          <div className={cn("font-sf", !oneSize && "mt-8")}>
+          <div
+            ref={sizesRef}
+            className={cn("scroll-mt-24 font-sf", !oneSize && "mt-8")}
+          >
             {!oneSize && (
               <>
                 <div className="flex items-center justify-between gap-4">
@@ -609,7 +652,7 @@ export function ProductDetail({
           </div>
 
           {/* Aksiyonlar */}
-          <div className="mt-8 flex items-center gap-3">
+          <div ref={actionsRef} className="mt-8 flex items-center gap-3">
             <button
               type="button"
               onClick={handleAdd}
@@ -753,6 +796,61 @@ export function ProductDetail({
           </div>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {showStickyBar && (
+          <motion.div
+            key="sticky-add"
+            initial={reduced ? { opacity: 0 } : { y: "100%" }}
+            animate={reduced ? { opacity: 1 } : { y: 0 }}
+            exit={reduced ? { opacity: 0 } : { y: "100%" }}
+            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-x-0 bottom-0 z-40 border-t border-foreground/10 bg-background/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 font-sf backdrop-blur lg:hidden"
+          >
+            <div className="flex items-center gap-3">
+              <div className="min-w-0 flex-1">
+                <p className="flex items-baseline gap-2 leading-none">
+                  <span className="text-[18px] font-black tracking-[-0.01em]">
+                    {formatPrice(product.price, product.currency)}
+                  </span>
+                  {discount !== null && (
+                    <span className="text-[12px] font-bold text-destructive">
+                      %{discount}
+                    </span>
+                  )}
+                </p>
+                <p className="mt-1 truncate text-[12px] text-foreground/55">
+                  {oneSize
+                    ? color
+                    : size
+                      ? `${color} · ${size}`
+                      : shoe
+                        ? "Numara seç"
+                        : "Beden seç"}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={stickyAdd}
+                aria-disabled={added || undefined}
+                className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-foreground px-6 text-[13px] font-bold uppercase tracking-[0.05em] text-background transition-colors hover:bg-brand"
+              >
+                {added ? (
+                  <>
+                    <Check className="size-4" strokeWidth={2.2} />
+                    Eklendi
+                  </>
+                ) : (
+                  <>
+                    Sepete Ekle
+                    <ArrowRight className="size-4" strokeWidth={2.2} />
+                  </>
+                )}
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

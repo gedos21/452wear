@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useState } from "react";
 import { AnimatePresence } from "motion/react";
+import { AddedToast } from "./added-toast";
 import { CartDrawer } from "./cart-drawer";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
 
@@ -39,6 +40,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     <CartUiContext.Provider value={{ open, openCart, closeCart }}>
       {children}
       <AnimatePresence>{open && <CartDrawer onClose={closeCart} />}</AnimatePresence>
+      <AddedToast drawerOpen={open} onOpenCart={openCart} />
     </CartUiContext.Provider>
   );
 }

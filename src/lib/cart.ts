@@ -106,6 +106,28 @@ function setItems(next: readonly CartItem[]) {
   emit();
 }
 
+/** Kullanıcı sepete bir şey eklediğinde (hydration ya da başka sekme değil). */
+export type CartAddEvent = {
+  productId: string;
+  size: ProductSize;
+  color: string;
+  qty: number;
+};
+
+const addListeners = new Set<(e: CartAddEvent) => void>();
+
+/**
+ * Sepete ekleme olayına abone olur ("Sepete eklendi" bildirimi için).
+ * Yalnızca `add` çağrısıyla tetiklenir; sepetin localStorage'dan yüklenmesi
+ * ya da başka sekmedeki değişiklik bildirim üretmez.
+ */
+export function onCartAdd(listener: (e: CartAddEvent) => void) {
+  addListeners.add(listener);
+  return () => {
+    addListeners.delete(listener);
+  };
+}
+
 export function useCart() {
   const items = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
@@ -147,6 +169,13 @@ export function useCart() {
               },
             ],
       );
+      for (const listener of addListeners)
+        listener({
+          productId: input.productId,
+          size: input.size,
+          color: input.color,
+          qty,
+        });
       return qty;
     },
     [],
