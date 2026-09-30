@@ -1644,57 +1644,57 @@
       ],
       "colors": [
         {
-          "name": "Beyaz / Siyah",
-          "hex": "#ffffff"
+          "name": "Beyaz",
+          "hex": "#f2efe9"
         }
       ],
       "variants": [
         {
           "id": "p-028-beyaz-36",
           "size": "36",
-          "color": "Beyaz / Siyah",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-37",
           "size": "37",
-          "color": "Beyaz / Siyah",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-38",
           "size": "38",
-          "color": "Beyaz / Siyah",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-39",
           "size": "39",
-          "color": "Beyaz / Siyah",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-40",
           "size": "40",
-          "color": "Beyaz / Siyah",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-41",
           "size": "41",
-          "color": "Beyaz / Siyah",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-42",
           "size": "42",
-          "color": "Beyaz / Siyah",
+          "color": "Beyaz",
           "stock": 10
         },
         {
           "id": "p-028-beyaz-43",
           "size": "43",
-          "color": "Beyaz / Siyah",
+          "color": "Beyaz",
           "stock": 10
         }
       ],
