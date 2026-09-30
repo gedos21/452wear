@@ -5,6 +5,18 @@ import { formatPrice } from "@/lib/format";
 import type { CozulmusKombin } from "@/lib/kombin-panolari";
 
 /**
+ * Kombindeki giyilen parça sayısı: eşofman takımı üst + alt olduğu için iki
+ * parça sayılır (Tech Fleece takım + ayakkabı = 3 parça).
+ */
+function parcaSayisi(kombin: CozulmusKombin) {
+  return kombin.urunler.reduce(
+    (n, u) =>
+      n + (u.category === "esofman" && /tak[ıi]m/i.test(u.name) ? 2 : 1),
+    0,
+  );
+}
+
+/**
  * Kombin panosu kartı: parçalar beyaz bir panoda yan yana (üst/takım büyük,
  * ayakkabı küçük ve biraz aşağıda — "yere serilmiş" düzen), altında ad, kısa
  * tarif ve kombin toplamı. Tıklayınca /kombinler sayfasında o kombine gider.
@@ -52,7 +64,7 @@ export function KombinKarti({
           ))}
         </div>
         <span className="absolute left-4 top-4 rounded-full bg-foreground px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-background sm:left-5 sm:top-5">
-          {kombin.urunler.length} parça
+          {parcaSayisi(kombin)} parça
         </span>
       </div>
 

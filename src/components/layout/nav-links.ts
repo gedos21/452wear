@@ -130,7 +130,6 @@ export const NAV_ITEMS: NavItem[] = [
     showcase: "giyim",
     menu: [
       { label: "Tüm Giyim", href: categoryHref("giyim") },
-      { label: "Hazır Kombinler", href: "/kombinler" },
       categoryItem("tisort"),
       categoryItem("sweatshirt"),
       categoryItem("esofman"),
@@ -138,5 +137,6 @@ export const NAV_ITEMS: NavItem[] = [
       categoryItem("triko"),
     ],
   },
+  { label: "Kombinler", href: "/kombinler" },
   { label: "452 Watch", href: WATCH_HREF, lang: "en", accent: true },
 ];
