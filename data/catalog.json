@@ -356,10 +356,16 @@
       "name": "Vans Old Skool",
       "description": "İkonik yan şerit detayıyla öne çıkan Old Skool, günlük streetwear kombinlerine kolayca uyum sağlayan zamansız bir sneaker.",
       "category": "ayakkabi",
+      "brand": "Vans",
+      "model": "Old Skool",
       "price": 1200,
       "compareAtPrice": 1383,
       "currency": "TRY",
       "images": [
+        {
+          "src": "/products/p-015-64006d1a.png",
+          "alt": "Vans Old Skool"
+        },
         {
           "src": "/products/p-015-7d33dfac.webp",
           "alt": "vans siyah beyaz"
@@ -449,9 +455,7 @@
           "stock": 10
         }
       ],
-      "isNew": true,
-      "brand": "Vans",
-      "model": "Old Skool"
+      "isNew": true
     },
     {
       "id": "p-016",
@@ -6967,7 +6971,8 @@
     "p-002",
     "p-008",
     "p-009",
-    "p-017"
+    "p-017",
+    "p-025"
   ],
   "yonlendirmeler": {
     "air-force-1": "p-012",
