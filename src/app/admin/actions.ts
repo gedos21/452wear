@@ -54,6 +54,7 @@ const KATEGORILER: ProductCategory[] = [
   "saat",
   "esofman",
   "hirka",
+  "triko",
   "tisort",
   "sweatshirt",
 ];

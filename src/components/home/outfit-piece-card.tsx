@@ -9,6 +9,7 @@ const PARCA: Record<ProductCategory, string> = {
   tisort: "Üst",
   sweatshirt: "Üst",
   hirka: "Üst",
+  triko: "Üst",
   esofman: "Alt",
   ayakkabi: "Ayakkabı",
   saat: "Aksesuar",

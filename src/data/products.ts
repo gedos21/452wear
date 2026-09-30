@@ -13,6 +13,7 @@ export const CATEGORIES: {
   { slug: "ayakkabi", label: "Ayakkabı" },
   { slug: "esofman", label: "Eşofman" },
   { slug: "hirka", label: "Hırka" },
+  { slug: "triko", label: "Triko" },
   { slug: "tisort", label: "Tişört" },
   { slug: "sweatshirt", label: "Sweatshirt", lang: "en" },
   { slug: "saat", label: "Saat" },

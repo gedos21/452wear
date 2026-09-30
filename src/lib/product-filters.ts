@@ -11,7 +11,7 @@ import type { Product, ProductCategory, ProductSize } from "@/types/product";
  * URL'de kategori gibi taşınır: /magaza?kategori=giyim.
  */
 export const CATEGORY_GROUPS = {
-  giyim: ["tisort", "sweatshirt", "esofman", "hirka"],
+  giyim: ["tisort", "sweatshirt", "esofman", "hirka", "triko"],
 } as const satisfies Record<string, readonly ProductCategory[]>;
 
 export type CategoryGroup = keyof typeof CATEGORY_GROUPS;

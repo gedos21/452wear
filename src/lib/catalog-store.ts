@@ -360,7 +360,7 @@ export async function kombinVitrini(): Promise<Product[]> {
     (await kategoriVitrini("ayakkabi", 3)).map((p) => p.id),
   );
   const gruplar: ProductCategory[][] = [
-    ["tisort", "sweatshirt", "hirka"],
+    ["tisort", "sweatshirt", "hirka", "triko"],
     ["esofman"],
     ["ayakkabi"],
   ];

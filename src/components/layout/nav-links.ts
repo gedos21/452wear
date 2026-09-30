@@ -134,6 +134,7 @@ export const NAV_ITEMS: NavItem[] = [
       categoryItem("sweatshirt"),
       categoryItem("esofman"),
       categoryItem("hirka"),
+      categoryItem("triko"),
     ],
   },
   { label: "452 Watch", href: WATCH_HREF, lang: "en", accent: true },

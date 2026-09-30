@@ -68,7 +68,7 @@ export const BUTCE_SECENEKLERI: { deger: Butce; etiket: string }[] = [
 type Yuva = "ust" | "alt" | "ayakkabi";
 
 const YUVA_KATEGORILERI: Record<Yuva, ProductCategory[]> = {
-  ust: ["tisort", "sweatshirt", "hirka"],
+  ust: ["tisort", "sweatshirt", "hirka", "triko"],
   alt: ["esofman"],
   ayakkabi: ["ayakkabi"],
 };

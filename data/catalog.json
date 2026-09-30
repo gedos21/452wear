@@ -5768,6 +5768,522 @@
         }
       ],
       "isNew": true
+    },
+    {
+      "id": "p-080",
+      "slug": "guess-ucgen-logo-triko-kazak-bordo",
+      "name": "Guess Üçgen Logo Triko Kazak",
+      "description": "Bordo örgü triko kazak. Göğüste beyaz Guess üçgen logosu; bisiklet yaka, ribanalı manşet ve etek.",
+      "category": "triko",
+      "brand": "Guess",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-080-e3910131.png",
+          "alt": "Guess Üçgen Logo Triko Kazak"
+        },
+        {
+          "src": "/products/p-080-fbd7ef4d.jpg",
+          "alt": "Guess Üçgen Logo Triko Kazak"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Bordo",
+          "hex": "#6b1f2a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-080-bordo-xs",
+          "size": "XS",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-080-bordo-s",
+          "size": "S",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-080-bordo-m",
+          "size": "M",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-080-bordo-l",
+          "size": "L",
+          "color": "Bordo",
+          "stock": 10
+        },
+        {
+          "id": "p-080-bordo-xl",
+          "size": "XL",
+          "color": "Bordo",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-081",
+      "slug": "guess-ucgen-logo-triko-kazak-siyah",
+      "name": "Guess Üçgen Logo Triko Kazak",
+      "description": "Siyah örgü triko kazak. Göğüste beyaz Guess üçgen logosu; bisiklet yaka, ribanalı manşet ve etek.",
+      "category": "triko",
+      "brand": "Guess",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-081-5ffed4a7.png",
+          "alt": "Guess Üçgen Logo Triko Kazak"
+        },
+        {
+          "src": "/products/p-081-b03a1aaf.jpg",
+          "alt": "Guess Üçgen Logo Triko Kazak"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-081-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-081-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-081-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-081-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-081-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-082",
+      "slug": "burberry-tb-monogram-triko-kazak-siyah",
+      "name": "Burberry TB Monogram Triko Kazak",
+      "description": "Siyah örgü triko kazak. Göğüste daire içinde işlemeli TB monogram arması; bisiklet yaka, ribanalı manşet ve etek.",
+      "category": "triko",
+      "brand": "Burberry",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-082-e1a8f522.png",
+          "alt": "Burberry TB Monogram Triko Kazak"
+        },
+        {
+          "src": "/products/p-082-59f9ee26.jpg",
+          "alt": "Burberry TB Monogram Triko Kazak"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-082-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-082-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-082-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-082-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-082-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-083",
+      "slug": "champion-script-logo-sweatshirt-lacivert",
+      "name": "Champion Script Logo Sweatshirt",
+      "description": "Lacivert bisiklet yaka sweatshirt. Göğüste beyaz Champion yazı logosu, kolda C logolu arma; ribanalı yaka, manşet ve etek.",
+      "category": "sweatshirt",
+      "brand": "Champion",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-083-22d26dc9.png",
+          "alt": "Champion Script Logo Sweatshirt"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Lacivert",
+          "hex": "#1f2a6b"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-083-lacivert-xs",
+          "size": "XS",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-083-lacivert-s",
+          "size": "S",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-083-lacivert-m",
+          "size": "M",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-083-lacivert-l",
+          "size": "L",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-083-lacivert-xl",
+          "size": "XL",
+          "color": "Lacivert",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-084",
+      "slug": "adidas-originals-uc-seritli-esofman-ustu-siyah-beyaz",
+      "name": "Adidas Originals Üç Şeritli Eşofman Üstü",
+      "description": "Siyah fermuarlı eşofman üstü. Kollarda beyaz üç şerit, göğüste Trefoil logo; dik yaka, fermuarlı yan cepler.",
+      "category": "esofman",
+      "brand": "Adidas",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-084-733e856c.png",
+          "alt": "Adidas Originals Üç Şeritli Eşofman Üstü"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah / Beyaz",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-084-siyah-beyaz-xs",
+          "size": "XS",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-084-siyah-beyaz-s",
+          "size": "S",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-084-siyah-beyaz-m",
+          "size": "M",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-084-siyah-beyaz-l",
+          "size": "L",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-084-siyah-beyaz-xl",
+          "size": "XL",
+          "color": "Siyah / Beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-085",
+      "slug": "adidas-originals-uc-seritli-esofman-ustu-beyaz-siyah",
+      "name": "Adidas Originals Üç Şeritli Eşofman Üstü",
+      "description": "Beyaz fermuarlı eşofman üstü. Kollarda siyah üç şerit, göğüste Trefoil logo; dik yaka, fermuarlı yan cepler.",
+      "category": "esofman",
+      "brand": "Adidas",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-085-ca25b546.png",
+          "alt": "Adidas Originals Üç Şeritli Eşofman Üstü"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Beyaz / Siyah",
+          "hex": "#f2efe9"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-085-beyaz-siyah-xs",
+          "size": "XS",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-085-beyaz-siyah-s",
+          "size": "S",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-085-beyaz-siyah-m",
+          "size": "M",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-085-beyaz-siyah-l",
+          "size": "L",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-085-beyaz-siyah-xl",
+          "size": "XL",
+          "color": "Beyaz / Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-086",
+      "slug": "guess-seritli-esofman-ustu-siyah",
+      "name": "Guess Şeritli Eşofman Üstü",
+      "description": "Siyah fermuarlı eşofman üstü. Göğüs boyunca kırmızı-beyaz şerit üzerinde Guess yazısı; dik yaka, yan cepler.",
+      "category": "esofman",
+      "brand": "Guess",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-086-ec3e288c.png",
+          "alt": "Guess Şeritli Eşofman Üstü"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-086-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-086-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-086-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-086-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-086-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-087",
+      "slug": "adidas-renk-bloklu-esofman-ustu-lacivert-beyaz",
+      "name": "Adidas Renk Bloklu Eşofman Üstü",
+      "description": "Lacivert ve beyaz renk bloklu fermuarlı eşofman üstü. Göğüste Adidas logosu, kollarda ve gövdede üç şerit; dik yaka.",
+      "category": "esofman",
+      "brand": "Adidas",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-087-25cdd3b4.jpg",
+          "alt": "Adidas Renk Bloklu Eşofman Üstü"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Lacivert / Beyaz",
+          "hex": "#1c2541"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-087-lacivert-beyaz-xs",
+          "size": "XS",
+          "color": "Lacivert / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-087-lacivert-beyaz-s",
+          "size": "S",
+          "color": "Lacivert / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-087-lacivert-beyaz-m",
+          "size": "M",
+          "color": "Lacivert / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-087-lacivert-beyaz-l",
+          "size": "L",
+          "color": "Lacivert / Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-087-lacivert-beyaz-xl",
+          "size": "XL",
+          "color": "Lacivert / Beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-088",
+      "slug": "adidas-originals-uc-seritli-esofman-ustu-lacivert-kirmizi",
+      "name": "Adidas Originals Üç Şeritli Eşofman Üstü",
+      "description": "Lacivert fermuarlı eşofman üstü. Kollarda kırmızı üç şerit, göğüste kırmızı Trefoil logo; dik yaka.",
+      "category": "esofman",
+      "brand": "Adidas",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-088-e53b8fac.jpg",
+          "alt": "Adidas Originals Üç Şeritli Eşofman Üstü"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Lacivert / Kırmızı",
+          "hex": "#1c2541"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-088-lacivert-kirmizi-xs",
+          "size": "XS",
+          "color": "Lacivert / Kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-088-lacivert-kirmizi-s",
+          "size": "S",
+          "color": "Lacivert / Kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-088-lacivert-kirmizi-m",
+          "size": "M",
+          "color": "Lacivert / Kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-088-lacivert-kirmizi-l",
+          "size": "L",
+          "color": "Lacivert / Kırmızı",
+          "stock": 10
+        },
+        {
+          "id": "p-088-lacivert-kirmizi-xl",
+          "size": "XL",
+          "color": "Lacivert / Kırmızı",
+          "stock": 10
+        }
+      ],
+      "isNew": true
     }
   ],
   "degisen": {

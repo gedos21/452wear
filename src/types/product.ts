@@ -26,6 +26,7 @@ export type ProductCategory =
   | "ayakkabi"
   | "esofman"
   | "hirka"
+  | "triko"
   | "tisort"
   | "sweatshirt"
   | "saat";

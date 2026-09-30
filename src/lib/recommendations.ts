@@ -22,7 +22,7 @@ const NEUTRAL: OutfitAnswers = {
   bottom: "farketmez",
 };
 
-const UST: ProductCategory[] = ["tisort", "sweatshirt", "hirka"];
+const UST: ProductCategory[] = ["tisort", "sweatshirt", "hirka", "triko"];
 const ALT: ProductCategory[] = ["esofman"];
 const AYAKKABI: ProductCategory[] = ["ayakkabi"];
 
