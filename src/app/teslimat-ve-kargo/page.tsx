@@ -11,13 +11,12 @@ export default function ShippingPage() {
     <LegalPageLayout page={page}>
       <Section no={1} title="Sipariş Hazırlama">
         <P>
-          Siparişin, ödeme onayının ardından aynı gün hazırlanır ve kargoya
-          verilir.
+          Siparişin, ödeme onayının ardından 1–3 iş günü içinde hazırlanır ve
+          kargoya verilir.
         </P>
         <P>
           Hafta sonu ve resmî tatillerde hazırlama ve kargo teslimi yapılmaz;
-          bu günlerde verilen siparişler takip eden ilk iş günü kargoya
-          verilir.
+          bu günler süreye dâhil edilmez.
         </P>
       </Section>
 

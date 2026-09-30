@@ -57,8 +57,8 @@ export default function PreInfoPage() {
 
       <Section no={4} title="Teslimat">
         <P>
-          Sipariş, ödeme onayının ardından aynı gün (hafta sonu ve resmî
-          tatillerde takip eden ilk iş günü) hazırlanarak kargoya verilir. Teslimat, alıcının belirttiği adrese{" "}
+          Sipariş, ödeme onayının ardından 1–3 iş günü içinde (hafta sonu ve
+          resmî tatiller hariç) hazırlanarak kargoya verilir. Teslimat, alıcının belirttiği adrese{" "}
           <Slot>[KARGO FİRMASI]</Slot> aracılığıyla yapılır. Kargo süreci ve
           ücretlere ilişkin ayrıntılar Teslimat ve Kargo sayfasındadır.
         </P>

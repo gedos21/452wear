@@ -747,8 +747,8 @@ export function ProductDetail({
             <ServiceNote icon={Truck} title="Ücretsiz kargo">
               {formatPrice(FREE_SHIPPING_THRESHOLD)} üzeri siparişlerde.
             </ServiceNote>
-            <ServiceNote icon={Timer} title="Aynı gün kargo">
-              Siparişin aynı gün kargoya verilir.
+            <ServiceNote icon={Timer} title="Hızlı gönderim">
+              Siparişin 1–3 iş günü içinde kargoya verilir.
             </ServiceNote>
             <ServiceNote icon={RotateCcw} title="Kolay iade">
               14 gün içinde gerekçesiz iade.

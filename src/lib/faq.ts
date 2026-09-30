@@ -29,7 +29,7 @@ export const FAQ: FaqGroup[] = [
     items: [
       {
         q: "Siparişim ne zaman kargoya verilir?",
-        a: "Siparişin, ödeme onayının ardından aynı gün hazırlanır ve kargoya verilir. Hafta sonu ve resmî tatillerde verilen siparişler takip eden ilk iş günü kargoya verilir.",
+        a: "Siparişin, ödeme onayının ardından 1–3 iş günü içinde hazırlanır ve kargoya verilir. Hafta sonu ve resmî tatiller bu süreye dâhil değildir.",
         link: { href: "/teslimat-ve-kargo", label: "Teslimat ve Kargo" },
       },
       {
