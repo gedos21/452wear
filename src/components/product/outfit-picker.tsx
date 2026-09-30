@@ -54,9 +54,10 @@ export function OutfitPicker({
     ),
   );
   const [uyari, setUyari] = useState<string | null>(null);
-  const [sonuc, setSonuc] = useState<{ eklenen: number; dolu: string[] } | null>(
-    null,
-  );
+  const [sonuc, setSonuc] = useState<{
+    eklenen: number;
+    dolu: string[];
+  } | null>(null);
   const kilit = useRef(false);
 
   useEffect(() => {
@@ -109,7 +110,13 @@ export function OutfitPicker({
 
   return (
     <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,18rem)] lg:items-start lg:gap-12">
-      <ul className="grid grid-cols-3 gap-3 sm:gap-4">
+      {/* İki parçalı kombinde üçüncü sütun boş kalmasın. */}
+      <ul
+        className={cn(
+          "grid gap-3 sm:gap-4",
+          pieces.length === 2 ? "grid-cols-2 sm:max-w-md" : "grid-cols-3",
+        )}
+      >
         {pieces.map((piece) => {
           const { brand, model } = productNameParts(piece);
           const bu = piece.id === currentId;
@@ -118,7 +125,9 @@ export function OutfitPicker({
           return (
             <li key={piece.id}>
               <Link href={`/urun/${piece.slug}`} className="group block">
-                <div className={`relative ${PRODUCT_SURFACE} ${PRODUCT_ASPECT}`}>
+                <div
+                  className={`relative ${PRODUCT_SURFACE} ${PRODUCT_ASPECT}`}
+                >
                   <Image
                     src={piece.images[0].src}
                     alt={piece.images[0].alt}

@@ -130,6 +130,7 @@ export const NAV_ITEMS: NavItem[] = [
     showcase: "giyim",
     menu: [
       { label: "Tüm Giyim", href: categoryHref("giyim") },
+      { label: "Hazır Kombinler", href: "/kombinler" },
       categoryItem("tisort"),
       categoryItem("sweatshirt"),
       categoryItem("esofman"),

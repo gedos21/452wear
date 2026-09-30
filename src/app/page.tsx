@@ -5,13 +5,15 @@ import { BestSellers } from "@/components/home/best-sellers";
 import { CategoryTiles } from "@/components/home/category-tiles";
 import { ShoeCampaign } from "@/components/home/shoe-campaign";
 import { KombinOner } from "@/components/home/kombin-oner";
+import { KombinPanolari } from "@/components/home/kombin-panolari";
 import { RecentlyViewedOnHome } from "@/components/product/recently-viewed";
 import { JoinSection } from "@/components/home/join-section";
 
 /**
  * Ana sayfa sırası: hero (yeni gelenler) → çok satanlar → kampanya bannerı →
- * ayakkabılar / giyim kategori bannerı → son baktıkların (yalnızca daha önce
- * ürün gezmiş ziyaretçide) → kombin öner → bize katıl → footer.
+ * ayakkabılar / giyim kategori bannerı → hazır kombinler → son baktıkların
+ * (yalnızca daha önce ürün gezmiş ziyaretçide) → kombin öner → bize katıl →
+ * footer.
  * Ürün ızgaraları ile editorial bannerlar dönüşümlü gider; yeni bir kampanya
  * eklemek için araya bir <CampaignBanner /> koymak yeterli.
  */
@@ -24,6 +26,7 @@ export default function HomePage() {
         <BestSellers />
         <ShoeCampaign />
         <CategoryTiles />
+        <KombinPanolari />
         <RecentlyViewedOnHome />
         <KombinOner />
         <JoinSection />
