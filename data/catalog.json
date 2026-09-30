@@ -6284,6 +6284,234 @@
         }
       ],
       "isNew": true
+    },
+    {
+      "id": "p-089",
+      "slug": "burberry-tb-monogram-triko-kazak-lacivert",
+      "name": "Burberry TB Monogram Triko Kazak",
+      "description": "Lacivert örgü triko kazak. Göğüste daire içinde işlemeli TB monogram arması; bisiklet yaka, ribanalı manşet ve etek.",
+      "category": "triko",
+      "brand": "Burberry",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-089-6c772604.png",
+          "alt": "Burberry TB Monogram Triko Kazak"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Lacivert",
+          "hex": "#1f2a52"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-089-lacivert-xs",
+          "size": "XS",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-089-lacivert-s",
+          "size": "S",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-089-lacivert-m",
+          "size": "M",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-089-lacivert-l",
+          "size": "L",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-089-lacivert-xl",
+          "size": "XL",
+          "color": "Lacivert",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-090",
+      "slug": "louis-vuitton-monogram-triko-kazak-siyah",
+      "name": "Louis Vuitton Monogram Triko Kazak",
+      "description": "Siyah örgü triko kazak. Önde ve kollarda beyaz, büyük boy LV monogram ve çiçek motifleri; bisiklet yaka, ribanalı manşet ve etek.",
+      "category": "triko",
+      "brand": "Louis Vuitton",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-090-af6fb3dd.png",
+          "alt": "Louis Vuitton Monogram Triko Kazak"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-090-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-090-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-090-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-090-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-090-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-091",
+      "slug": "gant-yarim-fermuarli-triko-siyah",
+      "name": "Gant Yarım Fermuarlı Triko",
+      "description": "Siyah kalın fitilli örgü triko. Dik yaka, metal yarım fermuar, göğüste işlemeli Gant arması; reglan kol.",
+      "category": "triko",
+      "brand": "Gant",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-091-76ddc7a7.png",
+          "alt": "Gant Yarım Fermuarlı Triko"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-091-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-091-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-091-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-091-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-091-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-092",
+      "slug": "gant-yarim-fermuarli-triko-ekru",
+      "name": "Gant Yarım Fermuarlı Triko",
+      "description": "Ekru kalın fitilli örgü triko. Dik yaka, metal yarım fermuar, göğüste işlemeli Gant arması; reglan kol.",
+      "category": "triko",
+      "brand": "Gant",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-092-a5b7f271.png",
+          "alt": "Gant Yarım Fermuarlı Triko"
+        },
+        {
+          "src": "/products/p-092-448e117f.jpg",
+          "alt": "Gant Yarım Fermuarlı Triko"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Ekru",
+          "hex": "#efe9dc"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-092-ekru-xs",
+          "size": "XS",
+          "color": "Ekru",
+          "stock": 10
+        },
+        {
+          "id": "p-092-ekru-s",
+          "size": "S",
+          "color": "Ekru",
+          "stock": 10
+        },
+        {
+          "id": "p-092-ekru-m",
+          "size": "M",
+          "color": "Ekru",
+          "stock": 10
+        },
+        {
+          "id": "p-092-ekru-l",
+          "size": "L",
+          "color": "Ekru",
+          "stock": 10
+        },
+        {
+          "id": "p-092-ekru-xl",
+          "size": "XL",
+          "color": "Ekru",
+          "stock": 10
+        }
+      ],
+      "isNew": true
     }
   ],
   "degisen": {
