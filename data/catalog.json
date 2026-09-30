@@ -5307,6 +5307,467 @@
         }
       ],
       "isNew": true
+    },
+    {
+      "id": "p-072",
+      "slug": "syna-world-tech-fleece-takim",
+      "name": "Syna World Tech Fleece Takım",
+      "description": "Gri ve siyahın göğüste çaprazla bölündüğü Tech Fleece takım. Göğüste ve paçada bej Syna World grafiti logosu, kapüşonda \"Life of Syn\" yazısı. Fermuarlı kapüşonlu üst ve fermuar cepli dar paça jogger.",
+      "category": "esofman",
+      "brand": "Syna World",
+      "model": "Tech Fleece",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-072-bbf48a3d.png",
+          "alt": "Syna World Tech Fleece Takım"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Gri / Siyah",
+          "hex": "#7c7f84"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-072-gri-siyah-xs",
+          "size": "XS",
+          "color": "Gri / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-072-gri-siyah-s",
+          "size": "S",
+          "color": "Gri / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-072-gri-siyah-m",
+          "size": "M",
+          "color": "Gri / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-072-gri-siyah-l",
+          "size": "L",
+          "color": "Gri / Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-072-gri-siyah-xl",
+          "size": "XL",
+          "color": "Gri / Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-073",
+      "slug": "nike-tech-fleece-takim-siyah",
+      "name": "Nike Tech Fleece Takım",
+      "description": "Baştan sona siyah Tech Fleece takım. Göğüste çapraz dikiş detayı, fermuarlı kapüşonlu üst ve fermuar cepli dar paça jogger.",
+      "category": "esofman",
+      "brand": "Nike",
+      "model": "Tech Fleece",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-073-4bc6c11b.png",
+          "alt": "Nike Tech Fleece Takım"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-073-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-073-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-073-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-073-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-073-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-074",
+      "slug": "nike-tech-fleece-takim-saks-mavisi",
+      "name": "Nike Tech Fleece Takım",
+      "description": "Canlı saks mavisi Tech Fleece takım. Göğüste siyah çapraz dikiş, fermuarlı kapüşonlu üst ve fermuar cepli dar paça jogger.",
+      "category": "esofman",
+      "brand": "Nike",
+      "model": "Tech Fleece",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-074-26ec174e.png",
+          "alt": "Nike Tech Fleece Takım"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Saks Mavisi",
+          "hex": "#1f4fd8"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-074-saks-mavisi-xs",
+          "size": "XS",
+          "color": "Saks Mavisi",
+          "stock": 10
+        },
+        {
+          "id": "p-074-saks-mavisi-s",
+          "size": "S",
+          "color": "Saks Mavisi",
+          "stock": 10
+        },
+        {
+          "id": "p-074-saks-mavisi-m",
+          "size": "M",
+          "color": "Saks Mavisi",
+          "stock": 10
+        },
+        {
+          "id": "p-074-saks-mavisi-l",
+          "size": "L",
+          "color": "Saks Mavisi",
+          "stock": 10
+        },
+        {
+          "id": "p-074-saks-mavisi-xl",
+          "size": "XL",
+          "color": "Saks Mavisi",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-075",
+      "slug": "champion-script-logo-sweatshirt-gri",
+      "name": "Champion Script Logo Sweatshirt",
+      "description": "Gri melanj bisiklet yaka sweatshirt. Göğüste lacivert Champion yazı logosu, kolda C logolu arma; ribanalı yaka, manşet ve etek.",
+      "category": "sweatshirt",
+      "brand": "Champion",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-075-da8abf19.png",
+          "alt": "Champion Script Logo Sweatshirt"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Gri",
+          "hex": "#a7a9ac"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-075-gri-xs",
+          "size": "XS",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-075-gri-s",
+          "size": "S",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-075-gri-m",
+          "size": "M",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-075-gri-l",
+          "size": "L",
+          "color": "Gri",
+          "stock": 10
+        },
+        {
+          "id": "p-075-gri-xl",
+          "size": "XL",
+          "color": "Gri",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-076",
+      "slug": "champion-script-logo-sweatshirt-beyaz",
+      "name": "Champion Script Logo Sweatshirt",
+      "description": "Beyaz bisiklet yaka sweatshirt. Göğüste lacivert Champion yazı logosu, kolda C logolu arma; ribanalı yaka, manşet ve etek.",
+      "category": "sweatshirt",
+      "brand": "Champion",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-076-9eba43fd.png",
+          "alt": "Champion Script Logo Sweatshirt"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Beyaz",
+          "hex": "#f2efe9"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-076-beyaz-xs",
+          "size": "XS",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-076-beyaz-s",
+          "size": "S",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-076-beyaz-m",
+          "size": "M",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-076-beyaz-l",
+          "size": "L",
+          "color": "Beyaz",
+          "stock": 10
+        },
+        {
+          "id": "p-076-beyaz-xl",
+          "size": "XL",
+          "color": "Beyaz",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-077",
+      "slug": "nike-72-baskili-hoodie",
+      "name": "Nike 72 Baskılı Hoodie",
+      "description": "Lacivert kapüşonlu sweatshirt. Göğüste kırmızı swoosh ve kanatlı figür nakışı; sırtta bulutlar arasında kanatlı at ile büyük kırmızı \"72 NIKE\" baskısı. Kanguru cep, reglan kol.",
+      "category": "sweatshirt",
+      "brand": "Nike",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-077-1e851135.png",
+          "alt": "Nike 72 Baskılı Hoodie"
+        },
+        {
+          "src": "/products/p-077-ea5f5417.png",
+          "alt": "Nike 72 Baskılı Hoodie"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Lacivert",
+          "hex": "#1c2541"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-077-lacivert-xs",
+          "size": "XS",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-077-lacivert-s",
+          "size": "S",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-077-lacivert-m",
+          "size": "M",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-077-lacivert-l",
+          "size": "L",
+          "color": "Lacivert",
+          "stock": 10
+        },
+        {
+          "id": "p-077-lacivert-xl",
+          "size": "XL",
+          "color": "Lacivert",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-078",
+      "slug": "rhinestone-omurga-sweat",
+      "name": "Rhinestone Omurga Sweat",
+      "description": "Siyah kapüşonlu sweatshirt. Önde beyaz gotik yazı baskısı, sırtta taşlarla işlenmiş büyük omurga ve kanat deseni. Kanguru cep.",
+      "category": "sweatshirt",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-078-d19ed23e.jpg",
+          "alt": "Rhinestone Omurga Sweat"
+        },
+        {
+          "src": "/products/p-078-7e8741f0.jpg",
+          "alt": "Rhinestone Omurga Sweat"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-078-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-078-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-078-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-078-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-078-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
+    },
+    {
+      "id": "p-079",
+      "slug": "rhinestone-orumcek-fermuarli-sweat",
+      "name": "Rhinestone Örümcek Fermuarlı Sweat",
+      "description": "Siyah fermuarlı kapüşonlu sweatshirt. Göğüste taşlarla işlenmiş küçük örümcek, sırtta kanatları açılmış büyük taşlı örümcek deseni. Metal fermuar, iki yan cep.",
+      "category": "sweatshirt",
+      "price": 1200,
+      "compareAtPrice": 1400,
+      "currency": "TRY",
+      "images": [
+        {
+          "src": "/products/p-079-3b46bfae.png",
+          "alt": "Rhinestone Örümcek Fermuarlı Sweat"
+        },
+        {
+          "src": "/products/p-079-9fe41d5b.jpg",
+          "alt": "Rhinestone Örümcek Fermuarlı Sweat"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Siyah",
+          "hex": "#1a1a1a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "p-079-siyah-xs",
+          "size": "XS",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-079-siyah-s",
+          "size": "S",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-079-siyah-m",
+          "size": "M",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-079-siyah-l",
+          "size": "L",
+          "color": "Siyah",
+          "stock": 10
+        },
+        {
+          "id": "p-079-siyah-xl",
+          "size": "XL",
+          "color": "Siyah",
+          "stock": 10
+        }
+      ],
+      "isNew": true
     }
   ],
   "degisen": {
