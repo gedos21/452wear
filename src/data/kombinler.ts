@@ -26,7 +26,7 @@ export const KOMBIN_PANOLARI: KombinPanosu[] = [
     slug: "drill",
     ad: "Drill",
     not: "Syna World takım ve TN: sahnenin üniforması.",
-    parcalar: ["syna-world-tech-fleece-takim", "nike-tn-gri-siyah"],
+    parcalar: ["syna-world-tech-fleece-takim", "nike-tn-beyaz-siyah"],
   },
   {
     slug: "saks-mavisi",
@@ -50,6 +50,6 @@ export const KOMBIN_PANOLARI: KombinPanosu[] = [
     slug: "ekru-triko",
     ad: "Ekru Triko",
     not: "Yarım fermuarlı ekru triko, kahverengi Spezial ile sakin bir görünüm.",
-    parcalar: ["gant-yarim-fermuarli-triko-ekru", "spezial-kahverengi"],
+    parcalar: ["gant-yarim-fermuarli-triko-ekru", "spezial-turuncu"],
   },
 ];
