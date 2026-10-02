@@ -3,8 +3,8 @@
     {
       "id": "p-011",
       "slug": "adidas-superstar",
-      "name": "Adidas Süperstar",
-      "description": "Adidas Süperstar",
+      "name": "Adidas Superstar",
+      "description": "Beyaz deri üzerinde siyah 3 bant ve ikonik kabuk burunla Superstar, retro havasını her kombine taşıyan bir klasik.",
       "category": "ayakkabi",
       "price": 1199,
       "compareAtPrice": 1399,
@@ -12,25 +12,25 @@
       "images": [
         {
           "src": "/products/p-011-f45165db.jpg",
-          "alt": "Adidas Süperstar"
+          "alt": "Adidas Superstar beyaz siyah"
         },
         {
           "src": "/products/p-011-5706411b.jpg",
-          "alt": "Adidas Süperstar"
+          "alt": "Adidas Superstar beyaz siyah"
         },
         {
           "src": "/products/p-011-37c109c9.jpg",
-          "alt": "Adidas Süperstar"
+          "alt": "Adidas Superstar beyaz siyah"
         },
         {
           "src": "/products/p-011-dd52f863.jpg",
-          "alt": "Adidas Süperstar"
+          "alt": "Adidas Superstar beyaz siyah"
         }
       ],
       "colors": [
         {
-          "name": "Siyah Beyaz",
-          "hex": "#1a1a1a"
+          "name": "Beyaz / Siyah",
+          "hex": "#f2efe9"
         }
       ],
       "variants": [
@@ -89,7 +89,8 @@
           "stock": 5
         }
       ],
-      "isNew": true
+      "isNew": true,
+      "brand": "Adidas"
     },
     {
       "id": "p-012",
@@ -359,7 +360,7 @@
       "brand": "Vans",
       "model": "Old Skool",
       "price": 1200,
-      "compareAtPrice": 1383,
+      "compareAtPrice": 1400,
       "currency": "TRY",
       "images": [
         {
@@ -758,9 +759,9 @@
     },
     {
       "id": "p-019",
-      "slug": "nike-dragon",
-      "name": "Nike Dunk Low",
-      "description": "Bordo ve beyaz renk kontrastını altın detaylarla tamamlayan Dunk Low, sade kombinlere güçlü bir vurgu katar.",
+      "slug": "air-jordan-1-low-bordo",
+      "name": "Air Jordan 1 Low",
+      "description": "Bordo ve beyaz deriyi altın Swoosh ve kanat logosuyla buluşturan Air Jordan 1 Low, sade kombinlere güçlü bir vurgu katar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -768,27 +769,27 @@
       "images": [
         {
           "src": "/products/p-019-temiz-072a0597.webp",
-          "alt": "Nike Dunk Low"
+          "alt": "Air Jordan 1 Low bordo beyaz"
         },
         {
           "src": "/products/p-019-69c98a1e.webp",
-          "alt": "nike dragon"
+          "alt": "Air Jordan 1 Low bordo beyaz"
         },
         {
           "src": "/products/p-019-273c2307.webp",
-          "alt": "nike dragon"
+          "alt": "Air Jordan 1 Low bordo beyaz"
         },
         {
           "src": "/products/p-019-dd98b3e4.webp",
-          "alt": "nike dragon"
+          "alt": "Air Jordan 1 Low bordo beyaz"
         },
         {
           "src": "/products/p-019-53249d52.webp",
-          "alt": "nike dragon"
+          "alt": "Air Jordan 1 Low bordo beyaz"
         },
         {
           "src": "/products/p-019-3a5fda84.webp",
-          "alt": "nike dragon"
+          "alt": "Air Jordan 1 Low bordo beyaz"
         }
       ],
       "colors": [
@@ -1514,9 +1515,9 @@
     },
     {
       "id": "p-027",
-      "slug": "dunk-beyaz",
-      "name": "Nike Dunk Low",
-      "description": "Siyah-beyaz renk bloklarıyla zamansız Dunk görünümü sunan model, farklı tarz ve renklerdeki kombinlere kolayca uyum sağlar.",
+      "slug": "air-jordan-1-low-siyah-beyaz",
+      "name": "Air Jordan 1 Low",
+      "description": "Siyah-beyaz renk bloklarıyla zamansız bir görünüm sunan Air Jordan 1 Low, her tarzdaki kombine kolayca uyum sağlar.",
       "category": "ayakkabi",
       "price": 1200,
       "compareAtPrice": 1400,
@@ -1524,27 +1525,27 @@
       "images": [
         {
           "src": "/products/p-027-temiz-50c84da9.webp",
-          "alt": "Nike Dunk Low"
+          "alt": "Air Jordan 1 Low siyah beyaz"
         },
         {
           "src": "/products/p-027-49001f77.webp",
-          "alt": "dunk beyaz"
+          "alt": "Air Jordan 1 Low siyah beyaz"
         },
         {
           "src": "/products/p-027-07dd0cec.webp",
-          "alt": "dunk beyaz"
+          "alt": "Air Jordan 1 Low siyah beyaz"
         },
         {
           "src": "/products/p-027-1a983bdc.webp",
-          "alt": "dunk beyaz"
+          "alt": "Air Jordan 1 Low siyah beyaz"
         },
         {
           "src": "/products/p-027-5ee046f5.webp",
-          "alt": "dunk beyaz"
+          "alt": "Air Jordan 1 Low siyah beyaz"
         },
         {
           "src": "/products/p-027-97961838.webp",
-          "alt": "dunk beyaz"
+          "alt": "Air Jordan 1 Low siyah beyaz"
         }
       ],
       "colors": [
@@ -2833,7 +2834,7 @@
       "description": "Açık mavi tonlarını klasik Jordan 1 Low silüetiyle bir araya getiren, temiz ve günlük bir model.",
       "category": "ayakkabi",
       "price": 1200,
-      "compareAtPrice": 1378,
+      "compareAtPrice": 1400,
       "currency": "TRY",
       "images": [
         {
@@ -6991,6 +6992,8 @@
     "oversize-tisort": "p-001",
     "kapusonlu-sweatshirt": "p-002",
     "fermuarli-sweatshirt": "p-008",
-    "bisiklet-yaka-sweatshirt": "p-009"
+    "bisiklet-yaka-sweatshirt": "p-009",
+    "nike-dragon": "p-019",
+    "dunk-beyaz": "p-027"
   }
 }
