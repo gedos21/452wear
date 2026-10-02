@@ -73,7 +73,7 @@ const MESSAGES: Record<string, string> = {
 };
 
 /** Sunucumuzun (lib/server/auth.ts) zaten Türkçe mesajla döndüğü kodlar. */
-const OWN_CODES = new Set(["INVALID_PROFILE", "FIELD_NOT_ALLOWED"]);
+const OWN_CODES = new Set(["INVALID_PROFILE", "FIELD_NOT_ALLOWED", "RESET_EMAIL_UNAVAILABLE"]);
 
 const GENERIC = "Bir şeyler ters gitti. Lütfen tekrar dene.";
 const NETWORK = "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";

@@ -3,7 +3,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { APIError, createAuthMiddleware, getSessionFromCtx } from "better-auth/api";
 import { getDb, schema } from "./db";
-import { resetPasswordEmail, sendEmail } from "./email";
+import { isEmailConfigured, resetPasswordEmail, sendEmail } from "./email";
 import { validateProfile } from "@/lib/profile";
 
 /**
@@ -43,6 +43,20 @@ const DELETE_REAUTH_WINDOW_MS = 15 * 60 * 1000;
  *   Google ile giren hesapta oturum son 15 dakikada açılmış olmalı.
  */
 const beforeHooks = createAuthMiddleware(async (ctx) => {
+  if (
+    ctx.path === "/request-password-reset" &&
+    process.env.NODE_ENV === "production" &&
+    !isEmailConfigured()
+  ) {
+    // E-posta servisi (alan adı + Resend) bağlanana kadar "gönderdik" deyip
+    // hiçbir şey göndermemek yerine dürüstçe reddedilir.
+    throw new APIError("SERVICE_UNAVAILABLE", {
+      code: "RESET_EMAIL_UNAVAILABLE",
+      message:
+        "Şifre e-postası şu an gönderilemiyor; bu özellik çok yakında açılacak. Acil durumda WhatsApp'tan bize yazabilirsin.",
+    });
+  }
+
   if (ctx.path === "/update-user") {
     const body = (ctx.body ?? {}) as Record<string, unknown>;
     const extra = Object.keys(body).filter(
