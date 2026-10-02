@@ -79,11 +79,9 @@ function createAuth() {
       accountLinking: { enabled: true, trustedProviders: ["google"] },
     },
 
-    session: {
-      // Her sayfa açılışında veritabanına gitmemek için oturum 5 dk
-      // imzalı çerezde önbelleklenir.
-      cookieCache: { enabled: true, maxAge: 5 * 60 },
-    },
+    // Oturum çerez önbelleği (cookieCache) bilerek kapalı: açıkken şifre
+    // sıfırlama ya da çıkış sonrası eski oturum 5 dk geçerli görünmeye
+    // devam ediyordu.
 
     rateLimit: {
       enabled: true,

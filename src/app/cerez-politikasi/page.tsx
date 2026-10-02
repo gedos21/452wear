@@ -38,13 +38,6 @@ export default function CookiePolicyPage() {
               "Birinci taraf",
             ],
             [
-              <Slot key="sd">452wear.session_data</Slot>,
-              "Oturum bilgisini kısa süreli saklayarak sayfaların hızlı açılması",
-              "Zorunlu · çerez",
-              "5 dakika",
-              "Birinci taraf",
-            ],
-            [
               <Slot key="ss">452wear.state</Slot>,
               "\"Google ile devam et\" sırasında girişin sana ait olduğunu doğrulamak",
               "Zorunlu · çerez",
