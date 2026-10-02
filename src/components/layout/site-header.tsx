@@ -105,14 +105,24 @@ export function SiteHeader() {
             <CountBadge count={favoriteCount} />
           </Link>
 
-          {/* Hesap: oturum durumu ileride buradan farklılaştırılabilir. */}
+          {/* Hesap: giriş yapılmışsa ikonun köşesinde marka renginde nokta.
+              Oturum yalnızca istemcide okunur; sunucuda ve hydration'da durum
+              "loading" olduğundan nokta ilk render'da hiç çizilmez. */}
           <Link
             href="/hesap"
-            aria-label={authStatus === "signed-in" ? "Hesabım" : "Hesap"}
+            aria-label={
+              authStatus === "signed-in" ? "Hesabım (giriş yapıldı)" : "Hesap"
+            }
             aria-current={isActive("/hesap") ? "page" : undefined}
             className={iconLink(isActive("/hesap"))}
           >
             <User className={ICON} strokeWidth={ICON_STROKE} />
+            {authStatus === "signed-in" && (
+              <span
+                aria-hidden
+                className="absolute -right-0.5 -top-0.5 size-2 rounded-full bg-brand ring-2 ring-white lg:size-2.5"
+              />
+            )}
           </Link>
 
           {/* Sepet: sayfaya gitmez, sağdan çekmeceyi açar. */}

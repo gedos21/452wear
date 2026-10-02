@@ -1,26 +1,37 @@
 /**
- * E-posta bülteni. Projede henüz bir bülten sağlayıcısı / backend yok; form
- * bu yüzden adresi hiçbir yere göndermez ve kullanıcıya bunu açıkça söyler.
+ * E-posta bülteni: form ile sunucu arasındaki ortak tanımlar.
  *
- * Sağlayıcı bağlandığında yalnızca `subscribeToNewsletter` doldurulur (ör. bir
- * server action ya da sağlayıcının API'si) ve NEWSLETTER_ENABLED true yapılır.
- * O noktada formun altına KVKK aydınlatma/açık rıza metni de eklenmelidir.
+ * Abonelik kendi veritabanımıza kaydedilir (bkz. lib/server/newsletter-action.ts).
+ * HENÜZ E-POSTA GÖNDERİLMİYOR: İYS (İleti Yönetim Sistemi) kaydı tamamlanınca
+ * gönderim ve abonelikten çıkış bağlantısı eklenecek.
+ *
+ * Açık rıza metni değişirse NEWSLETTER_CONSENT_VERSION da değişmeli; her
+ * abonenin hangi metne onay verdiği bu sürümle saklanıyor.
  */
-export const NEWSLETTER_ENABLED = false;
+export const NEWSLETTER_ENABLED = true;
+
+export const NEWSLETTER_CONSENT_VERSION = "bulten-acik-riza-v1";
+
+/** Formun bulunabileceği yerler; sunucu başka değer kabul etmez. */
+export const NEWSLETTER_SOURCES = ["ana-sayfa"] as const;
+export type NewsletterSource = (typeof NEWSLETTER_SOURCES)[number];
+
+export type SubscribeInput = {
+  email: string;
+  /** Açık rıza kutusu işaretli mi. */
+  consent: boolean;
+  /** Bal küpü (honeypot): insanlar görmez, botlar doldurur. */
+  website: string;
+  source: NewsletterSource;
+};
 
 export type SubscribeResult =
-  { ok: true } | { ok: false; reason: "invalid" | "not-configured" | "error" };
+  | { ok: true }
+  | { ok: false; reason: "invalid" | "consent" | "rate-limited" | "not-configured" | "error" };
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function isValidEmail(value: string): boolean {
-  return EMAIL.test(value.trim());
-}
-
-export async function subscribeToNewsletter(
-  email: string,
-): Promise<SubscribeResult> {
-  if (!isValidEmail(email)) return { ok: false, reason: "invalid" };
-  if (!NEWSLETTER_ENABLED) return { ok: false, reason: "not-configured" };
-  return { ok: false, reason: "error" };
+  const email = value.trim();
+  return email.length <= 254 && EMAIL.test(email);
 }

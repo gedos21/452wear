@@ -1,9 +1,12 @@
+import { sql } from "drizzle-orm";
 import {
   bigint,
   boolean,
+  check,
   index,
   integer,
   pgTable,
+  primaryKey,
   text,
   timestamp,
 } from "drizzle-orm/pg-core";
@@ -92,3 +95,66 @@ export const rateLimit = pgTable("rate_limit", {
   count: integer("count").notNull(),
   lastRequest: bigint("last_request", { mode: "number" }).notNull(),
 });
+
+/**
+ * Kayıtlı teslimat adresleri ("Adreslerim"). Kullanıcı silinince adresleri de
+ * silinir. Kullanıcı başına en fazla bir varsayılan adres olur; bunu
+ * uygulama korur (bkz. lib/server/addresses.ts) — kısmi tekil indeks, tek
+ * UPDATE ile varsayılanı taşırken satır satır kontrol edildiği için kullanılmadı.
+ */
+export const address = pgTable(
+  "address",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    /** Kullanıcının verdiği kısa ad: "Ev", "İş"… */
+    title: text("title").notNull(),
+    fullName: text("full_name").notNull(),
+    phone: text("phone").notNull(),
+    /** İl */
+    city: text("city").notNull(),
+    /** İlçe */
+    district: text("district").notNull(),
+    addressLine: text("address_line").notNull(),
+    postalCode: text("postal_code"),
+    isDefault: boolean("is_default").notNull().default(false),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+  },
+  (t) => [index("address_user_id_idx").on(t.userId)],
+);
+
+/** Giriş yapmış kullanıcının favorileri. Ürün kimliği katalogdaki `id`. */
+export const favorite = pgTable(
+  "favorite",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    productId: text("product_id").notNull(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.productId] })],
+);
+
+/**
+ * E-posta bülteni aboneleri. Hesaptan bağımsızdır (giriş yapmadan da abone
+ * olunur). Açık rıza anı ve o an gösterilen metnin sürümü saklanır; abonelikten
+ * çıkışta satır silinmez, `unsubscribed_at` dolar (rızanın geri alındığının kaydı).
+ */
+export const newsletterSubscriber = pgTable(
+  "newsletter_subscriber",
+  {
+    id: text("id").primaryKey(),
+    email: text("email").notNull().unique(),
+    consentAt: timestamp("consent_at").notNull(),
+    consentTextVersion: text("consent_text_version").notNull(),
+    /** Formun bulunduğu yer, ör. "ana-sayfa". */
+    source: text("source").notNull(),
+    unsubscribedAt: timestamp("unsubscribed_at"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (t) => [check("newsletter_subscriber_email_lower", sql`${t.email} = lower(${t.email})`)],
+);

@@ -4,7 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, Heart } from "lucide-react";
-import { Field, FormNote } from "./field";
+import { FormNote, SectionTitle } from "./field";
+import { AddressesSection } from "./addresses-section";
+import { ProfileSection } from "./profile-section";
 import { useAuth, type AuthUser } from "@/lib/auth";
 import { useFavoriteProducts } from "@/components/product/catalog-provider";
 import { useOrders, ORDER_STATUS_LABEL } from "@/lib/orders";
@@ -18,18 +20,33 @@ const SECTIONS = [
   { key: "profile", label: "Hesap Bilgileri" },
 ] as const;
 
-type SectionKey = (typeof SECTIONS)[number]["key"];
+export type SectionKey = (typeof SECTIONS)[number]["key"];
+
+/** Adres çubuğundaki `?bolum=` değerleri (ör. Google dönüşü). */
+const SECTION_SLUGS: Record<string, SectionKey> = {
+  siparisler: "orders",
+  favoriler: "favorites",
+  adresler: "addresses",
+  "hesap-bilgileri": "profile",
+};
+
+export function sectionFromSlug(slug: string | null | undefined): SectionKey | undefined {
+  return slug ? SECTION_SLUGS[slug] : undefined;
+}
 
 /** Hesap paneli. Kullanıcı bilgisi `useAuth().user`'dan gelir. */
 export function AccountDashboard({
   user,
   onExitPreview,
+  initialSection = "orders",
 }: {
   user: AuthUser;
   /** Yalnızca geliştirme önizlemesinde dolu gelir. */
   onExitPreview?: () => void;
+  initialSection?: SectionKey;
 }) {
-  const [section, setSection] = useState<SectionKey>("orders");
+  const [section, setSection] = useState<SectionKey>(initialSection);
+  const preview = Boolean(onExitPreview);
   const { signOut } = useAuth();
   const [note, setNote] = useState<string | null>(null);
 
@@ -103,22 +120,14 @@ export function AccountDashboard({
           >
             {section === "orders" && <OrdersSection />}
             {section === "favorites" && <FavoritesSection />}
-            {section === "addresses" && <AddressesSection />}
-            {section === "profile" && <ProfileSection user={user} />}
+            {section === "addresses" && <AddressesSection preview={preview} />}
+            {section === "profile" && <ProfileSection user={user} preview={preview} />}
           </motion.div>
 
           {note && <FormNote message={note} />}
         </div>
       </div>
     </div>
-  );
-}
-
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="font-display text-xl font-extrabold tracking-[-0.02em] sm:text-2xl">
-      {children}
-    </h2>
   );
 }
 
@@ -205,124 +214,6 @@ function FavoritesSection() {
         Favorileri Gör
         <ArrowRight className="size-4" strokeWidth={1.8} />
       </Link>
-    </div>
-  );
-}
-
-function AddressesSection() {
-  const [open, setOpen] = useState(false);
-  const [note, setNote] = useState<string | null>(null);
-  const [form, setForm] = useState({
-    fullName: "",
-    address: "",
-    city: "",
-    district: "",
-    postalCode: "",
-  });
-
-  const set = (key: keyof typeof form) => (value: string) =>
-    setForm((prev) => ({ ...prev, [key]: value }));
-
-  return (
-    <div>
-      <SectionTitle>ADRESLERİM</SectionTitle>
-      <p className="mt-8 text-sm text-muted-foreground">
-        Kayıtlı adresin yok.
-      </p>
-
-      {!open ? (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="mt-8 inline-flex h-12 items-center rounded-full border border-foreground/20 px-7 micro transition-colors hover:border-foreground/60"
-        >
-          Adres Ekle
-        </button>
-      ) : (
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            // Adres servisi bağlı değil: kaydediyormuş gibi davranmıyoruz.
-            setNote("Adres kaydı henüz bir servise bağlı değil.");
-          }}
-          className="mt-8 max-w-md space-y-6"
-        >
-          <p className="micro text-foreground/45">Teslimat Adresi</p>
-          <Field label="Ad Soyad" value={form.fullName} onChange={set("fullName")} autoComplete="name" />
-          <Field label="Adres" value={form.address} onChange={set("address")} autoComplete="street-address" />
-          <div className="grid gap-6 sm:grid-cols-2">
-            <Field label="Şehir" value={form.city} onChange={set("city")} autoComplete="address-level1" />
-            <Field label="İlçe" value={form.district} onChange={set("district")} autoComplete="address-level2" />
-          </div>
-          <Field label="Posta Kodu" value={form.postalCode} onChange={set("postalCode")} autoComplete="postal-code" />
-
-          <div className="flex items-center gap-5 pt-2">
-            <button
-              type="submit"
-              className="inline-flex h-12 items-center rounded-full bg-foreground px-7 micro text-background transition-colors hover:bg-foreground/90"
-            >
-              Kaydet
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setOpen(false);
-                setNote(null);
-              }}
-              className="micro text-foreground/45 transition-colors hover:text-foreground"
-            >
-              Vazgeç
-            </button>
-          </div>
-
-          {note && <FormNote message={note} />}
-        </form>
-      )}
-    </div>
-  );
-}
-
-function ProfileSection({ user }: { user: AuthUser }) {
-  const { requestPasswordReset } = useAuth();
-  const [note, setNote] = useState<string | null>(null);
-  const [pending, setPending] = useState(false);
-
-  return (
-    <div>
-      <SectionTitle>HESAP BİLGİLERİ</SectionTitle>
-
-      <dl className="mt-8 max-w-md divide-y divide-border/70 border-y border-border/70">
-        {[
-          { label: "Ad", value: user.firstName },
-          { label: "Soyad", value: user.lastName },
-          { label: "E-posta", value: user.email },
-        ].map((row) => (
-          <div key={row.label} className="flex items-baseline justify-between gap-4 py-4">
-            <dt className="micro text-foreground/45">{row.label}</dt>
-            <dd className="text-sm">{row.value}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <button
-        type="button"
-        disabled={pending}
-        onClick={async () => {
-          setPending(true);
-          const result = await requestPasswordReset(user.email);
-          setPending(false);
-          setNote(
-            result.ok
-              ? `Şifre belirleme bağlantısını ${user.email} adresine gönderdik.`
-              : result.message,
-          );
-        }}
-        className="mt-8 inline-flex h-12 items-center rounded-full border border-foreground/20 px-7 micro transition-colors hover:border-foreground/60 disabled:opacity-60"
-      >
-        Şifre Değiştir
-      </button>
-
-      {note && <FormNote message={note} />}
     </div>
   );
 }

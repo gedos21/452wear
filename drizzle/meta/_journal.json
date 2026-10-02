@@ -8,6 +8,13 @@
       "when": 1790925322497,
       "tag": "0000_giris_sistemi",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790927347211,
+      "tag": "0001_hesap_favori_bulten",
+      "breakpoints": true
     }
   ]
 }
