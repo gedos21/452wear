@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/container";
 import { OutfitPicker } from "@/components/product/outfit-picker";
 import { formatPrice } from "@/lib/format";
 import { kombinPanolari } from "@/lib/kombin-panolari";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 export const metadata: Metadata = {
   title: "Kombinler",
@@ -24,7 +25,7 @@ export default async function KombinlerSayfasi() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-10 pb-20 sm:pt-14 sm:pb-24">
           <h1 className="font-display text-[clamp(2.25rem,9vw,4rem)] font-extrabold uppercase leading-[0.95] tracking-[-0.03em]">
             Kombinler<span className="text-brand">.</span>

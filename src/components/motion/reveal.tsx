@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "motion/react";
+import { motion, type Variants } from "motion/react";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { fadeInUp } from "@/lib/motion";
 
 type RevealProps = {
@@ -17,6 +18,12 @@ type RevealProps = {
 /**
  * İçeriği hafifçe belirtir. Kullanıcı "reduced motion" seçtiyse
  * animasyon uygulanmaz.
+ *
+ * Tercih usePrefersReducedMotion ile okunur, motion'ın useReducedMotion'ı ile
+ * değil: o, ilk istemci render'ında matchMedia'yı okuduğu için sunucu
+ * (animasyonlu, opacity: 0) ile istemci (statik) farklı HTML çiziyor ve
+ * hydration uyuşmazlığı çıkıyordu. Bu kanca hydration'da sunucuyla aynı
+ * değeri verir, ardından gerçek tercihe geçer.
  */
 export function Reveal({
   children,
@@ -26,7 +33,7 @@ export function Reveal({
   trigger = "view",
   as = "div",
 }: RevealProps) {
-  const reduced = useReducedMotion();
+  const reduced = usePrefersReducedMotion();
 
   if (reduced) {
     const Static = as;

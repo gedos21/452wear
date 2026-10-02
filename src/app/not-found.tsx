@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion";
 import { ActionButton } from "@/components/ui/action-button";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 export const metadata: Metadata = {
   title: "Sayfa bulunamadı",
@@ -14,7 +15,7 @@ export default function NotFound() {
   return (
     <>
       <SiteHeader />
-      <main className="flex flex-1 items-center">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex flex-1 items-center">
         <Container className="py-20 sm:py-28">
           <Reveal trigger="mount">
             <p className="micro text-foreground/45">Hata 404</p>

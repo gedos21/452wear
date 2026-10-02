@@ -51,7 +51,7 @@ export const CONSENT_CATEGORIES: {
     key: "analytics",
     label: "Analitik / Performans",
     description:
-      "Sitenin nasıl kullanıldığını anlamak için toplu istatistik toplanmasına izin verir. Şu anda kullanılmıyor.",
+      "Sitenin nasıl kullanıldığını çerezle ölçen araçlara izin verir. Şu anda kullanılmıyor; çerezsiz, anonim sayfa ölçümü bu tercihe bağlı değildir.",
     required: false,
   },
   {

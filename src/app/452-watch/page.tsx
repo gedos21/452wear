@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/container";
 import { ProductGrid } from "@/components/shop/product-grid";
 import { WatchScroll } from "@/components/watch/watch-scroll";
 import { katalogOku } from "@/lib/catalog-store";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 export const metadata: Metadata = {
   title: "452 Watch",
@@ -28,7 +29,7 @@ export default async function WatchPage() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <WatchScroll />
 
         <section id="koleksiyon" className="scroll-mt-20 lg:scroll-mt-24">

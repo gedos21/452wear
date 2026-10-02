@@ -1,6 +1,7 @@
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { Container } from "./container";
+import { MAIN_CONTENT_ID } from "./skip-link";
 
 /**
  * Sayfa yüklenirken gösterilen iskelet. Boş ekran yerine sayfanın kabası
@@ -11,7 +12,7 @@ export function PageSkeleton() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-8 pb-16 sm:pt-10 sm:pb-20">
           <div aria-hidden className="animate-pulse motion-reduce:animate-none">
             <div className="h-9 w-48 rounded-full bg-muted sm:h-11 sm:w-64" />

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/container";
 import { AdminNav } from "@/components/admin/admin-nav";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 // absolute: kök şablon ("%s | 452WEAR") başlığa ikinci kez eklenmesin.
 export const metadata = {
@@ -46,18 +47,20 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
         </Container>
       </header>
 
-      <Container className="pt-8 pb-24">
-        <p className="mb-8 rounded-[var(--radius-product)] bg-muted/60 px-4 py-3 text-[13px] leading-relaxed text-muted-foreground ring-1 ring-border/60">
-          <span className="micro text-brand">Geliştirme alanı</span>
-          <span className="mt-1.5 block">
-            Bu panelde kimlik doğrulama yok ve production build&apos;inde
-            kapalıdır. Değişiklikler{" "}
-            <code className="text-foreground">data/catalog.json</code> dosyasına
-            yazılır; yazılabilir bir dosya sistemi gerekir.
-          </span>
-        </p>
-        {children}
-      </Container>
+      <main id={MAIN_CONTENT_ID} tabIndex={-1}>
+        <Container className="pt-8 pb-24">
+          <p className="mb-8 rounded-[var(--radius-product)] bg-muted/60 px-4 py-3 text-[13px] leading-relaxed text-muted-foreground ring-1 ring-border/60">
+            <span className="micro text-brand">Geliştirme alanı</span>
+            <span className="mt-1.5 block">
+              Bu panelde kimlik doğrulama yok ve production build&apos;inde
+              kapalıdır. Değişiklikler{" "}
+              <code className="text-foreground">data/catalog.json</code> dosyasına
+              yazılır; yazılabilir bir dosya sistemi gerekir.
+            </span>
+          </p>
+          {children}
+        </Container>
+      </main>
     </div>
   );
 }

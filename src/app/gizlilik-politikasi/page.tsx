@@ -74,10 +74,19 @@ export default function PrivacyPage() {
 
       <Section no={6} title="Üçüncü Taraf Hizmetler">
         <P>
-          Sitede şu anda analiz (analytics), reklam ağı, sosyal medya izleme
-          pikseli veya benzeri bir üçüncü taraf ölçümleme aracı
-          kullanılmamaktadır. Yazı tipleri site sunucusundan sunulur; bu nedenle
-          sayfa görüntülerken üçüncü bir tarafa istek gitmez.
+          Sitede reklam ağı, sosyal medya izleme pikseli veya çerez kullanan
+          bir analiz aracı kullanılmamaktadır. Yazı tipleri site sunucusundan
+          sunulur; bu nedenle sayfa görüntülerken üçüncü bir tarafa istek
+          gitmez.
+        </P>
+        <P>
+          Sayfa görüntüleme sayıları ve sayfaların yüklenme hızı, barındırma
+          sağlayıcımız Vercel&apos;in Web Analytics ve Speed Insights
+          araçlarıyla anonim ve toplu olarak ölçülür. Bu ölçüm çerez ya da
+          yerel depolama kullanmaz, tarayıcına kalıcı bir kimlik yazmaz ve seni
+          başka sitelerde izlemez. Ziyaretler, istekten türetilen ve 24 saat
+          içinde geçerliliğini yitiren bir özet değerle sayılır; istekler
+          sitenin kendi alan adı üzerinden gider.
         </P>
         <P>
           İleride böyle bir araç eklenirse bu bölüm ve{" "}

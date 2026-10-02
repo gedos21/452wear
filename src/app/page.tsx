@@ -8,6 +8,7 @@ import { KombinOner } from "@/components/home/kombin-oner";
 import { KombinPanolari } from "@/components/home/kombin-panolari";
 import { RecentlyViewedOnHome } from "@/components/product/recently-viewed";
 import { JoinSection } from "@/components/home/join-section";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 /**
  * Ana sayfa sırası: hero (yeni gelenler) → çok satanlar → kampanya bannerı →
@@ -21,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1 pb-6 lg:pb-10">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1 pb-6 lg:pb-10">
         <HomeHero />
         <BestSellers />
         <ShoeCampaign />

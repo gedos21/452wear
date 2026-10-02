@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import {
   ArrowRight,
   BellRing,
@@ -82,7 +83,7 @@ export function ProductDetail({
 }) {
   const panel = variant === "panel";
   const Heading = panel ? "h2" : "h1";
-  const reduced = useReducedMotion();
+  const reduced = usePrefersReducedMotion();
   const { add } = useCart();
   const { isFavorite, toggle } = useFavorites();
 

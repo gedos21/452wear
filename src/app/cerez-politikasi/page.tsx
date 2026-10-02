@@ -78,6 +78,15 @@ export default function CookiePolicyPage() {
           Yazı tipleri derleme sırasında site sunucusuna kopyalanır ve oradan
           sunulur; sayfa görüntülerken üçüncü bir tarafa istek gitmez.
         </P>
+        <P>
+          Hangi sayfaların ne sıklıkla açıldığı ve sayfaların ne kadar hızlı
+          yüklendiği, barındırma sağlayıcımız Vercel&apos;in Web Analytics ve
+          Speed Insights araçlarıyla anonim ve toplu olarak ölçülür. Bu ölçüm{" "}
+          <strong>çerez ya da yerel depolama kullanmaz</strong>, tarayıcına
+          kalıcı bir kimlik yazmaz ve seni başka sitelerde izlemez; istekler
+          sitenin kendi alan adı üzerinden gider. Bu yüzden yukarıdaki tabloda
+          yer almaz.
+        </P>
       </Section>
 
       <Section no={3} title="Çerez Kategorileri">
@@ -90,7 +99,7 @@ export default function CookiePolicyPage() {
         <List
           items={[
             <><strong>Zorunlu:</strong> Sitenin temel işlevleri için gereklidir; sepet, favoriler ve çerez tercihi bu kapsamdadır. Kapatılamaz.</>,
-            <><strong>Analitik / Performans:</strong> Sitenin nasıl kullanıldığını toplu olarak ölçmek için kullanılır. Şu anda kullanılmıyor.</>,
+            <><strong>Analitik / Performans:</strong> Sitenin nasıl kullanıldığını çerezle ölçen araçlar. Şu anda kullanılmıyor; yukarıda anlatılan çerezsiz, anonim ölçüm bu kategoriye girmez.</>,
             <><strong>İşlevsel:</strong> Dil ve bölge gibi ek tercihlerin hatırlanmasını sağlar. Şu anda kullanılmıyor.</>,
             <><strong>Reklam / Pazarlama:</strong> İlgi alanına göre reklam gösterimi ve ölçümü için kullanılır. Şu anda kullanılmıyor.</>,
           ]}

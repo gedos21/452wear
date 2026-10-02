@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion";
 import { LEGAL_UPDATED_AT, LEGAL_VERSION, type LegalPage } from "@/lib/legal";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 /** Yasal sayfa metadata'sını kayıttan üretir. */
 export function legalMetadata(page: LegalPage): Metadata {
@@ -24,7 +25,7 @@ export function LegalPageLayout({
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-12 pb-24 sm:pt-16 lg:pt-20">
           <div className="max-w-2xl">
             <Reveal trigger="mount">

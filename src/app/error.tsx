@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
 import { ActionButton } from "@/components/ui/action-button";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 /**
  * Beklenmeyen bir hata olduğunda sayfanın yerine bu ekran çizilir (Next.js
@@ -26,7 +27,7 @@ export default function Error({
   return (
     <>
       <SiteHeader />
-      <main className="flex flex-1 items-center">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex flex-1 items-center">
         <Container className="py-20 sm:py-28">
           <p className="micro text-foreground/45">Bir sorun çıktı</p>
           <h1 className="mt-4 font-display text-[clamp(2.5rem,10vw,5rem)] font-extrabold leading-[0.9] tracking-[-0.04em]">
