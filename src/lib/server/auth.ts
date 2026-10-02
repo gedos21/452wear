@@ -62,6 +62,17 @@ const beforeHooks = createAuthMiddleware(async (ctx) => {
     return { context: { body: { firstName, lastName, name } } };
   }
 
+  if (ctx.path === "/sign-up/email") {
+    // Kayıtta da ad/soyad kuralları geçerli; `name` sunucuda kurulur.
+    const body = (ctx.body ?? {}) as Record<string, unknown>;
+    const profile = validateProfile(body);
+    if (!profile.ok) {
+      throw new APIError("BAD_REQUEST", { code: "INVALID_PROFILE", message: profile.message });
+    }
+    const { firstName, lastName, name } = profile;
+    return { context: { body: { ...body, firstName, lastName, name } } };
+  }
+
   if (ctx.path === "/delete-user") {
     const session = await getSessionFromCtx(ctx);
     if (!session) return; // Uç nokta kendisi 401 döner.
