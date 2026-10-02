@@ -7,6 +7,7 @@ import {
   FavoritesBrowser,
   FavoritesCount,
 } from "@/components/favorites/favorites-browser";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 export const metadata: Metadata = {
   title: "Favoriler",
@@ -17,7 +18,7 @@ export default function FavoritesPage() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-12 pb-20 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
           <Reveal trigger="mount">
             <h1 className="font-display text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl lg:text-6xl">

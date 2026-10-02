@@ -10,6 +10,7 @@ import {
   PRODUCT_SURFACE,
 } from "@/components/product/product-surface";
 import { cn } from "@/lib/utils";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 export const metadata: Metadata = {
   title: "Hakkımızda",
@@ -50,7 +51,7 @@ export default function AboutPage() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         {/* Açılış */}
         <section className="pt-16 pb-24 sm:pt-24 sm:pb-32 lg:pt-32 lg:pb-40">
           <Container>

@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { PRODUCTS as SEED, SHOWCASE_SLUG } from "@/data/products";
-import type { Product, ProductCategory } from "@/types/product";
+import type { Product } from "@/types/product";
 
 /**
  * Katalog kalıcılığı — GELİŞTİRME ORTAMI İÇİN.
@@ -329,46 +329,6 @@ export async function yeniGelenler(limit = 4): Promise<Product[]> {
   return enYeniOnce(await katmanOku())
     .filter((p) => p.isNew)
     .slice(0, limit);
-}
-
-/**
- * Ana sayfa kategori vitrini: kategorinin stokta olan ürünleri, en yeni
- * eklenen başta.
- */
-export async function kategoriVitrini(
-  kategori: ProductCategory,
-  limit = 3,
-): Promise<Product[]> {
-  return enYeniOnce(await katmanOku())
-    .filter(
-      (p) => p.category === kategori && p.variants.some((v) => v.stock > 0),
-    )
-    .slice(0, limit);
-}
-
-/**
- * Ana sayfa kombin vitrini: birlikte giyilecek üç parça. Her biri kendi
- * grubunun stokta olan en yeni ürünü: üst (tişört/sweatshirt/hırka), eşofman,
- * ayakkabı. Grubunda ürün olmayan parça atlanır. Hemen üstteki ayakkabı
- * vitrininde görünen ürünler, başka seçenek varsa tekrar gösterilmez.
- */
-export async function kombinVitrini(): Promise<Product[]> {
-  const urunler = enYeniOnce(await katmanOku()).filter((p) =>
-    p.variants.some((v) => v.stock > 0),
-  );
-  const vitrinde = new Set(
-    (await kategoriVitrini("ayakkabi", 3)).map((p) => p.id),
-  );
-  const gruplar: ProductCategory[][] = [
-    ["tisort", "sweatshirt", "hirka", "triko"],
-    ["esofman"],
-    ["ayakkabi"],
-  ];
-  return gruplar.flatMap((grup) => {
-    const aday = urunler.filter((p) => grup.includes(p.category));
-    const urun = aday.find((p) => !vitrinde.has(p.id)) ?? aday[0];
-    return urun ? [urun] : [];
-  });
 }
 
 /**

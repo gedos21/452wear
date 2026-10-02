@@ -157,6 +157,19 @@
     background: var(--brand);
     color: var(--background);
   }
+
+  /* Klavye odağı: tarayıcı varsayılanı yerine site genelinde tek, marka
+     renginde halka. Base katmanında: kendi odak stilini veren bileşenler
+     (outline-none + ring) bunu ezer. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* "İçeriğe geç" ile odak <main>'e taşınır; bütün sayfayı çerçevelemesin. */
+  main[tabindex="-1"]:focus {
+    outline: none;
+  }
 }
 
 @utility no-scrollbar {

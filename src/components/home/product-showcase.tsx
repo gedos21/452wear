@@ -7,7 +7,6 @@ import {
   AnimatePresence,
   motion,
   useMotionValue,
-  useReducedMotion,
   useSpring,
   useTransform,
   type MotionValue,
@@ -20,6 +19,7 @@ import {
   PRODUCT_SURFACE,
 } from "@/components/product/product-surface";
 import { useFinePointer } from "@/hooks/use-fine-pointer";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 import { formatPrice } from "@/lib/format";
 import type { Product } from "@/types/product";
@@ -34,7 +34,7 @@ const PARALLAX: SpringOptions = { damping: 26, stiffness: 90, mass: 1.2 };
 export function ProductShowcase({ products }: { products: Product[] }) {
   const [main] = products;
 
-  const reduced = useReducedMotion();
+  const reduced = usePrefersReducedMotion();
   const finePointer = useFinePointer();
   const interactive = finePointer && !reduced;
 

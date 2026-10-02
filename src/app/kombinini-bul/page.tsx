@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/layout/container";
 import { KombinAkisi } from "@/components/kombin/kombin-akisi";
 import { katalogOku } from "@/lib/catalog-store";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 export const metadata: Metadata = {
   title: "Kombin Öner",
@@ -21,7 +22,7 @@ export default async function KombinSayfasi() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-12 pb-20 sm:pt-16 sm:pb-24 lg:pt-20">
           <KombinAkisi products={products} />
         </Container>

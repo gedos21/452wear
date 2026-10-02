@@ -18,6 +18,7 @@ import {
   RelatedProducts,
 } from "@/components/product/recommendations";
 import { RecentlyViewedOnProduct } from "@/components/product/recently-viewed";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 /**
  * Ürün sayfası. İçerik hızlı görünüm paneliyle aynı bileşenden gelir
@@ -112,7 +113,7 @@ export default async function UrunSayfasi({
         categoryHref={kategori ? categoryHref(kategori.slug) : undefined}
       />
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-8 pb-20 sm:pt-10 sm:pb-24 lg:pt-12 lg:pb-28">
           {/* Sade konum yolu: Ana Sayfa / Ayakkabılar|Giyim / Marka|Kategori */}
           <nav

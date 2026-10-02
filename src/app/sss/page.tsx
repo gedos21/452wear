@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion";
 import { Accordion } from "@/components/product/accordion";
 import { FAQ } from "@/lib/faq";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 export const metadata: Metadata = {
   title: "Sık Sorulan Sorular",
@@ -34,7 +35,7 @@ export default function FaqPage() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-12 pb-24 sm:pt-16 lg:pt-20">
           <Reveal trigger="mount">
             <h1 className="font-display text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl">

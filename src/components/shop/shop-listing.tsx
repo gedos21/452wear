@@ -5,6 +5,7 @@ import { ShopBrowser } from "./shop-browser";
 import { CATEGORIES } from "@/data/products";
 import { katalogOku } from "@/lib/catalog-store";
 import type { CategoryFilter } from "@/lib/product-filters";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 /** Sayfa başlığı; tekil kategorilerde katalog etiketi kullanılır. */
 function pageTitle(category: CategoryFilter): { label: string; lang?: "en" } {
@@ -35,7 +36,7 @@ export async function ShopListing({
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pb-24">
           {/* key: adresteki marka/model değişince filtreler baştan kurulur;
               yoksa ilk açılışın seçimi ekranda kalırdı. */}

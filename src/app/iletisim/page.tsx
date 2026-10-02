@@ -7,6 +7,7 @@ import { Reveal } from "@/components/motion";
 import { Slot } from "@/components/legal/prose";
 import { COMPANY, STORE } from "@/lib/legal";
 import { SITE_URL } from "@/lib/site";
+import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
 
 export const metadata: Metadata = {
   title: "İletişim",
@@ -92,7 +93,7 @@ export default function ContactPage() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1">
         <Container className="pt-12 pb-24 sm:pt-16 lg:pt-20">
           <Reveal trigger="mount">
             <h1 className="font-display text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl">

@@ -1,12 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import {
-  motion,
-  useInView,
-  useReducedMotion,
-  type Variants,
-} from "motion/react";
+import { motion, useInView, type Variants } from "motion/react";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 type StaggerProps = {
@@ -27,7 +23,7 @@ export function Stagger({
   stagger = 0.08,
   delay = 0,
 }: StaggerProps) {
-  const reduced = useReducedMotion();
+  const reduced = usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   /*
    * Görünürlük `whileInView` yerine durumda tutulur: kapsayıcı bir kez
@@ -71,7 +67,7 @@ export function StaggerItem({
   variants = fadeInUp,
   as = "div",
 }: StaggerItemProps) {
-  const reduced = useReducedMotion();
+  const reduced = usePrefersReducedMotion();
 
   if (reduced) {
     const Static = as;

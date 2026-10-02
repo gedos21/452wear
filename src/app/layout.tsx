@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CartProvider } from "@/components/cart/cart-provider";
 import { SearchProvider } from "@/components/search/search-provider";
 import { QuickViewProvider } from "@/components/product/quick-view";
 import { CookieBanner } from "@/components/cookie/cookie-banner";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
+import { SkipLink } from "@/components/layout/skip-link";
 import { CatalogProvider } from "@/components/product/catalog-provider";
 import { katalogOku } from "@/lib/catalog-store";
 import { SITE_URL } from "@/lib/site";
@@ -60,6 +63,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        {/* İlk odaklanan öğe: klavyeyle menüyü atlayıp içeriğe geçer. */}
+        <SkipLink />
         {/* Navbar'ın üstünde; sayfayla kayar, sticky header yerinde kalır. */}
         <AnnouncementBar />
         <CatalogProvider products={products}>
@@ -74,6 +79,9 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             </SearchProvider>
           </QuickViewProvider>
         </CatalogProvider>
+        {/* Çerezsiz, anonim sayfa görüntüleme ve performans ölçümü (Vercel). */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
