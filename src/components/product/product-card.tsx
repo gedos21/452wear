@@ -11,7 +11,8 @@ import { cn } from "@/lib/utils";
 import { formatPrice } from "@/lib/format";
 import {
   discountPercent,
-  productNameParts,
+  productBrand,
+  OWN_BRAND,
   variantSummary,
 } from "@/lib/product-filters";
 import type { Product } from "@/types/product";
@@ -42,7 +43,8 @@ export function ProductCard({
   // Yalnızca BÜTÜN varyantlar tükenmişse; stoktaki ürünlerde kart aynen kalır.
   const soldOut = !product.variants.some((v) => v.stock > 0);
   const discount = discountPercent(product);
-  const nameParts = productNameParts(product);
+  const shownBrand = productBrand(product);
+  const brand = product.brand?.trim() || (shownBrand !== OWN_BRAND ? shownBrand : null);
   const dots = product.colors.slice(0, MAX_DOTS);
   const rest = product.colors.length - dots.length;
   const summary = variantSummary(product);
@@ -135,19 +137,18 @@ export function ProductCard({
             }}
             className="block after:absolute after:inset-0 after:content-['']"
           >
-            {/* Marka satırı yalnızca başka markalarda (NIKE, ADIDAS…); kendi
-                ürünlerimizde yazılmaz. Marka adları Latin yazımlı: Türkçe büyük
-                harfte "NİKE" olmasın. */}
-            {nameParts.brand && (
-              <span
-                lang="en"
-                className="mb-0.5 block text-[13px] font-extrabold uppercase leading-tight tracking-[0.01em] sm:text-sm"
-              >
-                {nameParts.brand}
-              </span>
-            )}
-            <span className="block text-[13px] font-medium leading-snug text-foreground/85 sm:text-sm">
-              {nameParts.model}
+            {/* Üstte kalın marka (ürünün marka alanı; yoksa addan okunan),
+                altında ürünün tam adı. Markası bilinmeyen üründe "452WEAR"
+                uydurmuyoruz: satır boş kalır ama kart hizası korunur. Marka
+                adları Latin yazımlı: Türkçe büyük harfte "NİKE" olmasın. */}
+            <span
+              lang="en"
+              className="block truncate text-[15px] font-extrabold uppercase leading-tight tracking-[-0.005em] sm:text-[17px]"
+            >
+              {brand ?? <span aria-hidden>&nbsp;</span>}
+            </span>
+            <span className="mt-1 block text-[14px] font-normal leading-snug text-foreground/90 sm:text-[15px]">
+              {product.name}
             </span>
           </Link>
         </h3>
