@@ -28,6 +28,9 @@ const MAX_DOTS = 3;
  * `after:inset-0` ile kartı kaplar. Favori düğmesi bunun üstünde (z-10)
  * durduğu için ayrı bir hedef olarak çalışır; iç içe <button>/<a> yok.
  */
+/** Bu orandan itibaren indirim kartta siyah kutuyla vurgulanır. */
+const BIG_DISCOUNT = 25;
+
 export function ProductCard({
   product,
   sizes = "(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw",
@@ -154,10 +157,11 @@ export function ProductCard({
         </h3>
 
         {/* Güncel fiyat kartın en güçlü öğesi. İndirim yalnızca gerçek
-            indirimde, aynı satırda: üstü çizili eski fiyat ve kırmızı oran
-            (eski ve güncel fiyattan hesaplanır). Görselin üstünde etiket yok. */}
-        <div className="mt-2.5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-          <span className="text-[17px] font-black leading-none tracking-[-0.01em] sm:text-lg">
+            indirimde, aynı satırda: üstü çizili eski fiyat ve oran. Oran
+            normalde sakin kırmızı yazı; büyük kampanyada (BIG_DISCOUNT ve
+            üstü) siyah kutuya dönüşür ki gerçek fırsatlar öne çıksın. */}
+        <div className="mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span className="text-[19px] font-black leading-none tracking-[-0.015em] sm:text-[21px]">
             {formatPrice(product.price, product.currency)}
           </span>
           {discount !== null && (
@@ -166,7 +170,14 @@ export function ProductCard({
                 <span className="sr-only">İndirimsiz fiyat: </span>
                 {formatPrice(product.compareAtPrice!, product.currency)}
               </span>
-              <span className="text-[12px] font-bold leading-none text-destructive sm:text-[13px]">
+              <span
+                className={cn(
+                  "text-[12px] font-bold leading-none sm:text-[13px]",
+                  discount >= BIG_DISCOUNT
+                    ? "bg-foreground px-1.5 py-1 text-background"
+                    : "text-destructive",
+                )}
+              >
                 <span aria-hidden>%{discount}</span>
                 <span className="sr-only">Yüzde {discount} indirim</span>
               </span>
