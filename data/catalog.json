@@ -3139,6 +3139,10 @@
       "currency": "TRY",
       "images": [
         {
+          "src": "/products/p-044-temiz-512e9cce.webp",
+          "alt": "Air Jordan 1 Low"
+        },
+        {
           "src": "/products/p-044-77f45345.webp",
           "alt": "nike jordan pembe"
         },
@@ -3990,6 +3994,10 @@
       "currency": "TRY",
       "images": [
         {
+          "src": "/products/p-053-temiz-1c0f655a.webp",
+          "alt": "Air Jordan 1 Mid"
+        },
+        {
           "src": "/products/p-053-b4d6d66e.webp",
           "alt": "nike boğazlı parlak gold detay"
         },
@@ -4630,6 +4638,10 @@
       "compareAtPrice": 1400,
       "currency": "TRY",
       "images": [
+        {
+          "src": "/products/p-060-temiz-c2d64793.webp",
+          "alt": "Air Jordan 1 Mid"
+        },
         {
           "src": "/products/p-060-39d3fb8e.webp",
           "alt": "nike boğazlı mavi gri"
