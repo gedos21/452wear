@@ -2474,6 +2474,10 @@
       "currency": "TRY",
       "images": [
         {
+          "src": "/products/p-037-temiz-7aee8912.webp",
+          "alt": "Adidas Handball Spezial"
+        },
+        {
           "src": "/products/p-037-e71d4592.webp",
           "alt": "spezial kahverengi"
         },
@@ -2565,6 +2569,10 @@
       "currency": "TRY",
       "images": [
         {
+          "src": "/products/p-038-temiz-52ad2bd6.webp",
+          "alt": "Adidas Handball Spezial"
+        },
+        {
           "src": "/products/p-038-45d30e92.webp",
           "alt": "spezial mavi"
         },
@@ -2655,6 +2663,10 @@
       "compareAtPrice": 1400,
       "currency": "TRY",
       "images": [
+        {
+          "src": "/products/p-039-temiz-67e70efd.webp",
+          "alt": "Adidas Handball Spezial"
+        },
         {
           "src": "/products/p-039-55dce415.webp",
           "alt": "spezial leopar"
