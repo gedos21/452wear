@@ -20,14 +20,37 @@ export default function CookiePolicyPage() {
 
       <Section no={2} title="Şu Anda Hangi Teknolojileri Kullanıyoruz">
         <P>
-          {COMPANY.brand} sitesi şu anda <strong>hiçbir çerez (cookie)
-          kullanmamaktadır</strong>. Bunun yerine, sitenin çalışması için
-          gereken bilgiler tarayıcının yerel depolamasında tutulur. Bu veriler
-          sunucumuza gönderilmez ve sen silene kadar cihazında kalır.
+          {COMPANY.brand} sitesi yalnızca <strong>zorunlu çerezler</strong>{" "}
+          kullanır: hesabına giriş yaptığında oturumunu açık tutan ve giriş
+          işleminin güvenliğini sağlayan çerezler. Giriş yapmazsan çerez
+          oluşturulmaz. Sepet, favori ve benzeri bilgiler tarayıcının yerel
+          depolamasında tutulur; bu veriler sunucumuza gönderilmez ve sen
+          silene kadar cihazında kalır.
         </P>
         <Table
           head={["Ad", "Amaç", "Tür", "Süre", "Taraf"]}
           rows={[
+            [
+              <Slot key="st">452wear.session_token</Slot>,
+              "Hesabına giriş yaptığında oturumunu açık tutmak",
+              "Zorunlu · çerez",
+              "7 gün (çıkış yapınca silinir)",
+              "Birinci taraf",
+            ],
+            [
+              <Slot key="sd">452wear.session_data</Slot>,
+              "Oturum bilgisini kısa süreli saklayarak sayfaların hızlı açılması",
+              "Zorunlu · çerez",
+              "5 dakika",
+              "Birinci taraf",
+            ],
+            [
+              <Slot key="ss">452wear.state</Slot>,
+              "\"Google ile devam et\" sırasında girişin sana ait olduğunu doğrulamak",
+              "Zorunlu · çerez",
+              "En çok 10 dakika",
+              "Birinci taraf",
+            ],
             [
               <Slot key="c">452wear:cart</Slot>,
               "Sepetindeki ürünlerin sayfa yenilendiğinde kaybolmaması",

@@ -11,6 +11,7 @@ export function Field({
   onChange,
   autoComplete,
   required,
+  minLength,
   className,
 }: {
   label: string;
@@ -19,6 +20,7 @@ export function Field({
   onChange: (next: string) => void;
   autoComplete?: string;
   required?: boolean;
+  minLength?: number;
   className?: string;
 }) {
   const id = useId();
@@ -34,14 +36,15 @@ export function Field({
         onChange={(e) => onChange(e.target.value)}
         autoComplete={autoComplete}
         required={required}
+        minLength={minLength}
         className="mt-2 h-11 w-full border-b border-border bg-transparent text-sm outline-none transition-colors placeholder:text-foreground/30 focus:border-foreground"
       />
     </div>
   );
 }
 
-/** Backend bağlı değilken gösterilen dürüst bilgi satırı. */
-export function NotConnectedNote({ message }: { message: string }) {
+/** Form altındaki durum/hata satırı. */
+export function FormNote({ message }: { message: string }) {
   return (
     <p className="mt-5 text-[13px] leading-relaxed text-muted-foreground" role="status">
       {message}

@@ -3,14 +3,13 @@
 import { useState } from "react";
 import { AuthForms } from "./auth-forms";
 import { AccountDashboard } from "./account-dashboard";
-import { useAuth, type AuthUser } from "@/lib/auth";
+import { oauthErrorMessage, useAuth, type AuthUser } from "@/lib/auth";
 
 /**
  * Hesap ekranının kökü: oturum durumuna göre giriş formunu ya da paneli gösterir.
  *
- * Auth bağlı olmadığı için panel normalde erişilemez. Tasarımın gözden
- * geçirilebilmesi adına YALNIZCA geliştirmede bir önizleme anahtarı var;
- * üretim derlemesinde bu düğme hiç render edilmez ve panel açılamaz.
+ * Tasarımın oturum açmadan gözden geçirilebilmesi için YALNIZCA geliştirmede
+ * bir önizleme anahtarı var; üretim derlemesinde bu düğme hiç render edilmez.
  */
 
 const PREVIEW_ENABLED = process.env.NODE_ENV !== "production";
@@ -22,13 +21,24 @@ const PREVIEW_USER: AuthUser = {
   email: "ornek@452wear.com",
 };
 
-export function AccountView() {
+export function AccountView({
+  googleEnabled,
+  oauthError,
+}: {
+  googleEnabled: boolean;
+  /** Google dönüşündeki `?error=` kodu. */
+  oauthError: string | null;
+}) {
   const { status, user } = useAuth();
   const [preview, setPreview] = useState(false);
 
-  const signedIn = status === "signed-in" && user !== null;
+  // Oturum sorgusu bitene kadar formu göstermiyoruz; giriş yapmış kullanıcı
+  // bir an giriş formunu görmesin.
+  if (status === "loading") {
+    return <div className="h-80" aria-busy="true" />;
+  }
 
-  if (signedIn) return <AccountDashboard user={user} />;
+  if (status === "signed-in" && user) return <AccountDashboard user={user} />;
 
   if (preview && PREVIEW_ENABLED) {
     return (
@@ -36,9 +46,8 @@ export function AccountView() {
         <div className="mb-10 rounded-product bg-muted px-5 py-4">
           <p className="micro text-brand">Önizleme</p>
           <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-            Kimlik doğrulama bağlı değil. Buradaki ad, e-posta ve içerikler
-            tasarımı görebilmek için konulmuş örneklerdir; gerçek bir hesap
-            değildir.
+            Buradaki ad, e-posta ve içerikler tasarımı görebilmek için
+            konulmuş örneklerdir; gerçek bir hesap değildir.
           </p>
         </div>
         <AccountDashboard
@@ -51,7 +60,10 @@ export function AccountView() {
 
   return (
     <div>
-      <AuthForms />
+      <AuthForms
+        googleEnabled={googleEnabled}
+        initialNote={oauthErrorMessage(oauthError)}
+      />
 
       {PREVIEW_ENABLED && (
         <button

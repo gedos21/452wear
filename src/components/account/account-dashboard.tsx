@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, Heart } from "lucide-react";
-import { Field, NotConnectedNote } from "./field";
+import { Field, FormNote } from "./field";
 import { useAuth, type AuthUser } from "@/lib/auth";
 import { useFavoriteProducts } from "@/components/product/catalog-provider";
 import { useOrders, ORDER_STATUS_LABEL } from "@/lib/orders";
@@ -20,10 +20,7 @@ const SECTIONS = [
 
 type SectionKey = (typeof SECTIONS)[number]["key"];
 
-/**
- * Hesap paneli. Kullanıcı bilgisi dışarıdan gelir; gerçek auth bağlandığında
- * `useAuth().user` doğrudan buraya beslenecek, bileşen değişmeyecek.
- */
+/** Hesap paneli. Kullanıcı bilgisi `useAuth().user`'dan gelir. */
 export function AccountDashboard({
   user,
   onExitPreview,
@@ -110,7 +107,7 @@ export function AccountDashboard({
             {section === "profile" && <ProfileSection user={user} />}
           </motion.div>
 
-          {note && <NotConnectedNote message={note} />}
+          {note && <FormNote message={note} />}
         </div>
       </div>
     </div>
@@ -278,7 +275,7 @@ function AddressesSection() {
             </button>
           </div>
 
-          {note && <NotConnectedNote message={note} />}
+          {note && <FormNote message={note} />}
         </form>
       )}
     </div>
@@ -288,6 +285,7 @@ function AddressesSection() {
 function ProfileSection({ user }: { user: AuthUser }) {
   const { requestPasswordReset } = useAuth();
   const [note, setNote] = useState<string | null>(null);
+  const [pending, setPending] = useState(false);
 
   return (
     <div>
@@ -308,16 +306,23 @@ function ProfileSection({ user }: { user: AuthUser }) {
 
       <button
         type="button"
+        disabled={pending}
         onClick={async () => {
+          setPending(true);
           const result = await requestPasswordReset(user.email);
-          if (!result.ok) setNote(result.message);
+          setPending(false);
+          setNote(
+            result.ok
+              ? `Şifre belirleme bağlantısını ${user.email} adresine gönderdik.`
+              : result.message,
+          );
         }}
-        className="mt-8 inline-flex h-12 items-center rounded-full border border-foreground/20 px-7 micro transition-colors hover:border-foreground/60"
+        className="mt-8 inline-flex h-12 items-center rounded-full border border-foreground/20 px-7 micro transition-colors hover:border-foreground/60 disabled:opacity-60"
       >
         Şifre Değiştir
       </button>
 
-      {note && <NotConnectedNote message={note} />}
+      {note && <FormNote message={note} />}
     </div>
   );
 }

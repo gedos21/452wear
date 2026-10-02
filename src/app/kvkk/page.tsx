@@ -86,6 +86,13 @@ export default function KvkkPage() {
           toplanır.
         </P>
         <P>
+          Hesap oluşturman hâlinde ad, soyad, e-posta adresi ve şifren
+          (geri döndürülemez biçimde şifrelenmiş olarak) kaydedilir.
+          &quot;Google ile devam et&quot; seçeneğini kullanırsan Google
+          hesabındaki ad, soyad, e-posta adresi ve profil fotoğrafı bağlantısı
+          Google tarafından bize iletilir; Google şifren bizimle paylaşılmaz.
+        </P>
+        <P>
           Sepet, favori ve beden profili (boy/kilo) bilgileri hâlihazırda
           yalnızca tarayıcının yerel
           depolamasında tutulmakta olup sunucuya iletilmemektedir. Ayrıntı için{" "}
@@ -103,7 +110,8 @@ export default function KvkkPage() {
           items={[
             "Kargo ve lojistik hizmeti sağlayıcıları — teslimat için.",
             "Ödeme hizmeti sağlayıcıları ve bankalar — ödeme işleminin gerçekleştirilmesi için.",
-            "Bilişim altyapısı ve barındırma sağlayıcıları — hizmetin sunulması için.",
+            "Bilişim altyapısı ve barındırma sağlayıcıları — hizmetin sunulması için (site barındırma: Vercel; hesap veritabanı: Neon, sunucuları Almanya/Frankfurt'ta).",
+            "Google — yalnızca \"Google ile devam et\" seçeneğini kullanman hâlinde, kimliğinin doğrulanması için.",
             "Muhasebe ve hukuk danışmanları — yasal yükümlülükler ve hakların korunması için.",
             "Yetkili kamu kurum ve kuruluşları — mevzuattan doğan talepler kapsamında.",
           ]}
