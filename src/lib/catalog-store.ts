@@ -1,7 +1,9 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { PRODUCTS as SEED, SHOWCASE_SLUG } from "@/data/products";
-import type { Product } from "@/types/product";
+import type { Product, ShoeSize } from "@/types/product";
+import { OWN_BRAND, productBrand } from "@/lib/product-filters";
+import { SHOE_SIZES } from "@/lib/product-variants";
 
 /**
  * Katalog kalıcılığı — GELİŞTİRME ORTAMI İÇİN.
@@ -329,6 +331,53 @@ export async function yeniGelenler(limit = 4): Promise<Product[]> {
   return enYeniOnce(await katmanOku())
     .filter((p) => p.isNew)
     .slice(0, limit);
+}
+
+/**
+ * Ana sayfa "Yeni Gelenler": stokta olan ürünler, en son eklenen başta.
+ * "Yeni" işaretine bakılmaz; ürün eklendikçe şerit kendiliğinden tazelenir.
+ */
+export async function sonEklenenler(limit = 10): Promise<Product[]> {
+  return enYeniOnce(await katmanOku())
+    .filter((p) => p.variants.some((v) => v.stock > 0))
+    .slice(0, limit);
+}
+
+/**
+ * Ana sayfa "Numaran kaç?": her ayakkabı numarası için o numarası stokta
+ * olan ayakkabı sayısı. Stokta hiç olmayan numara 0 döner (buton pasif).
+ */
+export async function numaraStoklari(): Promise<{ size: ShoeSize; count: number }[]> {
+  const ayakkabilar = (await katalogOku()).filter((p) => p.category === "ayakkabi");
+  return SHOE_SIZES.map((size) => ({
+    size,
+    count: ayakkabilar.filter((p) =>
+      p.variants.some((v) => v.size === size && v.stock > 0),
+    ).length,
+  }));
+}
+
+/**
+ * Ana sayfa markalar şeridi: stokta ürünü olan markalar, en çok ürünü olan
+ * başta. Markası bilinmeyen (kendi adımıza düşen) ürünler şeride girmez.
+ * `yalnizAyakkabi` true ise bağlantı ayakkabılar sayfasına gider.
+ */
+export async function markaVitrini(): Promise<
+  { name: string; count: number; yalnizAyakkabi: boolean }[]
+> {
+  const markalar = new Map<string, { count: number; yalnizAyakkabi: boolean }>();
+  for (const p of await katalogOku()) {
+    if (!p.variants.some((v) => v.stock > 0)) continue;
+    const marka = productBrand(p);
+    if (marka === OWN_BRAND && !p.brand?.trim()) continue;
+    const kayit = markalar.get(marka) ?? { count: 0, yalnizAyakkabi: true };
+    kayit.count += 1;
+    if (p.category !== "ayakkabi") kayit.yalnizAyakkabi = false;
+    markalar.set(marka, kayit);
+  }
+  return [...markalar.entries()]
+    .map(([name, v]) => ({ name, ...v }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, "tr"));
 }
 
 /**

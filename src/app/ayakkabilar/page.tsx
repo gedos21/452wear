@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ShopListing } from "@/components/shop/shop-listing";
-import { BRAND_PARAM, MODEL_PARAM } from "@/components/layout/nav-links";
+import { BRAND_PARAM, MODEL_PARAM, SIZE_PARAM } from "@/components/layout/nav-links";
 
 export const metadata: Metadata = {
   title: "Ayakkabılar",
@@ -17,7 +17,8 @@ export default async function ShoesPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  // ?marka= / ?model= navbar menüsünden gelir; tanınmayan değer yok sayılır.
+  // ?marka= / ?model= navbar menüsünden, ?numara= ana sayfadan gelir;
+  // tanınmayan değer yok sayılır.
   const params = await searchParams;
 
   return (
@@ -25,6 +26,7 @@ export default async function ShoesPage({
       category="ayakkabi"
       brand={tek(params[BRAND_PARAM])}
       model={tek(params[MODEL_PARAM])}
+      size={tek(params[SIZE_PARAM])}
     />
   );
 }

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { ShopListing } from "@/components/shop/shop-listing";
 import { CATEGORIES } from "@/data/products";
 import {
+  BRAND_PARAM,
   CATEGORY_PARAM,
   CATEGORY_ROUTES,
   categoryHref,
@@ -28,11 +29,19 @@ export default async function ShopPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const category = readCategory((await searchParams)[CATEGORY_PARAM]);
+  const params = await searchParams;
+  const category = readCategory(params[CATEGORY_PARAM]);
+  // ?marka= ana sayfadaki markalar şeridinden gelir (tüm kategorilerde).
+  const marka = params[BRAND_PARAM];
 
   // Kendi adresi olan kategoriler (/ayakkabilar, /giyim) oraya yönlenir;
   // eski ?kategori= bağlantıları da çalışmaya devam eder.
   if (category in CATEGORY_ROUTES) redirect(categoryHref(category));
 
-  return <ShopListing category={category} />;
+  return (
+    <ShopListing
+      category={category}
+      brand={Array.isArray(marka) ? marka[0] : marka}
+    />
+  );
 }

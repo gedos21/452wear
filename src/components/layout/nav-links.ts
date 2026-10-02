@@ -18,6 +18,8 @@ export const CATEGORY_ROUTES: Record<string, string> = {
 /** Ayakkabı listesinde marka/model ön seçimini taşıyan parametreler. */
 export const BRAND_PARAM = "marka";
 export const MODEL_PARAM = "model";
+/** Ayakkabı numarası ön seçimi: /ayakkabilar?numara=42 (ana sayfa "Numaran kaç?"). */
+export const SIZE_PARAM = "numara";
 
 /** Bir kategori için listeleme bağlantısı. "all" parametresiz gider. */
 export function categoryHref(slug: string) {

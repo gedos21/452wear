@@ -1,3 +1,6 @@
+import { NewArrivals } from "@/components/home/new-arrivals";
+import { SizeFinder } from "@/components/home/size-finder";
+import { BrandStrip } from "@/components/home/brand-strip";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { HomeHero } from "@/components/home/home-hero";
@@ -25,8 +28,11 @@ export default function HomePage() {
       <main id={MAIN_CONTENT_ID} tabIndex={-1} className="flex-1 pb-6 lg:pb-10">
         <HomeHero />
         <BestSellers />
+        <NewArrivals />
+        <SizeFinder />
         <ShoeCampaign />
         <CategoryTiles />
+        <BrandStrip />
         <KombinPanolari />
         <RecentlyViewedOnHome />
         <KombinOner />

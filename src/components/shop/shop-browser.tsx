@@ -29,7 +29,7 @@ import {
 } from "@/lib/product-filters";
 import { buildSearchIndex, searchProducts } from "@/lib/product-search";
 import { CATEGORIES } from "@/data/products";
-import type { Product, ProductCategory } from "@/types/product";
+import type { Product, ProductCategory, ProductSize } from "@/types/product";
 
 /** Bir seferde gösterilen ürün sayısı. */
 const PAGE_SIZE = 8;
@@ -51,6 +51,7 @@ export function ShopBrowser({
   title,
   initialBrand,
   initialModel,
+  initialSize,
 }: {
   products: Product[];
   category: CategoryFilter;
@@ -58,6 +59,8 @@ export function ShopBrowser({
   /** Adresten gelen marka/model (slug); navbar menüsü bunları kullanır. */
   initialBrand?: string;
   initialModel?: string;
+  /** Adresten gelen numara/beden; katalogda karşılığı yoksa yok sayılır. */
+  initialSize?: string;
 }) {
   const router = useRouter();
 
@@ -75,6 +78,9 @@ export function ShopBrowser({
       ...EMPTY_FILTERS,
       brands: eslestir(initialBrand, productBrand),
       models: eslestir(initialModel, productModel),
+      sizes: products.some((p) => p.variants.some((v) => v.size === initialSize))
+        ? [initialSize as ProductSize]
+        : [],
     };
   });
   const [sort, setSort] = useState<SortKey>("recommended");

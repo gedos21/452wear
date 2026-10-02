@@ -25,11 +25,14 @@ export async function ShopListing({
   category,
   brand,
   model,
+  size,
 }: {
   category: CategoryFilter;
   /** Adresten gelen ön seçim (slug) — navbar menüsündeki marka/model. */
   brand?: string;
   model?: string;
+  /** Adresten gelen numara/beden ön seçimi. */
+  size?: string;
 }) {
   const products = await katalogOku();
 
@@ -41,12 +44,13 @@ export async function ShopListing({
           {/* key: adresteki marka/model değişince filtreler baştan kurulur;
               yoksa ilk açılışın seçimi ekranda kalırdı. */}
           <ShopBrowser
-            key={`${category}|${brand ?? ""}|${model ?? ""}`}
+            key={`${category}|${brand ?? ""}|${model ?? ""}|${size ?? ""}`}
             products={products}
             category={category}
             title={pageTitle(category)}
             initialBrand={brand}
             initialModel={model}
+            initialSize={size}
           />
         </Container>
       </main>
