@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default async function AccountPage({
   searchParams,
 }: PageProps<"/hesap">) {
-  const { error } = await searchParams;
+  const { error, bolum, silindi } = await searchParams;
 
   return (
     <>
@@ -38,6 +38,8 @@ export default async function AccountPage({
             <AccountView
               googleEnabled={isGoogleEnabled()}
               oauthError={typeof error === "string" ? error : null}
+              section={typeof bolum === "string" ? bolum : null}
+              deleted={silindi === "1"}
             />
           </div>
         </Container>

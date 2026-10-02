@@ -10,12 +10,18 @@ import { authClient } from "@/lib/auth-client";
 export type AuthStatus = "loading" | "signed-out" | "signed-in";
 
 export type AuthUser = {
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
 };
 
-export type AuthResult = { ok: true } | { ok: false; message: string };
+export type AuthResult =
+  | { ok: true }
+  | { ok: false; message: string; /** Better Auth hata kodu (varsa). */ code?: string };
+
+/** Hesaba bağlı giriş yöntemleri. */
+export type SignInMethods = { google: boolean; password: boolean };
 
 export type SignInInput = { email: string; password: string };
 
@@ -31,10 +37,17 @@ export type AuthApi = {
   user: AuthUser | null;
   signIn: (input: SignInInput) => Promise<AuthResult>;
   signUp: (input: SignUpInput) => Promise<AuthResult>;
-  signInWithGoogle: () => Promise<AuthResult>;
+  /** `callbackURL`: Google dönüşünde gidilecek sayfa (varsayılan /hesap). */
+  signInWithGoogle: (callbackURL?: string) => Promise<AuthResult>;
   signOut: () => Promise<AuthResult>;
   requestPasswordReset: (email: string) => Promise<AuthResult>;
   resetPassword: (token: string, newPassword: string) => Promise<AuthResult>;
+  updateProfile: (input: { firstName: string; lastName: string }) => Promise<AuthResult>;
+  listSignInMethods: () => Promise<
+    ({ ok: true } & SignInMethods) | { ok: false; message: string }
+  >;
+  /** Şifreli hesapta `password` zorunlu; yalnızca Google'lı hesapta taze oturum gerekir. */
+  deleteAccount: (password?: string) => Promise<AuthResult>;
 };
 
 /** Giriş sonrası ve Google dönüşünde gidilen sayfa. */
@@ -53,9 +66,17 @@ const MESSAGES: Record<string, string> = {
   INVALID_TOKEN:
     "Şifre sıfırlama bağlantısı geçersiz ya da süresi dolmuş. Yeni bir bağlantı iste.",
   RESET_PASSWORD_DISABLED: "Şifre sıfırlama şu anda kullanılamıyor.",
+  PASSWORD_REQUIRED: "Hesabını silmek için şifreni gir.",
+  SESSION_EXPIRED: "Güvenliğin için yeniden giriş yapman gerekiyor.",
+  CREDENTIAL_ACCOUNT_NOT_FOUND: "Bu hesapta şifre tanımlı değil.",
+  UNAUTHORIZED: "Oturumun kapanmış görünüyor. Lütfen tekrar giriş yap.",
 };
 
+/** Sunucumuzun (lib/server/auth.ts) zaten Türkçe mesajla döndüğü kodlar. */
+const OWN_CODES = new Set(["INVALID_PROFILE", "FIELD_NOT_ALLOWED"]);
+
 const GENERIC = "Bir şeyler ters gitti. Lütfen tekrar dene.";
+const NETWORK = "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
 
 type ClientError = { code?: string; status?: number; message?: string } | null;
 
@@ -64,7 +85,12 @@ function toResult(error: ClientError): AuthResult {
   if (error.status === 429) {
     return { ok: false, message: "Çok fazla deneme yaptın. Biraz bekleyip tekrar dene." };
   }
-  return { ok: false, message: (error.code && MESSAGES[error.code]) || GENERIC };
+  const code = error.code;
+  const message =
+    (code && MESSAGES[code]) ||
+    (code && OWN_CODES.has(code) && error.message) ||
+    GENERIC;
+  return { ok: false, message, code };
 }
 
 async function run(call: () => Promise<{ error: ClientError }>): Promise<AuthResult> {
@@ -72,7 +98,7 @@ async function run(call: () => Promise<{ error: ClientError }>): Promise<AuthRes
     const { error } = await call();
     return toResult(error);
   } catch {
-    return { ok: false, message: "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene." };
+    return { ok: false, message: NETWORK };
   }
 }
 
@@ -91,6 +117,7 @@ export function useAuth(): AuthApi {
 
   const user: AuthUser | null = data
     ? {
+        id: data.user.id,
         firstName: data.user.firstName || data.user.name,
         lastName: data.user.lastName ?? "",
         email: data.user.email,
@@ -116,11 +143,11 @@ export function useAuth(): AuthApi {
       ),
 
     // Başarılıysa tarayıcı Google'a yönlenir; bu sonuç yalnızca hata için.
-    signInWithGoogle: () =>
+    signInWithGoogle: (callbackURL = ACCOUNT_PATH) =>
       run(() =>
         authClient.signIn.social({
           provider: "google",
-          callbackURL: ACCOUNT_PATH,
+          callbackURL,
           errorCallbackURL: ACCOUNT_PATH,
         }),
       ),
@@ -132,5 +159,35 @@ export function useAuth(): AuthApi {
 
     resetPassword: (token, newPassword) =>
       run(() => authClient.resetPassword({ token, newPassword })),
+
+    // `name` sunucuda da "ad soyad" olarak yeniden kurulur (bkz. server/auth.ts).
+    updateProfile: ({ firstName, lastName }) =>
+      run(() =>
+        authClient.updateUser({
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          name: `${firstName.trim()} ${lastName.trim()}`,
+        }),
+      ),
+
+    listSignInMethods: async () => {
+      try {
+        const { data: accounts, error } = await authClient.listAccounts();
+        if (error || !accounts) {
+          const result = toResult(error ?? {});
+          return { ok: false, message: result.ok ? GENERIC : result.message };
+        }
+        return {
+          ok: true,
+          google: accounts.some((a) => a.providerId === "google"),
+          password: accounts.some((a) => a.providerId === "credential"),
+        };
+      } catch {
+        return { ok: false, message: NETWORK };
+      }
+    },
+
+    deleteAccount: (password) =>
+      run(() => authClient.deleteUser(password ? { password } : {})),
   };
 }

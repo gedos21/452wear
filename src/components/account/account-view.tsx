@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AuthForms } from "./auth-forms";
-import { AccountDashboard } from "./account-dashboard";
+import { AccountDashboard, sectionFromSlug } from "./account-dashboard";
 import { oauthErrorMessage, useAuth, type AuthUser } from "@/lib/auth";
 
 /**
@@ -16,6 +16,7 @@ const PREVIEW_ENABLED = process.env.NODE_ENV !== "production";
 
 /** Önizlemede gösterilen örnek kullanıcı — gerçek bir hesap değil. */
 const PREVIEW_USER: AuthUser = {
+  id: "onizleme",
   firstName: "Ad",
   lastName: "Soyad",
   email: "ornek@452wear.com",
@@ -24,10 +25,16 @@ const PREVIEW_USER: AuthUser = {
 export function AccountView({
   googleEnabled,
   oauthError,
+  section = null,
+  deleted = false,
 }: {
   googleEnabled: boolean;
   /** Google dönüşündeki `?error=` kodu. */
   oauthError: string | null;
+  /** `?bolum=`: panelde açılacak bölüm (ör. "hesap-bilgileri"). */
+  section?: string | null;
+  /** `?silindi=1`: hesap az önce silindi. */
+  deleted?: boolean;
 }) {
   const { status, user } = useAuth();
   const [preview, setPreview] = useState(false);
@@ -38,7 +45,9 @@ export function AccountView({
     return <div className="h-80" aria-busy="true" />;
   }
 
-  if (status === "signed-in" && user) return <AccountDashboard user={user} />;
+  if (status === "signed-in" && user) {
+    return <AccountDashboard user={user} initialSection={sectionFromSlug(section)} />;
+  }
 
   if (preview && PREVIEW_ENABLED) {
     return (
@@ -62,7 +71,11 @@ export function AccountView({
     <div>
       <AuthForms
         googleEnabled={googleEnabled}
-        initialNote={oauthErrorMessage(oauthError)}
+        initialNote={
+          deleted
+            ? "Hesabın ve ona bağlı tüm bilgiler kalıcı olarak silindi."
+            : oauthErrorMessage(oauthError)
+        }
       />
 
       {PREVIEW_ENABLED && (

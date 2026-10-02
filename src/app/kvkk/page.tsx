@@ -93,10 +93,27 @@ export default function KvkkPage() {
           Google tarafından bize iletilir; Google şifren bizimle paylaşılmaz.
         </P>
         <P>
-          Sepet, favori ve beden profili (boy/kilo) bilgileri hâlihazırda
-          yalnızca tarayıcının yerel
-          depolamasında tutulmakta olup sunucuya iletilmemektedir. Ayrıntı için{" "}
+          Hesabına kaydettiğin teslimat adresleri (adres başlığı, ad soyad,
+          telefon, il, ilçe, açık adres, posta kodu) ve giriş yapmışken
+          favorilerine eklediğin ürünler hesabınla birlikte saklanır. Giriş
+          yaptığında, bu cihazda daha önce eklediğin favoriler hesabına
+          aktarılır. Hesabını &quot;Hesap Bilgileri&quot; bölümünden
+          sildiğinde hesabın, adreslerin ve favorilerin kalıcı olarak silinir.
+        </P>
+        <P>
+          Sepet, beden profili (boy/kilo) ve giriş yapmadan eklenen favoriler
+          hâlihazırda yalnızca tarayıcının yerel depolamasında tutulmakta olup
+          sunucuya iletilmemektedir. Ayrıntı için{" "}
           <Slot>Çerez Politikası</Slot> bölümüne bakabilirsin.
+        </P>
+        <P>
+          E-posta bültenine abone olursan e-posta adresin, açık rıza verdiğin
+          an, onay verdiğin metnin sürümü ve formun bulunduğu sayfa kaydedilir.
+          Bu kayıt hesabından bağımsızdır ve rızanı geri alana kadar saklanır;
+          rızanı geri aldığında sana ileti gönderilmez, rızanın geri alındığı
+          da kayıt altında tutulur. Kötüye kullanımı önlemek için abonelik
+          denemelerinde IP adresinin geri döndürülemez bir özeti kısa süreli
+          tutulur.
         </P>
       </Section>
 
