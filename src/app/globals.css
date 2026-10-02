@@ -170,6 +170,11 @@
   main[tabindex="-1"]:focus {
     outline: none;
   }
+
+  /* Atlayınca içerik yapışkan menünün altında kalmasın. */
+  main[tabindex="-1"] {
+    scroll-margin-top: 6rem;
+  }
 }
 
 @utility no-scrollbar {

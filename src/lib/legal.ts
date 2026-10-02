@@ -3,7 +3,7 @@
  * buradan üretilir; yeni bir metin eklenirse tek yerden tanımlanır.
  */
 
-export const LEGAL_UPDATED_AT = "8 Eylül 2026";
+export const LEGAL_UPDATED_AT = "2 Ekim 2026";
 export const LEGAL_VERSION = "1.0 (taslak)";
 
 export type LegalPage = {
