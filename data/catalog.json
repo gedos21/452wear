@@ -4920,6 +4920,10 @@
       "currency": "TRY",
       "images": [
         {
+          "src": "/products/p-063-temiz-940c21f3.webp",
+          "alt": "Nike Air Max Plus"
+        },
+        {
           "src": "/products/p-063-67eea552.webp",
           "alt": "nike tn gri siyah"
         },
@@ -5010,6 +5014,10 @@
       "compareAtPrice": 1400,
       "currency": "TRY",
       "images": [
+        {
+          "src": "/products/p-064-temiz-7ef55016.webp",
+          "alt": "Nike Air Max Plus"
+        },
         {
           "src": "/products/p-064-6c521653.webp",
           "alt": "nike tn mor pembe"
