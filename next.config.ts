@@ -56,6 +56,12 @@ const nextConfig: NextConfig = {
       bodySizeLimit: isDev ? "25mb" : "1mb",
     },
   },
+  // public/ CDN'den sunulur; sunucu paketine kopyalanmasın. Admin'in lokalde
+  // fotoğraf yazabilmesi (lib/server/storage) Next'in tüm klasörü pakete
+  // katmasına yol açıyordu (fonksiyon başına ~150 MB).
+  outputFileTracingExcludes: {
+    "/**": ["./public/**/*"],
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
