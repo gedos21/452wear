@@ -22,3 +22,4 @@ Sen bu projenin ana yazılım ajanısın. Kullanıcı (Kaan) yalnızca seninle k
 - Kullanıcı iki makinede çalışır (Mac ve Windows PC); iş bitince GitHub'a gönderilmeli.
 - Admin (`/admin`) yalnızca `npm run dev` altında açıktır; `data/catalog.json` ve `public/products/` dosyalarına yazar, sonra commit gerekir.
 - Arayüz metinleri Türkçe; kullanıcıyla Türkçe konuş.
+- Veritabanı (Neon, Frankfurt): canlı site `main` branch'ini, lokal `.env.local` ise `dev` branch'ini kullanır (her iki makinede). Şema değişince göçü önce lokalde (`npm run db:migrate`), sonra canlıda uygula; canlı adres yalnızca Neon panelinde ve Vercel'de.
