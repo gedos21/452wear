@@ -51,7 +51,9 @@ const nextConfig: NextConfig = {
       // Admin ürün formu görselleri tek istekte gönderir; varsayılan 1 MB
       // birkaç 2048×2048 WebP için yetmez. Dosya başına sınır (8 MB) ve tür
       // kontrolü sunucuda ayrıca yapılır: bkz. src/app/admin/actions.ts.
-      bodySizeLimit: "25mb",
+      // Yalnızca geliştirmede: admin canlıda kapalı; canlıda bülten gibi
+      // eylemler varsayılan 1 MB sınırında kalsın (büyük istekle yük bindirilemesin).
+      bodySizeLimit: isDev ? "25mb" : "1mb",
     },
   },
   async headers() {

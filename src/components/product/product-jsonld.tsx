@@ -74,8 +74,9 @@ export function ProductJsonLd({
   return (
     <script
       type="application/ld+json"
-      // Veri bizim ürettiğimiz nesneden geliyor; JSON.stringify kaçışı yeterli.
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(veri) }}
+      // Ürün adı/açıklaması admin'den gelir; "<" kaçışı, metindeki bir
+      // "</script>" dizisinin etiketi erken kapatmasını engeller.
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(veri).replace(/</g, "\\u003c") }}
     />
   );
 }

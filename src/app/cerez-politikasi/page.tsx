@@ -31,14 +31,14 @@ export default function CookiePolicyPage() {
           head={["Ad", "Amaç", "Tür", "Süre", "Taraf"]}
           rows={[
             [
-              <Slot key="st">452wear.session_token</Slot>,
+              <Slot key="st">__Secure-452wear.session_token</Slot>,
               "Hesabına giriş yaptığında oturumunu açık tutmak",
               "Zorunlu · çerez",
               "7 gün (çıkış yapınca silinir)",
               "Birinci taraf",
             ],
             [
-              <Slot key="ss">452wear.state</Slot>,
+              <Slot key="ss">__Secure-452wear.state</Slot>,
               "\"Google ile devam et\" sırasında girişin sana ait olduğunu doğrulamak",
               "Zorunlu · çerez",
               "En çok 10 dakika",
