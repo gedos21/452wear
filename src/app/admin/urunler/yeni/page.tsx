@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { UrunDuzenleyici } from "@/components/admin/urun-duzenleyici";
-import { katalogOku } from "@/lib/catalog-store";
+import { adminKatalog } from "@/lib/catalog-store";
 
 export const metadata = { title: "Yeni ürün" };
 
@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 
 export default async function YeniUrunSayfasi() {
   // Öneri alanlarında seçilecek ürünler (saatler 452 Watch bölümünde).
-  const urunler = (await katalogOku()).filter((u) => u.category !== "saat");
+  const urunler = (await adminKatalog()).filter((u) => u.category !== "saat");
 
   return (
     <div>

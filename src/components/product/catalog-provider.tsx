@@ -9,7 +9,7 @@ import type { Currency, Product } from "@/types/product";
 /**
  * İstemci tarafındaki TEK ürün kaynağı.
  *
- * Kök layout canlı kataloğu (tohum + data/catalog.json, bkz. lib/catalog-store)
+ * Kök layout canlı kataloğu (veritabanı, bkz. lib/catalog-store)
  * sunucuda bir kez okuyup buraya verir. Sepet, ödeme özeti, favoriler ve arama
  * ürünü buradan çözer. `@/data/products` içindeki tohum listeyi doğrudan
  * okumak admin'den eklenen ürünleri kaçırır.

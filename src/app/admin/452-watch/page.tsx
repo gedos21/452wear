@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ExternalLink, Plus } from "lucide-react";
 import { Silinenler } from "@/components/admin/silinenler";
 import { UrunListesi, kategoriAdi } from "@/components/admin/urun-listesi";
-import { copKutusu, katalogOku } from "@/lib/catalog-store";
+import { copKutusu, adminKatalog } from "@/lib/catalog-store";
 
 export const metadata = { title: "452 Watch" };
 
@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
  * burada eklenen ürünün kategorisi her zaman "saat"tir.
  */
 export default async function WatchAdminSayfasi() {
-  const [tumu, tumSilinenler] = await Promise.all([katalogOku(), copKutusu()]);
+  const [tumu, tumSilinenler] = await Promise.all([adminKatalog(), copKutusu()]);
   const saatler = tumu.filter((u) => u.category === "saat");
   const silinenler = tumSilinenler.filter((u) => u.category === "saat");
 

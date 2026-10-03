@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/container";
 import { AdminNav } from "@/components/admin/admin-nav";
 import { MAIN_CONTENT_ID } from "@/components/layout/skip-link";
+import { adminOturumu } from "@/lib/server/admin";
+import { GORSEL_YUKLEME_ACIK } from "@/lib/server/storage";
 
 // absolute: kök şablon ("%s | 452WEAR") başlığa ikinci kez eklenmesin.
 export const metadata = {
@@ -12,13 +14,13 @@ export const metadata = {
 /**
  * Admin kabuğu.
  *
- * ERİŞİM: Projede gerçek kimlik doğrulama yok (bkz. src/lib/auth.ts). Bu yüzden
- * sahte bir "admin girişi" koymuyoruz — bunun yerine alan production'da
- * KAPALI. Gerçek bir auth sağlayıcı bağlandığında buradaki kontrol o sağlayıcının
- * oturum/rol kontrolüyle değiştirilecek.
+ * ERİŞİM: yalnızca admin hesabı (ADMIN_EMAILS + doğrulanmış e-posta, bkz.
+ * lib/server/admin). Başkasına 404 verilir; panelin varlığı bile görünmez.
+ * Eylemler yetkiyi ayrıca kendileri de kontrol eder (app/admin/actions.ts).
  */
-export default function AdminLayout({ children }: LayoutProps<"/admin">) {
-  if (process.env.NODE_ENV === "production") notFound();
+export default async function AdminLayout({ children }: LayoutProps<"/admin">) {
+  const oturum = await adminOturumu();
+  if (!oturum) notFound();
 
   return (
     <div className="min-h-dvh bg-background">
@@ -50,12 +52,16 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
       <main id={MAIN_CONTENT_ID} tabIndex={-1}>
         <Container className="pt-8 pb-24">
           <p className="mb-8 rounded-[var(--radius-product)] bg-muted/60 px-4 py-3 text-[13px] leading-relaxed text-muted-foreground ring-1 ring-border/60">
-            <span className="micro text-brand">Geliştirme alanı</span>
+            <span className="micro text-brand">
+              {process.env.NODE_ENV === "production" ? "Canlı site" : "Lokal (test veritabanı)"}
+            </span>
             <span className="mt-1.5 block">
-              Bu panelde kimlik doğrulama yok ve production build&apos;inde
-              kapalıdır. Değişiklikler{" "}
-              <code className="text-foreground">data/catalog.json</code> dosyasına
-              yazılır; yazılabilir bir dosya sistemi gerekir.
+              {oturum.user.email} olarak giriş yaptın. Kaydettiğin değişiklikler
+              {process.env.NODE_ENV === "production"
+                ? " anında sitede görünür."
+                : " yalnızca test veritabanına yazılır; canlı siteyi etkilemez."}
+              {!GORSEL_YUKLEME_ACIK &&
+                " Görsel yükleme şimdilik kapalı; mevcut görselleri sıralayıp kaldırabilirsin."}
             </span>
           </p>
           {children}

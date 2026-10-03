@@ -5,6 +5,7 @@ import {
   check,
   index,
   integer,
+  jsonb,
   pgTable,
   primaryKey,
   text,
@@ -158,3 +159,72 @@ export const newsletterSubscriber = pgTable(
   },
   (t) => [check("newsletter_subscriber_email_lower", sql`${t.email} = lower(${t.email})`)],
 );
+
+/* ---------------- Katalog ---------------- */
+
+/**
+ * Ürünler. Görseller, renkler ve öneri listeleri ürünle birlikte değişen küçük
+ * listeler olduğu için jsonb; stok ise siparişte tek tek düşülebilsin diye
+ * ayrı tabloda (product_variant).
+ *
+ * durum: "yayinda" | "cop" (çöp kutusu, geri getirilebilir) | "silindi"
+ * (kalıcı silindi; satır, id'si yeniden kullanılmasın diye kalır).
+ * sira: katalog sırası. tohum: ilk koddaki katalogdan gelen ürün ("en yeni"
+ * sıralamasında admin'in eklediklerinden sonra gelir).
+ */
+export const product = pgTable(
+  "product",
+  {
+    id: text("id").primaryKey(),
+    slug: text("slug").notNull().unique(),
+    name: text("name").notNull(),
+    description: text("description").notNull(),
+    category: text("category").notNull(),
+    brand: text("brand"),
+    model: text("model"),
+    fit: text("fit"),
+    price: integer("price").notNull(),
+    compareAtPrice: integer("compare_at_price"),
+    currency: text("currency").notNull().default("TRY"),
+    images: jsonb("images").$type<{ src: string; alt: string }[]>().notNull(),
+    colors: jsonb("colors").$type<{ name: string; hex: string }[]>().notNull(),
+    isNew: boolean("is_new").notNull().default(false),
+    complementaryIds: jsonb("complementary_ids").$type<string[]>(),
+    relatedIds: jsonb("related_ids").$type<string[]>(),
+    durum: text("durum").notNull().default("yayinda"),
+    sira: integer("sira").notNull(),
+    tohum: boolean("tohum").notNull().default(false),
+    /** Çöpe atılma anı; çöp kutusu en son silinen başta listelenir. */
+    copeAtildi: timestamp("cope_atildi"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+  },
+  (t) => [index("product_durum_idx").on(t.durum)],
+);
+
+/** Renk × beden stok satırları. Sırası ürün formundaki sıradır. */
+export const productVariant = pgTable(
+  "product_variant",
+  {
+    id: text("id").primaryKey(),
+    productId: text("product_id")
+      .notNull()
+      .references(() => product.id, { onDelete: "cascade" }),
+    size: text("size").notNull(),
+    color: text("color").notNull(),
+    stock: integer("stock").notNull().default(0),
+    sira: integer("sira").notNull(),
+  },
+  (t) => [
+    index("product_variant_product_idx").on(t.productId),
+    check("product_variant_stock_nonneg", sql`${t.stock} >= 0`),
+  ],
+);
+
+/** Eski adres → ürün: adı/adresi değişen ürünün eski bağlantısı yönlenir. */
+export const productRedirect = pgTable("product_redirect", {
+  slug: text("slug").primaryKey(),
+  productId: text("product_id")
+    .notNull()
+    .references(() => product.id, { onDelete: "cascade" }),
+});

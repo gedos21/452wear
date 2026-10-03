@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { TopluDuzenle } from "@/components/admin/toplu-duzenle";
-import { katalogOku } from "@/lib/catalog-store";
+import { adminKatalog } from "@/lib/catalog-store";
 
 export const metadata = { title: "Toplu düzenle" };
 
@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function TopluDuzenleSayfasi() {
   // Saatler 452 Watch bölümünde yönetilir; toplu düzenlemeye karışmaz.
-  const urunler = (await katalogOku()).filter((u) => u.category !== "saat");
+  const urunler = (await adminKatalog()).filter((u) => u.category !== "saat");
 
   return (
     <div>

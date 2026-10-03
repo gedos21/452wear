@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { UrunDuzenleyici } from "@/components/admin/urun-duzenleyici";
-import { katalogOku, urunBul } from "@/lib/catalog-store";
+import { adminKatalog, urunBul } from "@/lib/catalog-store";
 
 /** Admin bölümünün adresi: saatler 452 Watch'ta, diğerleri Ürünler'de. */
 export const bolumAdresi = (saat: boolean) =>
@@ -25,7 +25,7 @@ export async function UrunDuzenleSayfasi({
   if (saat !== (bolum === "452-watch")) redirect(`${bolumAdresi(saat)}/${id}`);
 
   // Öneri alanlarında yalnızca aynı bölümün ürünleri seçilebilir.
-  const urunler = (await katalogOku()).filter(
+  const urunler = (await adminKatalog()).filter(
     (u) => (u.category === "saat") === saat,
   );
 

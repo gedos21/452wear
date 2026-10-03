@@ -1,22 +1,27 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-import { createHash } from "node:crypto";
-import { promises as fs } from "node:fs";
-import path from "node:path";
+import { revalidatePath, updateTag } from "next/cache";
 
 import {
   bosSlug,
   copeTasi,
   copKutusundanGeriGetir,
   kaliciSil,
-  katalogOku,
+  KATALOG_ETIKETI,
+  tumGorselYollari,
   slugSahibi,
   slugYap,
   urunBul,
   urunYaz,
   yeniId,
 } from "@/lib/catalog-store";
+import { adminMi } from "@/lib/server/admin";
+import {
+  GORSEL_YUKLEME_ACIK,
+  GORSEL_YUKLEME_KAPALI_MESAJI,
+  gorselKaydet,
+  gorselSil,
+} from "@/lib/server/storage";
 
 import { sizesForCategory } from "@/lib/product-variants";
 import type {
@@ -31,7 +36,7 @@ import type {
 
 /**
  * Admin eylemleri. Hepsi sunucuda çalışır ve girdileri güvenilmez kabul eder.
- * Başarı mesajı yalnızca disk yazımı gerçekten tamamlandığında döner.
+ * Başarı mesajı yalnızca veritabanı yazımı gerçekten tamamlandığında döner.
  */
 export type Sonuc =
   | { durum: "bos" }
@@ -39,15 +44,11 @@ export type Sonuc =
   | { durum: "hata"; mesaj: string };
 
 /**
- * Admin paneli yalnızca yerel geliştirmede açıktır (bkz. admin/layout). Sayfa
- * production'da 404 verse de bu eylemler build'e girer ve kimliği bilinirse
- * doğrudan çağrılabilir; bu yüzden her eylem kendi başına da kapanır.
+ * Admin paneli yalnızca admin hesabına açıktır (bkz. lib/server/admin, admin
+ * layout). Sayfa başkasına 404 verse de bu eylemler doğrudan çağrılabilir; bu
+ * yüzden her eylem yetkiyi kendisi de kontrol eder.
  */
-const KAPALI = process.env.NODE_ENV === "production";
-const KAPALI_SONUC: Sonuc = {
-  durum: "hata",
-  mesaj: "Admin yalnızca geliştirme ortamında çalışır.",
-};
+const YETKISIZ: Sonuc = { durum: "hata", mesaj: "Bu işlem için yetkin yok." };
 
 const KATEGORILER: ProductCategory[] = [
   "ayakkabi",
@@ -60,6 +61,8 @@ const KATEGORILER: ProductCategory[] = [
 ];
 
 function tazele(urunId?: string) {
+  // Site tarafı katalog önbelleği hemen düşer; sonraki istek tazeyi okur.
+  updateTag(KATALOG_ETIKETI);
   // Kök layout da kataloğu okur (sepet, favoriler, arama): tüm ağaç tazelenir.
   revalidatePath("/", "layout");
   revalidatePath("/admin/urunler");
@@ -195,6 +198,8 @@ function gorselleriDogrula(fd: FormData): File[] {
   const dosyalar = fd
     .getAll("gorsel")
     .filter((f): f is File => f instanceof File && f.size > 0);
+  if (dosyalar.length > 0 && !GORSEL_YUKLEME_ACIK)
+    throw new Error(GORSEL_YUKLEME_KAPALI_MESAJI);
   for (const f of dosyalar) {
     if (!GORSEL_TURLERI[f.type])
       throw new Error(`"${f.name}" desteklenmiyor; WebP, PNG veya JPG yükle.`);
@@ -205,23 +210,10 @@ function gorselleriDogrula(fd: FormData): File[] {
 }
 
 async function gorselleriYaz(dosyalar: File[], id: string, ad: string) {
-  if (dosyalar.length === 0) return [];
-  const klasor = path.join(process.cwd(), "public", "products");
-  await fs.mkdir(klasor, { recursive: true });
   const out = [];
   for (const f of dosyalar) {
-    const buf = Buffer.from(await f.arrayBuffer());
-    // İçerik hash'li ad: mevcut bir dosyanın (başka ürünün görseli dahil)
-    // üzerine asla yazılmaz; aynı içerik zaten varsa dosya yeniden yazılmaz.
-    const hash = createHash("sha1").update(buf).digest("hex").slice(0, 8);
-    const adi = `${id}-${hash}.${GORSEL_TURLERI[f.type]}`;
-    try {
-      await fs.writeFile(path.join(klasor, adi), buf, { flag: "wx" });
-    } catch (e) {
-      if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw e;
-    }
     // alt metni ürün adından gelir; uydurma açıklama üretmiyoruz.
-    out.push({ src: `/products/${adi}`, alt: ad });
+    out.push({ src: await gorselKaydet(f, id, GORSEL_TURLERI[f.type]), alt: ad });
   }
   return out;
 }
@@ -282,17 +274,12 @@ function gorselSirasi(
  * fazla ürün tarafından paylaşılabildiği için asla silinmez.
  */
 async function kullanilmayanGorselleriSil(yollar: string[], urunId: string) {
-  const kullanilan = new Set(
-    (await katalogOku()).flatMap((p) => p.images.map((g) => g.src)),
-  );
+  // Çöp kutusundakiler de sayılır: geri getirilebilirler.
+  const kullanilan = new Set(await tumGorselYollari());
   const yuklenen = new RegExp(`^/products/${urunId}-[0-9a-f]{8}\\.(webp|png|jpg)$`);
   for (const yol of yollar) {
     if (kullanilan.has(yol) || !yuklenen.test(yol)) continue;
-    try {
-      await fs.unlink(path.join(process.cwd(), "public", yol.slice(1)));
-    } catch (e) {
-      if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
-    }
+    await gorselSil(yol);
   }
 }
 
@@ -333,7 +320,7 @@ function oneriAlanlari(fd: FormData, id: string) {
 }
 
 export async function urunKaydet(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
-  if (KAPALI) return KAPALI_SONUC;
+  if (!(await adminMi())) return YETKISIZ;
   try {
     const a = urunuAyikla(fd);
     if (!a.ok) return { durum: "hata", mesaj: a.hata };
@@ -478,10 +465,7 @@ export type TopluSonuc =
     }
   | { durum: "hata"; mesaj: string };
 
-const TOPLU_KAPALI: TopluSonuc = {
-  durum: "hata",
-  mesaj: "Admin yalnızca geliştirme ortamında çalışır.",
-};
+const TOPLU_YETKISIZ: TopluSonuc = { durum: "hata", mesaj: "Bu işlem için yetkin yok." };
 
 /**
  * Tek bir ürüne toplu değişiklikleri uygular ve YENİ ürünü döndürür.
@@ -605,7 +589,7 @@ export async function topluGuncelle(
   _onceki: TopluSonuc,
   fd: FormData,
 ): Promise<TopluSonuc> {
-  if (KAPALI) return TOPLU_KAPALI;
+  if (!(await adminMi())) return TOPLU_YETKISIZ;
   try {
     const ham = String(fd.get("degisiklikler") ?? "");
     let liste: TopluDegisiklik[];
@@ -661,7 +645,7 @@ export async function topluGuncelle(
 
 /** Ürünü çöp kutusuna taşır. Verisi ve görselleri durur; geri getirilebilir. */
 export async function urunSil(_onceki: Sonuc, fd: FormData): Promise<Sonuc> {
-  if (KAPALI) return KAPALI_SONUC;
+  if (!(await adminMi())) return YETKISIZ;
   try {
     const urun = await copeTasi(String(fd.get("urunId") ?? ""));
     if (!urun) return { durum: "hata", mesaj: "Ürün bulunamadı." };
@@ -679,7 +663,7 @@ export async function urunGeriGetir(
   _onceki: Sonuc,
   fd: FormData,
 ): Promise<Sonuc> {
-  if (KAPALI) return KAPALI_SONUC;
+  if (!(await adminMi())) return YETKISIZ;
   try {
     const urun = await copKutusundanGeriGetir(String(fd.get("urunId") ?? ""));
     if (!urun) return { durum: "hata", mesaj: "Ürün çöp kutusunda değil." };
@@ -702,7 +686,7 @@ export async function urunKaliciSil(
   _onceki: Sonuc,
   fd: FormData,
 ): Promise<Sonuc> {
-  if (KAPALI) return KAPALI_SONUC;
+  if (!(await adminMi())) return YETKISIZ;
   try {
     const urun = await kaliciSil(String(fd.get("urunId") ?? ""));
     if (!urun) return { durum: "hata", mesaj: "Ürün çöp kutusunda değil." };

@@ -20,5 +20,5 @@ Sen bu projenin ana yazılım ajanısın. Kullanıcı (Kaan) yalnızca seninle k
 
 - `main`'e push = Vercel üzerinden canlıya deploy (https://452wear.vercel.app). Kullanıcı onay vermeden `main`'e push etme; büyük işler ayrı dalda yapılır.
 - Kullanıcı iki makinede çalışır (Mac ve Windows PC); iş bitince GitHub'a gönderilmeli.
-- Admin (`/admin`) yalnızca `npm run dev` altında açıktır; `data/catalog.json` ve `public/products/` dosyalarına yazar, sonra commit gerekir.
+- Katalog veritabanında (product, product_variant, product_redirect; bkz. src/lib/catalog-store.ts). Admin (`/admin`) yalnızca ADMIN_EMAILS'teki doğrulanmış hesaba açık; canlıda da çalışır, değişiklikler anında yayına girer (commit gerekmez). Görsel yükleme şimdilik yalnızca lokalde (public/products, sonra commit); canlıda R2 bağlanınca açılacak.
 - Arayüz metinleri Türkçe; kullanıcıyla Türkçe konuş.

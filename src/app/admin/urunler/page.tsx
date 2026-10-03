@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ListChecks, Plus } from "lucide-react";
 import { Silinenler } from "@/components/admin/silinenler";
 import { UrunListesi, kategoriAdi } from "@/components/admin/urun-listesi";
-import { copKutusu, katalogOku } from "@/lib/catalog-store";
+import { copKutusu, adminKatalog } from "@/lib/catalog-store";
 
 export const metadata = { title: "Ürünler" };
 
@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 /** Giyim ve ayakkabı. Saatler ayrı bölümde: /admin/452-watch. */
 export default async function UrunlerSayfasi() {
-  const [tumu, tumSilinenler] = await Promise.all([katalogOku(), copKutusu()]);
+  const [tumu, tumSilinenler] = await Promise.all([adminKatalog(), copKutusu()]);
   const urunler = tumu.filter((u) => u.category !== "saat");
   const silinenler = tumSilinenler.filter((u) => u.category !== "saat");
 

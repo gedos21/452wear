@@ -15,6 +15,13 @@
       "when": 1790927347211,
       "tag": "0001_hesap_favori_bulten",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791012182134,
+      "tag": "0002_katalog",
+      "breakpoints": true
     }
   ]
 }

@@ -1,0 +1,7423 @@
+{
+ "urunler": [
+  {
+   "id": "p-001",
+   "slug": "oversize-sweatshirt",
+   "name": "Champion Sweatshirt",
+   "description": "Ağır gramajlı %100 pamuk, oversize kalıp. Yıkamada çekmeye karşı ön işlemli.",
+   "category": "sweatshirt",
+   "brand": "Champion",
+   "price": 749,
+   "compareAtPrice": 899,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-001-196f9141.jpg",
+     "alt": "Champion Sweatshirt"
+    },
+    {
+     "src": "/products/p-001-0322a8d1.jpg",
+     "alt": "Champion Sweatshirt"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-001-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-001-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-001-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-001-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "cop",
+   "sira": 0,
+   "tohum": true,
+   "copSira": 9
+  },
+  {
+   "id": "p-002",
+   "slug": "sweatshirt",
+   "name": "Champion Sweat",
+   "description": "Üç iplik şardonlu kumaş, geniş kapüşon ve ribana detay.",
+   "category": "sweatshirt",
+   "price": 1499,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-002-3b944998.jpg",
+     "alt": "Champion Sweat"
+    },
+    {
+     "src": "/products/p-002-f1256f1b.jpg",
+     "alt": "Champion Sweat"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-002-beyaz-m",
+     "size": "M",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-002-beyaz-l",
+     "size": "L",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-002-beyaz-xl",
+     "size": "XL",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "cop",
+   "sira": 1,
+   "tohum": true,
+   "copSira": 10
+  },
+  {
+   "id": "p-003",
+   "slug": "kargo-pantolon",
+   "name": "Kargo Pantolon",
+   "description": "Rahat kalıp, yan cepli kargo pantolon, ayarlanabilir paça.",
+   "category": "esofman",
+   "price": 1799,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-003-7a9acd99.png",
+     "alt": "Kargo Pantolon"
+    },
+    {
+     "src": "/products/p-003-7008e797.png",
+     "alt": "Kargo Pantolon"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Haki",
+     "hex": "#6e7358"
+    },
+    {
+     "name": "Bej",
+     "hex": "#c9b79c"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-003-m",
+     "size": "M",
+     "color": "Haki",
+     "stock": 7
+    },
+    {
+     "id": "p-003-l",
+     "size": "L",
+     "color": "Haki",
+     "stock": 2
+    },
+    {
+     "id": "p-003-s",
+     "size": "S",
+     "color": "Bej",
+     "stock": 6
+    }
+   ],
+   "isNew": true,
+   "durum": "cop",
+   "sira": 2,
+   "tohum": true,
+   "copSira": 4
+  },
+  {
+   "id": "p-004",
+   "slug": "yikanmis-jean",
+   "name": "Yıkanmış Jean",
+   "description": "Orta yükseklikte bel, düz paça, taş yıkama denim.",
+   "category": "esofman",
+   "price": 1949,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-004-542dba5a.png",
+     "alt": "Yıkanmış Jean"
+    },
+    {
+     "src": "/products/p-004-7008e797.png",
+     "alt": "Yıkanmış Jean"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Açık Mavi",
+     "hex": "#8fa3b8"
+    },
+    {
+     "name": "İndigo",
+     "hex": "#2e3b4e"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-004-l",
+     "size": "L",
+     "color": "Açık Mavi",
+     "stock": 6
+    },
+    {
+     "id": "p-004-m",
+     "size": "M",
+     "color": "İndigo",
+     "stock": 4
+    }
+   ],
+   "isNew": true,
+   "durum": "cop",
+   "sira": 3,
+   "tohum": true,
+   "copSira": 5
+  },
+  {
+   "id": "p-006",
+   "slug": "eye-dagger-tisort",
+   "name": "Eye & Dagger Tişört",
+   "description": "Kırık beyaz ağır gramaj tişört, önden gravür baskı.",
+   "category": "tisort",
+   "price": 599,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/eye-dagger-tee.jpg",
+     "alt": "Kırık beyaz tişört üzerinde gravür baskı"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Kırık Beyaz",
+     "hex": "#E9E4DA"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-006-m",
+     "size": "M",
+     "color": "Kırık Beyaz",
+     "stock": 6
+    },
+    {
+     "id": "p-006-l",
+     "size": "L",
+     "color": "Kırık Beyaz",
+     "stock": 4
+    }
+   ],
+   "isNew": true,
+   "durum": "cop",
+   "sira": 4,
+   "tohum": true,
+   "copSira": 6
+  },
+  {
+   "id": "p-007",
+   "slug": "basic-tisort",
+   "name": "Basic Tişört",
+   "description": "Düz kalıp, orta gramaj, günlük kullanım için.",
+   "category": "tisort",
+   "price": 549,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-007-6bd28dd3.jpg",
+     "alt": "Basic Tişört"
+    },
+    {
+     "src": "/products/p-007-70beded4.jpg",
+     "alt": "Basic Tişört"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#f2efe9"
+    },
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    },
+    {
+     "name": "Gri",
+     "hex": "#9b9b96"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-007-s",
+     "size": "S",
+     "color": "Beyaz",
+     "stock": 14
+    },
+    {
+     "id": "p-007-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 11
+    },
+    {
+     "id": "p-007-xl",
+     "size": "XL",
+     "color": "Gri",
+     "stock": 5
+    }
+   ],
+   "isNew": false,
+   "durum": "cop",
+   "sira": 5,
+   "tohum": true,
+   "copSira": 7
+  },
+  {
+   "id": "p-008",
+   "slug": "sweatshirt-adidas",
+   "name": "Adidas Sweat",
+   "description": "Tam boy fermuar, yan cepli, şardonlu iç yüzey.",
+   "category": "sweatshirt",
+   "price": 1699,
+   "compareAtPrice": 1999,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-008-d0e3a42a.jpg",
+     "alt": "Adidas Sweat"
+    },
+    {
+     "src": "/products/p-008-a4975ff1.jpg",
+     "alt": "Adidas Sweat"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Lacivert",
+     "hex": "#2a6bac"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-008-lacivert-m",
+     "size": "M",
+     "color": "Lacivert",
+     "stock": 7
+    }
+   ],
+   "isNew": false,
+   "durum": "cop",
+   "sira": 6,
+   "tohum": true,
+   "copSira": 11
+  },
+  {
+   "id": "p-009",
+   "slug": "adidas-sweat",
+   "name": "Adidas Sweat",
+   "description": "Klasik crewneck kalıp, ribana yaka ve manşet.",
+   "category": "sweatshirt",
+   "price": 1349,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-009-7e1ed813.jpg",
+     "alt": "Adidas Sweat"
+    },
+    {
+     "src": "/products/p-009-d1994831.jpg",
+     "alt": "Adidas Sweat"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-009-beyaz-s",
+     "size": "S",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-009-beyaz-l",
+     "size": "L",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-009-beyaz-xxl",
+     "size": "XXL",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": false,
+   "durum": "cop",
+   "sira": 7,
+   "tohum": true,
+   "copSira": 12
+  },
+  {
+   "id": "p-010",
+   "slug": "jogger-pantolon",
+   "name": "Jogger Pantolon",
+   "description": "Lastikli bel ve paça, yumuşak üç iplik kumaş.",
+   "category": "esofman",
+   "price": 1249,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-010-d72592a2.png",
+     "alt": "Jogger Pantolon"
+    },
+    {
+     "src": "/products/p-010-cf2b6ff8.png",
+     "alt": "Jogger Pantolon"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    },
+    {
+     "name": "Gri",
+     "hex": "#9b9b96"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-010-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 8
+    },
+    {
+     "id": "p-010-l",
+     "size": "L",
+     "color": "Gri",
+     "stock": 0
+    }
+   ],
+   "isNew": false,
+   "durum": "cop",
+   "sira": 8,
+   "tohum": true,
+   "copSira": 8
+  },
+  {
+   "id": "p-011",
+   "slug": "adidas-superstar",
+   "name": "Adidas Superstar",
+   "description": "Beyaz deri üzerinde siyah 3 bant ve ikonik kabuk burunla Superstar, retro havasını her kombine taşıyan bir klasik.",
+   "category": "ayakkabi",
+   "price": 1199,
+   "compareAtPrice": 1399,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-011-f45165db.jpg",
+     "alt": "Adidas Superstar beyaz siyah"
+    },
+    {
+     "src": "/products/p-011-5706411b.jpg",
+     "alt": "Adidas Superstar beyaz siyah"
+    },
+    {
+     "src": "/products/p-011-37c109c9.jpg",
+     "alt": "Adidas Superstar beyaz siyah"
+    },
+    {
+     "src": "/products/p-011-dd52f863.jpg",
+     "alt": "Adidas Superstar beyaz siyah"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Siyah",
+     "hex": "#f2efe9"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-011-siyah-beyaz-36",
+     "size": "36",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    },
+    {
+     "id": "p-011-siyah-beyaz-37",
+     "size": "37",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    },
+    {
+     "id": "p-011-siyah-beyaz-38",
+     "size": "38",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    },
+    {
+     "id": "p-011-siyah-beyaz-39",
+     "size": "39",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    },
+    {
+     "id": "p-011-siyah-beyaz-40",
+     "size": "40",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    },
+    {
+     "id": "p-011-siyah-beyaz-41",
+     "size": "41",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    },
+    {
+     "id": "p-011-siyah-beyaz-42",
+     "size": "42",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    },
+    {
+     "id": "p-011-siyah-beyaz-43",
+     "size": "43",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    },
+    {
+     "id": "p-011-siyah-beyaz-44",
+     "size": "44",
+     "color": "Siyah Beyaz",
+     "stock": 5
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "durum": "cop",
+   "sira": 9,
+   "tohum": false,
+   "copSira": 0
+  },
+  {
+   "id": "p-012",
+   "slug": "nike-air-jordan-1-low-year-of-the-dragon",
+   "name": "Nike Air Jordan 1 Low Year of the Dragon",
+   "description": "Açıklama:\r\nJordan 1 Low’un ikonik silüeti, Çin kültüründen ilham alan Year of the Dragon detaylarıyla buluşuyor. Dengeli renk kombinasyonu, özel grafik/dokusal detayları ve klasik düşük bilek tasarımıyla günlük streetwear kombinlerine güçlü bir görünüm katar.\r\n\r\nÖne Çıkanlar\r\n\r\nAir Jordan 1 Low silüeti\r\nYear of the Dragon özel tasarım detayları\r\nDüşük bilekli klasik yapı\r\nGünlük kullanıma uygun\r\nJean, eşofman ve oversize parçalarla kolay kombinlenir",
+   "category": "ayakkabi",
+   "price": 1199,
+   "compareAtPrice": 1399,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-012-b6473a43.jpg",
+     "alt": "Nike Air Jordan 1 Low Year of the Dragon"
+    },
+    {
+     "src": "/products/p-012-04b58ee0.jpg",
+     "alt": "Nike Air Jordan 1 Low Year of the Dragon"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#f2efe9"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-012-beyaz-36",
+     "size": "36",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-37",
+     "size": "37",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-38",
+     "size": "38",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-39",
+     "size": "39",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-40",
+     "size": "40",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-41",
+     "size": "41",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-42",
+     "size": "42",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-43",
+     "size": "43",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-44",
+     "size": "44",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-012-beyaz-45",
+     "size": "45",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": false,
+   "durum": "cop",
+   "sira": 10,
+   "tohum": false,
+   "copSira": 3
+  },
+  {
+   "id": "p-013",
+   "slug": "nike-court-borough-low-recraft",
+   "name": "Nike Court Borough Low Recraft",
+   "description": "Günlük kullanıma uygun, klasik ve sade tasarımıyla öne çıkan Nike Court Borough Low Recraft, rahatlığı ve ikonik Nike görünümünü bir araya getiriyor. Düşük bilekli yapısı sayesinde kolay kombinlenirken, temiz silüetiyle günlük streetwear tarzına uyum sağlar.\r\n\r\nÖne Çıkanlar\r\n\r\nNike Court Borough Low Recraft tasarımı\r\nKlasik düşük bilekli sneaker silüeti\r\nGünlük kullanıma uygun\r\nKolay kombinlenebilen sade görünüm\r\nJean, eşofman ve günlük kombinlerle uyumlu\r\n\r\nKategori: Sneaker\r\nModel: Court Borough Low Recraft\r\nTarz: Günlük / Streetwear",
+   "category": "ayakkabi",
+   "price": 1199,
+   "compareAtPrice": 1399,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-013-9eb209dd.jpg",
+     "alt": "Nike Court Borough Low Recraft"
+    },
+    {
+     "src": "/products/p-013-6ddb52e9.jpg",
+     "alt": "Nike Court Borough Low Recraft"
+    },
+    {
+     "src": "/products/p-013-9afc0b0e.jpg",
+     "alt": "Nike Court Borough Low Recraft"
+    },
+    {
+     "src": "/products/p-013-51653d9f.jpg",
+     "alt": "Nike Court Borough Low Recraft"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#f2efe9"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-013-beyaz-36",
+     "size": "36",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-013-beyaz-37",
+     "size": "37",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-013-beyaz-38",
+     "size": "38",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-013-beyaz-39",
+     "size": "39",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-013-beyaz-40",
+     "size": "40",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-013-beyaz-41",
+     "size": "41",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-013-beyaz-42",
+     "size": "42",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-013-beyaz-43",
+     "size": "43",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "cop",
+   "sira": 11,
+   "tohum": false,
+   "copSira": 2
+  },
+  {
+   "id": "p-014",
+   "slug": "nike-dunk-low-iron-shadow",
+   "name": "Nike Dunk Low Iron Shadow",
+   "description": "Klasik Dunk Low silüetini koyu ve modern bir renk paletiyle buluşturan Nike Dunk Low Iron Shadow, sade ama dikkat çekici görünümüyle streetwear kombinlerinin tamamlayıcı parçası. Düşük bilekli yapısı ve kontrast detayları sayesinde günlük kullanımdan şehir stiline kadar kolayca kombinlenebilir.\r\n\r\nÖne Çıkanlar\r\n\r\nDunk Low klasik silüeti\r\nIron Shadow renk konsepti\r\nDüşük bilekli sneaker yapısı\r\nGünlük kullanıma uygun\r\nJean, kargo ve eşofmanlarla kolay kombinlenir",
+   "category": "ayakkabi",
+   "price": 1199,
+   "compareAtPrice": 1399,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-014-9d64b153.jpg",
+     "alt": "Nike Dunk Low Iron Shadow"
+    },
+    {
+     "src": "/products/p-014-2f9d079a.jpg",
+     "alt": "Nike Dunk Low Iron Shadow"
+    },
+    {
+     "src": "/products/p-014-7ef3c84b.jpg",
+     "alt": "Nike Dunk Low Iron Shadow"
+    },
+    {
+     "src": "/products/p-014-65a423fd.jpg",
+     "alt": "Nike Dunk Low Iron Shadow"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Gri",
+     "hex": "#545454"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-014-gri-36",
+     "size": "36",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-014-gri-37",
+     "size": "37",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-014-gri-38",
+     "size": "38",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-014-gri-39",
+     "size": "39",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-014-gri-40",
+     "size": "40",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-014-gri-41",
+     "size": "41",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-014-gri-42",
+     "size": "42",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-014-gri-43",
+     "size": "43",
+     "color": "Gri",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "cop",
+   "sira": 12,
+   "tohum": false,
+   "copSira": 1
+  },
+  {
+   "id": "p-015",
+   "slug": "vans-siyah-beyaz",
+   "name": "Vans Old Skool",
+   "description": "İkonik yan şerit detayıyla öne çıkan Old Skool, günlük streetwear kombinlerine kolayca uyum sağlayan zamansız bir sneaker.",
+   "category": "ayakkabi",
+   "brand": "Vans",
+   "model": "Old Skool",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-015-64006d1a.png",
+     "alt": "Vans Old Skool"
+    },
+    {
+     "src": "/products/p-015-7d33dfac.webp",
+     "alt": "vans siyah beyaz"
+    },
+    {
+     "src": "/products/p-015-bf5e9c9b.webp",
+     "alt": "vans siyah beyaz"
+    },
+    {
+     "src": "/products/p-015-140d010b.webp",
+     "alt": "vans siyah beyaz"
+    },
+    {
+     "src": "/products/p-015-bb7cb399.webp",
+     "alt": "vans siyah beyaz"
+    },
+    {
+     "src": "/products/p-015-d231c78d.webp",
+     "alt": "vans siyah beyaz"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah / Beyaz",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-015-siyah-36",
+     "size": "36",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-37",
+     "size": "37",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-38",
+     "size": "38",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-39",
+     "size": "39",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-40",
+     "size": "40",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-41",
+     "size": "41",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-42",
+     "size": "42",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-43",
+     "size": "43",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-44",
+     "size": "44",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-015-siyah-45",
+     "size": "45",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 13,
+   "tohum": false
+  },
+  {
+   "id": "p-016",
+   "slug": "vans-beyaz",
+   "name": "Vans Old Skool",
+   "description": "Temiz beyaz görünümü ve gum tabanıyla klasik Vans stilini sade ve günlük bir görünümle tamamlayan sneaker.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-016-temiz-3b872c90.webp",
+     "alt": "Vans Old Skool"
+    },
+    {
+     "src": "/products/p-016-ef77e991.webp",
+     "alt": "vans beyaz"
+    },
+    {
+     "src": "/products/p-016-8045ee53.webp",
+     "alt": "vans beyaz"
+    },
+    {
+     "src": "/products/p-016-d0f9763e.webp",
+     "alt": "vans beyaz"
+    },
+    {
+     "src": "/products/p-016-98677b5e.webp",
+     "alt": "vans beyaz"
+    },
+    {
+     "src": "/products/p-016-012708ba.webp",
+     "alt": "vans beyaz"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Gum",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-016-beyaz-36",
+     "size": "36",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-37",
+     "size": "37",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-38",
+     "size": "38",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-39",
+     "size": "39",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-40",
+     "size": "40",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-41",
+     "size": "41",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-42",
+     "size": "42",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-43",
+     "size": "43",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-44",
+     "size": "44",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    },
+    {
+     "id": "p-016-beyaz-45",
+     "size": "45",
+     "color": "Beyaz / Gum",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Vans",
+   "model": "Old Skool",
+   "durum": "yayinda",
+   "sira": 14,
+   "tohum": false
+  },
+  {
+   "id": "p-017",
+   "slug": "jordan-4-yeni",
+   "name": "Air Jordan 4",
+   "description": "Güçlü detaylarıyla öne çıkan Jordan 4 silüeti, sneaker koleksiyonlarına dikkat çekici ve karakterli bir görünüm kazandırır.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-017-d77ece4e.webp",
+     "alt": "jordan 4 yeni"
+    },
+    {
+     "src": "/products/p-017-a415c873.webp",
+     "alt": "jordan 4 yeni"
+    },
+    {
+     "src": "/products/p-017-487660d7.webp",
+     "alt": "jordan 4 yeni"
+    },
+    {
+     "src": "/products/p-017-ee18d133.webp",
+     "alt": "jordan 4 yeni"
+    },
+    {
+     "src": "/products/p-017-68c1cc1a.webp",
+     "alt": "jordan 4 yeni"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Bordo Detay",
+     "hex": "#5e1212"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-017-bordo-36",
+     "size": "36",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    },
+    {
+     "id": "p-017-bordo-37",
+     "size": "37",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    },
+    {
+     "id": "p-017-bordo-38",
+     "size": "38",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    },
+    {
+     "id": "p-017-bordo-39",
+     "size": "39",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    },
+    {
+     "id": "p-017-bordo-40",
+     "size": "40",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    },
+    {
+     "id": "p-017-bordo-41",
+     "size": "41",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    },
+    {
+     "id": "p-017-bordo-42",
+     "size": "42",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    },
+    {
+     "id": "p-017-bordo-43",
+     "size": "43",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    },
+    {
+     "id": "p-017-bordo-44",
+     "size": "44",
+     "color": "Beyaz / Bordo Detay",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 4",
+   "durum": "cop",
+   "sira": 15,
+   "tohum": false,
+   "copSira": 13
+  },
+  {
+   "id": "p-018",
+   "slug": "nike-sb-dunk",
+   "name": "Nike SB Dunk Low",
+   "description": "Klasik Dunk silüetini skate kültürünün karakteriyle buluşturan model, günlük streetwear kombinleri için güçlü bir seçenek.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-018-temiz-f4038902.webp",
+     "alt": "Nike SB Dunk Low"
+    },
+    {
+     "src": "/products/p-018-bff6f0c2.webp",
+     "alt": "nike sb dunk"
+    },
+    {
+     "src": "/products/p-018-2daf2c83.webp",
+     "alt": "nike sb dunk"
+    },
+    {
+     "src": "/products/p-018-ce78e220.webp",
+     "alt": "nike sb dunk"
+    },
+    {
+     "src": "/products/p-018-2fed12bb.webp",
+     "alt": "nike sb dunk"
+    },
+    {
+     "src": "/products/p-018-ba6588de.webp",
+     "alt": "nike sb dunk"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Lacivert / Beyaz",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-018-gri-36",
+     "size": "36",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-018-gri-37",
+     "size": "37",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-018-gri-38",
+     "size": "38",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-018-gri-39",
+     "size": "39",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-018-gri-40",
+     "size": "40",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-018-gri-41",
+     "size": "41",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-018-gri-42",
+     "size": "42",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-018-gri-43",
+     "size": "43",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "SB Dunk Low",
+   "durum": "yayinda",
+   "sira": 16,
+   "tohum": false
+  },
+  {
+   "id": "p-019",
+   "slug": "air-jordan-1-low-bordo",
+   "name": "Air Jordan 1 Low",
+   "description": "Bordo ve beyaz deriyi altın Swoosh ve kanat logosuyla buluşturan Air Jordan 1 Low, sade kombinlere güçlü bir vurgu katar.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-019-temiz-072a0597.webp",
+     "alt": "Air Jordan 1 Low bordo beyaz"
+    },
+    {
+     "src": "/products/p-019-69c98a1e.webp",
+     "alt": "Air Jordan 1 Low bordo beyaz"
+    },
+    {
+     "src": "/products/p-019-273c2307.webp",
+     "alt": "Air Jordan 1 Low bordo beyaz"
+    },
+    {
+     "src": "/products/p-019-dd98b3e4.webp",
+     "alt": "Air Jordan 1 Low bordo beyaz"
+    },
+    {
+     "src": "/products/p-019-53249d52.webp",
+     "alt": "Air Jordan 1 Low bordo beyaz"
+    },
+    {
+     "src": "/products/p-019-3a5fda84.webp",
+     "alt": "Air Jordan 1 Low bordo beyaz"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Bordo / Beyaz / Altın",
+     "hex": "#8d1616"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-019-bordo-36",
+     "size": "36",
+     "color": "Bordo / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-019-bordo-37",
+     "size": "37",
+     "color": "Bordo / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-019-bordo-38",
+     "size": "38",
+     "color": "Bordo / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-019-bordo-39",
+     "size": "39",
+     "color": "Bordo / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-019-bordo-40",
+     "size": "40",
+     "color": "Bordo / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-019-bordo-41",
+     "size": "41",
+     "color": "Bordo / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-019-bordo-42",
+     "size": "42",
+     "color": "Bordo / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-019-bordo-43",
+     "size": "43",
+     "color": "Bordo / Beyaz / Altın",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Dunk Low",
+   "durum": "yayinda",
+   "sira": 17,
+   "tohum": false
+  },
+  {
+   "id": "p-020",
+   "slug": "nike-gri-mavi",
+   "name": "Air Jordan 1 Low",
+   "description": "Alçak bilekli Jordan 1 silüeti, gri ve lacivert tonlarıyla günlük kullanım için sportif ve dengeli bir görünüm sunar.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-020-temiz-e199fadd.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-020-3e8224ea.webp",
+     "alt": "nike gri mavi"
+    },
+    {
+     "src": "/products/p-020-dbc308db.webp",
+     "alt": "nike gri mavi"
+    },
+    {
+     "src": "/products/p-020-7d4ea4ac.webp",
+     "alt": "nike gri mavi"
+    },
+    {
+     "src": "/products/p-020-a783cca0.webp",
+     "alt": "nike gri mavi"
+    },
+    {
+     "src": "/products/p-020-45ca5db4.webp",
+     "alt": "nike gri mavi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Gri / Lacivert",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-020-beyaz-gri-36",
+     "size": "36",
+     "color": "Gri / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-020-beyaz-gri-37",
+     "size": "37",
+     "color": "Gri / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-020-beyaz-gri-38",
+     "size": "38",
+     "color": "Gri / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-020-beyaz-gri-39",
+     "size": "39",
+     "color": "Gri / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-020-beyaz-gri-40",
+     "size": "40",
+     "color": "Gri / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-020-beyaz-gri-41",
+     "size": "41",
+     "color": "Gri / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-020-beyaz-gri-42",
+     "size": "42",
+     "color": "Gri / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-020-beyaz-gri-43",
+     "size": "43",
+     "color": "Gri / Lacivert",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 18,
+   "tohum": false
+  },
+  {
+   "id": "p-021",
+   "slug": "nike-sb-dunk-digeri",
+   "name": "Nike SB Dunk Low",
+   "description": "Kontrast renk yapısı ve düşük bilekli formuyla streetwear stiline kolayca uyum sağlayan klasik SB Dunk görünümü.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-021-temiz-f22c7c67.webp",
+     "alt": "Nike SB Dunk Low"
+    },
+    {
+     "src": "/products/p-021-e2be9cbf.webp",
+     "alt": "nike sb dunk diğeri"
+    },
+    {
+     "src": "/products/p-021-b1776fb7.webp",
+     "alt": "nike sb dunk diğeri"
+    },
+    {
+     "src": "/products/p-021-990d3b11.webp",
+     "alt": "nike sb dunk diğeri"
+    },
+    {
+     "src": "/products/p-021-bd85d67b.webp",
+     "alt": "nike sb dunk diğeri"
+    },
+    {
+     "src": "/products/p-021-6b9ac7fb.webp",
+     "alt": "nike sb dunk diğeri"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Lacivert / Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-021-beyaz-36",
+     "size": "36",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-021-beyaz-37",
+     "size": "37",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-021-beyaz-38",
+     "size": "38",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-021-beyaz-39",
+     "size": "39",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-021-beyaz-40",
+     "size": "40",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-021-beyaz-41",
+     "size": "41",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-021-beyaz-42",
+     "size": "42",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-021-beyaz-43",
+     "size": "43",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "SB Dunk Low",
+   "durum": "yayinda",
+   "sira": 19,
+   "tohum": false
+  },
+  {
+   "id": "p-022",
+   "slug": "af1-gri-logo",
+   "name": "Nike Air Force 1 '07",
+   "description": "Klasik AF1 formunu gri tonlarla modernleştiren model, günlük kullanım ve minimal kombinler için ideal.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-022-temiz-04a889ea.webp",
+     "alt": "Nike Air Force 1 '07"
+    },
+    {
+     "src": "/products/p-022-15373c60.webp",
+     "alt": "af1 gri logo"
+    },
+    {
+     "src": "/products/p-022-371df7ef.webp",
+     "alt": "af1 gri logo"
+    },
+    {
+     "src": "/products/p-022-bd266efc.webp",
+     "alt": "af1 gri logo"
+    },
+    {
+     "src": "/products/p-022-6b28bf7c.webp",
+     "alt": "af1 gri logo"
+    },
+    {
+     "src": "/products/p-022-6b9ac7fb.webp",
+     "alt": "af1 gri logo"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Gri / Beyaz",
+     "hex": "#808080"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-022-gri-36",
+     "size": "36",
+     "color": "Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-022-gri-37",
+     "size": "37",
+     "color": "Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-022-gri-38",
+     "size": "38",
+     "color": "Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-022-gri-39",
+     "size": "39",
+     "color": "Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-022-gri-40",
+     "size": "40",
+     "color": "Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-022-gri-41",
+     "size": "41",
+     "color": "Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-022-gri-42",
+     "size": "42",
+     "color": "Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-022-gri-43",
+     "size": "43",
+     "color": "Gri / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Force 1 '07",
+   "durum": "yayinda",
+   "sira": 20,
+   "tohum": false
+  },
+  {
+   "id": "p-023",
+   "slug": "nike-parlak-siyah",
+   "name": "Nike Dunk Low",
+   "description": "Parlak siyah yüzeyi ve kırmızı detaylarıyla daha iddialı bir Dunk görünümü sunan model.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-023-temiz-bdacec93.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-023-ea33b3fd.webp",
+     "alt": "nike parlak siyah"
+    },
+    {
+     "src": "/products/p-023-ed542e0f.webp",
+     "alt": "nike parlak siyah"
+    },
+    {
+     "src": "/products/p-023-001da853.webp",
+     "alt": "nike parlak siyah"
+    },
+    {
+     "src": "/products/p-023-b5ba51c2.webp",
+     "alt": "nike parlak siyah"
+    },
+    {
+     "src": "/products/p-023-e8162d9a.webp",
+     "alt": "nike parlak siyah"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Parlak Siyah / Kırmızı",
+     "hex": "#5d0909"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-023-kirmizi-36",
+     "size": "36",
+     "color": "Parlak Siyah / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-023-kirmizi-37",
+     "size": "37",
+     "color": "Parlak Siyah / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-023-kirmizi-38",
+     "size": "38",
+     "color": "Parlak Siyah / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-023-kirmizi-39",
+     "size": "39",
+     "color": "Parlak Siyah / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-023-kirmizi-40",
+     "size": "40",
+     "color": "Parlak Siyah / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-023-kirmizi-41",
+     "size": "41",
+     "color": "Parlak Siyah / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-023-kirmizi-42",
+     "size": "42",
+     "color": "Parlak Siyah / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-023-kirmizi-43",
+     "size": "43",
+     "color": "Parlak Siyah / Kırmızı",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Dunk Low",
+   "durum": "yayinda",
+   "sira": 21,
+   "tohum": false
+  },
+  {
+   "id": "p-024",
+   "slug": "af1-beyaz",
+   "name": "Nike Air Force 1 '07",
+   "description": "Temiz ve zamansız beyaz AF1 görünümü; jean, eşofman ve oversize parçalarla kolayca kombinlenebilir.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-024-temiz-a436846b.webp",
+     "alt": "Nike Air Force 1 '07"
+    },
+    {
+     "src": "/products/p-024-90d97e49.webp",
+     "alt": "af1 beyaz"
+    },
+    {
+     "src": "/products/p-024-5735c717.webp",
+     "alt": "af1 beyaz"
+    },
+    {
+     "src": "/products/p-024-2d6b7192.webp",
+     "alt": "af1 beyaz"
+    },
+    {
+     "src": "/products/p-024-2dac7449.webp",
+     "alt": "af1 beyaz"
+    },
+    {
+     "src": "/products/p-024-5551a7f4.webp",
+     "alt": "af1 beyaz"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-024-beyaz-36",
+     "size": "36",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-024-beyaz-37",
+     "size": "37",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-024-beyaz-38",
+     "size": "38",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-024-beyaz-39",
+     "size": "39",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-024-beyaz-40",
+     "size": "40",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-024-beyaz-41",
+     "size": "41",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-024-beyaz-42",
+     "size": "42",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-024-beyaz-43",
+     "size": "43",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Force 1 '07",
+   "durum": "yayinda",
+   "sira": 22,
+   "tohum": false
+  },
+  {
+   "id": "p-025",
+   "slug": "nilke-dunk-beyaz-r",
+   "name": "Nike Air Force 1 '07",
+   "description": "Temiz ve zamansız beyaz AF1 görünümü; jean, eşofman ve oversize parçalarla kolayca kombinlenebilir.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-025-90d97e49.webp",
+     "alt": "Nike Air Force 1 '07"
+    },
+    {
+     "src": "/products/p-025-5735c717.webp",
+     "alt": "Nike Air Force 1 '07"
+    },
+    {
+     "src": "/products/p-025-2d6b7192.webp",
+     "alt": "Nike Air Force 1 '07"
+    },
+    {
+     "src": "/products/p-025-2dac7449.webp",
+     "alt": "Nike Air Force 1 '07"
+    },
+    {
+     "src": "/products/p-025-5551a7f4.webp",
+     "alt": "Nike Air Force 1 '07"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-025-beyaz-36",
+     "size": "36",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-025-beyaz-37",
+     "size": "37",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-025-beyaz-38",
+     "size": "38",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-025-beyaz-39",
+     "size": "39",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-025-beyaz-40",
+     "size": "40",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-025-beyaz-41",
+     "size": "41",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-025-beyaz-42",
+     "size": "42",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-025-beyaz-43",
+     "size": "43",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Dunk Low",
+   "durum": "cop",
+   "sira": 23,
+   "tohum": false,
+   "copSira": 14
+  },
+  {
+   "id": "p-026",
+   "slug": "af1-mavi-logo",
+   "name": "Nike Air Force 1 '07",
+   "description": "Beyaz gövdeyi mavi detaylarla hareketlendiren klasik AF1 tasarımı, günlük kombinlere sportif bir dokunuş katar.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-026-temiz-236d7b7e.webp",
+     "alt": "Nike Air Force 1 '07"
+    },
+    {
+     "src": "/products/p-026-507aaa3f.webp",
+     "alt": "af1 mavi logo"
+    },
+    {
+     "src": "/products/p-026-49cd16e0.webp",
+     "alt": "af1 mavi logo"
+    },
+    {
+     "src": "/products/p-026-1c6a99c9.webp",
+     "alt": "af1 mavi logo"
+    },
+    {
+     "src": "/products/p-026-d2789530.webp",
+     "alt": "af1 mavi logo"
+    },
+    {
+     "src": "/products/p-026-39589c30.webp",
+     "alt": "af1 mavi logo"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Mavi",
+     "hex": "#0069cc"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-026-mavi-36",
+     "size": "36",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-026-mavi-37",
+     "size": "37",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-026-mavi-38",
+     "size": "38",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-026-mavi-39",
+     "size": "39",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-026-mavi-40",
+     "size": "40",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-026-mavi-41",
+     "size": "41",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-026-mavi-42",
+     "size": "42",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-026-mavi-43",
+     "size": "43",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Force 1 '07",
+   "durum": "yayinda",
+   "sira": 24,
+   "tohum": false
+  },
+  {
+   "id": "p-027",
+   "slug": "air-jordan-1-low-siyah-beyaz",
+   "name": "Air Jordan 1 Low",
+   "description": "Siyah-beyaz renk bloklarıyla zamansız bir görünüm sunan Air Jordan 1 Low, her tarzdaki kombine kolayca uyum sağlar.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-027-temiz-50c84da9.webp",
+     "alt": "Air Jordan 1 Low siyah beyaz"
+    },
+    {
+     "src": "/products/p-027-49001f77.webp",
+     "alt": "Air Jordan 1 Low siyah beyaz"
+    },
+    {
+     "src": "/products/p-027-07dd0cec.webp",
+     "alt": "Air Jordan 1 Low siyah beyaz"
+    },
+    {
+     "src": "/products/p-027-1a983bdc.webp",
+     "alt": "Air Jordan 1 Low siyah beyaz"
+    },
+    {
+     "src": "/products/p-027-5ee046f5.webp",
+     "alt": "Air Jordan 1 Low siyah beyaz"
+    },
+    {
+     "src": "/products/p-027-97961838.webp",
+     "alt": "Air Jordan 1 Low siyah beyaz"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Siyah",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-027-beyaz-36",
+     "size": "36",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-027-beyaz-37",
+     "size": "37",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-027-beyaz-38",
+     "size": "38",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-027-beyaz-39",
+     "size": "39",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-027-beyaz-40",
+     "size": "40",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-027-beyaz-41",
+     "size": "41",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-027-beyaz-42",
+     "size": "42",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-027-beyaz-43",
+     "size": "43",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Dunk Low",
+   "durum": "yayinda",
+   "sira": 25,
+   "tohum": false
+  },
+  {
+   "id": "p-028",
+   "slug": "beyaz-superstar",
+   "name": "Adidas Superstar",
+   "description": "İkonik 3 bant ve klasik kabuk burun tasarımıyla günlük stile retro bir dokunuş katan Superstar.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-028-temiz-f7e456c9.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-028-a744403f.webp",
+     "alt": "beyaz süperstar"
+    },
+    {
+     "src": "/products/p-028-fe473c65.webp",
+     "alt": "beyaz süperstar"
+    },
+    {
+     "src": "/products/p-028-89b14244.webp",
+     "alt": "beyaz süperstar"
+    },
+    {
+     "src": "/products/p-028-cb8fb345.webp",
+     "alt": "beyaz süperstar"
+    },
+    {
+     "src": "/products/p-028-fc6e3341.webp",
+     "alt": "beyaz süperstar"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#f2efe9"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-028-beyaz-36",
+     "size": "36",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-028-beyaz-37",
+     "size": "37",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-028-beyaz-38",
+     "size": "38",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-028-beyaz-39",
+     "size": "39",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-028-beyaz-40",
+     "size": "40",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-028-beyaz-41",
+     "size": "41",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-028-beyaz-42",
+     "size": "42",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-028-beyaz-43",
+     "size": "43",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Superstar",
+   "durum": "yayinda",
+   "sira": 26,
+   "tohum": false
+  },
+  {
+   "id": "p-029",
+   "slug": "superstar-yesil-mavi",
+   "name": "Adidas Superstar",
+   "description": "Klasik Superstar silüetini renkli detaylarla daha enerjik hale getiren günlük sneaker.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-029-temiz-6b25abd5.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-029-903cdd7b.webp",
+     "alt": "superstar yeşil mavi"
+    },
+    {
+     "src": "/products/p-029-23ee8ebe.webp",
+     "alt": "superstar yeşil mavi"
+    },
+    {
+     "src": "/products/p-029-9bef47fa.webp",
+     "alt": "superstar yeşil mavi"
+    },
+    {
+     "src": "/products/p-029-f4e145c7.webp",
+     "alt": "superstar yeşil mavi"
+    },
+    {
+     "src": "/products/p-029-51104006.webp",
+     "alt": "superstar yeşil mavi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Yeşil / Mavi",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-029-beyaz-36",
+     "size": "36",
+     "color": "Beyaz / Yeşil / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-029-beyaz-37",
+     "size": "37",
+     "color": "Beyaz / Yeşil / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-029-beyaz-38",
+     "size": "38",
+     "color": "Beyaz / Yeşil / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-029-beyaz-39",
+     "size": "39",
+     "color": "Beyaz / Yeşil / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-029-beyaz-40",
+     "size": "40",
+     "color": "Beyaz / Yeşil / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-029-beyaz-41",
+     "size": "41",
+     "color": "Beyaz / Yeşil / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-029-beyaz-42",
+     "size": "42",
+     "color": "Beyaz / Yeşil / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-029-beyaz-43",
+     "size": "43",
+     "color": "Beyaz / Yeşil / Mavi",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Superstar",
+   "durum": "yayinda",
+   "sira": 27,
+   "tohum": false
+  },
+  {
+   "id": "p-030",
+   "slug": "siyah-beyaz-superstar",
+   "name": "Adidas Superstar",
+   "description": "Siyah gövde ve beyaz 3 bant kontrastıyla güçlü, sade ve kolay kombinlenebilir Superstar görünümü.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-030-temiz-4298dbb3.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-030-d476bba6.webp",
+     "alt": "siyah beyaz superstar"
+    },
+    {
+     "src": "/products/p-030-ee1184f1.webp",
+     "alt": "siyah beyaz superstar"
+    },
+    {
+     "src": "/products/p-030-38563764.webp",
+     "alt": "siyah beyaz superstar"
+    },
+    {
+     "src": "/products/p-030-58a42fde.webp",
+     "alt": "siyah beyaz superstar"
+    },
+    {
+     "src": "/products/p-030-bb3c0ba2.webp",
+     "alt": "siyah beyaz superstar"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah / Beyaz",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-030-siyah-36",
+     "size": "36",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-030-siyah-37",
+     "size": "37",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-030-siyah-38",
+     "size": "38",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-030-siyah-39",
+     "size": "39",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-030-siyah-40",
+     "size": "40",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-030-siyah-41",
+     "size": "41",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-030-siyah-42",
+     "size": "42",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-030-siyah-43",
+     "size": "43",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Superstar",
+   "durum": "yayinda",
+   "sira": 28,
+   "tohum": false
+  },
+  {
+   "id": "p-031",
+   "slug": "superstar-renkli-horozlu",
+   "name": "Adidas Superstar",
+   "description": "Klasik Superstar formuna renkli detaylar ekleyen model, sade kombinlere hareket kazandırır.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-031-temiz-a2f386f8.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-031-14f0bf42.webp",
+     "alt": "superstar renkli horozlu"
+    },
+    {
+     "src": "/products/p-031-356969d4.webp",
+     "alt": "superstar renkli horozlu"
+    },
+    {
+     "src": "/products/p-031-072f4888.webp",
+     "alt": "superstar renkli horozlu"
+    },
+    {
+     "src": "/products/p-031-bf080c4c.webp",
+     "alt": "superstar renkli horozlu"
+    },
+    {
+     "src": "/products/p-031-06b7c4f7.webp",
+     "alt": "superstar renkli horozlu"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Çok Renkli",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-031-beyaz-36",
+     "size": "36",
+     "color": "Beyaz / Çok Renkli",
+     "stock": 10
+    },
+    {
+     "id": "p-031-beyaz-37",
+     "size": "37",
+     "color": "Beyaz / Çok Renkli",
+     "stock": 10
+    },
+    {
+     "id": "p-031-beyaz-38",
+     "size": "38",
+     "color": "Beyaz / Çok Renkli",
+     "stock": 10
+    },
+    {
+     "id": "p-031-beyaz-39",
+     "size": "39",
+     "color": "Beyaz / Çok Renkli",
+     "stock": 10
+    },
+    {
+     "id": "p-031-beyaz-40",
+     "size": "40",
+     "color": "Beyaz / Çok Renkli",
+     "stock": 10
+    },
+    {
+     "id": "p-031-beyaz-41",
+     "size": "41",
+     "color": "Beyaz / Çok Renkli",
+     "stock": 10
+    },
+    {
+     "id": "p-031-beyaz-42",
+     "size": "42",
+     "color": "Beyaz / Çok Renkli",
+     "stock": 10
+    },
+    {
+     "id": "p-031-beyaz-43",
+     "size": "43",
+     "color": "Beyaz / Çok Renkli",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Superstar",
+   "durum": "yayinda",
+   "sira": 29,
+   "tohum": false
+  },
+  {
+   "id": "p-032",
+   "slug": "superstar-horozlu-siyah",
+   "name": "Adidas Superstar",
+   "description": "Zamansız siyah-beyaz renk kombinasyonu ve ikonik 3 bant detaylarıyla günlük kullanıma uygun Superstar.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-032-temiz-3aa11c9d.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-032-72f4b383.webp",
+     "alt": "superstar horozlu siyah"
+    },
+    {
+     "src": "/products/p-032-9c48fadf.webp",
+     "alt": "superstar horozlu siyah"
+    },
+    {
+     "src": "/products/p-032-b18feb11.webp",
+     "alt": "superstar horozlu siyah"
+    },
+    {
+     "src": "/products/p-032-869863ea.webp",
+     "alt": "superstar horozlu siyah"
+    },
+    {
+     "src": "/products/p-032-23ec9060.webp",
+     "alt": "superstar horozlu siyah"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah / Beyaz",
+     "hex": "#000000"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-032-siyah-36",
+     "size": "36",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-032-siyah-37",
+     "size": "37",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-032-siyah-38",
+     "size": "38",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-032-siyah-39",
+     "size": "39",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-032-siyah-40",
+     "size": "40",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-032-siyah-41",
+     "size": "41",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-032-siyah-42",
+     "size": "42",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-032-siyah-43",
+     "size": "43",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Superstar",
+   "durum": "yayinda",
+   "sira": 30,
+   "tohum": false
+  },
+  {
+   "id": "p-033",
+   "slug": "superstar-beyaz-kirmizi",
+   "name": "Adidas Superstar",
+   "description": "Beyaz taban üzerinde kırmızı detaylarıyla daha sportif ve canlı bir Superstar görünümü.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-033-temiz-c122b647.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-033-903df7cf.webp",
+     "alt": "superstar beyaz kırmızı"
+    },
+    {
+     "src": "/products/p-033-29430ecb.webp",
+     "alt": "superstar beyaz kırmızı"
+    },
+    {
+     "src": "/products/p-033-72b69289.webp",
+     "alt": "superstar beyaz kırmızı"
+    },
+    {
+     "src": "/products/p-033-18c32824.webp",
+     "alt": "superstar beyaz kırmızı"
+    },
+    {
+     "src": "/products/p-033-175e2818.webp",
+     "alt": "superstar beyaz kırmızı"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Kırmızı",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-033-beyaz-36",
+     "size": "36",
+     "color": "Beyaz / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-033-beyaz-37",
+     "size": "37",
+     "color": "Beyaz / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-033-beyaz-38",
+     "size": "38",
+     "color": "Beyaz / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-033-beyaz-39",
+     "size": "39",
+     "color": "Beyaz / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-033-beyaz-40",
+     "size": "40",
+     "color": "Beyaz / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-033-beyaz-41",
+     "size": "41",
+     "color": "Beyaz / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-033-beyaz-42",
+     "size": "42",
+     "color": "Beyaz / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-033-beyaz-43",
+     "size": "43",
+     "color": "Beyaz / Kırmızı",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Superstar",
+   "durum": "yayinda",
+   "sira": 31,
+   "tohum": false
+  },
+  {
+   "id": "p-034",
+   "slug": "siyah-beyaz-superstar-2",
+   "name": "Adidas Superstar",
+   "description": "Temiz beyaz gövde ve siyah detayların oluşturduğu klasik Superstar renk kombinasyonu.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-034-temiz-4902dc07.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-034-f4c9cb72.webp",
+     "alt": "SİYAH BEYAZ SUPERSTAR"
+    },
+    {
+     "src": "/products/p-034-b8a39323.webp",
+     "alt": "SİYAH BEYAZ SUPERSTAR"
+    },
+    {
+     "src": "/products/p-034-067e9bb9.webp",
+     "alt": "SİYAH BEYAZ SUPERSTAR"
+    },
+    {
+     "src": "/products/p-034-c0064634.webp",
+     "alt": "SİYAH BEYAZ SUPERSTAR"
+    },
+    {
+     "src": "/products/p-034-b5485e4d.webp",
+     "alt": "SİYAH BEYAZ SUPERSTAR"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-034-siyah-36",
+     "size": "36",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-034-siyah-37",
+     "size": "37",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-034-siyah-38",
+     "size": "38",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-034-siyah-39",
+     "size": "39",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-034-siyah-40",
+     "size": "40",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-034-siyah-41",
+     "size": "41",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-034-siyah-42",
+     "size": "42",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-034-siyah-43",
+     "size": "43",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Superstar",
+   "durum": "yayinda",
+   "sira": 32,
+   "tohum": false
+  },
+  {
+   "id": "p-035",
+   "slug": "spezial-mavi",
+   "name": "Adidas Handball Spezial",
+   "description": "Süet görünümü ve gum tabanıyla retro adidas estetiğini taşıyan Handball Spezial, günlük streetwear kombinlerine uyum sağlar.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-035-temiz-ff3cbe37.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-035-b838e1b1.webp",
+     "alt": "spezial mavi"
+    },
+    {
+     "src": "/products/p-035-5a1e86e3.webp",
+     "alt": "spezial mavi"
+    },
+    {
+     "src": "/products/p-035-68a0e99f.webp",
+     "alt": "spezial mavi"
+    },
+    {
+     "src": "/products/p-035-afeed973.webp",
+     "alt": "spezial mavi"
+    },
+    {
+     "src": "/products/p-035-70ac17c7.webp",
+     "alt": "spezial mavi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Açık Mavi",
+     "hex": "#007db3"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-035-mavi-36",
+     "size": "36",
+     "color": "Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-035-mavi-37",
+     "size": "37",
+     "color": "Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-035-mavi-38",
+     "size": "38",
+     "color": "Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-035-mavi-39",
+     "size": "39",
+     "color": "Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-035-mavi-40",
+     "size": "40",
+     "color": "Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-035-mavi-41",
+     "size": "41",
+     "color": "Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-035-mavi-42",
+     "size": "42",
+     "color": "Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-035-mavi-43",
+     "size": "43",
+     "color": "Açık Mavi",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Handball Spezial",
+   "durum": "yayinda",
+   "sira": 33,
+   "tohum": false
+  },
+  {
+   "id": "p-036",
+   "slug": "spezial-bordo",
+   "name": "Adidas Handball Spezial",
+   "description": "Bordo süet görünümü ve gum tabanıyla retro karakteri güçlü, dikkat çekici bir Spezial modeli.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-036-temiz-ed5899a3.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-036-b6f75e90.webp",
+     "alt": "spezial bordo"
+    },
+    {
+     "src": "/products/p-036-f9c4aa14.webp",
+     "alt": "spezial bordo"
+    },
+    {
+     "src": "/products/p-036-e74c1a5f.webp",
+     "alt": "spezial bordo"
+    },
+    {
+     "src": "/products/p-036-db2a419b.webp",
+     "alt": "spezial bordo"
+    },
+    {
+     "src": "/products/p-036-9551248f.webp",
+     "alt": "spezial bordo"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Bordo",
+     "hex": "#5b0101"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-036-bordo-36",
+     "size": "36",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-036-bordo-37",
+     "size": "37",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-036-bordo-38",
+     "size": "38",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-036-bordo-39",
+     "size": "39",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-036-bordo-40",
+     "size": "40",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-036-bordo-41",
+     "size": "41",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-036-bordo-42",
+     "size": "42",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-036-bordo-43",
+     "size": "43",
+     "color": "Bordo",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Handball Spezial",
+   "durum": "yayinda",
+   "sira": 34,
+   "tohum": false
+  },
+  {
+   "id": "p-037",
+   "slug": "spezial-turuncu",
+   "name": "Adidas Handball Spezial",
+   "description": "Turuncu süet gövde, siyah 3 bant ve gum tabanıyla vintage havası taşıyan, günlük kombinlerde kolay kullanılabilecek Spezial.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-037-temiz-7aee8912.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-037-e71d4592.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-037-d6e9afb5.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-037-2c7f20e2.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-037-a06e9048.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-037-5a72e6f2.webp",
+     "alt": "Adidas Handball Spezial"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Turuncu",
+     "hex": "#c8761f"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-037-kahverengi-36",
+     "size": "36",
+     "color": "Turuncu",
+     "stock": 10
+    },
+    {
+     "id": "p-037-kahverengi-37",
+     "size": "37",
+     "color": "Turuncu",
+     "stock": 10
+    },
+    {
+     "id": "p-037-kahverengi-38",
+     "size": "38",
+     "color": "Turuncu",
+     "stock": 10
+    },
+    {
+     "id": "p-037-kahverengi-39",
+     "size": "39",
+     "color": "Turuncu",
+     "stock": 10
+    },
+    {
+     "id": "p-037-kahverengi-40",
+     "size": "40",
+     "color": "Turuncu",
+     "stock": 10
+    },
+    {
+     "id": "p-037-kahverengi-41",
+     "size": "41",
+     "color": "Turuncu",
+     "stock": 10
+    },
+    {
+     "id": "p-037-kahverengi-42",
+     "size": "42",
+     "color": "Turuncu",
+     "stock": 10
+    },
+    {
+     "id": "p-037-kahverengi-43",
+     "size": "43",
+     "color": "Turuncu",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Handball Spezial",
+   "durum": "yayinda",
+   "sira": 35,
+   "tohum": false
+  },
+  {
+   "id": "p-038",
+   "slug": "spezial-mavi-2",
+   "name": "Adidas Handball Spezial",
+   "description": "Mavi tonları ve klasik gum tabanıyla sportif-retro görünümü öne çıkaran Spezial modeli.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-038-temiz-52ad2bd6.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-038-45d30e92.webp",
+     "alt": "spezial mavi"
+    },
+    {
+     "src": "/products/p-038-32a436ab.webp",
+     "alt": "spezial mavi"
+    },
+    {
+     "src": "/products/p-038-bb63361e.webp",
+     "alt": "spezial mavi"
+    },
+    {
+     "src": "/products/p-038-3edea54a.webp",
+     "alt": "spezial mavi"
+    },
+    {
+     "src": "/products/p-038-11475c5d.webp",
+     "alt": "spezial mavi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Mavi",
+     "hex": "#0074ad"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-038-mavi-36",
+     "size": "36",
+     "color": "Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-038-mavi-37",
+     "size": "37",
+     "color": "Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-038-mavi-38",
+     "size": "38",
+     "color": "Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-038-mavi-39",
+     "size": "39",
+     "color": "Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-038-mavi-40",
+     "size": "40",
+     "color": "Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-038-mavi-41",
+     "size": "41",
+     "color": "Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-038-mavi-42",
+     "size": "42",
+     "color": "Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-038-mavi-43",
+     "size": "43",
+     "color": "Mavi",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Handball Spezial",
+   "durum": "yayinda",
+   "sira": 36,
+   "tohum": false
+  },
+  {
+   "id": "p-039",
+   "slug": "spezial-leopar",
+   "name": "Adidas Handball Spezial",
+   "description": "Klasik Spezial silüetini dikkat çekici leopar detaylarla buluşturan, daha iddialı bir yorum.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-039-temiz-67e70efd.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-039-55dce415.webp",
+     "alt": "spezial leopar"
+    },
+    {
+     "src": "/products/p-039-626a68c2.webp",
+     "alt": "spezial leopar"
+    },
+    {
+     "src": "/products/p-039-3610499b.webp",
+     "alt": "spezial leopar"
+    },
+    {
+     "src": "/products/p-039-50f2152e.webp",
+     "alt": "spezial leopar"
+    },
+    {
+     "src": "/products/p-039-77bf8afd.webp",
+     "alt": "spezial leopar"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Leopar / Krem",
+     "hex": "#271111"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-039-leopar-36",
+     "size": "36",
+     "color": "Leopar / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-039-leopar-37",
+     "size": "37",
+     "color": "Leopar / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-039-leopar-38",
+     "size": "38",
+     "color": "Leopar / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-039-leopar-39",
+     "size": "39",
+     "color": "Leopar / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-039-leopar-40",
+     "size": "40",
+     "color": "Leopar / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-039-leopar-41",
+     "size": "41",
+     "color": "Leopar / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-039-leopar-42",
+     "size": "42",
+     "color": "Leopar / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-039-leopar-43",
+     "size": "43",
+     "color": "Leopar / Krem",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Handball Spezial",
+   "durum": "yayinda",
+   "sira": 37,
+   "tohum": false
+  },
+  {
+   "id": "p-040",
+   "slug": "spezial-kahverengi-gibi",
+   "name": "Adidas Handball Spezial",
+   "description": "Kahverengi ve açık tonların dengeli birlikteliğiyle retro ve sade bir görünüm sunan Spezial.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-040-temiz-89226cb0.webp",
+     "alt": "Adidas Handball Spezial"
+    },
+    {
+     "src": "/products/p-040-fee7c720.webp",
+     "alt": "spezial kahverengi gibi"
+    },
+    {
+     "src": "/products/p-040-0ae65dab.webp",
+     "alt": "spezial kahverengi gibi"
+    },
+    {
+     "src": "/products/p-040-7fbe796c.webp",
+     "alt": "spezial kahverengi gibi"
+    },
+    {
+     "src": "/products/p-040-c0e4a3ee.webp",
+     "alt": "spezial kahverengi gibi"
+    },
+    {
+     "src": "/products/p-040-b3eb59ea.webp",
+     "alt": "spezial kahverengi gibi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Kahverengi / Krem",
+     "hex": "#6a310c"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-040-kahverengi-36",
+     "size": "36",
+     "color": "Kahverengi / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-040-kahverengi-37",
+     "size": "37",
+     "color": "Kahverengi / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-040-kahverengi-38",
+     "size": "38",
+     "color": "Kahverengi / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-040-kahverengi-39",
+     "size": "39",
+     "color": "Kahverengi / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-040-kahverengi-40",
+     "size": "40",
+     "color": "Kahverengi / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-040-kahverengi-41",
+     "size": "41",
+     "color": "Kahverengi / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-040-kahverengi-42",
+     "size": "42",
+     "color": "Kahverengi / Krem",
+     "stock": 10
+    },
+    {
+     "id": "p-040-kahverengi-43",
+     "size": "43",
+     "color": "Kahverengi / Krem",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Handball Spezial",
+   "durum": "yayinda",
+   "sira": 38,
+   "tohum": false
+  },
+  {
+   "id": "p-041",
+   "slug": "nike-jordan-bebe-mavisi",
+   "name": "Air Jordan 1 Low",
+   "description": "Açık mavi tonlarını klasik Jordan 1 Low silüetiyle bir araya getiren, temiz ve günlük bir model.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-041-temiz-8ad9874e.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-041-4527a5c7.webp",
+     "alt": "nike jordan bebe mavisi"
+    },
+    {
+     "src": "/products/p-041-99aac31f.webp",
+     "alt": "nike jordan bebe mavisi"
+    },
+    {
+     "src": "/products/p-041-9ad27e00.webp",
+     "alt": "nike jordan bebe mavisi"
+    },
+    {
+     "src": "/products/p-041-6e9affa8.webp",
+     "alt": "nike jordan bebe mavisi"
+    },
+    {
+     "src": "/products/p-041-053a20b2.webp",
+     "alt": "nike jordan bebe mavisi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Bebek Mavisi / Beyaz",
+     "hex": "#1b949d"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-041-bebe-mavi-36",
+     "size": "36",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-041-bebe-mavi-37",
+     "size": "37",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-041-bebe-mavi-38",
+     "size": "38",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-041-bebe-mavi-39",
+     "size": "39",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-041-bebe-mavi-40",
+     "size": "40",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-041-bebe-mavi-41",
+     "size": "41",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-041-bebe-mavi-42",
+     "size": "42",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-041-bebe-mavi-43",
+     "size": "43",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 39,
+   "tohum": false
+  },
+  {
+   "id": "p-042",
+   "slug": "nike-jordan-gri-siyah",
+   "name": "Air Jordan 1 Low",
+   "description": "Gri ve siyah renk bloklarıyla daha koyu ve şehirli bir Jordan 1 Low görünümü.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-042-temiz-bcf4d9c8.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-042-c985256a.webp",
+     "alt": "nike jordan gri siyah"
+    },
+    {
+     "src": "/products/p-042-fe7ab7f0.webp",
+     "alt": "nike jordan gri siyah"
+    },
+    {
+     "src": "/products/p-042-7eaf7d49.webp",
+     "alt": "nike jordan gri siyah"
+    },
+    {
+     "src": "/products/p-042-bb36690c.webp",
+     "alt": "nike jordan gri siyah"
+    },
+    {
+     "src": "/products/p-042-a0dd11a6.webp",
+     "alt": "nike jordan gri siyah"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Gri / Siyah",
+     "hex": "#636363"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-042-gri-siyah-36",
+     "size": "36",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-042-gri-siyah-37",
+     "size": "37",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-042-gri-siyah-38",
+     "size": "38",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-042-gri-siyah-39",
+     "size": "39",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-042-gri-siyah-40",
+     "size": "40",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-042-gri-siyah-41",
+     "size": "41",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-042-gri-siyah-42",
+     "size": "42",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-042-gri-siyah-43",
+     "size": "43",
+     "color": "Gri / Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 40,
+   "tohum": false
+  },
+  {
+   "id": "p-043",
+   "slug": "nike-jordan-bordo-siyah",
+   "name": "Air Jordan 1 Low",
+   "description": "Bordo ve siyah tonlarıyla daha güçlü bir karakter kazanan Jordan 1 Low.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-043-temiz-4f84764c.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-043-e2b48163.webp",
+     "alt": "nike jordan bordo siyah"
+    },
+    {
+     "src": "/products/p-043-0ab63bfd.webp",
+     "alt": "nike jordan bordo siyah"
+    },
+    {
+     "src": "/products/p-043-fbaada78.webp",
+     "alt": "nike jordan bordo siyah"
+    },
+    {
+     "src": "/products/p-043-7f9d7422.webp",
+     "alt": "nike jordan bordo siyah"
+    },
+    {
+     "src": "/products/p-043-d7a56074.webp",
+     "alt": "nike jordan bordo siyah"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Bordo / Siyah",
+     "hex": "#612424"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-043-bordo-36",
+     "size": "36",
+     "color": "Bordo / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-043-bordo-37",
+     "size": "37",
+     "color": "Bordo / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-043-bordo-38",
+     "size": "38",
+     "color": "Bordo / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-043-bordo-39",
+     "size": "39",
+     "color": "Bordo / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-043-bordo-40",
+     "size": "40",
+     "color": "Bordo / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-043-bordo-41",
+     "size": "41",
+     "color": "Bordo / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-043-bordo-42",
+     "size": "42",
+     "color": "Bordo / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-043-bordo-43",
+     "size": "43",
+     "color": "Bordo / Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 41,
+   "tohum": false
+  },
+  {
+   "id": "p-044",
+   "slug": "nike-jordan-pembe",
+   "name": "Air Jordan 1 Low",
+   "description": "Pembe ve açık mavi detaylarıyla daha soft ve enerjik bir Jordan 1 Low görünümü.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-044-temiz-512e9cce.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-044-77f45345.webp",
+     "alt": "nike jordan pembe"
+    },
+    {
+     "src": "/products/p-044-c3dc5949.webp",
+     "alt": "nike jordan pembe"
+    },
+    {
+     "src": "/products/p-044-03ce450f.webp",
+     "alt": "nike jordan pembe"
+    },
+    {
+     "src": "/products/p-044-36f94aa0.webp",
+     "alt": "nike jordan pembe"
+    },
+    {
+     "src": "/products/p-044-c571939b.webp",
+     "alt": "nike jordan pembe"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Pembe / Açık Mavi",
+     "hex": "#ff0095"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-044-pembe-36",
+     "size": "36",
+     "color": "Pembe / Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-044-pembe-37",
+     "size": "37",
+     "color": "Pembe / Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-044-pembe-38",
+     "size": "38",
+     "color": "Pembe / Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-044-pembe-39",
+     "size": "39",
+     "color": "Pembe / Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-044-pembe-40",
+     "size": "40",
+     "color": "Pembe / Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-044-pembe-41",
+     "size": "41",
+     "color": "Pembe / Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-044-pembe-42",
+     "size": "42",
+     "color": "Pembe / Açık Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-044-pembe-43",
+     "size": "43",
+     "color": "Pembe / Açık Mavi",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 42,
+   "tohum": false
+  },
+  {
+   "id": "p-045",
+   "slug": "superstar-beyaz-2",
+   "name": "Adidas Superstar",
+   "description": "Temiz beyaz görünümü ve klasik Superstar çizgileriyle günlük kombinlerin sade tamamlayıcısı.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-045-temiz-a0ca7c87.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-045-f4351226.webp",
+     "alt": "superstar beyaz 2"
+    },
+    {
+     "src": "/products/p-045-71f3d3e7.webp",
+     "alt": "superstar beyaz 2"
+    },
+    {
+     "src": "/products/p-045-1a866979.webp",
+     "alt": "superstar beyaz 2"
+    },
+    {
+     "src": "/products/p-045-a63cb595.webp",
+     "alt": "superstar beyaz 2"
+    },
+    {
+     "src": "/products/p-045-b20fee1e.webp",
+     "alt": "superstar beyaz 2"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-045-beyaz-36",
+     "size": "36",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-045-beyaz-37",
+     "size": "37",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-045-beyaz-38",
+     "size": "38",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-045-beyaz-39",
+     "size": "39",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-045-beyaz-40",
+     "size": "40",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-045-beyaz-41",
+     "size": "41",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-045-beyaz-42",
+     "size": "42",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-045-beyaz-43",
+     "size": "43",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Superstar",
+   "durum": "yayinda",
+   "sira": 43,
+   "tohum": false
+  },
+  {
+   "id": "p-046",
+   "slug": "adidas-campus-siyah",
+   "name": "Adidas Campus 00s",
+   "description": "2000'ler esintili geniş silüetiyle güçlü bir streetwear görünümü sunan siyah Campus 00s.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-046-temiz-548ac475.webp",
+     "alt": "Adidas Campus 00s"
+    },
+    {
+     "src": "/products/p-046-3f96a44f.webp",
+     "alt": "adidas campus siyah"
+    },
+    {
+     "src": "/products/p-046-61654299.webp",
+     "alt": "adidas campus siyah"
+    },
+    {
+     "src": "/products/p-046-dff88500.webp",
+     "alt": "adidas campus siyah"
+    },
+    {
+     "src": "/products/p-046-2916bacd.webp",
+     "alt": "adidas campus siyah"
+    },
+    {
+     "src": "/products/p-046-cfc9355f.webp",
+     "alt": "adidas campus siyah"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-046-siyah-36",
+     "size": "36",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-046-siyah-37",
+     "size": "37",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-046-siyah-38",
+     "size": "38",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-046-siyah-39",
+     "size": "39",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-046-siyah-40",
+     "size": "40",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-046-siyah-41",
+     "size": "41",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-046-siyah-42",
+     "size": "42",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-046-siyah-43",
+     "size": "43",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Campus 00s",
+   "durum": "yayinda",
+   "sira": 44,
+   "tohum": false
+  },
+  {
+   "id": "p-047",
+   "slug": "adidas-campus-yesil",
+   "name": "Adidas Campus 00s",
+   "description": "Yeşil süet görünümü ve açık renk detaylarıyla retro Campus stiline renk katan model.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-047-temiz-05068936.webp",
+     "alt": "Adidas Campus 00s"
+    },
+    {
+     "src": "/products/p-047-dc4c2cff.webp",
+     "alt": "adidas campus yeşil"
+    },
+    {
+     "src": "/products/p-047-edd2c6ef.webp",
+     "alt": "adidas campus yeşil"
+    },
+    {
+     "src": "/products/p-047-191779c4.webp",
+     "alt": "adidas campus yeşil"
+    },
+    {
+     "src": "/products/p-047-0a71b168.webp",
+     "alt": "adidas campus yeşil"
+    },
+    {
+     "src": "/products/p-047-a78f84be.webp",
+     "alt": "adidas campus yeşil"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Yeşil / Beyaz",
+     "hex": "#00ff1e"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-047-yesil-36",
+     "size": "36",
+     "color": "Yeşil / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-047-yesil-37",
+     "size": "37",
+     "color": "Yeşil / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-047-yesil-38",
+     "size": "38",
+     "color": "Yeşil / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-047-yesil-39",
+     "size": "39",
+     "color": "Yeşil / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-047-yesil-40",
+     "size": "40",
+     "color": "Yeşil / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-047-yesil-41",
+     "size": "41",
+     "color": "Yeşil / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-047-yesil-42",
+     "size": "42",
+     "color": "Yeşil / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-047-yesil-43",
+     "size": "43",
+     "color": "Yeşil / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Campus 00s",
+   "durum": "yayinda",
+   "sira": 45,
+   "tohum": false
+  },
+  {
+   "id": "p-048",
+   "slug": "adidas-superstar-kahverengi",
+   "name": "Adidas Superstar",
+   "description": "Kahverengi deri gövde, krem 3 bant ve ikonik kabuk burunla retro havası taşıyan Superstar.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-048-temiz-768c141d.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-048-c2d73d7e.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-048-f9fca18a.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-048-f98c5c00.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-048-6c0afa6c.webp",
+     "alt": "Adidas Superstar"
+    },
+    {
+     "src": "/products/p-048-6ef304d5.webp",
+     "alt": "Adidas Superstar"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Kahverengi",
+     "hex": "#4e342e"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-048-kahverengi-36",
+     "size": "36",
+     "color": "Kahverengi",
+     "stock": 10
+    },
+    {
+     "id": "p-048-kahverengi-37",
+     "size": "37",
+     "color": "Kahverengi",
+     "stock": 10
+    },
+    {
+     "id": "p-048-kahverengi-38",
+     "size": "38",
+     "color": "Kahverengi",
+     "stock": 10
+    },
+    {
+     "id": "p-048-kahverengi-39",
+     "size": "39",
+     "color": "Kahverengi",
+     "stock": 10
+    },
+    {
+     "id": "p-048-kahverengi-40",
+     "size": "40",
+     "color": "Kahverengi",
+     "stock": 10
+    },
+    {
+     "id": "p-048-kahverengi-41",
+     "size": "41",
+     "color": "Kahverengi",
+     "stock": 10
+    },
+    {
+     "id": "p-048-kahverengi-42",
+     "size": "42",
+     "color": "Kahverengi",
+     "stock": 10
+    },
+    {
+     "id": "p-048-kahverengi-43",
+     "size": "43",
+     "color": "Kahverengi",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Adidas",
+   "model": "Campus 00s",
+   "durum": "yayinda",
+   "sira": 46,
+   "tohum": false
+  },
+  {
+   "id": "p-049",
+   "slug": "nike-af1-mavi-cizgi",
+   "name": "Nike Air Force 1 '07",
+   "description": "Klasik beyaz AF1 gövdesini mavi detaylarla tamamlayan sade ve sportif model.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-049-temiz-f52d211d.webp",
+     "alt": "Nike Air Force 1 '07"
+    },
+    {
+     "src": "/products/p-049-aec470de.webp",
+     "alt": "nike af1 mavi çizgi"
+    },
+    {
+     "src": "/products/p-049-9c661231.webp",
+     "alt": "nike af1 mavi çizgi"
+    },
+    {
+     "src": "/products/p-049-25e70211.webp",
+     "alt": "nike af1 mavi çizgi"
+    },
+    {
+     "src": "/products/p-049-2417279c.webp",
+     "alt": "nike af1 mavi çizgi"
+    },
+    {
+     "src": "/products/p-049-d63451ad.webp",
+     "alt": "nike af1 mavi çizgi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Mavi",
+     "hex": "#607ae2"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-049-mavi-36",
+     "size": "36",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-049-mavi-37",
+     "size": "37",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-049-mavi-38",
+     "size": "38",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-049-mavi-39",
+     "size": "39",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-049-mavi-40",
+     "size": "40",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-049-mavi-41",
+     "size": "41",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-049-mavi-42",
+     "size": "42",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    },
+    {
+     "id": "p-049-mavi-43",
+     "size": "43",
+     "color": "Beyaz / Mavi",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Force 1 '07",
+   "durum": "yayinda",
+   "sira": 47,
+   "tohum": false
+  },
+  {
+   "id": "p-050",
+   "slug": "nike-dunk-low-lacivert",
+   "name": "Nike Dunk Low",
+   "description": "Lacivert dokulu deri, beyaz gövde ve topuktaki altın \"Just Do It\" işlemesiyle öne çıkan Dunk Low.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-050-temiz-29e06249.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-050-2c672c1b.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-050-85eec24f.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-050-8962247d.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-050-5dc62a80.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-050-7f5d9ecb.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-050-93860919.webp",
+     "alt": "Nike Dunk Low"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Lacivert / Altın",
+     "hex": "#1f2a44"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-050-siyah-36",
+     "size": "36",
+     "color": "Beyaz / Lacivert / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-050-siyah-37",
+     "size": "37",
+     "color": "Beyaz / Lacivert / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-050-siyah-38",
+     "size": "38",
+     "color": "Beyaz / Lacivert / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-050-siyah-39",
+     "size": "39",
+     "color": "Beyaz / Lacivert / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-050-siyah-40",
+     "size": "40",
+     "color": "Beyaz / Lacivert / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-050-siyah-41",
+     "size": "41",
+     "color": "Beyaz / Lacivert / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-050-siyah-42",
+     "size": "42",
+     "color": "Beyaz / Lacivert / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-050-siyah-43",
+     "size": "43",
+     "color": "Beyaz / Lacivert / Altın",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Force 1 '07",
+   "durum": "yayinda",
+   "sira": 48,
+   "tohum": false
+  },
+  {
+   "id": "p-051",
+   "slug": "air-jordan-1-low-lacivert-kirmizi",
+   "name": "Air Jordan 1 Low",
+   "description": "Lacivert, kırmızı ve beyaz renk bloklarını desenli tabanla birleştiren, dikkat çekici bir Air Jordan 1 Low.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-051-temiz-f2d83a83.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-051-8b6d2538.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-051-b7221903.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-051-8c9678db.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-051-0c91ccee.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-051-47a4812f.webp",
+     "alt": "Air Jordan 1 Low"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Kırmızı / Lacivert",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-051-beyaz-36",
+     "size": "36",
+     "color": "Beyaz / Kırmızı / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-051-beyaz-37",
+     "size": "37",
+     "color": "Beyaz / Kırmızı / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-051-beyaz-38",
+     "size": "38",
+     "color": "Beyaz / Kırmızı / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-051-beyaz-39",
+     "size": "39",
+     "color": "Beyaz / Kırmızı / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-051-beyaz-40",
+     "size": "40",
+     "color": "Beyaz / Kırmızı / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-051-beyaz-41",
+     "size": "41",
+     "color": "Beyaz / Kırmızı / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-051-beyaz-42",
+     "size": "42",
+     "color": "Beyaz / Kırmızı / Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-051-beyaz-43",
+     "size": "43",
+     "color": "Beyaz / Kırmızı / Lacivert",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Force 1",
+   "durum": "yayinda",
+   "sira": 49,
+   "tohum": false
+  },
+  {
+   "id": "p-052",
+   "slug": "nike-x-travis-black",
+   "name": "Travis Scott x Air Jordan 1 Low",
+   "description": "Jordan 1 Low silüetini Travis Scott estetiğiyle birleştiren koyu tonlu streetwear modeli.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-052-temiz-71d7a324.webp",
+     "alt": "Travis Scott x Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-052-352ac868.webp",
+     "alt": "nike x travis black"
+    },
+    {
+     "src": "/products/p-052-af1ca1f5.webp",
+     "alt": "nike x travis black"
+    },
+    {
+     "src": "/products/p-052-d2c010d5.webp",
+     "alt": "nike x travis black"
+    },
+    {
+     "src": "/products/p-052-a9bb2d9a.webp",
+     "alt": "nike x travis black"
+    },
+    {
+     "src": "/products/p-052-2786916f.webp",
+     "alt": "nike x travis black"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-052-siyah-36",
+     "size": "36",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-052-siyah-37",
+     "size": "37",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-052-siyah-38",
+     "size": "38",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-052-siyah-39",
+     "size": "39",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-052-siyah-40",
+     "size": "40",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-052-siyah-41",
+     "size": "41",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-052-siyah-42",
+     "size": "42",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-052-siyah-43",
+     "size": "43",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 50,
+   "tohum": false
+  },
+  {
+   "id": "p-053",
+   "slug": "nike-bogazli-parlak-gold-detay",
+   "name": "Air Jordan 1 Mid",
+   "description": "Yüksek bilekli Jordan 1 formu, siyah-beyaz yapı ve altın detaylarla daha iddialı bir görünüm kazanıyor.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-053-temiz-1c0f655a.webp",
+     "alt": "Air Jordan 1 Mid"
+    },
+    {
+     "src": "/products/p-053-b4d6d66e.webp",
+     "alt": "nike boğazlı parlak gold detay"
+    },
+    {
+     "src": "/products/p-053-58d68f0a.webp",
+     "alt": "nike boğazlı parlak gold detay"
+    },
+    {
+     "src": "/products/p-053-c427dc78.webp",
+     "alt": "nike boğazlı parlak gold detay"
+    },
+    {
+     "src": "/products/p-053-2b16d3a8.webp",
+     "alt": "nike boğazlı parlak gold detay"
+    },
+    {
+     "src": "/products/p-053-930a34b7.webp",
+     "alt": "nike boğazlı parlak gold detay"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah / Beyaz / Altın",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-053-siyah-36",
+     "size": "36",
+     "color": "Siyah / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-053-siyah-37",
+     "size": "37",
+     "color": "Siyah / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-053-siyah-38",
+     "size": "38",
+     "color": "Siyah / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-053-siyah-39",
+     "size": "39",
+     "color": "Siyah / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-053-siyah-40",
+     "size": "40",
+     "color": "Siyah / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-053-siyah-41",
+     "size": "41",
+     "color": "Siyah / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-053-siyah-42",
+     "size": "42",
+     "color": "Siyah / Beyaz / Altın",
+     "stock": 10
+    },
+    {
+     "id": "p-053-siyah-43",
+     "size": "43",
+     "color": "Siyah / Beyaz / Altın",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Mid",
+   "durum": "yayinda",
+   "sira": 51,
+   "tohum": false
+  },
+  {
+   "id": "p-054",
+   "slug": "air-jordan-1-low-gri",
+   "name": "Air Jordan 1 Low",
+   "description": "Duman gri nubuk, beyaz gövde ve krem tabanla sakin ve vintage bir görünüm sunan Air Jordan 1 Low.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-054-temiz-98d91b8a.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-054-fd6dace5.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-054-a315e258.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-054-7c97b134.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-054-97a6fad1.webp",
+     "alt": "Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-054-1d1c4f98.webp",
+     "alt": "Air Jordan 1 Low"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Duman Gri / Beyaz",
+     "hex": "#707070"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-054-gri-36",
+     "size": "36",
+     "color": "Duman Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-054-gri-37",
+     "size": "37",
+     "color": "Duman Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-054-gri-38",
+     "size": "38",
+     "color": "Duman Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-054-gri-39",
+     "size": "39",
+     "color": "Duman Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-054-gri-40",
+     "size": "40",
+     "color": "Duman Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-054-gri-41",
+     "size": "41",
+     "color": "Duman Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-054-gri-42",
+     "size": "42",
+     "color": "Duman Gri / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-054-gri-43",
+     "size": "43",
+     "color": "Duman Gri / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Force 1 '07",
+   "durum": "yayinda",
+   "sira": 52,
+   "tohum": false
+  },
+  {
+   "id": "p-055",
+   "slug": "nike-x-travis-mavi",
+   "name": "Travis Scott x Air Jordan 1 Low",
+   "description": "Açık ve koyu mavi tonların birleşimiyle dikkat çeken, güçlü streetwear karakterine sahip Jordan 1 Low yorumu.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-055-temiz-7ebd6d37.webp",
+     "alt": "Travis Scott x Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-055-4a8af9ce.webp",
+     "alt": "nike x travis mavi"
+    },
+    {
+     "src": "/products/p-055-2ceef3f9.webp",
+     "alt": "nike x travis mavi"
+    },
+    {
+     "src": "/products/p-055-b5db3968.webp",
+     "alt": "nike x travis mavi"
+    },
+    {
+     "src": "/products/p-055-4aba47eb.webp",
+     "alt": "nike x travis mavi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Mavi / Beyaz",
+     "hex": "#184081"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-055-mavi-36",
+     "size": "36",
+     "color": "Mavi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-055-mavi-37",
+     "size": "37",
+     "color": "Mavi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-055-mavi-38",
+     "size": "38",
+     "color": "Mavi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-055-mavi-39",
+     "size": "39",
+     "color": "Mavi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-055-mavi-40",
+     "size": "40",
+     "color": "Mavi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-055-mavi-41",
+     "size": "41",
+     "color": "Mavi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-055-mavi-42",
+     "size": "42",
+     "color": "Mavi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-055-mavi-43",
+     "size": "43",
+     "color": "Mavi / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 53,
+   "tohum": false
+  },
+  {
+   "id": "p-056",
+   "slug": "nike-x-travis-beyaz",
+   "name": "Travis Scott x Air Jordan 1 Low",
+   "description": "Beyaz ağırlıklı temiz görünümüyle daha minimal bir Travis Scott x Jordan 1 Low yorumu.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-056-temiz-9852f671.webp",
+     "alt": "Travis Scott x Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-056-230e2b06.webp",
+     "alt": "nike x travis beyaz"
+    },
+    {
+     "src": "/products/p-056-b0b64a21.webp",
+     "alt": "nike x travis beyaz"
+    },
+    {
+     "src": "/products/p-056-762d921f.webp",
+     "alt": "nike x travis beyaz"
+    },
+    {
+     "src": "/products/p-056-9c2ce07c.webp",
+     "alt": "nike x travis beyaz"
+    },
+    {
+     "src": "/products/p-056-1bed9fc4.webp",
+     "alt": "nike x travis beyaz"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-056-beyaz-36",
+     "size": "36",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-056-beyaz-37",
+     "size": "37",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-056-beyaz-38",
+     "size": "38",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-056-beyaz-39",
+     "size": "39",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-056-beyaz-40",
+     "size": "40",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-056-beyaz-41",
+     "size": "41",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-056-beyaz-42",
+     "size": "42",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-056-beyaz-43",
+     "size": "43",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 54,
+   "tohum": false
+  },
+  {
+   "id": "p-057",
+   "slug": "nike-dunk-low-siyah",
+   "name": "Nike Dunk Low",
+   "description": "Siyah süet gövde ve turuncu gum tabanla sade ama güçlü duran bir Dunk Low.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-057-temiz-67d25a38.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-057-5704f0a8.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-057-e4afab2c.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-057-f6c14b87.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-057-4873f12d.webp",
+     "alt": "Nike Dunk Low"
+    },
+    {
+     "src": "/products/p-057-7e9202be.webp",
+     "alt": "Nike Dunk Low"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-057-siyah-36",
+     "size": "36",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-057-siyah-37",
+     "size": "37",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-057-siyah-38",
+     "size": "38",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-057-siyah-39",
+     "size": "39",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-057-siyah-40",
+     "size": "40",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-057-siyah-41",
+     "size": "41",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-057-siyah-42",
+     "size": "42",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-057-siyah-43",
+     "size": "43",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Force 1 '07",
+   "durum": "yayinda",
+   "sira": 55,
+   "tohum": false
+  },
+  {
+   "id": "p-058",
+   "slug": "nike-x-travis-sari",
+   "name": "Travis Scott x Air Jordan 1 Low",
+   "description": "Sarı ve lacivert kontrastıyla daha enerjik bir streetwear görünümü sunan Jordan 1 Low yorumu.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-058-temiz-56e87e5c.webp",
+     "alt": "Travis Scott x Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-058-96834047.webp",
+     "alt": "nike x travis sarı"
+    },
+    {
+     "src": "/products/p-058-119b4d28.webp",
+     "alt": "nike x travis sarı"
+    },
+    {
+     "src": "/products/p-058-f605fac1.webp",
+     "alt": "nike x travis sarı"
+    },
+    {
+     "src": "/products/p-058-de70dd2f.webp",
+     "alt": "nike x travis sarı"
+    },
+    {
+     "src": "/products/p-058-f8dadb1d.webp",
+     "alt": "nike x travis sarı"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Sarı / Lacivert / Beyaz",
+     "hex": "#c4fa00"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-058-sari-36",
+     "size": "36",
+     "color": "Sarı / Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-058-sari-37",
+     "size": "37",
+     "color": "Sarı / Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-058-sari-38",
+     "size": "38",
+     "color": "Sarı / Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-058-sari-39",
+     "size": "39",
+     "color": "Sarı / Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-058-sari-40",
+     "size": "40",
+     "color": "Sarı / Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-058-sari-41",
+     "size": "41",
+     "color": "Sarı / Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-058-sari-42",
+     "size": "42",
+     "color": "Sarı / Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-058-sari-43",
+     "size": "43",
+     "color": "Sarı / Lacivert / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 56,
+   "tohum": false
+  },
+  {
+   "id": "p-059",
+   "slug": "nike-x-travis-mor-beyaz",
+   "name": "Travis Scott x Air Jordan 1 Low",
+   "description": "Mor tonları ve açık renk detaylarıyla daha cesur ve dikkat çekici bir streetwear görünümü.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-059-temiz-49c51852.webp",
+     "alt": "Travis Scott x Air Jordan 1 Low"
+    },
+    {
+     "src": "/products/p-059-1ae28b7d.webp",
+     "alt": "nike x travis mor beyaz"
+    },
+    {
+     "src": "/products/p-059-bfcb64e5.webp",
+     "alt": "nike x travis mor beyaz"
+    },
+    {
+     "src": "/products/p-059-a4ab9168.webp",
+     "alt": "nike x travis mor beyaz"
+    },
+    {
+     "src": "/products/p-059-ac3103b7.webp",
+     "alt": "nike x travis mor beyaz"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Mor / Beyaz",
+     "hex": "#9900ff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-059-mor-36",
+     "size": "36",
+     "color": "Mor / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-059-mor-37",
+     "size": "37",
+     "color": "Mor / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-059-mor-38",
+     "size": "38",
+     "color": "Mor / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-059-mor-39",
+     "size": "39",
+     "color": "Mor / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-059-mor-40",
+     "size": "40",
+     "color": "Mor / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-059-mor-41",
+     "size": "41",
+     "color": "Mor / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-059-mor-42",
+     "size": "42",
+     "color": "Mor / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-059-mor-43",
+     "size": "43",
+     "color": "Mor / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Low",
+   "durum": "yayinda",
+   "sira": 57,
+   "tohum": false
+  },
+  {
+   "id": "p-060",
+   "slug": "nike-bogazli-mavi-gri",
+   "name": "Air Jordan 1 Mid",
+   "description": "Mavi ve gri tonlarıyla klasik Jordan 1 Mid silüetini daha soft bir renk paletiyle sunan model.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-060-temiz-c2d64793.webp",
+     "alt": "Air Jordan 1 Mid"
+    },
+    {
+     "src": "/products/p-060-39d3fb8e.webp",
+     "alt": "nike boğazlı mavi gri"
+    },
+    {
+     "src": "/products/p-060-5ed5978a.webp",
+     "alt": "nike boğazlı mavi gri"
+    },
+    {
+     "src": "/products/p-060-a726755a.webp",
+     "alt": "nike boğazlı mavi gri"
+    },
+    {
+     "src": "/products/p-060-27f1ce65.webp",
+     "alt": "nike boğazlı mavi gri"
+    },
+    {
+     "src": "/products/p-060-f4cc2ab0.webp",
+     "alt": "nike boğazlı mavi gri"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Mavi / Gri",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-060-siyah-36",
+     "size": "36",
+     "color": "Mavi / Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-060-siyah-37",
+     "size": "37",
+     "color": "Mavi / Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-060-siyah-38",
+     "size": "38",
+     "color": "Mavi / Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-060-siyah-39",
+     "size": "39",
+     "color": "Mavi / Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-060-siyah-40",
+     "size": "40",
+     "color": "Mavi / Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-060-siyah-41",
+     "size": "41",
+     "color": "Mavi / Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-060-siyah-42",
+     "size": "42",
+     "color": "Mavi / Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-060-siyah-43",
+     "size": "43",
+     "color": "Mavi / Gri",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Mid",
+   "durum": "yayinda",
+   "sira": 58,
+   "tohum": false
+  },
+  {
+   "id": "p-061",
+   "slug": "nike-bogazli-beyaz",
+   "name": "Air Jordan 1 Mid",
+   "description": "Temiz beyaz görünümüyle Jordan 1 Mid'in klasik yüksek bilekli yapısını öne çıkaran model.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-061-temiz-b659100a.webp",
+     "alt": "Air Jordan 1 Mid"
+    },
+    {
+     "src": "/products/p-061-d3fd04aa.webp",
+     "alt": "nike boğazlı beyaz"
+    },
+    {
+     "src": "/products/p-061-942a62ec.webp",
+     "alt": "nike boğazlı beyaz"
+    },
+    {
+     "src": "/products/p-061-3301c035.webp",
+     "alt": "nike boğazlı beyaz"
+    },
+    {
+     "src": "/products/p-061-d43b52b0.webp",
+     "alt": "nike boğazlı beyaz"
+    },
+    {
+     "src": "/products/p-061-965add81.webp",
+     "alt": "nike boğazlı beyaz"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-061-beyaz-36",
+     "size": "36",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-061-beyaz-37",
+     "size": "37",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-061-beyaz-38",
+     "size": "38",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-061-beyaz-39",
+     "size": "39",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-061-beyaz-40",
+     "size": "40",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-061-beyaz-41",
+     "size": "41",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-061-beyaz-42",
+     "size": "42",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-061-beyaz-43",
+     "size": "43",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Mid",
+   "durum": "yayinda",
+   "sira": 59,
+   "tohum": false
+  },
+  {
+   "id": "p-062",
+   "slug": "nike-bogazli-bebek-mavi",
+   "name": "Air Jordan 1 Mid",
+   "description": "Açık mavi ve beyaz tonlarıyla daha soft ve günlük bir Jordan 1 Mid görünümü.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-062-temiz-7949cac6.webp",
+     "alt": "Air Jordan 1 Mid"
+    },
+    {
+     "src": "/products/p-062-c81583e8.webp",
+     "alt": "nike boğazlı bebek mavi"
+    },
+    {
+     "src": "/products/p-062-04b559b8.webp",
+     "alt": "nike boğazlı bebek mavi"
+    },
+    {
+     "src": "/products/p-062-6ac10193.webp",
+     "alt": "nike boğazlı bebek mavi"
+    },
+    {
+     "src": "/products/p-062-df3f41f8.webp",
+     "alt": "nike boğazlı bebek mavi"
+    },
+    {
+     "src": "/products/p-062-081d1462.webp",
+     "alt": "nike boğazlı bebek mavi"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Bebek Mavisi / Beyaz",
+     "hex": "#099f8e"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-062-bebe-mavi-36",
+     "size": "36",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-062-bebe-mavi-37",
+     "size": "37",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-062-bebe-mavi-38",
+     "size": "38",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-062-bebe-mavi-39",
+     "size": "39",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-062-bebe-mavi-40",
+     "size": "40",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-062-bebe-mavi-41",
+     "size": "41",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-062-bebe-mavi-42",
+     "size": "42",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-062-bebe-mavi-43",
+     "size": "43",
+     "color": "Bebek Mavisi / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Jordan 1 Mid",
+   "durum": "yayinda",
+   "sira": 60,
+   "tohum": false
+  },
+  {
+   "id": "p-063",
+   "slug": "nike-tn-beyaz-siyah",
+   "name": "Nike Air Max Plus",
+   "description": "Beyaz ve siyah kafes yapısı ve sportif silüetiyle daha agresif bir sneaker karakteri sunan Air Max Plus.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-063-temiz-940c21f3.webp",
+     "alt": "Nike Air Max Plus"
+    },
+    {
+     "src": "/products/p-063-67eea552.webp",
+     "alt": "Nike Air Max Plus"
+    },
+    {
+     "src": "/products/p-063-c8cf56f0.webp",
+     "alt": "Nike Air Max Plus"
+    },
+    {
+     "src": "/products/p-063-62ef6b28.webp",
+     "alt": "Nike Air Max Plus"
+    },
+    {
+     "src": "/products/p-063-43f76aec.webp",
+     "alt": "Nike Air Max Plus"
+    },
+    {
+     "src": "/products/p-063-fcfb7807.webp",
+     "alt": "Nike Air Max Plus"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-063-siyah-36",
+     "size": "36",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-063-siyah-37",
+     "size": "37",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-063-siyah-38",
+     "size": "38",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-063-siyah-39",
+     "size": "39",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-063-siyah-40",
+     "size": "40",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-063-siyah-41",
+     "size": "41",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-063-siyah-42",
+     "size": "42",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-063-siyah-43",
+     "size": "43",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Max Plus",
+   "durum": "yayinda",
+   "sira": 61,
+   "tohum": false
+  },
+  {
+   "id": "p-064",
+   "slug": "nike-tn-mor-pembe",
+   "name": "Nike Air Max Plus",
+   "description": "Mor ve pembe tonlarını sportif Air Max Plus silüetiyle bir araya getiren, daha renkli ve dikkat çekici model.",
+   "category": "ayakkabi",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-064-temiz-7ef55016.webp",
+     "alt": "Nike Air Max Plus"
+    },
+    {
+     "src": "/products/p-064-6c521653.webp",
+     "alt": "nike tn mor pembe"
+    },
+    {
+     "src": "/products/p-064-0cb82823.webp",
+     "alt": "nike tn mor pembe"
+    },
+    {
+     "src": "/products/p-064-a02ebeb4.webp",
+     "alt": "nike tn mor pembe"
+    },
+    {
+     "src": "/products/p-064-89c045e8.webp",
+     "alt": "nike tn mor pembe"
+    },
+    {
+     "src": "/products/p-064-bcfbe5fa.webp",
+     "alt": "nike tn mor pembe"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Mor / Pembe",
+     "hex": "#5700c2"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-064-mor-36",
+     "size": "36",
+     "color": "Mor / Pembe",
+     "stock": 10
+    },
+    {
+     "id": "p-064-mor-37",
+     "size": "37",
+     "color": "Mor / Pembe",
+     "stock": 10
+    },
+    {
+     "id": "p-064-mor-38",
+     "size": "38",
+     "color": "Mor / Pembe",
+     "stock": 10
+    },
+    {
+     "id": "p-064-mor-39",
+     "size": "39",
+     "color": "Mor / Pembe",
+     "stock": 10
+    },
+    {
+     "id": "p-064-mor-40",
+     "size": "40",
+     "color": "Mor / Pembe",
+     "stock": 10
+    },
+    {
+     "id": "p-064-mor-41",
+     "size": "41",
+     "color": "Mor / Pembe",
+     "stock": 10
+    },
+    {
+     "id": "p-064-mor-42",
+     "size": "42",
+     "color": "Mor / Pembe",
+     "stock": 10
+    },
+    {
+     "id": "p-064-mor-43",
+     "size": "43",
+     "color": "Mor / Pembe",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "brand": "Nike",
+   "model": "Air Max Plus",
+   "durum": "yayinda",
+   "sira": 62,
+   "tohum": false
+  },
+  {
+   "id": "p-065",
+   "slug": "bape-ape-head-hoodie-gri",
+   "name": "Bape Ape Head Hoodie",
+   "description": "Mavi kamuflaj Ape Head baskısıyla BAPE’in en tanınan detayını taşıyan gri kapüşonlu sweatshirt; kanguru cebi ve rahat kalıbıyla günlük kombinlerin merkezinde.",
+   "category": "sweatshirt",
+   "brand": "Bape",
+   "fit": "dar",
+   "price": 999,
+   "compareAtPrice": 1300,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-065-c2d8c53c.png",
+     "alt": "Bape Ape Head Hoodie"
+    },
+    {
+     "src": "/products/p-065-cc634ec0.png",
+     "alt": "Bape Ape Head Hoodie"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Gri",
+     "hex": "#7a7a7a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-065-gri-xs",
+     "size": "XS",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-065-gri-s",
+     "size": "S",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-065-gri-m",
+     "size": "M",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-065-gri-l",
+     "size": "L",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-065-gri-xl",
+     "size": "XL",
+     "color": "Gri",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 63,
+   "tohum": false
+  },
+  {
+   "id": "p-066",
+   "slug": "grafik-baskili-hoodie-siyah",
+   "name": "Grafik Baskılı Hoodie",
+   "description": "Göğüste küçük amblem, sırtta büyük grafik baskı. Siyah kapüşonlu sweatshirt, sade önü ve dikkat çeken arkasıyla iki farklı görünüm sunar.",
+   "category": "sweatshirt",
+   "price": 999,
+   "compareAtPrice": 1300,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-066-4fc80029.png",
+     "alt": "Grafik Baskılı Hoodie"
+    },
+    {
+     "src": "/products/p-066-8d787646.png",
+     "alt": "Grafik Baskılı Hoodie"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-066-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-066-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-066-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-066-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 64,
+   "tohum": false
+  },
+  {
+   "id": "p-067",
+   "slug": "trapstar-london-hoodie-siyah",
+   "name": "Trapstar London Hoodie",
+   "description": "Göğüste Trapstar London yazısıyla Londra sokak kültürünün imzasını taşıyan siyah kapüşonlu sweatshirt; kalın ipli kapüşon ve kanguru cebiyle.",
+   "category": "sweatshirt",
+   "brand": "Trapstar",
+   "price": 999,
+   "compareAtPrice": 1300,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-067-a3b61528.png",
+     "alt": "Trapstar London Hoodie"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-067-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-067-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-067-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-067-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 65,
+   "tohum": false
+  },
+  {
+   "id": "p-068",
+   "slug": "corteiz-slaughter-gang-hoodie-beyaz",
+   "name": "Corteiz Slaughter Gang Hoodie",
+   "description": "Kırmızı Slaughter Gang baskısı ve arkada Alcatraz logosuyla Corteiz’in karakterini yansıtan beyaz kapüşonlu sweatshirt.",
+   "category": "sweatshirt",
+   "brand": "Corteiz",
+   "fit": "oversize",
+   "price": 999,
+   "compareAtPrice": 1200,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-068-51d508c8.png",
+     "alt": "Corteiz Slaughter Gang Hoodie"
+    },
+    {
+     "src": "/products/p-068-8a1ca137.png",
+     "alt": "Corteiz Slaughter Gang Hoodie"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#ffffff"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-068-beyaz-xs",
+     "size": "XS",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-068-beyaz-s",
+     "size": "S",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-068-beyaz-m",
+     "size": "M",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-068-beyaz-l",
+     "size": "L",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 66,
+   "tohum": false
+  },
+  {
+   "id": "p-069",
+   "slug": "sp5der-web-hoodie-siyah",
+   "name": "Sp5der Web Hoodie",
+   "description": "Kırmızı örümcek ağı ve beyaz Sp5der logosuyla markanın en bilinen tasarımı; siyah kapüşonlu sweatshirt, rahat kalıp.",
+   "category": "sweatshirt",
+   "brand": "Sp5der",
+   "fit": "oversize",
+   "price": 999,
+   "compareAtPrice": 1300,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-069-2656e3cf.png",
+     "alt": "Sp5der Web Hoodie"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-069-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-069-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-069-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-069-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 67,
+   "tohum": false
+  },
+  {
+   "id": "p-070",
+   "slug": "sp5der-pembe-baskili-hoodie-siyah",
+   "name": "Sp5der Pembe Baskılı Hoodie",
+   "description": "Pembe Sp5der yazısı ve beyaz örümcek ağı baskısıyla siyah kapüşonlu sweatshirt; sade kombinlere renkli bir vurgu katar.",
+   "category": "sweatshirt",
+   "brand": "Sp5der",
+   "fit": "oversize",
+   "price": 999,
+   "compareAtPrice": 1300,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-070-42ae30e2.png",
+     "alt": "Sp5der Pembe Baskılı Hoodie"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-070-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-070-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-070-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-070-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-070-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 68,
+   "tohum": false
+  },
+  {
+   "id": "p-071",
+   "slug": "bape-ekose-ape-head-fermuarli-hoodie-siyah",
+   "name": "Bape Ekose Ape Head Fermuarlı Hoodie",
+   "description": "Sırtta ekose desenli Ape Head baskısı, önde fermuar ve göğüste küçük BAPE yazısı. Siyah fermuarlı kapüşonlu sweatshirt.",
+   "category": "sweatshirt",
+   "brand": "Bape",
+   "fit": "dar",
+   "price": 999,
+   "compareAtPrice": 1300,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-071-1440f1c7.png",
+     "alt": "Bape Ekose Ape Head Fermuarlı Hoodie"
+    },
+    {
+     "src": "/products/p-071-db0057e5.png",
+     "alt": "Bape Ekose Ape Head Fermuarlı Hoodie"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-071-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-071-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-071-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-071-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 69,
+   "tohum": false
+  },
+  {
+   "id": "p-072",
+   "slug": "syna-world-tech-fleece-takim",
+   "name": "Syna World Tech Fleece Takım",
+   "description": "Gri ve siyahın göğüste çaprazla bölündüğü Tech Fleece takım. Göğüste ve paçada bej Syna World grafiti logosu, kapüşonda \"Life of Syn\" yazısı. Fermuarlı kapüşonlu üst ve fermuar cepli dar paça jogger.",
+   "category": "esofman",
+   "brand": "Syna World",
+   "model": "Tech Fleece",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-072-bbf48a3d.png",
+     "alt": "Syna World Tech Fleece Takım"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Gri / Siyah",
+     "hex": "#7c7f84"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-072-gri-siyah-xs",
+     "size": "XS",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-072-gri-siyah-s",
+     "size": "S",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-072-gri-siyah-m",
+     "size": "M",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-072-gri-siyah-l",
+     "size": "L",
+     "color": "Gri / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-072-gri-siyah-xl",
+     "size": "XL",
+     "color": "Gri / Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 70,
+   "tohum": false
+  },
+  {
+   "id": "p-073",
+   "slug": "nike-tech-fleece-takim-siyah",
+   "name": "Nike Tech Fleece Takım",
+   "description": "Baştan sona siyah Tech Fleece takım. Göğüste çapraz dikiş detayı, fermuarlı kapüşonlu üst ve fermuar cepli dar paça jogger.",
+   "category": "esofman",
+   "brand": "Nike",
+   "model": "Tech Fleece",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-073-4bc6c11b.png",
+     "alt": "Nike Tech Fleece Takım"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-073-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-073-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-073-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-073-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-073-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 71,
+   "tohum": false
+  },
+  {
+   "id": "p-074",
+   "slug": "nike-tech-fleece-takim-saks-mavisi",
+   "name": "Nike Tech Fleece Takım",
+   "description": "Canlı saks mavisi Tech Fleece takım. Göğüste siyah çapraz dikiş, fermuarlı kapüşonlu üst ve fermuar cepli dar paça jogger.",
+   "category": "esofman",
+   "brand": "Nike",
+   "model": "Tech Fleece",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-074-26ec174e.png",
+     "alt": "Nike Tech Fleece Takım"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Saks Mavisi",
+     "hex": "#1f4fd8"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-074-saks-mavisi-xs",
+     "size": "XS",
+     "color": "Saks Mavisi",
+     "stock": 10
+    },
+    {
+     "id": "p-074-saks-mavisi-s",
+     "size": "S",
+     "color": "Saks Mavisi",
+     "stock": 10
+    },
+    {
+     "id": "p-074-saks-mavisi-m",
+     "size": "M",
+     "color": "Saks Mavisi",
+     "stock": 10
+    },
+    {
+     "id": "p-074-saks-mavisi-l",
+     "size": "L",
+     "color": "Saks Mavisi",
+     "stock": 10
+    },
+    {
+     "id": "p-074-saks-mavisi-xl",
+     "size": "XL",
+     "color": "Saks Mavisi",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 72,
+   "tohum": false
+  },
+  {
+   "id": "p-075",
+   "slug": "champion-script-logo-sweatshirt-gri",
+   "name": "Champion Script Logo Sweatshirt",
+   "description": "Gri melanj bisiklet yaka sweatshirt. Göğüste lacivert Champion yazı logosu, kolda C logolu arma; ribanalı yaka, manşet ve etek.",
+   "category": "sweatshirt",
+   "brand": "Champion",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-075-da8abf19.png",
+     "alt": "Champion Script Logo Sweatshirt"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Gri",
+     "hex": "#a7a9ac"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-075-gri-xs",
+     "size": "XS",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-075-gri-s",
+     "size": "S",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-075-gri-m",
+     "size": "M",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-075-gri-l",
+     "size": "L",
+     "color": "Gri",
+     "stock": 10
+    },
+    {
+     "id": "p-075-gri-xl",
+     "size": "XL",
+     "color": "Gri",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 73,
+   "tohum": false
+  },
+  {
+   "id": "p-076",
+   "slug": "champion-script-logo-sweatshirt-beyaz",
+   "name": "Champion Script Logo Sweatshirt",
+   "description": "Beyaz bisiklet yaka sweatshirt. Göğüste lacivert Champion yazı logosu, kolda C logolu arma; ribanalı yaka, manşet ve etek.",
+   "category": "sweatshirt",
+   "brand": "Champion",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-076-9eba43fd.png",
+     "alt": "Champion Script Logo Sweatshirt"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz",
+     "hex": "#f2efe9"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-076-beyaz-xs",
+     "size": "XS",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-076-beyaz-s",
+     "size": "S",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-076-beyaz-m",
+     "size": "M",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-076-beyaz-l",
+     "size": "L",
+     "color": "Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-076-beyaz-xl",
+     "size": "XL",
+     "color": "Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 74,
+   "tohum": false
+  },
+  {
+   "id": "p-077",
+   "slug": "nike-72-baskili-hoodie",
+   "name": "Nike 72 Baskılı Hoodie",
+   "description": "Lacivert kapüşonlu sweatshirt. Göğüste kırmızı swoosh ve kanatlı figür nakışı; sırtta bulutlar arasında kanatlı at ile büyük kırmızı \"72 NIKE\" baskısı. Kanguru cep, reglan kol.",
+   "category": "sweatshirt",
+   "brand": "Nike",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-077-1e851135.png",
+     "alt": "Nike 72 Baskılı Hoodie"
+    },
+    {
+     "src": "/products/p-077-ea5f5417.png",
+     "alt": "Nike 72 Baskılı Hoodie"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Lacivert",
+     "hex": "#1c2541"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-077-lacivert-xs",
+     "size": "XS",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-077-lacivert-s",
+     "size": "S",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-077-lacivert-m",
+     "size": "M",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-077-lacivert-l",
+     "size": "L",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-077-lacivert-xl",
+     "size": "XL",
+     "color": "Lacivert",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 75,
+   "tohum": false
+  },
+  {
+   "id": "p-078",
+   "slug": "rhinestone-omurga-sweat",
+   "name": "Rhinestone Omurga Sweat",
+   "description": "Siyah kapüşonlu sweatshirt. Önde beyaz gotik yazı baskısı, sırtta taşlarla işlenmiş büyük omurga ve kanat deseni. Kanguru cep.",
+   "category": "sweatshirt",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-078-d19ed23e.jpg",
+     "alt": "Rhinestone Omurga Sweat"
+    },
+    {
+     "src": "/products/p-078-7e8741f0.jpg",
+     "alt": "Rhinestone Omurga Sweat"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-078-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-078-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-078-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-078-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-078-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 76,
+   "tohum": false
+  },
+  {
+   "id": "p-079",
+   "slug": "rhinestone-orumcek-fermuarli-sweat",
+   "name": "Rhinestone Örümcek Fermuarlı Sweat",
+   "description": "Siyah fermuarlı kapüşonlu sweatshirt. Göğüste taşlarla işlenmiş küçük örümcek, sırtta kanatları açılmış büyük taşlı örümcek deseni. Metal fermuar, iki yan cep.",
+   "category": "sweatshirt",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-079-3b46bfae.png",
+     "alt": "Rhinestone Örümcek Fermuarlı Sweat"
+    },
+    {
+     "src": "/products/p-079-9fe41d5b.jpg",
+     "alt": "Rhinestone Örümcek Fermuarlı Sweat"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-079-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-079-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-079-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-079-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-079-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 77,
+   "tohum": false
+  },
+  {
+   "id": "p-080",
+   "slug": "guess-ucgen-logo-triko-kazak-bordo",
+   "name": "Guess Üçgen Logo Triko Kazak",
+   "description": "Bordo örgü triko kazak. Göğüste beyaz Guess üçgen logosu; bisiklet yaka, ribanalı manşet ve etek.",
+   "category": "triko",
+   "brand": "Guess",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-080-e3910131.png",
+     "alt": "Guess Üçgen Logo Triko Kazak"
+    },
+    {
+     "src": "/products/p-080-fbd7ef4d.jpg",
+     "alt": "Guess Üçgen Logo Triko Kazak"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Bordo",
+     "hex": "#6b1f2a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-080-bordo-xs",
+     "size": "XS",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-080-bordo-s",
+     "size": "S",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-080-bordo-m",
+     "size": "M",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-080-bordo-l",
+     "size": "L",
+     "color": "Bordo",
+     "stock": 10
+    },
+    {
+     "id": "p-080-bordo-xl",
+     "size": "XL",
+     "color": "Bordo",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 78,
+   "tohum": false
+  },
+  {
+   "id": "p-081",
+   "slug": "guess-ucgen-logo-triko-kazak-siyah",
+   "name": "Guess Üçgen Logo Triko Kazak",
+   "description": "Siyah örgü triko kazak. Göğüste beyaz Guess üçgen logosu; bisiklet yaka, ribanalı manşet ve etek.",
+   "category": "triko",
+   "brand": "Guess",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-081-5ffed4a7.png",
+     "alt": "Guess Üçgen Logo Triko Kazak"
+    },
+    {
+     "src": "/products/p-081-b03a1aaf.jpg",
+     "alt": "Guess Üçgen Logo Triko Kazak"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-081-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-081-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-081-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-081-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-081-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 79,
+   "tohum": false
+  },
+  {
+   "id": "p-082",
+   "slug": "burberry-tb-monogram-triko-kazak-siyah",
+   "name": "Burberry TB Monogram Triko Kazak",
+   "description": "Siyah örgü triko kazak. Göğüste daire içinde işlemeli TB monogram arması; bisiklet yaka, ribanalı manşet ve etek.",
+   "category": "triko",
+   "brand": "Burberry",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-082-e1a8f522.png",
+     "alt": "Burberry TB Monogram Triko Kazak"
+    },
+    {
+     "src": "/products/p-082-59f9ee26.jpg",
+     "alt": "Burberry TB Monogram Triko Kazak"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-082-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-082-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-082-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-082-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-082-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 80,
+   "tohum": false
+  },
+  {
+   "id": "p-083",
+   "slug": "champion-script-logo-sweatshirt-lacivert",
+   "name": "Champion Script Logo Sweatshirt",
+   "description": "Lacivert bisiklet yaka sweatshirt. Göğüste beyaz Champion yazı logosu, kolda C logolu arma; ribanalı yaka, manşet ve etek.",
+   "category": "sweatshirt",
+   "brand": "Champion",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-083-22d26dc9.png",
+     "alt": "Champion Script Logo Sweatshirt"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Lacivert",
+     "hex": "#1f2a6b"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-083-lacivert-xs",
+     "size": "XS",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-083-lacivert-s",
+     "size": "S",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-083-lacivert-m",
+     "size": "M",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-083-lacivert-l",
+     "size": "L",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-083-lacivert-xl",
+     "size": "XL",
+     "color": "Lacivert",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 81,
+   "tohum": false
+  },
+  {
+   "id": "p-084",
+   "slug": "adidas-originals-uc-seritli-esofman-ustu-siyah-beyaz",
+   "name": "Adidas Originals Üç Şeritli Eşofman Üstü",
+   "description": "Siyah fermuarlı eşofman üstü. Kollarda beyaz üç şerit, göğüste Trefoil logo; dik yaka, fermuarlı yan cepler.",
+   "category": "esofman",
+   "brand": "Adidas",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-084-733e856c.png",
+     "alt": "Adidas Originals Üç Şeritli Eşofman Üstü"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah / Beyaz",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-084-siyah-beyaz-xs",
+     "size": "XS",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-084-siyah-beyaz-s",
+     "size": "S",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-084-siyah-beyaz-m",
+     "size": "M",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-084-siyah-beyaz-l",
+     "size": "L",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-084-siyah-beyaz-xl",
+     "size": "XL",
+     "color": "Siyah / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 82,
+   "tohum": false
+  },
+  {
+   "id": "p-085",
+   "slug": "adidas-originals-uc-seritli-esofman-ustu-beyaz-siyah",
+   "name": "Adidas Originals Üç Şeritli Eşofman Üstü",
+   "description": "Beyaz fermuarlı eşofman üstü. Kollarda siyah üç şerit, göğüste Trefoil logo; dik yaka, fermuarlı yan cepler.",
+   "category": "esofman",
+   "brand": "Adidas",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-085-ca25b546.png",
+     "alt": "Adidas Originals Üç Şeritli Eşofman Üstü"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Beyaz / Siyah",
+     "hex": "#f2efe9"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-085-beyaz-siyah-xs",
+     "size": "XS",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-085-beyaz-siyah-s",
+     "size": "S",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-085-beyaz-siyah-m",
+     "size": "M",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-085-beyaz-siyah-l",
+     "size": "L",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-085-beyaz-siyah-xl",
+     "size": "XL",
+     "color": "Beyaz / Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 83,
+   "tohum": false
+  },
+  {
+   "id": "p-086",
+   "slug": "guess-seritli-esofman-ustu-siyah",
+   "name": "Guess Şeritli Eşofman Üstü",
+   "description": "Siyah fermuarlı eşofman üstü. Göğüs boyunca kırmızı-beyaz şerit üzerinde Guess yazısı; dik yaka, yan cepler.",
+   "category": "esofman",
+   "brand": "Guess",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-086-ec3e288c.png",
+     "alt": "Guess Şeritli Eşofman Üstü"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-086-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-086-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-086-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-086-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-086-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 84,
+   "tohum": false
+  },
+  {
+   "id": "p-087",
+   "slug": "adidas-renk-bloklu-esofman-ustu-lacivert-beyaz",
+   "name": "Adidas Renk Bloklu Eşofman Üstü",
+   "description": "Lacivert ve beyaz renk bloklu fermuarlı eşofman üstü. Göğüste Adidas logosu, kollarda ve gövdede üç şerit; dik yaka.",
+   "category": "esofman",
+   "brand": "Adidas",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-087-25cdd3b4.jpg",
+     "alt": "Adidas Renk Bloklu Eşofman Üstü"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Lacivert / Beyaz",
+     "hex": "#1c2541"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-087-lacivert-beyaz-xs",
+     "size": "XS",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-087-lacivert-beyaz-s",
+     "size": "S",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-087-lacivert-beyaz-m",
+     "size": "M",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-087-lacivert-beyaz-l",
+     "size": "L",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    },
+    {
+     "id": "p-087-lacivert-beyaz-xl",
+     "size": "XL",
+     "color": "Lacivert / Beyaz",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 85,
+   "tohum": false
+  },
+  {
+   "id": "p-088",
+   "slug": "adidas-originals-uc-seritli-esofman-ustu-lacivert-kirmizi",
+   "name": "Adidas Originals Üç Şeritli Eşofman Üstü",
+   "description": "Lacivert fermuarlı eşofman üstü. Kollarda kırmızı üç şerit, göğüste kırmızı Trefoil logo; dik yaka.",
+   "category": "esofman",
+   "brand": "Adidas",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-088-e53b8fac.jpg",
+     "alt": "Adidas Originals Üç Şeritli Eşofman Üstü"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Lacivert / Kırmızı",
+     "hex": "#1c2541"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-088-lacivert-kirmizi-xs",
+     "size": "XS",
+     "color": "Lacivert / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-088-lacivert-kirmizi-s",
+     "size": "S",
+     "color": "Lacivert / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-088-lacivert-kirmizi-m",
+     "size": "M",
+     "color": "Lacivert / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-088-lacivert-kirmizi-l",
+     "size": "L",
+     "color": "Lacivert / Kırmızı",
+     "stock": 10
+    },
+    {
+     "id": "p-088-lacivert-kirmizi-xl",
+     "size": "XL",
+     "color": "Lacivert / Kırmızı",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 86,
+   "tohum": false
+  },
+  {
+   "id": "p-089",
+   "slug": "burberry-tb-monogram-triko-kazak-lacivert",
+   "name": "Burberry TB Monogram Triko Kazak",
+   "description": "Lacivert örgü triko kazak. Göğüste daire içinde işlemeli TB monogram arması; bisiklet yaka, ribanalı manşet ve etek.",
+   "category": "triko",
+   "brand": "Burberry",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-089-6c772604.png",
+     "alt": "Burberry TB Monogram Triko Kazak"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Lacivert",
+     "hex": "#1f2a52"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-089-lacivert-xs",
+     "size": "XS",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-089-lacivert-s",
+     "size": "S",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-089-lacivert-m",
+     "size": "M",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-089-lacivert-l",
+     "size": "L",
+     "color": "Lacivert",
+     "stock": 10
+    },
+    {
+     "id": "p-089-lacivert-xl",
+     "size": "XL",
+     "color": "Lacivert",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 87,
+   "tohum": false
+  },
+  {
+   "id": "p-090",
+   "slug": "louis-vuitton-monogram-triko-kazak-siyah",
+   "name": "Louis Vuitton Monogram Triko Kazak",
+   "description": "Siyah örgü triko kazak. Önde ve kollarda beyaz, büyük boy LV monogram ve çiçek motifleri; bisiklet yaka, ribanalı manşet ve etek.",
+   "category": "triko",
+   "brand": "Louis Vuitton",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-090-af6fb3dd.png",
+     "alt": "Louis Vuitton Monogram Triko Kazak"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-090-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-090-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-090-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-090-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-090-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 88,
+   "tohum": false
+  },
+  {
+   "id": "p-091",
+   "slug": "gant-yarim-fermuarli-triko-siyah",
+   "name": "Gant Yarım Fermuarlı Triko",
+   "description": "Siyah kalın fitilli örgü triko. Dik yaka, metal yarım fermuar, göğüste işlemeli Gant arması; reglan kol.",
+   "category": "triko",
+   "brand": "Gant",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-091-76ddc7a7.png",
+     "alt": "Gant Yarım Fermuarlı Triko"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Siyah",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-091-siyah-xs",
+     "size": "XS",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-091-siyah-s",
+     "size": "S",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-091-siyah-m",
+     "size": "M",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-091-siyah-l",
+     "size": "L",
+     "color": "Siyah",
+     "stock": 10
+    },
+    {
+     "id": "p-091-siyah-xl",
+     "size": "XL",
+     "color": "Siyah",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 89,
+   "tohum": false
+  },
+  {
+   "id": "p-092",
+   "slug": "gant-yarim-fermuarli-triko-ekru",
+   "name": "Gant Yarım Fermuarlı Triko",
+   "description": "Ekru kalın fitilli örgü triko. Dik yaka, metal yarım fermuar, göğüste işlemeli Gant arması; reglan kol.",
+   "category": "triko",
+   "brand": "Gant",
+   "price": 1200,
+   "compareAtPrice": 1400,
+   "currency": "TRY",
+   "images": [
+    {
+     "src": "/products/p-092-a5b7f271.png",
+     "alt": "Gant Yarım Fermuarlı Triko"
+    },
+    {
+     "src": "/products/p-092-448e117f.jpg",
+     "alt": "Gant Yarım Fermuarlı Triko"
+    }
+   ],
+   "colors": [
+    {
+     "name": "Ekru",
+     "hex": "#efe9dc"
+    }
+   ],
+   "variants": [
+    {
+     "id": "p-092-ekru-xs",
+     "size": "XS",
+     "color": "Ekru",
+     "stock": 10
+    },
+    {
+     "id": "p-092-ekru-s",
+     "size": "S",
+     "color": "Ekru",
+     "stock": 10
+    },
+    {
+     "id": "p-092-ekru-m",
+     "size": "M",
+     "color": "Ekru",
+     "stock": 10
+    },
+    {
+     "id": "p-092-ekru-l",
+     "size": "L",
+     "color": "Ekru",
+     "stock": 10
+    },
+    {
+     "id": "p-092-ekru-xl",
+     "size": "XL",
+     "color": "Ekru",
+     "stock": 10
+    }
+   ],
+   "isNew": true,
+   "durum": "yayinda",
+   "sira": 90,
+   "tohum": false
+  }
+ ],
+ "yonlendirmeler": {
+  "air-force-1": "p-012",
+  "oversize-tisort": "p-001",
+  "kapusonlu-sweatshirt": "p-002",
+  "fermuarli-sweatshirt": "p-008",
+  "bisiklet-yaka-sweatshirt": "p-009",
+  "nike-dragon": "p-019",
+  "dunk-beyaz": "p-027",
+  "spezial-kahverengi": "p-037",
+  "adidas-campus-kahverengi": "p-048",
+  "nike-af1-altin-detay": "p-050",
+  "nike-af1-degisik-taban": "p-051",
+  "nike-af1-duman-rengi": "p-054",
+  "nike-beyaz-kahverengi-taban": "p-057",
+  "nike-tn-gri-siyah": "p-063"
+ }
+}

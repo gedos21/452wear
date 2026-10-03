@@ -1,108 +1,124 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
-import { PRODUCTS as SEED, SHOWCASE_SLUG } from "@/data/products";
-import type { Product, ShoeSize } from "@/types/product";
+import "server-only";
+import { cache } from "react";
+import { unstable_cache } from "next/cache";
+import { and, asc, eq, inArray, ne, sql } from "drizzle-orm";
+import { SHOWCASE_SLUG } from "@/data/products";
+import type { Product, ProductColor, ProductImage, ShoeSize } from "@/types/product";
 import { OWN_BRAND, productBrand } from "@/lib/product-filters";
 import { SHOE_SIZES } from "@/lib/product-variants";
+import { getDb, schema } from "@/lib/server/db";
 
 /**
- * Katalog kalıcılığı — GELİŞTİRME ORTAMI İÇİN.
+ * Katalog kalıcılığı — Neon Postgres (bkz. lib/server/db/schema.ts: product,
+ * product_variant, product_redirect).
  *
- * Projede gerçek bir veritabanı veya CMS yok. Bu modül, koddaki tohum
- * katalogun (src/data/products.ts) üzerine diskteki bir JSON katmanı bindirir:
+ * Site tarafı okumaları (katalogOku, slugIleUrun…) Next önbelleğinden gelir ve
+ * "katalog" etiketiyle tazelenir: admin bir ürünü değiştirince
+ * `updateTag(KATALOG_ETIKETI)` çağrılır (bkz. app/admin/actions.ts). Admin'in
+ * kendi okumaları (urunBul, copKutusu, slug kontrolleri) her zaman tazedir.
  *
- *   tohum (kodda, salt okunur)  +  data/catalog.json (admin yazıyor)
- *
- * Böylece mevcut ürünler (p-001, p-006, p-007 dahil) kodda kalmaya devam eder,
- * admin'in eklediği/düzenlediği ürünler ise dosyada saklanır ve sunucu yeniden
- * başlasa da kaybolmaz.
- *
- * SINIR: Bu, dosya sistemine yazılabilen bir ortam gerektirir (yerel `next dev`
- * veya kendi sunucunda `next start`). Vercel benzeri salt-okunur/serverless bir
- * ortamda yazma başarısız olur ve eylem hata döndürür — sahte başarı mesajı
- * göstermiyoruz. Gerçek bir veritabanına geçilince yalnızca bu dosya değişir.
+ * Ürün durumları: "yayinda" | "cop" (çöp kutusu) | "silindi" (kalıcı silindi;
+ * satır, id'si yeni ürüne verilmesin diye kalır, hiçbir listede görünmez).
  */
 
-const DOSYA = path.join(process.cwd(), "data", "catalog.json");
+export const KATALOG_ETIKETI = "katalog";
 
-type Katman = {
-  /** Admin'in eklediği yeni ürünler. */
-  eklenen: Product[];
-  /** Tohum üründe yapılan değişiklikler: id → ürün. */
-  degisen: Record<string, Product>;
-  /**
-   * Çöp kutusu: silinen ama geri getirilebilen ürünlerin id'leri. Ürünün
-   * verisi ve görselleri yerinde durur; yalnızca katalogda gösterilmez.
-   */
-  cop: string[];
-  /**
-   * Kalıcı silinen ürünlerin id'leri. Tohum ürün kodda durduğu için burada
-   * işaretlenerek kalıcı gizlenir; id'ler yeni bir ürüne verilmez (bkz. yeniId).
-   */
-  silinen: string[];
-  /** Eski slug → ürün id'si: adresi değişen ürünün eski bağlantısı yönlenir. */
-  yonlendirmeler: Record<string, string>;
-};
+const { product, productVariant, productRedirect } = schema;
 
-async function katmanOku(): Promise<Katman> {
-  try {
-    const ham = await fs.readFile(DOSYA, "utf8");
-    const v = JSON.parse(ham) as Partial<Katman>;
-    return {
-      eklenen: v.eklenen ?? [],
-      degisen: v.degisen ?? {},
-      cop: v.cop ?? [],
-      silinen: v.silinen ?? [],
-      yonlendirmeler: v.yonlendirmeler ?? {},
-    };
-  } catch (e) {
-    // Dosya yoksa katman boştur; başka bir hata varsa yut­mayalım.
-    if ((e as NodeJS.ErrnoException).code === "ENOENT")
-      return {
-        eklenen: [],
-        degisen: {},
-        cop: [],
-        silinen: [],
-        yonlendirmeler: {},
-      };
-    throw e;
+type UrunSatiri = typeof product.$inferSelect;
+type VaryantSatiri = typeof productVariant.$inferSelect;
+
+function urunYap(r: UrunSatiri, varyantlar: VaryantSatiri[]): Product {
+  const p: Product = {
+    id: r.id,
+    slug: r.slug,
+    name: r.name,
+    description: r.description,
+    category: r.category as Product["category"],
+    price: r.price,
+    currency: "TRY",
+    images: r.images as ProductImage[],
+    colors: r.colors as ProductColor[],
+    variants: varyantlar
+      .sort((a, b) => a.sira - b.sira)
+      .map((v) => ({
+        id: v.id,
+        size: v.size as Product["variants"][number]["size"],
+        color: v.color,
+        stock: v.stock,
+      })),
+    isNew: r.isNew,
+  };
+  if (r.brand) p.brand = r.brand;
+  if (r.model) p.model = r.model;
+  if (r.fit === "dar" || r.fit === "oversize" || r.fit === "normal") p.fit = r.fit;
+  if (r.compareAtPrice != null) p.compareAtPrice = r.compareAtPrice;
+  if (r.complementaryIds?.length) p.complementaryIds = r.complementaryIds;
+  if (r.relatedIds?.length) p.relatedIds = r.relatedIds;
+  return p;
+}
+
+/** Verilen durumlardaki ürünler, katalog sırasıyla (her zaman taze). */
+async function urunleriOku(durumlar: string[]): Promise<(Product & { _satir: UrunSatiri })[]> {
+  const db = getDb();
+  const satirlar = await db
+    .select()
+    .from(product)
+    .where(inArray(product.durum, durumlar))
+    .orderBy(asc(product.sira));
+  if (satirlar.length === 0) return [];
+  const varyantlar = await db
+    .select()
+    .from(productVariant)
+    .where(inArray(productVariant.productId, satirlar.map((s) => s.id)));
+  const grup = new Map<string, VaryantSatiri[]>();
+  for (const v of varyantlar) {
+    const liste = grup.get(v.productId) ?? [];
+    liste.push(v);
+    grup.set(v.productId, liste);
   }
+  return satirlar.map((s) => ({ ...urunYap(s, grup.get(s.id) ?? []), _satir: s }));
 }
 
-async function katmanYaz(k: Katman): Promise<void> {
-  await fs.mkdir(path.dirname(DOSYA), { recursive: true });
-  // Boş listeler dosyaya yazılmaz; dosya elle okunurken sade kalsın.
-  const veri: Partial<Katman> = { eklenen: k.eklenen, degisen: k.degisen };
-  if (k.cop.length > 0) veri.cop = k.cop;
-  if (k.silinen.length > 0) veri.silinen = k.silinen;
-  if (Object.keys(k.yonlendirmeler).length > 0)
-    veri.yonlendirmeler = k.yonlendirmeler;
-  await fs.writeFile(DOSYA, JSON.stringify(veri, null, 2) + "\n", "utf8");
+function temizle(p: Product & { _satir?: UrunSatiri }): Product {
+  const { _satir, ...urun } = p;
+  void _satir;
+  return urun;
 }
 
-/** Kalıcı silinmemiş tüm ürünler (çöp kutusundakiler dahil), güncel halleriyle. */
-function tumUrunler(k: Katman): Product[] {
-  const silinen = new Set(k.silinen);
-  const tohum = SEED.filter((p) => !silinen.has(p.id)).map(
-    (p) => k.degisen[p.id] ?? p,
-  );
-  return [...tohum, ...k.eklenen.filter((p) => !silinen.has(p.id))];
-}
+/* ---------------- Site tarafı (önbellekli) ---------------- */
 
-/** Yayındaki ürünler: kalıcı silinenler ve çöp kutusundakiler hariç. */
-function yayindakiler(k: Katman): Product[] {
-  const cop = new Set(k.cop);
-  return tumUrunler(k).filter((p) => !cop.has(p.id));
-}
+/**
+ * Yayındaki ürünler, iki sıralamayla: katalog sırası ve "en yeni önce"
+ * (admin'in eklediği ürünler en yeniden eskiye, ardından ilk katalog).
+ */
+const yayindakiOnbellek = unstable_cache(
+  async () => {
+    const urunler = await urunleriOku(["yayinda"]);
+    const eklenen = urunler.filter((p) => !p._satir.tohum).reverse();
+    const tohum = urunler.filter((p) => p._satir.tohum);
+    return {
+      katalog: urunler.map(temizle),
+      enYeni: [...eklenen, ...tohum].map(temizle),
+    };
+  },
+  ["katalog-yayinda"],
+  { tags: [KATALOG_ETIKETI] },
+);
 
-/** Tohum + admin katmanı birleşmiş canlı katalog. */
-export async function katalogOku(): Promise<Product[]> {
-  return yayindakiler(await katmanOku());
-}
+const yonlendirmeOnbellek = unstable_cache(
+  async () => {
+    const satirlar = await getDb().select().from(productRedirect);
+    return Object.fromEntries(satirlar.map((r) => [r.slug, r.productId]));
+  },
+  ["katalog-yonlendirme"],
+  { tags: [KATALOG_ETIKETI] },
+);
 
-export async function urunBul(id: string): Promise<Product | null> {
-  return (await katalogOku()).find((p) => p.id === id) ?? null;
-}
+/** Yayındaki katalog (istek başına bir kez okunur). */
+export const katalogOku = cache(async (): Promise<Product[]> => {
+  return (await yayindakiOnbellek()).katalog;
+});
 
 /**
  * Slug'a karşılık gelen yayındaki ürün. Slug ürünün eski adresiyse ürün yine
@@ -111,117 +127,169 @@ export async function urunBul(id: string): Promise<Product | null> {
 export async function slugIleUrun(
   slug: string,
 ): Promise<{ urun: Product | null; yonlendir: boolean }> {
-  const k = await katmanOku();
-  const urunler = yayindakiler(k);
+  const urunler = await katalogOku();
   const dogrudan = urunler.find((p) => p.slug === slug);
   if (dogrudan) return { urun: dogrudan, yonlendir: false };
-  const id = k.yonlendirmeler[slug];
+  const id = (await yonlendirmeOnbellek())[slug];
   const hedef = id ? urunler.find((p) => p.id === id) : undefined;
   return { urun: hedef ?? null, yonlendir: Boolean(hedef) };
 }
 
-/** Ürünü ekler veya günceller. Tohum ürünler dosyada override edilir. */
-export async function urunYaz(urun: Product): Promise<void> {
-  const k = await katmanOku();
-  // Adres değiştiyse eski slug yeni adrese yönlendirilir; yeni slug artık
-  // gerçek bir ürün adresi olduğu için yönlendirmelerden düşer.
-  const onceki = tumUrunler(k).find((p) => p.id === urun.id);
-  if (onceki && onceki.slug !== urun.slug)
-    k.yonlendirmeler[onceki.slug] = urun.id;
-  delete k.yonlendirmeler[urun.slug];
+/* ---------------- Admin tarafı (taze) ---------------- */
 
-  const tohumMu = SEED.some((p) => p.id === urun.id);
-  if (tohumMu) {
-    k.degisen[urun.id] = urun;
-  } else {
-    const i = k.eklenen.findIndex((p) => p.id === urun.id);
-    if (i >= 0) k.eklenen[i] = urun;
-    else k.eklenen.push(urun);
+/** Yayındaki ya da çöpteki ürün (admin düzenleme ekranı için). */
+export async function urunBul(id: string): Promise<Product | null> {
+  const urunler = await urunleriOku(["yayinda", "cop"]);
+  const u = urunler.find((p) => p.id === id);
+  return u ? temizle(u) : null;
+}
+
+/** Yayındaki ve çöpteki ürünlerin kullandığı tüm görsel yolları (taze). */
+export async function tumGorselYollari(): Promise<string[]> {
+  return (await urunleriOku(["yayinda", "cop"])).flatMap((p) => p.images.map((g) => g.src));
+}
+
+/** Admin listesi: yayındaki ürünler, katalog sırasıyla, taze. */
+export async function adminKatalog(): Promise<Product[]> {
+  return (await urunleriOku(["yayinda"])).map(temizle);
+}
+
+/**
+ * Ürünü ekler veya günceller; varyantlar baştan yazılır. Adres değiştiyse eski
+ * adres yeni adrese yönlendirilir. Hepsi tek işlemde (batch) yazılır.
+ */
+export async function urunYaz(urun: Product): Promise<void> {
+  const db = getDb();
+  const [onceki] = await db
+    .select({ slug: product.slug, sira: product.sira, tohum: product.tohum, durum: product.durum })
+    .from(product)
+    .where(eq(product.id, urun.id));
+
+  let sira = onceki?.sira;
+  if (sira === undefined) {
+    const [{ enBuyuk }] = await db
+      .select({ enBuyuk: sql<number>`coalesce(max(${product.sira}), -1)` })
+      .from(product);
+    sira = Number(enBuyuk) + 1;
   }
-  await katmanYaz(k);
+
+  const degerler = {
+    slug: urun.slug,
+    name: urun.name,
+    description: urun.description,
+    category: urun.category,
+    brand: urun.brand ?? null,
+    model: urun.model ?? null,
+    fit: urun.fit ?? null,
+    price: urun.price,
+    compareAtPrice: urun.compareAtPrice ?? null,
+    currency: urun.currency,
+    images: urun.images,
+    colors: urun.colors,
+    isNew: urun.isNew,
+    complementaryIds: urun.complementaryIds ?? null,
+    relatedIds: urun.relatedIds ?? null,
+    updatedAt: new Date(),
+  };
+
+  const adimlar = [
+    db
+      .insert(product)
+      .values({ id: urun.id, ...degerler, durum: "yayinda", sira, tohum: false })
+      .onConflictDoUpdate({ target: product.id, set: degerler }),
+    db.delete(productVariant).where(eq(productVariant.productId, urun.id)),
+    // Yeni adres artık gerçek bir ürün adresi: yönlendirmelerden düşer.
+    db.delete(productRedirect).where(eq(productRedirect.slug, urun.slug)),
+  ] as const;
+
+  const ekler = [];
+  if (urun.variants.length > 0)
+    ekler.push(
+      db.insert(productVariant).values(
+        urun.variants.map((v, i) => ({
+          id: v.id,
+          productId: urun.id,
+          size: v.size,
+          color: v.color,
+          stock: Math.max(0, Math.floor(v.stock)),
+          sira: i,
+        })),
+      ),
+    );
+  if (onceki && onceki.slug !== urun.slug)
+    ekler.push(
+      db
+        .insert(productRedirect)
+        .values({ slug: onceki.slug, productId: urun.id })
+        .onConflictDoUpdate({ target: productRedirect.slug, set: { productId: urun.id } }),
+    );
+
+  await db.batch([...adimlar, ...ekler]);
 }
 
 /** Ürünü çöp kutusuna taşır: katalogdan kalkar, verisi ve görselleri durur. */
 export async function copeTasi(id: string): Promise<Product | null> {
-  const k = await katmanOku();
-  const urun = yayindakiler(k).find((p) => p.id === id);
+  const urun = await urunBul(id);
   if (!urun) return null;
-  k.cop.push(id);
-  await katmanYaz(k);
-  return urun;
+  const sonuc = await getDb()
+    .update(product)
+    .set({ durum: "cop", copeAtildi: new Date() })
+    .where(and(eq(product.id, id), eq(product.durum, "yayinda")))
+    .returning({ id: product.id });
+  return sonuc.length ? urun : null;
 }
 
 /** Çöp kutusundaki ürünler; en son silinen başta. */
 export async function copKutusu(): Promise<Product[]> {
-  const k = await katmanOku();
-  const urunler = tumUrunler(k);
-  return [...k.cop]
-    .reverse()
-    .map((id) => urunler.find((p) => p.id === id))
-    .filter((p): p is Product => Boolean(p));
+  const urunler = await urunleriOku(["cop"]);
+  return urunler
+    .sort(
+      (a, b) =>
+        (b._satir.copeAtildi?.getTime() ?? 0) - (a._satir.copeAtildi?.getTime() ?? 0),
+    )
+    .map(temizle);
 }
 
 /** Çöp kutusundaki ürünü kataloğa geri getirir. */
-export async function copKutusundanGeriGetir(
-  id: string,
-): Promise<Product | null> {
-  const k = await katmanOku();
-  if (!k.cop.includes(id)) return null;
-  const urun = tumUrunler(k).find((p) => p.id === id) ?? null;
-  k.cop = k.cop.filter((x) => x !== id);
-  await katmanYaz(k);
-  return urun;
+export async function copKutusundanGeriGetir(id: string): Promise<Product | null> {
+  const sonuc = await getDb()
+    .update(product)
+    .set({ durum: "yayinda", copeAtildi: null })
+    .where(and(eq(product.id, id), eq(product.durum, "cop")))
+    .returning({ id: product.id });
+  return sonuc.length ? urunBul(id) : null;
 }
 
 /**
- * Çöp kutusundaki ürünü kalıcı siler ve silinen ürünü döndürür (dosya
- * temizliği için). Admin ürünü dosyadan çıkar; tohum ürün kodda durduğu için
- * kalıcı gizlenir. İki durumda da id `silinen` listesine girer ve bir daha
- * kullanılmaz.
+ * Çöp kutusundaki ürünü kalıcı siler ve silinen ürünü döndürür (görsel
+ * temizliği için). Satır "silindi" olarak kalır ki id'si yeni ürüne verilmesin;
+ * adresi boşaltılır ve yönlendirmeleri silinir.
  */
 export async function kaliciSil(id: string): Promise<Product | null> {
-  const k = await katmanOku();
-  if (!k.cop.includes(id)) return null;
-  const urun = tumUrunler(k).find((p) => p.id === id) ?? null;
-  k.cop = k.cop.filter((x) => x !== id);
-  k.eklenen = k.eklenen.filter((p) => p.id !== id);
-  delete k.degisen[id];
-  if (!k.silinen.includes(id)) k.silinen.push(id);
-  for (const [eski, hedef] of Object.entries(k.yonlendirmeler))
-    if (hedef === id) delete k.yonlendirmeler[eski];
-  await katmanYaz(k);
-  return urun;
+  const urun = (await urunleriOku(["cop"])).find((p) => p.id === id);
+  if (!urun) return null;
+  const db = getDb();
+  await db.batch([
+    db
+      .update(product)
+      .set({ durum: "silindi", slug: `_silindi_${id}`, copeAtildi: null })
+      .where(and(eq(product.id, id), eq(product.durum, "cop"))),
+    db.delete(productRedirect).where(eq(productRedirect.productId, id)),
+  ]);
+  return temizle(urun);
 }
 
 /**
  * Yeni ürün id'si (p-NNN): şimdiye kadar kullanılmış en büyük numaranın bir
- * fazlası. Aradaki boşluklar ve silinen id'ler BİLEREK kullanılmaz:
- *   • silinmiş bir ürünün id'si tarayıcılardaki sepet/favorilerde kalmış
- *     olabilir; yeni ürüne verilirse orada başka bir ürün olarak dirilir,
- *   • public/ altında o numarayla başlayan dosyalar olabilir (ör. p-005-b.png
- *     p-009'un görseli) ve yeni ürünle karışır.
- * Bu yüzden katalogdaki ve silinen id'lerin yanında public/products altındaki
- * dosya adlarına da bakılır.
+ * fazlası. Kalıcı silinenler de sayılır; aradaki boşluklar BİLEREK kullanılmaz
+ * (eski id tarayıcılardaki sepet/favorilerde kalmış olabilir ve görsel dosya
+ * adları id ile başlar).
  */
 export async function yeniId(): Promise<string> {
-  const k = await katmanOku();
-  const adlar = [
-    ...SEED.map((p) => p.id),
-    ...k.eklenen.map((p) => p.id),
-    ...k.silinen,
-  ];
-  try {
-    const dosyalar = await fs.readdir(
-      path.join(process.cwd(), "public", "products"),
-      { recursive: true },
-    );
-    adlar.push(...dosyalar.map((d) => path.basename(d)));
-  } catch (e) {
-    if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
-  }
+  const satirlar = await getDb().select({ id: product.id }).from(product);
   const enBuyuk = Math.max(
     0,
-    ...adlar.map((ad) => Number(/^p-(\d+)(?=[-.]|$)/.exec(ad)?.[1] ?? 0)),
+    ...satirlar.map((s) => Number(/^p-(\d+)$/.exec(s.id)?.[1] ?? 0)),
   );
   return `p-${String(enBuyuk + 1).padStart(3, "0")}`;
 }
@@ -256,40 +324,29 @@ export function slugYap(ad: string): string {
  * Bu slug'ı kullanan başka bir ürün (haricId dışında) varsa onu döndürür.
  * Çöp kutusundakiler de sayılır: geri getirildiklerinde adresleri çakışmasın.
  */
-export async function slugSahibi(
-  slug: string,
-  haricId: string,
-): Promise<Product | null> {
-  return (
-    tumUrunler(await katmanOku()).find(
-      (p) => p.slug === slug && p.id !== haricId,
-    ) ?? null
-  );
+export async function slugSahibi(slug: string, haricId: string): Promise<Product | null> {
+  const [satir] = await getDb()
+    .select({ id: product.id })
+    .from(product)
+    .where(and(eq(product.slug, slug), ne(product.id, haricId), ne(product.durum, "silindi")));
+  return satir ? urunBul(satir.id) : null;
 }
 
 /** Addan üretilen slug başka üründe varsa sonuna -2, -3… eklenir. */
 export async function bosSlug(taban: string, haricId: string): Promise<string> {
-  const dolu = new Set(
-    tumUrunler(await katmanOku())
-      .filter((p) => p.id !== haricId)
-      .map((p) => p.slug),
-  );
+  const satirlar = await getDb()
+    .select({ slug: product.slug })
+    .from(product)
+    .where(ne(product.id, haricId));
+  const dolu = new Set(satirlar.map((s) => s.slug));
   if (!dolu.has(taban)) return taban;
   for (let n = 2; ; n++) if (!dolu.has(`${taban}-${n}`)) return `${taban}-${n}`;
 }
 
 /* ---- Sunucu tarafı okuma yardımcıları (canlı katalog) ---- */
 
-/**
- * Yayındaki ürünler, en yeni önce: admin'in eklediği ürünler en yeniden
- * eskiye, ardından tohum katalog kendi sırasıyla.
- */
-function enYeniOnce(k: Katman): Product[] {
-  const yayinda = yayindakiler(k);
-  const eklenenIdler = new Set(k.eklenen.map((p) => p.id));
-  const eklenen = yayinda.filter((p) => eklenenIdler.has(p.id)).reverse();
-  const tohum = yayinda.filter((p) => !eklenenIdler.has(p.id));
-  return [...eklenen, ...tohum];
+async function enYeniOnce(): Promise<Product[]> {
+  return (await yayindakiOnbellek()).enYeni;
 }
 
 /**
@@ -328,9 +385,7 @@ export async function cokSatanlar(limit = 4): Promise<Product[]> {
 
 /** "Yeni" işaretli ürünler, en yenisi başta (hero vitrininin yedeği). */
 export async function yeniGelenler(limit = 4): Promise<Product[]> {
-  return enYeniOnce(await katmanOku())
-    .filter((p) => p.isNew)
-    .slice(0, limit);
+  return (await enYeniOnce()).filter((p) => p.isNew).slice(0, limit);
 }
 
 /**
@@ -338,7 +393,7 @@ export async function yeniGelenler(limit = 4): Promise<Product[]> {
  * "Yeni" işaretine bakılmaz; ürün eklendikçe şerit kendiliğinden tazelenir.
  */
 export async function sonEklenenler(limit = 10): Promise<Product[]> {
-  return enYeniOnce(await katmanOku())
+  return (await enYeniOnce())
     .filter((p) => p.variants.some((v) => v.stock > 0))
     .slice(0, limit);
 }
@@ -382,9 +437,8 @@ export async function markaVitrini(): Promise<
 
 /**
  * "Sana Özel" bölümünün ürünü. Şimdilik sabit bir kural: yayındaki katalogun
- * ikinci ürünü (tohum katalogda Kapüşonlu Sweatshirt). İleride kullanıcının
- * gezdiği / favorilediği / sepetindeki ürüne göre belirlenecek. Katalog boşsa
- * null döner ve bölüm çizilmez.
+ * ikinci ürünü. İleride kullanıcının gezdiği / favorilediği / sepetindeki
+ * ürüne göre belirlenecek. Katalog boşsa null döner ve bölüm çizilmez.
  */
 export async function sanaOzel(): Promise<Product | null> {
   const urunler = await katalogOku();
@@ -405,3 +459,4 @@ export async function vitrinUrunu(): Promise<Product | null> {
     null
   );
 }
+
